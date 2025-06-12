@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "Pico",
+    "subtitle": "Plataforma de Estudios Gamificada",
+    "description": "Pico es una aplicación móvil que transforma el estudio para exámenes en un juego, con preguntas seleccionadas por IA, cronogramas de estudio y competencia con amigos. Ayuda a los estudiantes a dejar de procrastinar y crear hábitos duraderos para ingresar a sus escuelas y carreras soñadas.",
+    "website": "https://www.usepico.com.br/",
+    "src": "/partners/pico.png"
+  },
+  {
+    "id": 2,
+    "name": "SignLink",
+    "subtitle": "Plataforma de Aprendizaje de Lengua de Señas",
+    "description": "SignLink es una plataforma de lenguas de señas lanzada en Brasil en 2023 y actualmente incubada por StartFellowship en Suiza. Con rutas de aprendizaje gamificadas, un diccionario en expansión y un enfoque en la presencia humana, el proyecto facilita el aprendizaje de múltiples lenguas de señas para romper barreras internacionales.",
+    "website": "https://www.linkedin.com/company/sign-link-project/",
+    "src": "/partners/signlink.png"
+  }
+]

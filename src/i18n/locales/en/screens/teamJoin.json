@@ -1,0 +1,42 @@
+{
+  "title": "Join Our Team",
+  "description": "We are always looking for talented people to join RAIA. Even with the Fellows 2025 selection process closed, we encourage you to fill out the form to be considered for future opportunities.",
+  "whyWorkWithUs": {
+    "title": "Why Work With Us",
+    "reasons": [
+      "Collaborative environment focused on AI innovation",
+      "Projects with real impact on Brazilian society",
+      "Technical and leadership development opportunities",
+      "Work with cutting-edge AI technologies"
+    ]
+  },
+  "currentOpenings": {
+    "title": "Openings",
+    "positions": [
+      "RAIA Fellows (2025 selection process closed - register for future opportunities)",
+      "Fundraising & Partnerships",
+      "Marketing",
+      "Projects",
+      "Tech"
+    ]
+  },
+  "form": {
+    "title": "Application Form",
+    "fullName": "Full Name",
+    "email": "Email",
+    "phone": "Phone Number",
+    "position": "Position",
+    "github": "GitHub Profile",
+    "linkedin": "LinkedIn Profile",
+    "uploadCV": "Upload CV",
+    "changeCV": "Change CV File",
+    "selectedFile": "Selected file: {{name}}",
+    "fileHelp": "Accepts PDF, DOC or DOCX files (max. 5MB)",
+    "message": "Why do you want to join RAIA?",
+    "submit": "Submit Application",
+    "submitting": "Submitting...",
+    "success": "Application successfully submitted! Thank you for your interest in RAIA.",
+    "error": "There was an error submitting your application. Please try again."
+  },
+  "positions": ["Fundraising & Partnerships", "Marketing", "Projects", "Tech"]
+}

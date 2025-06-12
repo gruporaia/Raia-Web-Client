@@ -1,0 +1,63 @@
+{
+  "hero": {
+    "overline": "INITIATIVES",
+    "title": "What We Develop"
+  },
+  "services": [
+    {
+      "title": "Events and Hackathons",
+      "icon": "events-icon.svg",
+      "placeholderType": "event",
+      "description": "We promote RAIAthon and RAIA Conference to create networking opportunities, technical discussions, and showcases of AI work.",
+      "features": [
+        "Competitions with AI solutions",
+        "Lectures and panel discussions",
+        "Connection with professionals and companies"
+      ]
+    },
+    {
+      "title": "RAIA Fellowship",
+      "icon": "education-icon.svg",
+      "placeholderType": "fellowship",
+      "description": "Our main program, aimed at a select group of participants, focused on technical and leadership development in AI.",
+      "features": [
+        "Participation in real projects",
+        "Development of technical skills",
+        "Leadership training"
+      ]
+    }
+  ],
+  "process": {
+    "overline": "PROCESS",
+    "title": "How We Work",
+    "subtitle": "Our streamlined process ensures efficient\nand effective delivery of your project.",
+    "buttonText": "Start Your Project With Us",
+    "steps": [
+      {
+        "phase": "Discovery",
+        "description": "We understand your requirements and objectives."
+      },
+      {
+        "phase": "Planning",
+        "description": "We create a detailed roadmap for your project."
+      },
+      {
+        "phase": "Design",
+        "description": "We develop wireframes and visual designs."
+      },
+      {
+        "phase": "Development",
+        "description": "We build your solution with clean, efficient code."
+      },
+      {
+        "phase": "Testing",
+        "description": "We thoroughly test for quality and performance."
+      },
+      {
+        "phase": "Launch",
+        "description": "We deploy your solution and provide ongoing support."
+      }
+    ],
+    "footer": "Tell us what you need — we'll deliver tailored solutions for your business."
+  }
+}

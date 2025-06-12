@@ -1,0 +1,319 @@
+import { Box, useTheme } from '@mui/material';
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
+
+import { debounce } from '../../utils/animationUtils';
+
+interface Logo {
+  src: string;
+  name: string;
+  website?: string;
+}
+
+interface PartnerCarouselProps {
+  logos: Logo[];
+  speed?: number;
+  maxLogoHeight?: number;
+  padding?: string;
+  align?: 'center' | 'start' | 'end' | 'stretch';
+  logoSize?: number;
+}
+
+const PartnerCarousel: React.FC<PartnerCarouselProps> = ({
+  logos = [],
+  speed = 20,
+  maxLogoHeight = 60,
+  padding = '0 40px',
+  align = 'center',
+  logoSize = 160,
+}) => {
+  const theme = useTheme();
+  const isDarkMode = theme.palette.mode === 'dark';
+  const containerRef = useRef<HTMLDivElement>(null);
+  const innerRef = useRef<HTMLDivElement>(null);
+  const [totalWidth, setTotalWidth] = useState(0);
+  const totalWidthRef = useRef(0);
+  const [shouldAnimate, setShouldAnimate] = useState(false);
+  const shouldAnimateRef = useRef(false);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [animationOffset, setAnimationOffset] = useState(0);
+  const animationRef = useRef<number | null>(null);
+  const lastTimeRef = useRef<number | null>(null);
+  const offsetRef = useRef(0);
+  const [, setLoadedImages] = useState(0);
+  const isReadyRef = useRef(false);
+  const expectedImageCount = useMemo(() => logos.length, [logos.length]);
+
+  const handleLogoClick = useCallback((website?: string) => {
+    if (website) {
+      window.open(website, '_blank', 'noopener,noreferrer');
+    }
+  }, []);
+
+  const displayItems = useMemo(() => {
+    if (logos.length === 0) return [];
+    if (!shouldAnimate) return logos;
+    return [...logos, ...logos, ...logos];
+  }, [logos, shouldAnimate]);
+
+  const startRAF = useCallback(() => {
+    if (animationRef.current) return;
+
+    const animate = (timestamp: number) => {
+      if (!lastTimeRef.current) {
+        lastTimeRef.current = timestamp;
+        animationRef.current = requestAnimationFrame(animate);
+        return;
+      }
+
+      const elapsed = timestamp - lastTimeRef.current;
+      const pixelsPerMs = totalWidthRef.current / (speed * 1000);
+
+      offsetRef.current =
+        (offsetRef.current + elapsed * pixelsPerMs) % totalWidthRef.current;
+
+      setAnimationOffset(offsetRef.current);
+
+      lastTimeRef.current = timestamp;
+      animationRef.current = requestAnimationFrame(animate);
+    };
+
+    lastTimeRef.current = null;
+    animationRef.current = requestAnimationFrame(animate);
+  }, [speed]);
+
+  const stopRAF = useCallback(() => {
+    if (animationRef.current) {
+      cancelAnimationFrame(animationRef.current);
+      animationRef.current = null;
+    }
+    lastTimeRef.current = null;
+  }, []);
+
+  const resetAnimation = useCallback(() => {
+    offsetRef.current = 0;
+    setAnimationOffset(0);
+    stopRAF();
+
+    if (
+      shouldAnimateRef.current &&
+      isReadyRef.current &&
+      totalWidthRef.current > 0
+    ) {
+      startRAF();
+    }
+  }, [startRAF, stopRAF]);
+
+  const recalculateDimensions = useCallback(() => {
+    if (!containerRef.current || !innerRef.current || logos.length === 0)
+      return;
+
+    const containerWidth = containerRef.current.clientWidth;
+
+    const originalFlexWrap = innerRef.current.style.flexWrap;
+    const originalVisibility = innerRef.current.style.visibility;
+    const originalPosition = innerRef.current.style.position;
+
+    innerRef.current.style.flexWrap = 'nowrap';
+    innerRef.current.style.visibility = 'hidden';
+    innerRef.current.style.position = 'absolute';
+    innerRef.current.style.width = 'auto';
+
+    const itemsWidth = innerRef.current.scrollWidth;
+
+    innerRef.current.style.flexWrap = originalFlexWrap;
+    innerRef.current.style.visibility = originalVisibility;
+    innerRef.current.style.position = originalPosition;
+    innerRef.current.style.width = '';
+
+    const originalItemsWidth = shouldAnimateRef.current
+      ? itemsWidth / 3
+      : itemsWidth;
+
+    if (originalItemsWidth !== totalWidthRef.current) {
+      totalWidthRef.current = originalItemsWidth;
+      setTotalWidth(originalItemsWidth);
+    }
+
+    const newShouldAnimate = originalItemsWidth > containerWidth;
+
+    if (newShouldAnimate !== shouldAnimateRef.current) {
+      shouldAnimateRef.current = newShouldAnimate;
+      setShouldAnimate(newShouldAnimate);
+
+      resetAnimation();
+    }
+  }, [logos.length, resetAnimation]);
+
+  const handleImageLoad = useCallback(() => {
+    setLoadedImages((prev) => {
+      const newCount = prev + 1;
+      if (newCount >= expectedImageCount && !isReadyRef.current) {
+        isReadyRef.current = true;
+        setTimeout(recalculateDimensions, 50);
+      }
+      return newCount;
+    });
+  }, [expectedImageCount, recalculateDimensions]);
+
+  const debouncedRecalculate = useMemo(
+    () => debounce(recalculateDimensions, 100),
+    [recalculateDimensions]
+  );
+
+  useEffect(() => {
+    if (logos.length === 0) return;
+    setLoadedImages(0);
+    isReadyRef.current = false;
+  }, [logos]);
+
+  useEffect(() => {
+    if (!containerRef.current || logos.length === 0) return;
+
+    const resizeObserver = new ResizeObserver(debouncedRecalculate);
+    resizeObserver.observe(containerRef.current);
+
+    window.addEventListener('resize', debouncedRecalculate);
+    window.addEventListener('orientationchange', debouncedRecalculate);
+
+    return () => {
+      resizeObserver.disconnect();
+      window.removeEventListener('resize', debouncedRecalculate);
+      window.removeEventListener('orientationchange', debouncedRecalculate);
+      stopRAF();
+    };
+  }, [logos.length, debouncedRecalculate, stopRAF]);
+
+  useEffect(() => {
+    if (shouldAnimate && isReadyRef.current && totalWidthRef.current > 0) {
+      startRAF();
+    } else {
+      stopRAF();
+    }
+
+    return () => {
+      stopRAF();
+    };
+  }, [shouldAnimate, totalWidth, speed, startRAF, stopRAF]);
+
+  return (
+    <Box
+      sx={{
+        width: '100%',
+        overflow: 'hidden',
+        position: 'relative',
+        backgroundColor: 'transparent',
+        py: 2,
+      }}
+      ref={containerRef}
+    >
+      <Box
+        ref={innerRef}
+        sx={{
+          display: 'flex',
+          alignItems: align,
+          justifyContent: shouldAnimate ? 'flex-start' : 'center',
+          flexWrap: 'nowrap',
+          width: shouldAnimate ? 'fit-content' : '100%',
+          gap: 4,
+          transform: shouldAnimate
+            ? `translateX(-${animationOffset}px)`
+            : 'none',
+          willChange: shouldAnimate ? 'transform' : 'auto',
+        }}
+      >
+        {displayItems.map((logo, index) => {
+          const cloneGroup = Math.floor(index / logos.length);
+          const originalIndex = index % logos.length;
+          const uniqueKey = shouldAnimate
+            ? `logo-${originalIndex}-clone-${cloneGroup}`
+            : `logo-${originalIndex}`;
+
+          return (
+            <Box
+              key={uniqueKey}
+              sx={{
+                padding: padding,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                minWidth: logoSize,
+                maxWidth: logoSize + 60, // Allow some extra width for wider logos
+                height: maxLogoHeight, // unified height
+              }}
+            >
+              {/* Inner wrapper for hover scaling to avoid affecting the track animation */}
+              <Box
+                sx={{
+                  transition: 'transform 0.3s ease',
+                  transform:
+                    hoveredIndex === index ? 'scale(1.05)' : 'scale(1)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  minWidth: logoSize,
+                  maxWidth: logoSize + 60, // Allow some extra width for wider logos
+                  height: maxLogoHeight, // unified height
+                  padding: 0, // remove extra padding
+                  backgroundColor: 'transparent',
+                  borderRadius: 1,
+                  cursor: logo.website ? 'pointer' : 'default',
+                }}
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(null)}
+                onClick={() => handleLogoClick(logo.website)}
+                role={logo.website ? 'button' : undefined}
+                tabIndex={logo.website ? 0 : undefined}
+                onKeyDown={(e) => {
+                  if (logo.website && (e.key === 'Enter' || e.key === ' ')) {
+                    e.preventDefault();
+                    handleLogoClick(logo.website);
+                  }
+                }}
+                aria-label={
+                  logo.website ? `Visit ${logo.name} website` : undefined
+                }
+              >
+                <img
+                  src={logo.src}
+                  alt={logo.name}
+                  onLoad={handleImageLoad}
+                  onError={handleImageLoad}
+                  style={{
+                    maxHeight: `${maxLogoHeight}px`,
+                    width: 'auto',
+                    minWidth: '120px', // Ensure minimum width for readability
+                    maxWidth: '200px', // Allow wider logos to be more readable
+                    objectFit: 'contain',
+                    display: 'block',
+                    margin: '0 auto',
+                    borderRadius: 6,
+                    boxSizing: 'border-box',
+                    padding: '8px', // consistent padding
+                    opacity: hoveredIndex === index ? 1 : 0.8,
+                    transition: 'all 0.3s ease, filter 0.3s ease',
+                    filter:
+                      hoveredIndex === index
+                        ? isDarkMode
+                          ? `drop-shadow(0 2px 6px rgba(255,255,255,0.3)) drop-shadow(0 1px 3px rgba(255,255,255,0.25)) drop-shadow(0 0px 2px rgba(255,255,255,0.2)) grayscale(0)`
+                          : `drop-shadow(0 2px 6px rgba(0,0,0,0.3)) drop-shadow(0 1px 3px rgba(0,0,0,0.25)) drop-shadow(0 0px 2px rgba(0,0,0,0.2)) grayscale(0)`
+                        : isDarkMode
+                          ? 'grayscale(100%) contrast(2) brightness(0.4) invert(1) opacity(0.85)' // White filter preserving details
+                          : 'grayscale(100%) brightness(0.4) contrast(2) opacity(0.7)', // Black filter preserving details
+                  }}
+                />
+              </Box>
+            </Box>
+          );
+        })}
+      </Box>
+    </Box>
+  );
+};
+
+export default PartnerCarousel;

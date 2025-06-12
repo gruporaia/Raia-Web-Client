@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Beuni",
+    "src": "/event-sponsors/beuni.png",
+    "website": "https://beuni.com.br/"
+  },
+  {
+    "id": 2,
+    "name": "Tractian",
+    "src": "/event-sponsors/tractian.png",
+    "website": "https://tractian.com/"
+  },
+  {
+    "id": 3,
+    "name": "Nubank",
+    "src": "/event-sponsors/nubank.svg",
+    "website": "https://www.nubank.com.br/"
+  },
+  {
+    "id": 4,
+    "name": "Banco BTG Pactual",
+    "src": "/event-sponsors/btg.svg",
+    "website": "https://www.btgpactual.com/"
+  },
+  {
+    "id": 5,
+    "name": "Griaule",
+    "src": "/event-sponsors/griaule.png",
+    "website": "https://griaule.com/"
+  }
+]

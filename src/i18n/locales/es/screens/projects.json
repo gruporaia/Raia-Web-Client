@@ -1,0 +1,20 @@
+{
+  "hero": {
+    "title": "Nuestros Proyectos",
+    "subtitle": "Los proyectos tienen como objetivo unir a los fellows en equipos para crear soluciones con inteligencia artificial.",
+    "overline": "PROYECTOS",
+    "buttonText": "Conoce Nuestras Iniciativas"
+  },
+  "content": {
+    "overline": "CASOS DE ÉXITO",
+    "title": "Proyectos Recientes",
+    "readMore": "Saber Más",
+    "viewDetails": "Ver Detalles",
+    "noItemsTitle": "Ningún Proyecto Encontrado",
+    "noItemsMessage": "Actualmente no hay proyectos disponibles."
+  },
+  "loading": {
+    "items": "Cargando proyectos...",
+    "updating": "Actualizando proyectos..."
+  }
+}

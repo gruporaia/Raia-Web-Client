@@ -1,0 +1,32 @@
+{
+  "hero": {
+    "overline": "WELCOME",
+    "title": "Leading Brazil to prominence in Artificial Intelligence",
+    "subtitle": "We are pleased to announce the foundation of RAIA, a non-profit organization with an ambitious purpose: to help make Brazil a leader in the field of Artificial Intelligence (AI)"
+  },
+  "about": {
+    "overline": "ABOUT US",
+    "title": "Introduction to the Group",
+    "subtitle": "RAIA (Network for the Advancement of Artificial Intelligence) is a non-profit organization committed to transforming Brazil into a global leader in the field of Artificial Intelligence (AI).",
+    "buttonText": "Learn More"
+  },
+  "partners": {
+    "overline": "PARTNERS",
+    "title": "Our Partners",
+    "subtitle": "We collaborate with companies, universities, and organizations to advance Artificial Intelligence in Brazil.",
+    "buttonText": "View Partners"
+  },
+  "team": {
+    "overline": "TEAM",
+    "title": "Directors",
+    "subtitle": "Meet the people behind RAIA who work together to expand the limits of artificial intelligence.",
+    "buttonText": "View Team"
+  },
+  "cta": {
+    "overline": "JOIN US",
+    "title": "Be Part of RAIA",
+    "subtitle": "We collaborate with organizations that share our vision of advancing Artificial Intelligence in Brazil.",
+    "becomePartner": "Become a Partner",
+    "joinTeam": "Join Our Team"
+  }
+}

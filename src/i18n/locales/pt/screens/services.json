@@ -1,0 +1,63 @@
+{
+  "hero": {
+    "overline": "INICIATIVAS",
+    "title": "O Que Desenvolvemos"
+  },
+  "services": [
+    {
+      "title": "Eventos e Hackathons",
+      "icon": "events-icon.svg",
+      "placeholderType": "event",
+      "description": "Promovemos o RAIAthon e a RAIA Conference para criar oportunidades de networking, discussões técnicas e mostras de trabalho em IA.",
+      "features": [
+        "Competições com soluções em IA",
+        "Palestras e painéis de debate",
+        "Conexão com profissionais e empresas"
+      ]
+    },
+    {
+      "title": "RAIA Fellowship",
+      "icon": "education-icon.svg",
+      "placeholderType": "fellowship",
+      "description": "Nosso programa principal, voltado para um grupo seleto de participantes, focado no desenvolvimento técnico e de liderança em IA.",
+      "features": [
+        "Participação em projetos reais",
+        "Desenvolvimento de habilidades técnicas",
+        "Formação em liderança"
+      ]
+    }
+  ],
+  "process": {
+    "overline": "PROCESSO",
+    "title": "Como Trabalhamos",
+    "subtitle": "Nosso processo otimizado garante a entrega eficiente e eficaz do seu projeto.",
+    "buttonText": "Inicie Seu Projeto Conosco",
+    "steps": [
+      {
+        "phase": "Descoberta",
+        "description": "Entendemos seus requisitos e objetivos."
+      },
+      {
+        "phase": "Planejamento",
+        "description": "Criamos um roteiro detalhado para seu projeto."
+      },
+      {
+        "phase": "Design",
+        "description": "Desenvolvemos wireframes e designs visuais."
+      },
+      {
+        "phase": "Desenvolvimento",
+        "description": "Construímos sua solução com código limpo e eficiente."
+      },
+      {
+        "phase": "Testes",
+        "description": "Testamos minuciosamente a qualidade e performance."
+      },
+      {
+        "phase": "Lançamento",
+        "description": "Implementamos sua solução e fornecemos suporte contínuo."
+      }
+    ],
+    "footer": "Conte-nos o que você precisa — entregaremos soluções personalizadas para o seu negócio."
+  }
+}

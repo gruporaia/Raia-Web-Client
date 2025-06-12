@@ -1,0 +1,52 @@
+{
+  "hero": {
+    "title": "Sobre RAIA",
+    "subtitle": "Iniciativa y Propósito",
+    "overline": "SOBRE NOSOTROS",
+    "buttonText": "Conoce Nuestro Equipo"
+  },
+  "story": {
+    "title": "Nuestra Historia",
+    "content": [
+      "RAIA nació después de que dos estudiantes de la USP São Carlos, Pedro Augusto Ribeiro Gomes y Pedro Kenzo Muramatsu Carmo, visitaran Alemania y conocieran el grupo TUM AI, una organización independiente reconocida como catalizador de la IA en Alemania.",
+      "Inspirados por el éxito de TUM AI, decidieron crear una iniciativa similar en Brasil, enfocada en el desarrollo de Inteligencia Artificial que pudiera tener un alto impacto en la sociedad brasileña."
+    ]
+  },
+  "mission": {
+    "title": "Nuestra Misión",
+    "content": "Avanzar la Inteligencia Artificial en Brasil y transformar al país en un protagonista en el campo."
+  },
+  "values": {
+    "overline": "VALORES",
+    "title": "En Lo Que Creemos",
+    "subtitle": "RAIA opera en cinco pilares estratégicos que guían todas nuestras actividades y proyectos.",
+    "buttonText": "Ver Más Detalles",
+    "items": [
+      {
+        "title": "Proyectos de Impacto",
+        "description": "Desarrollo de soluciones reales en IA, tanto en colaboración con la industria y la academia como en iniciativas emprendedoras."
+      },
+      {
+        "title": "Eventos y Conferencias",
+        "description": "Conexiones, presentaciones y discusiones entre profesionales, académicos y líderes del sector de IA."
+      },
+      {
+        "title": "Creación de Contenido Científico y Educativo",
+        "description": "Difusión de conocimiento técnico, fomento de la investigación y publicación de descubrimientos."
+      },
+      {
+        "title": "Desarrollo de Talentos",
+        "description": "Pulido de jóvenes talentos, tanto en capacidades técnicas como en liderazgo."
+      },
+      {
+        "title": "Comunidad",
+        "description": "Creación de un ambiente colaborativo, donde los principales actores del ecosistema de Inteligencia Artificial pueden intercambiar conocimiento, apoyarse y crecer juntos."
+      }
+    ]
+  },
+  "purpose": {
+    "overline": "PROPÓSITO",
+    "title": "Por Qué Existimos",
+    "content": "RAIA (Red de Avance en Inteligencia Artificial) es una organización sin fines de lucro comprometida en transformar a Brasil en un protagonista global en el campo de la Inteligencia Artificial (IA). A través de proyectos técnicos de impacto real, eventos, educación y desarrollo de talentos, RAIA promueve la innovación tecnológica y forma líderes preparados para enfrentar los desafíos del futuro.\n\nLa IA es una fuerza revolucionaria de transformación, capaz de generar progreso social y económico. Nuestra misión es reunir a los mejores talentos emergentes y proporcionar un ambiente donde puedan crecer, colaborar y contribuir a soluciones que impacten positivamente al país y posicionen a Brasil como uno de los líderes mundiales en el área."
+  }
+}

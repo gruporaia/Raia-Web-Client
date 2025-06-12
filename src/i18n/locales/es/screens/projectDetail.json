@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "title": "Detalles del Proyecto",
+    "description": "Información detallada sobre este proyecto"
+  },
+  "loading": {
+    "title": "Cargando detalles del proyecto...",
+    "error": "Error al cargar el proyecto"
+  },
+  "notFound": {
+    "title": "Proyecto No Encontrado",
+    "message": "Lo sentimos, el proyecto que buscas no se puede encontrar.",
+    "button": "Volver a Proyectos"
+  },
+  "sections": {
+    "author": "Información del Autor",
+    "details": "Detalles de la Publicación",
+    "basicInfo": "Información Básica",
+    "tags": "Etiquetas"
+  },
+  "details": {
+    "category": "Categoría",
+    "participants": "Participantes",
+    "date": "Fecha",
+    "technologies": "Tecnologías",
+    "github": "Repositorio GitHub",
+    "website": "Sitio Web",
+    "author": "Miembros del Equipo",
+    "publishedOn": "Publicado el",
+    "share": "Compartir",
+    "email": "Correo electrónico",
+    "references": "Referencias",
+    "readTime": "Tiempo de lectura"
+  },
+  "navigation": {
+    "back": "Volver a Proyectos",
+    "next": "Proyecto Siguiente",
+    "previous": "Proyecto Anterior"
+  },
+  "cta": {
+    "overline": "¿Interesado en nuestro trabajo?",
+    "title": "Hablemos sobre tu próximo proyecto",
+    "button": "Contáctanos"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "title": "Detalles de la Publicación del Blog",
+    "description": "Información detallada sobre esta publicación del blog"
+  },
+  "loading": {
+    "title": "Cargando publicación del blog...",
+    "error": "Error al cargar la publicación del blog"
+  },
+  "notFound": {
+    "title": "Publicación del Blog No Encontrada",
+    "message": "Lo sentimos, la publicación del blog que estás buscando no se puede encontrar.",
+    "button": "Volver al Blog"
+  },
+  "sections": {
+    "author": "Información del Autor",
+    "details": "Detalles de la Publicación",
+    "tags": "Etiquetas"
+  },
+  "details": {
+    "author": "Autor",
+    "email": "Correo Electrónico",
+    "date": "Fecha",
+    "share": "Compartir",
+    "publishedOn": "Publicado El",
+    "category": "Categoría",
+    "readTime": "Tiempo de Lectura",
+    "participants": "Participantes"
+  },
+  "newsletter": {
+    "title": "Suscríbete a Nuestro Boletín",
+    "description": "Mantente actualizado con nuestras últimas noticias y artículos",
+    "button": "Suscribirse Ahora"
+  },
+  "navigation": {
+    "back": "Volver al Blog",
+    "next": "Siguiente Publicación",
+    "previous": "Publicación Anterior"
+  },
+  "cta": {
+    "overline": "¿Interesado en nuestras ideas?",
+    "title": "Lee más en nuestro blog",
+    "button": "Ver Todos los Artículos"
+  }
+}

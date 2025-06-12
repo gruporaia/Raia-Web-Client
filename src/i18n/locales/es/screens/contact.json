@@ -1,0 +1,26 @@
+{
+  "pageTitle": "Contáctanos",
+  "pageDescription": "Ponte en contacto con nuestro equipo. ¿Tienes preguntas sobre nuestras soluciones de IA? ¡Nos encantaría escucharte y discutir cómo podemos ayudar a convertir tu idea en realidad!",
+  "contactInfo": {
+    "title": "Información de Contacto",
+    "address": "Dirección: São Carlos, SP - Brasil"
+  },
+  "form": {
+    "title": "Envíanos un Mensaje",
+    "name": "Nombre",
+    "email": "Correo Electrónico",
+    "subject": "Asunto",
+    "customSubject": "Asunto Personalizado",
+    "message": "Mensaje",
+    "attachFile": "Adjuntar Archivo (máx. 5MB)",
+    "fileSize": "Tamaño del archivo: {{size}} MB",
+    "fileSizeError": "El tamaño del archivo excede el límite de 5MB",
+    "submit": "Enviar Mensaje",
+    "success": "¡Gracias por tu mensaje! Nos pondremos en contacto pronto."
+  },
+  "subjects": {
+    "partner": "Convertirse en Socio",
+    "services": "Proyectos de IA",
+    "other": "Otro"
+  }
+}

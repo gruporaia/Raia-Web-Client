@@ -1,0 +1,63 @@
+{
+  "hero": {
+    "overline": "INICIATIVAS",
+    "title": "Lo Que Desarrollamos"
+  },
+  "services": [
+    {
+      "title": "Eventos y Hackathons",
+      "icon": "events-icon.svg",
+      "placeholderType": "event",
+      "description": "Promovemos el RAIAthon y la RAIA Conference para crear oportunidades de networking, discusiones técnicas y muestras de trabajo en IA.",
+      "features": [
+        "Competiciones con soluciones en IA",
+        "Conferencias y paneles de debate",
+        "Conexión con profesionales y empresas"
+      ]
+    },
+    {
+      "title": "RAIA Fellowship",
+      "icon": "education-icon.svg",
+      "placeholderType": "fellowship",
+      "description": "Nuestro programa principal, dirigido a un grupo selecto de participantes, enfocado en el desarrollo técnico y de liderazgo en IA.",
+      "features": [
+        "Participación en proyectos reales",
+        "Desarrollo de habilidades técnicas",
+        "Formación en liderazgo"
+      ]
+    }
+  ],
+  "process": {
+    "overline": "PROCESO",
+    "title": "Cómo Trabajamos",
+    "subtitle": "Nuestro proceso optimizado asegura una entrega eficiente y efectiva de su proyecto.",
+    "buttonText": "Inicia Tu Proyecto Con Nosotros",
+    "steps": [
+      {
+        "phase": "Descubrimiento",
+        "description": "Entendemos sus requisitos y objetivos."
+      },
+      {
+        "phase": "Planificación",
+        "description": "Creamos una hoja de ruta detallada para su proyecto."
+      },
+      {
+        "phase": "Diseño",
+        "description": "Desarrollamos wireframes y diseños visuales."
+      },
+      {
+        "phase": "Desarrollo",
+        "description": "Construimos su solución con código limpio y eficiente."
+      },
+      {
+        "phase": "Pruebas",
+        "description": "Probamos exhaustivamente la calidad y el rendimiento."
+      },
+      {
+        "phase": "Lanzamiento",
+        "description": "Implementamos su solución y brindamos soporte continuo."
+      }
+    ],
+    "footer": "Cuéntenos lo que necesita — entregaremos soluciones personalizadas para su negocio."
+  }
+}

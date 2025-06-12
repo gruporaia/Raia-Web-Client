@@ -1,0 +1,20 @@
+{
+  "hero": {
+    "title": "Our Projects",
+    "subtitle": "The projects aim to unite fellows in teams to create solutions with artificial intelligence.",
+    "overline": "PROJECTS",
+    "buttonText": "Discover Our Initiatives"
+  },
+  "content": {
+    "overline": "SUCCESS CASES",
+    "title": "Recent Projects",
+    "readMore": "Learn More",
+    "viewDetails": "View Details",
+    "noItemsTitle": "No Projects Found",
+    "noItemsMessage": "There are currently no projects available."
+  },
+  "loading": {
+    "items": "Loading projects...",
+    "updating": "Updating projects..."
+  }
+}

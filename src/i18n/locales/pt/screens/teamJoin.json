@@ -1,0 +1,42 @@
+{
+  "title": "Junte-se à Nossa Equipe",
+  "description": "Estamos sempre em busca de pessoas talentosas para se juntar à RAIA. Mesmo com o processo de seleção de Fellows 2025 encerrado, incentivamos você a preencher o formulario para ser considerado em futuras oportunidades.",
+  "whyWorkWithUs": {
+    "title": "Por Que Trabalhar Conosco",
+    "reasons": [
+      "Ambiente colaborativo focado em inovação em IA",
+      "Projetos de impacto real na sociedade brasileira",
+      "Oportunidades de desenvolvimento técnico e de liderança",
+      "Trabalho com tecnologias de ponta em IA"
+    ]
+  },
+  "currentOpenings": {
+    "title": "Vagas",
+    "positions": [
+      "Fellows RAIA (Processo seletivo 2025 encerrado - cadastre-se para futuras oportunidades)",
+      "Fundraising & Parcerias",
+      "Marketing",
+      "Projetos",
+      "Tech"
+    ]
+  },
+  "form": {
+    "title": "Formulário de Inscrição",
+    "fullName": "Nome Completo",
+    "email": "E-mail",
+    "phone": "Número de Telefone",
+    "position": "Posição",
+    "github": "Perfil do GitHub",
+    "linkedin": "Perfil do LinkedIn",
+    "uploadCV": "Enviar CV",
+    "changeCV": "Alterar Arquivo do CV",
+    "selectedFile": "Arquivo selecionado: {{name}}",
+    "fileHelp": "Aceita arquivos PDF, DOC ou DOCX (máx. 5MB)",
+    "message": "Por que você quer se juntar à RAIA?",
+    "submit": "Enviar Inscrição",
+    "submitting": "Enviando...",
+    "success": "Inscrição enviada com sucesso! Obrigado pelo seu interesse na RAIA.",
+    "error": "Houve um erro ao enviar sua inscrição. Por favor, tente novamente."
+  },
+  "positions": ["Fundraising & Parcerias", "Marketing", "Projetos", "Tech"]
+}

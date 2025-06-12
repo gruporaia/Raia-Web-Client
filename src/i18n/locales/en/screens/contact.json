@@ -1,0 +1,26 @@
+{
+  "pageTitle": "Contact Us",
+  "pageDescription": "Get in touch with our team. Have questions about our AI solutions? We'd love to hear from you and discuss how we can help turn your idea into reality!",
+  "contactInfo": {
+    "title": "Contact Information",
+    "address": "Address: São Carlos, SP - Brazil"
+  },
+  "form": {
+    "title": "Send Us a Message",
+    "name": "Name",
+    "email": "Email",
+    "subject": "Subject",
+    "customSubject": "Custom Subject",
+    "message": "Message",
+    "attachFile": "Attach File (max. 5MB)",
+    "fileSize": "File size: {{size}} MB",
+    "fileSizeError": "File size exceeds the 5MB limit",
+    "submit": "Send Message",
+    "success": "Thank you for your message! We will get in touch soon."
+  },
+  "subjects": {
+    "partner": "Become a Partner",
+    "services": "AI Projects",
+    "other": "Other"
+  }
+}
