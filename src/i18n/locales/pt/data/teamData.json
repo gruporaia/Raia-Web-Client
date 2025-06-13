@@ -1,0 +1,139 @@
+[
+  {
+    "id": "pedro-augusto-ribeiro-gomes",
+    "name": "Pedro Augusto Ribeiro Gomes",
+    "role": "Fundador e Presidente",
+    "image": "/team/pedro-augusto-ribeiro-gomes.png",
+    "bio": "Fundador e Presidente do RAIA, cursando Ciência da Computação no ICMC - USP São Carlos.",
+    "linkedin": "https://www.linkedin.com/in/pedroaurgomes/",
+    "expertise": [
+      "Inteligência Artificial",
+      "Desenvolvimento Organizacional",
+      "Liderança de Equipes"
+    ],
+    "education": "Universidade de São Paulo (USP)"
+  },
+  {
+    "id": "luisa-shimabucoro",
+    "name": "Luísa Shimabucoro",
+    "role": "Diretora de Projetos",
+    "image": "/team/luisa-shimabucoro.png",
+    "bio": "Tem interesse nas áreas de ML, com ênfase em NLP e Visão. Aluna de Ciências de Computação da USP, já tendo passado pela U. de Edimburgo e Cohere For AI como pesquisadora.",
+    "github": "https://github.com/luisashimabucoro",
+    "linkedin": "https://www.linkedin.com/in/lushimabucoro/",
+    "expertise": ["Machine Learning", "NLP", "Visão Computacional"],
+    "education": "Universidade de São Paulo (USP)"
+  },
+  {
+    "id": "pedro-augusto-monteiro-delgado",
+    "name": "Pedro Augusto Monteiro Delgado",
+    "role": "Diretor de Projetos",
+    "image": "/team/pedro-augusto-monteiro-delgado.png",
+    "bio": "Graduando em Ciências de Computação pelo ICMC-USP, em intercâmbio com a Universidade de Berna, na Suíça. Possui interesse em explorar a aplicação de ferramentas de inteligência artificial em áreas de interesse público, como saúde e educação.",
+    "github": "https://github.com/DelgadoPedro",
+    "linkedin": "https://www.linkedin.com/in/pedroamdelgado",
+    "expertise": ["Inteligência Artificial", "Saúde", "Educação"],
+    "education": "ICMC-USP"
+  },
+  {
+    "id": "samuel-rubens-souza-oliveira",
+    "name": "Samuel Rubens Souza Oliveira",
+    "role": "Diretor de Tech",
+    "image": "/team/samuel-rubens-souza-oliveira.png",
+    "bio": "Profissional com experiência em desenvolvimento de software, automação de infraestrutura e sistemas distribuídos.",
+    "website": "https://rubenszinho.dev/",
+    "github": "https://github.com/rubenszinho",
+    "linkedin": "https://www.linkedin.com/in/samuelrubens/",
+    "expertise": ["DevOps", "Microsserviços", "Computação em Nuvem"]
+  },
+  {
+    "id": "lara-peclart-dalese",
+    "name": "Lara Peclart Dalese",
+    "role": "Diretora de Marketing",
+    "image": "/team/lara-peclart-dalese.png",
+    "bio": "Graduanda em Comunicação Digital pela Fundação Getulio Vargas ECMI.",
+    "linkedin": "https://www.linkedin.com/in/larapeclartdalese/",
+    "expertise": ["Marketing", "Comunicação"],
+    "education": "Fundação Getúlio Vargas (FGV)"
+  },
+  {
+    "id": "gabriel-andreghetti",
+    "name": "Gabriel Andreghetti",
+    "role": "Diretor de Parcerias",
+    "image": "/team/gabriel-andreghetti.png",
+    "bio": "Cursando Bacharelado em Sistemas de Informação.",
+    "linkedin": "https://www.linkedin.com/in/gabriel-moraes-andreghetti-422573274/",
+    "expertise": ["Parcerias", "Sistemas de Informação"],
+    "education": "Universidade de São Paulo (USP)"
+  },
+  {
+    "id": "pedro-lucas-bahiense",
+    "name": "Pedro Lucas Bahiense",
+    "role": "Diretor de Parcerias",
+    "image": "/team/pedro-lucas-bahiense.png",
+    "bio": "Aluno de Ciências de Computação da Universidade de São Paulo.",
+    "linkedin": "https://www.linkedin.com/in/pedro-lucas-figueiredo-bahiense/",
+    "expertise": ["Parcerias", "Ciência da Computação"],
+    "education": "Universidade de São Paulo (USP)"
+  },
+  {
+    "id": "cecilia-nunes-sedenho",
+    "name": "Cecília Nunes Sedenho",
+    "role": "Diretora de Projetos",
+    "image": "/team/cecilia-nunes-sedenho.png",
+    "bio": "Graduanda em Ciências de Computação pelo ICMC - USP e pesquisadora na área de arquitetura de dados. Possui interesse em áreas relacionadas a Engenharia de Dados e Machine Learning.",
+    "github": "https://github.com/HeNunes",
+    "linkedin": "https://www.linkedin.com/in/cec%C3%ADlia-nunes-sedenho-305059255/",
+    "expertise": [
+      "Arquitetura de Dados",
+      "Engenharia de Dados",
+      "Machine Learning"
+    ],
+    "education": "ICMC - USP"
+  },
+  {
+    "id": "gabriel-merlin",
+    "name": "Gabriel Merlin",
+    "role": "Diretor de Projetos",
+    "image": "/team/gabriel-merlin.png",
+    "bio": "Seus interesses se encaixam na área de ML/DL, especialmente envolvendo Séries Temporais.",
+    "linkedin": "https://www.linkedin.com/in/gabrielcmerlin/",
+    "expertise": ["Machine Learning", "Deep Learning", "Séries Temporais"]
+  },
+  {
+    "id": "leticia-marchezi",
+    "name": "Leticia Marchezi",
+    "role": "Diretora de Projetos",
+    "image": "/team/leticia-marchezi.png",
+    "bio": "Estudante de Ciência da Computação na Universidade Federal de São Carlos. Já realizou uma pesquisa em PLN com a Fapesp e um estágio na U. de Sheffield.",
+    "linkedin": "https://www.linkedin.com/in/letmarchezi/",
+    "expertise": ["PLN", "Pesquisa", "Ciência da Computação"],
+    "education": "Universidade Federal de São Carlos"
+  },
+  {
+    "id": "lucas-de-souza-brandao",
+    "name": "Lucas de Souza Brandão",
+    "role": "Diretor de Projetos",
+    "image": "/team/lucas-de-souza-brandao.png",
+    "bio": "Estudante de Ciências de Computação na Universidade de São Paulo. Pesquisador de nível de graduação com foco em Ciência de Dados.",
+    "linkedin": "https://www.linkedin.com/in/lucas-de-souza-brand%C3%A3o-590b1228b/",
+    "expertise": ["Ciência de Dados", "Pesquisa", "Ciência da Computação"],
+    "education": "Universidade de São Paulo (USP)"
+  },
+  {
+    "id": "pedro-kenzo-muramatsu-carmo",
+    "name": "Pedro Kenzo Muramatsu",
+    "role": "Conselheiro",
+    "image": "/team/pedro-kenzo-muramatsu-carmo.jpeg",
+    "bio": "Ex-Co-Presidente, atual Conselheiro do RAIA. Engenheiro de Computação Distribuída no CERN e futuro Engenheiro de Software Backend II no QuintoAndar. Bacharel em Ciência da Computação @ ICMC USP, intercâmbio de pesquisa com bolsa integral @ Universidade de Kyushu",
+    "linkedin": "https://www.linkedin.com/in/muramatsu-pedro/",
+    "github": "https://github.com/Muramatsu2602",
+    "expertise": [
+      "Monitoramento de Cluster NetApp",
+      "Analítica de Aprendizagem",
+      "Ciência de Dados",
+      "Comunicação Intercultural"
+    ],
+    "education": "Universidade de São Paulo (USP), Universidade de Kyushu"
+  }
+]

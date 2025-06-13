@@ -1,0 +1,93 @@
+{
+  "buttons": {
+    "readMore": "Read More",
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "submit": "Submit",
+    "sendMessage": "Send Message",
+    "viewAll": "View All"
+  },
+  "forms": {
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone Number",
+    "message": "Message",
+    "subject": "Subject",
+    "customSubject": "Custom Subject",
+    "required": "Required",
+    "invalidEmail": "Invalid email address"
+  },
+  "cta": {
+    "newsletter": "Subscribe to Our Newsletter"
+  },
+  "errors": {
+    "generic": "Something went wrong. Please try again later.",
+    "fileSize": "File size exceeds the limit of {{size}}MB"
+  },
+  "success": {
+    "messageSent": "Thank you for your message! We will get back to you soon."
+  },
+  "social": {
+    "twitter": "X",
+    "linkedin": "LinkedIn",
+    "instagram": "Instagram",
+    "github": "GitHub",
+    "links": {
+      "twitter": "https://www.x.com/gruporaia",
+      "linkedin": "https://www.linkedin.com/company/gruporaia",
+      "instagram": "https://www.instagram.com/grupo.raia",
+      "github": "https://www.github.com/gruporaia"
+    }
+  },
+  "partners": {
+    "title": "Partners"
+  },
+  "organization": {
+    "name": "Grupo RAIA",
+    "logoText": "RAIA"
+  },
+  "footer": {
+    "tagline": "Leading Brazil to a prominent role in Artificial Intelligence",
+    "navigation": "Navigation",
+    "contact": "Contact Us",
+    "rights": "All rights reserved.",
+    "links": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "cookies": "Cookie Policy"
+    },
+    "contactInfo": {
+      "email": "comunicacao.raia@gmail.com",
+      "address": "São Carlos, SP - Brazil"
+    }
+  },
+  "newsletter": {
+    "title": "Subscribe to Our Newsletter",
+    "description": "Stay updated with our latest news, projects, and events. No spam, unsubscribe anytime.",
+    "emailLabel": "Email Address",
+    "emailRequired": "Email is required",
+    "invalidEmail": "Please enter a valid email address",
+    "subscribeButton": "Subscribe Now",
+    "privacyNotice": "By subscribing, you agree to our Privacy Policy and Terms of Service.",
+    "successTitle": "Thank You for Subscribing!",
+    "successMessage": "You have been added to our email list. We'll keep you informed about our latest updates!",
+    "closeButton": "Close",
+    "close": "Close"
+  },
+  "ui": {
+    "scrollToTop": "Back to top",
+    "logoAnimation": {
+      "tagline": "Advancing AI in Brazil"
+    }
+  },
+  "blog": {
+    "hero": {
+      "subscribeButton": "Subscribe to Newsletter"
+    }
+  },
+  "projects": {
+    "hero": {
+      "buttonText": "View Projects"
+    }
+  }
+}

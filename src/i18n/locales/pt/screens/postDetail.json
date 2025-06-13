@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "title": "Detalhes do Post do Blog",
+    "description": "Informações detalhadas sobre este post do blog"
+  },
+  "loading": {
+    "title": "Carregando post do blog...",
+    "error": "Erro ao carregar post do blog"
+  },
+  "notFound": {
+    "title": "Post do Blog Não Encontrado",
+    "message": "Desculpe, o post do blog que você está procurando não pode ser encontrado.",
+    "button": "Voltar ao Blog"
+  },
+  "sections": {
+    "author": "Informações do Autor",
+    "details": "Detalhes do Post",
+    "tags": "Tags"
+  },
+  "details": {
+    "author": "Autor",
+    "email": "E-mail",
+    "date": "Data",
+    "share": "Compartilhar",
+    "publishedOn": "Publicado Em",
+    "category": "Categoria",
+    "readTime": "Tempo de Leitura",
+    "participants": "Participantes"
+  },
+  "newsletter": {
+    "title": "Inscreva-se em Nossa Newsletter",
+    "description": "Mantenha-se atualizado com nossas últimas notícias e artigos",
+    "button": "Inscrever-se Agora"
+  },
+  "navigation": {
+    "back": "Voltar ao Blog",
+    "next": "Próximo Post",
+    "previous": "Post Anterior"
+  },
+  "cta": {
+    "overline": "Interessado em nossas ideias?",
+    "title": "Leia mais em nosso blog",
+    "button": "Ver Todos os Artigos"
+  }
+}

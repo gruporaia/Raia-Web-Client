@@ -1,0 +1,52 @@
+{
+  "hero": {
+    "title": "Sobre o RAIA",
+    "subtitle": "Iniciativa e Propósito",
+    "overline": "SOBRE NÓS",
+    "buttonText": "Conheça Nossa Equipe"
+  },
+  "story": {
+    "title": "Nossa História",
+    "content": [
+      "O RAIA nasceu após dois estudantes da USP São Carlos, Pedro Augusto Ribeiro Gomes e Pedro Kenzo Muramatsu Carmo, visitarem a Alemanha e conhecerem o grupo TUM AI, uma organização independente e reconhecida como um catalisador de IA na Alemanha.",
+      "Inspirados pelo sucesso da TUM AI, decidiram criar uma iniciativa similar no Brasil, voltada ao desenvolvimento de Inteligência Artificial e que pudesse ter alto impacto na sociedade brasileira."
+    ]
+  },
+  "mission": {
+    "title": "Nossa Missão",
+    "content": "Avançar a Inteligência Artificial no Brasil e transformar o país num protagonista no campo."
+  },
+  "values": {
+    "overline": "VALORES",
+    "title": "No Que Acreditamos",
+    "subtitle": "O RAIA atua em cinco pilares estratégicos que orientam todas as nossas atividades e projetos.",
+    "buttonText": "Ver Mais Detalhes",
+    "items": [
+      {
+        "title": "Projetos de Impacto",
+        "description": "Desenvolvimento de soluções reais em IA, tanto em colaboração com a Indústria e a academia quanto em iniciativas empreendedoras."
+      },
+      {
+        "title": "Eventos e Conferências",
+        "description": "Conexões, apresentações e discussões entre profissionais, acadêmicos e líderes do setor de IA."
+      },
+      {
+        "title": "Criação de conteúdo científico e educacional",
+        "description": "Disseminação de conhecimento técnico, fomento à pesquisa e publicação de descobertas."
+      },
+      {
+        "title": "Desenvolvimento de Talentos",
+        "description": "Lapidação de jovens talentos, tanto em capacidades técnicas quanto em liderança."
+      },
+      {
+        "title": "Comunidade",
+        "description": "Criação de um ambiente colaborativo, onde os principais personagens do ecossistema de Inteligência Artificial podem trocar conhecimento, se apoiar e crescer juntos."
+      }
+    ]
+  },
+  "purpose": {
+    "overline": "PROPÓSITO",
+    "title": "Por Que Existimos",
+    "content": "O RAIA (Rede de Avanço em Inteligência Artificial) é uma organização sem fins lucrativos comprometida em transformar o Brasil em protagonista global no campo da Inteligência Artificial (IA). Por meio de projetos técnicos de impacto real, eventos, educação e desenvolvimento de talentos, o RAIA promove inovação tecnológica e forma líderes preparados para enfrentar os desafios do futuro.\n\nA IA é uma força revolucionária de transformação, capaz de gerar progresso social e econômico. Nossa missão é reunir os melhores talentos emergentes e proporcionar um ambiente onde possam crescer, colaborar e contribuir para soluções que impactem positivamente o país e posicione o Brasil como um dos líderes mundiais na área."
+  }
+}

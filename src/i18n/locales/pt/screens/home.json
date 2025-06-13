@@ -1,0 +1,32 @@
+{
+  "hero": {
+    "overline": "BEM-VINDO",
+    "title": "Levando o Brasil ao protagonismo em Inteligência Artificial",
+    "subtitle": "Temos o prazer de anunciar a fundação da RAIA, uma organização sem fins lucrativos com um propósito ambicioso: ajudar a tornar o Brasil um protagonista no campo da Inteligência Artificial (IA)"
+  },
+  "about": {
+    "overline": "SOBRE NÓS",
+    "title": "Introdução ao Grupo",
+    "subtitle": "O RAIA (Rede de Avanço em Inteligência Artificial) é uma organização sem fins lucrativos comprometida em transformar o Brasil em protagonista global no campo da Inteligência Artificial (IA).",
+    "buttonText": "Saiba Mais"
+  },
+  "partners": {
+    "overline": "PARCEIROS",
+    "title": "Nossos Parceiros",
+    "subtitle": "Colaboramos com empresas, universidades e organizações para avançar a Inteligência Artificial no Brasil.",
+    "buttonText": "Ver Parceiros"
+  },
+  "team": {
+    "overline": "EQUIPE",
+    "title": "Diretores",
+    "subtitle": "Conheça as pessoas por trás do RAIA que trabalham em conjunto para expandir os limites da inteligência artificial.",
+    "buttonText": "Ver Equipe"
+  },
+  "cta": {
+    "overline": "JUNTE-SE A NÓS",
+    "title": "Faça Parte da RAIA",
+    "subtitle": "Colaboramos com organizações que compartilham nossa visão de avançar a Inteligência Artificial no Brasil.",
+    "becomePartner": "Torne-se Parceiro",
+    "joinTeam": "Junte-se à Nossa Equipe"
+  }
+}

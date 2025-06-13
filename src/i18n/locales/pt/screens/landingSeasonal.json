@@ -1,0 +1,22 @@
+{
+  "overline": "INSCRIÇÕES: 24/05 - 06/06",
+  "title": "RAIA Conference 2025",
+  "subtitle": "Um encontro para discutir o presente e futuro da Inteligência Artificial no Brasil. Palestras com especialistas, apresentações de projetos inovadores, networking e debates técnicos.",
+  "buttonText": "Entrar no Site",
+  "primaryButtonText": "Assistir ao Vivo",
+  "location": "ICMC USP São Carlos - Auditório Fernão Stella",
+  "date": "14/06",
+  "subscriptionEndDate": "06/06",
+  "subscriptionEndAlert": "Inscrições encerraram, mas não se preocupe! Você pode assistir ao evento ao vivo remotamente.",
+  "features": [
+    "Palestras com especialistas em IA",
+    "Apresentações de projetos inovadores",
+    "Networking",
+    "Debates estratégicos e técnicos"
+  ],
+  "cta": "Se você quer estar entre aqueles que moldam o futuro da IA no país, este evento é para você. Inscrições abertas de 24/05 a 13/06. Seja parte desta transformação!",
+  "sponsors": {
+    "title": "Patrocinadores Oficiais",
+    "subtitle": "Empresas líderes que apoiam a inovação tecnológica no Brasil"
+  }
+}

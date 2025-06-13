@@ -1,0 +1,32 @@
+{
+  "hero": {
+    "overline": "BIENVENIDO",
+    "title": "Llevando a Brasil al protagonismo en Inteligencia Artificial",
+    "subtitle": "Nos complace anunciar la fundación de RAIA, una organización sin fines de lucro con un propósito ambicioso: ayudar a convertir a Brasil en un protagonista en el campo de la Inteligencia Artificial (IA)"
+  },
+  "about": {
+    "overline": "SOBRE NOSOTROS",
+    "title": "Introducción al Grupo",
+    "subtitle": "RAIA (Red de Avance en Inteligencia Artificial) es una organización sin fines de lucro comprometida en transformar a Brasil en protagonista global en el campo de la Inteligencia Artificial (IA).",
+    "buttonText": "Saber Más"
+  },
+  "partners": {
+    "overline": "SOCIOS",
+    "title": "Nuestros Socios",
+    "subtitle": "Conoce a las personas detrás de RAIA que trabajan en conjunto para expandir los límites de la inteligencia artificial.",
+    "buttonText": "Ver Socios"
+  },
+  "team": {
+    "overline": "EQUIPO",
+    "title": "Directores",
+    "subtitle": "Conoce a los  detrás de RAIA que trabajan juntos para expandir los límites de la inteligencia artificial.",
+    "buttonText": "Ver Equipo"
+  },
+  "cta": {
+    "overline": "ÚNETE A NOSOTROS",
+    "title": "Forma Parte de RAIA",
+    "subtitle": "Colaboramos con organizaciones que comparten nuestra visión de avanzar la Inteligencia Artificial en Brasil.",
+    "becomePartner": "Conviértete en Socio",
+    "joinTeam": "Únete a Nuestro Equipo"
+  }
+}

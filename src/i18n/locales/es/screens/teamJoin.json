@@ -1,0 +1,47 @@
+{
+  "title": "Únete a Nuestro Equipo",
+  "description": "Siempre estamos buscando personas talentosas para unirse a RAIA. Incluso con el proceso de selección de Fellows 2025 cerrado, te animamos a completar el formulario para ser considerado en futuras oportunidades.",
+  "whyWorkWithUs": {
+    "title": "Por Qué Trabajar Con Nosotros",
+    "reasons": [
+      "Ambiente colaborativo enfocado en innovación en IA",
+      "Proyectos con impacto real en la sociedad brasileña",
+      "Oportunidades de desarrollo técnico y de liderazgo",
+      "Trabajo con tecnologías de vanguardia en IA"
+    ]
+  },
+  "currentOpenings": {
+    "title": "Vacantes",
+    "positions": [
+      "Fellows RAIA (Proceso de selección 2025 cerrado - regístrate para futuras oportunidades)",
+      "Recaudación de Fondos y Alianzas",
+      "Marketing",
+      "Proyectos",
+      "Tecnología"
+    ]
+  },
+  "form": {
+    "title": "Formulario de Solicitud",
+    "fullName": "Nombre Completo",
+    "email": "Correo Electrónico",
+    "phone": "Número de Teléfono",
+    "position": "Posición",
+    "github": "Perfil de GitHub",
+    "linkedin": "Perfil de LinkedIn",
+    "uploadCV": "Subir CV",
+    "changeCV": "Cambiar Archivo de CV",
+    "selectedFile": "Archivo seleccionado: {{name}}",
+    "fileHelp": "Acepta archivos PDF, DOC o DOCX (máx. 5MB)",
+    "message": "¿Por qué quieres unirte a RAIA?",
+    "submit": "Enviar Solicitud",
+    "submitting": "Enviando...",
+    "success": "¡Solicitud enviada con éxito! Gracias por tu interés en RAIA.",
+    "error": "Hubo un error al enviar tu solicitud. Por favor, inténtalo de nuevo."
+  },
+  "positions": [
+    "Recaudación de Fondos y Alianzas",
+    "Marketing",
+    "Proyectos",
+    "Tecnología"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "pageTitle": "Contate-nos",
+  "pageDescription": "Entre em contato com nossa equipe. Tem dúvidas sobre nossas soluções de IA? Gostaríamos de ouvir de você e discutir como podemos ajudar a transformar sua ideia em realidade!",
+  "contactInfo": {
+    "title": "Informações de Contato",
+    "address": "Endereço: São Carlos, SP - Brasil"
+  },
+  "form": {
+    "title": "Envie-nos uma Mensagem",
+    "name": "Nome",
+    "email": "E-mail",
+    "subject": "Assunto",
+    "customSubject": "Assunto Personalizado",
+    "message": "Mensagem",
+    "attachFile": "Anexar Arquivo (máx. 5MB)",
+    "fileSize": "Tamanho do arquivo: {{size}} MB",
+    "fileSizeError": "O tamanho do arquivo excede o limite de 5MB",
+    "submit": "Enviar Mensagem",
+    "success": "Obrigado pela sua mensagem! Entraremos em contato em breve."
+  },
+  "subjects": {
+    "partner": "Tornar-se Parceiro",
+    "services": "Projetos de IA",
+    "other": "Outro"
+  }
+}

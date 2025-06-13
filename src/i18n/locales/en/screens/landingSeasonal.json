@@ -1,0 +1,22 @@
+{
+  "overline": "REGISTRATION: 05/24 - 06/06",
+  "title": "RAIA Conference 2025",
+  "subtitle": "A gathering to discuss the present and future of Artificial Intelligence in Brazil. Talks with experts, innovative project presentations, networking, and technical debates.",
+  "buttonText": "Enter Site",
+  "primaryButtonText": "Watch Live",
+  "location": "ICMC USP São Carlos - Fernão Stella Auditorium",
+  "date": "06/14/2025",
+  "subscriptionEndDate": "06/06",
+  "subscriptionEndAlert": "Registration has ended, but don't worry! You can watch the event live remotely.",
+  "features": [
+    "Talks with top AI experts",
+    "Presentations of innovative projects",
+    "Networking",
+    "Strategic and technical debates"
+  ],
+  "cta": "If you want to be among those shaping the future of AI in the country, this event is for you. Registration open from 05/24 to 06/13/2025. Be part of this transformation!",
+  "sponsors": {
+    "title": "Official Sponsors",
+    "subtitle": "Leading companies that support technological innovation in Brazil"
+  }
+}
