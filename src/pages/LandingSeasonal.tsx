@@ -44,7 +44,7 @@ const LandingSeasonal: React.FC = () => {
   const title = getContent<string>('title');
   const subtitle = getContent<string>('subtitle');
   const buttonText = getContent<string>('buttonText');
-  const subscribeButtonText = getContent<string>('subscribeButtonText');
+  const primaryButtonText = getContent<string>('primaryButtonText');
   const location = getContent<string>('location');
   const date = getContent<string>('date');
   const subscriptionEndAlert = getContent<string>('subscriptionEndAlert');
@@ -63,9 +63,9 @@ const LandingSeasonal: React.FC = () => {
     navigate('/');
   };
 
-  const handleSubscribe = () => {
-    const subscriptionUrl = `${import.meta.env.VITE_LANDING_CAMPAIGN_BASE_URL}`;
-    window.open(subscriptionUrl, '_blank');
+  const handlePrimaryButton = () => {
+    const url = `${import.meta.env.VITE_LANDING_CAMPAIGN_BASE_URL}`;
+    window.open(url, '_blank');
   };
 
   return (
@@ -296,7 +296,7 @@ const LandingSeasonal: React.FC = () => {
           <Button
             variant="outlined"
             size="large"
-            onClick={handleSubscribe}
+            onClick={handlePrimaryButton}
             sx={{
               borderColor: theme.palette.common.white,
               color:
@@ -319,7 +319,7 @@ const LandingSeasonal: React.FC = () => {
               },
             }}
           >
-            {subscribeButtonText}
+            {primaryButtonText}
           </Button>
         </Box>
         {sponsorsTitle && (

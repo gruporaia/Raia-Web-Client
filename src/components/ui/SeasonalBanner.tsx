@@ -40,15 +40,15 @@ const SeasonalBanner: React.FC = () => {
 
   const overline = getContent<string>('overline');
   const title = getContent<string>('title');
-  const subscribeButtonText = getContent<string>('subscribeButtonText');
+  const primaryButtonText = getContent<string>('primaryButtonText');
   const location = getContent<string>('location');
   const date = getContent<string>('date');
   const subscriptionEndAlert = getContent<string>('subscriptionEndAlert');
   const sponsorsTitle = getContent<string>('sponsors.title');
 
-  const handleSubscribe = () => {
-    const subscriptionUrl = `${import.meta.env.VITE_LANDING_CAMPAIGN_BASE_URL}`;
-    window.open(subscriptionUrl, '_blank');
+  const handlePrimaryButton = () => {
+    const url = `${import.meta.env.VITE_LANDING_CAMPAIGN_BASE_URL}`;
+    window.open(url, '_blank');
   };
 
   const handleDismiss = () => {
@@ -281,7 +281,7 @@ const SeasonalBanner: React.FC = () => {
                   <Button
                     variant="contained"
                     size="large"
-                    onClick={handleSubscribe}
+                    onClick={handlePrimaryButton}
                     sx={{
                       backgroundColor:
                         theme.palette.mode === 'dark'
@@ -312,7 +312,7 @@ const SeasonalBanner: React.FC = () => {
                       },
                     }}
                   >
-                    {subscribeButtonText}
+                    {primaryButtonText}
                   </Button>
                 </Box>
               </Box>
