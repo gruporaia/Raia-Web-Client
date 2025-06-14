@@ -1,0 +1,455 @@
+[
+    {
+        "id": "1",
+        "title": "Chat del Diario Oficial",
+        "description": "El Chat del Diario Oficial es una solución integral que optimiza la búsqueda en grandes bases de datos textuales, como el Diario Oficial de Belo Horizonte, utilizando Generación Aumentada por Recuperación (RAG). Ayuda a funcionarios y profesionales a navegar por documentos extensos, proporcionando búsquedas eficientes y ahorrando tiempo.",
+        "image": "/projects/chat-diario-oficial/chat-diario-oficial.png",
+        "category": "Procesamiento de Texto",
+        "iconType": "RAG",
+        "date": "2024-02-15",
+        "language": "es",
+        "technologies": [
+            "NLP",
+            "Ingeniería de Datos",
+            "RAG",
+            "LLM"
+        ],
+        "github": "https://github.com/gruporaia/Chat-Diario-Oficial",
+        "meta": {
+            "technologies": [
+                "NLP",
+                "Ingeniería de Datos",
+                "RAG",
+                "LLM"
+            ],
+            "team": [
+                {
+                    "name": "Alvaro Jose Lopes",
+                    "role": "Desarrollador",
+                    "image": "/team/chat-diario-oficial/alvaro-jose-lopes.png",
+                    "bio": "Contribuyó con la etapa de ingestión de datos, desde el diseño hasta la implementación.",
+                    "linkedin": "https://www.linkedin.com/in/alvaro-jose-lopes/"
+                },
+                {
+                    "name": "Bernardo Marques Costa",
+                    "role": "Desarrollador",
+                    "image": "/team/chat-diario-oficial/bernardo-marques-costa.png",
+                    "bio": "Trabajó en el diseño e implementación de la herramienta, desde la ingestión de datos hasta la creación de la aplicación final.",
+                    "linkedin": "https://www.linkedin.com/in/bernardo-marques-costa/",
+                    "github": "https://github.com/bmarquescost"
+                },
+                {
+                    "name": "Cecília Nunes Sedenho",
+                    "role": "Desarrolladora",
+                    "image": "/team/cecilia-nunes-sedenho.png",
+                    "bio": "Contribuyó con pruebas de diferentes modelos de lenguaje e integración entre la ingestión de datos y la interacción con el modelo.",
+                    "linkedin": "https://www.linkedin.com/in/cec%C3%ADlia-nunes-sedenho-305059255/",
+                    "github": "https://github.com/HeNunes"
+                },
+                {
+                    "name": "Laura Fernandes Camargos",
+                    "role": "Desarrolladora",
+                    "image": "/team/chat-diario-oficial/laura-fernandes-camargos.png",
+                    "bio": "Trabajó en pruebas de configuraciones RAG e implementación del frontend de la aplicación final.",
+                    "linkedin": "https://www.linkedin.com/in/laura-fernandes-camargos-a26b89246/",
+                    "github": "https://github.com/laurafcamargos"
+                },
+                {
+                    "name": "Pedro Augusto Monteiro Delgado",
+                    "role": "Gerente",
+                    "image": "/team/pedro-augusto-monteiro-delgado.png",
+                    "bio": "Gestionó el equipo y el proyecto, además de contribuir a las pruebas de la aplicación.",
+                    "linkedin": "https://www.linkedin.com/in/pedroamdelgado",
+                    "github": "https://github.com/DelgadoPedro"
+                }
+            ]
+        }
+    },
+    {
+        "id": "2",
+        "title": "BEMU",
+        "description": "El proyecto recopila preguntas de exámenes de ingreso universitario brasileños para evaluar IAs multimodales en portugués, combinando análisis de PDFs, modelos de IA y convertidores a LaTeX. El resultado son cinco conjuntos de datos con más de 5.000 preguntas, haciendo que los benchmarks sean más representativos.",
+        "image": "/projects/bemu/bemu.png",
+        "category": "Modelos de Inteligencia Artificial",
+        "iconType": "Artificial Intelligence",
+        "date": "2024-03-20",
+        "language": "es",
+        "technologies": [
+            "Machine Learning",
+            "Computer Vision",
+            "NLP",
+            "LaTeX"
+        ],
+        "github": "https://github.com/gruporaia/BEMU",
+        "featured": true,
+        "references": [
+            {
+                "title": "Más allá del inglés: ampliando el horizonte de evaluaciones de IAs multimodales",
+                "url": "https://medium.com/@raia.diretoria/indo-al%C3%A9m-do-ingl%C3%AAs-ampliando-o-horizonte-de-avalia%C3%A7%C3%B5es-de-ias-multimodais-a5249af02f7a",
+                "type": "article"
+            }
+        ],
+        "meta": {
+            "technologies": [
+                "Machine Learning",
+                "Computer Vision",
+                "NLP",
+                "LaTeX"
+            ],
+            "team": [
+                {
+                    "name": "Luísa Shimabucoro",
+                    "role": "Gerente de Proyecto",
+                    "image": "/team/luisa-shimabucoro.png",
+                    "bio": "Investigadora en ML enfocada en NLP y Visión Computacional.",
+                    "linkedin": "https://www.linkedin.com/in/lushimabucoro/",
+                    "github": "https://github.com/gruporaia/BEMU/commits?author=luisashimabucoro"
+                },
+                {
+                    "name": "Gabriel Merlin",
+                    "role": "Desarrollador",
+                    "image": "/team/gabriel-merlin.png",
+                    "bio": "Especialista en Machine Learning y Deep Learning enfocado en Series Temporales.",
+                    "linkedin": "https://www.linkedin.com/in/gabrielcmerlin/"
+                },
+                {
+                    "name": "André Mitri",
+                    "role": "Ingeniero de Datos",
+                    "image": "/team/bemu/andre-mitri.png",
+                    "bio": "Investigador en Series Temporales y Aprendizaje de Representación con experiencia en web scraping.",
+                    "linkedin": "https://www.linkedin.com/in/andre-de-mitri/"
+                },
+                {
+                    "name": "Leticia Marchezi",
+                    "role": "Investigadora",
+                    "image": "/team/leticia-marchezi.png",
+                    "bio": "Investigadora en PLN con experiencia en extracción de textos usando modelos multimodales.",
+                    "linkedin": "https://www.linkedin.com/in/letmarchezi/"
+                },
+                {
+                    "name": "Otávio F. Coletti",
+                    "role": "Desarrollador",
+                    "image": "/team/bemu/otavio-coletti.png",
+                    "bio": "Desarrollador especializado en análisis de PDFs y extracción de datos estructurados.",
+                    "linkedin": "https://www.linkedin.com/in/ot%C3%A1viocoletti-012/"
+                }
+            ]
+        }
+    },
+    {
+        "id": "3",
+        "title": "EcoVision",
+        "description": "EcoVision aplica visión por computadora para la seguridad en la clasificación de residuos, identificando objetos peligrosos en tiempo real.",
+        "image": "/projects/ecovision/ecovision.png",
+        "category": "Visión Computacional",
+        "iconType": "Computer Vision",
+        "date": "2025-05-19",
+        "language": "es",
+        "technologies": [
+            "YOLO v11",
+            "Computer Vision"
+        ],
+        "featured": false,
+        "github": "https://github.com/gruporaia/EcoVision",
+        "meta": {
+            "technologies": [
+                "YOLO v11",
+                "Computer Vision"
+            ],
+            "team": [
+                {
+                    "name": "Artur De Vlieger Lima",
+                    "role": "Desarrollador",
+                    "image": "/team/ecovision/artur-de-vlieger-lima.png",
+                    "bio": "Desarrollador especializado en técnicas de visión por computadora y detección de objetos en tiempo real.",
+                    "github": "https://github.com/Deflyer"
+                },
+                {
+                    "name": "Lucas de Souza Brandão",
+                    "role": "Científico de Datos",
+                    "image": "/team/lucas-de-souza-brandao.png",
+                    "bio": "Experto en modelos de visión por computadora para el reconocimiento de objetos.",
+                    "github": "https://github.com/sb-lucas"
+                },
+                {
+                    "name": "Gustavo Sampaio",
+                    "role": "Gerente de Proyecto",
+                    "image": "/team/ecovision/gustavo-sampaio.png",
+                    "bio": "Coordinador de proyectos con experiencia en visión por computadora para impacto social.",
+                    "github": "https://github.com/GusSampaio"
+                },
+                {
+                    "name": "Pedro L. Figueiredo",
+                    "role": "Ingeniero de IA",
+                    "image": "/team/ecovision/pedro-figueiredo.png",
+                    "bio": "Ingeniero especializado en la implementación de modelos YOLO para la detección de objetos.",
+                    "github": "https://github.com/PedroLFigueiredo"
+                }
+            ]
+        }
+    },
+    {
+        "id": "4",
+        "title": "TTS-AutoTuning",
+        "description": "Este proyecto consiste en la creación de una aplicación para automatizar el proceso de ajuste fino de modelos de texto a voz a partir de audios en portugués.",
+        "image": "",
+        "category": "Texto a voz",
+        "iconType": "RAG",
+        "date": "2025-06-14",
+        "language": "es",
+        "technologies": [
+            "Texto a voz",
+            "Procesamiento de audio"
+        ],
+        "github": "http://github.com/gruporaia/TTS-AutoTuning",
+        "meta": {
+            "technologies": [
+                "Automatización",
+                "Procesamiento de audio",
+                "Ajuste fino"
+            ],
+            "team": [
+                {
+                    "name": "Antonio Micheli",
+                    "role": "Desarrollador",
+                    "image": "/team/tts/antonio.png",
+                    "bio": "Participó en la evaluación automática de los audios generados y en la implementación de la aplicación final.",
+                    "linkedin": "https://www.linkedin.com/in/ant%C3%B4nio-carlos-micheli-b10bb4289"
+                },
+                {
+                    "name": "Arthur Ramos",
+                    "role": "Desarrollador",
+                    "image": "/team/tts/arthur.png",
+                    "bio": "Participó en la automatización del ajuste fino del modelo Orpheus.",
+                    "linkedin": "https://www.linkedin.com/in/arthur-ramos-9b81b9201/"
+                },
+                {
+                    "name": "Caio Petroncini",
+                    "role": "Desarrollador",
+                    "image": "/team/tts/caio.png",
+                    "bio": "Participó en la automatización del ajuste fino del modelo XTTS.",
+                    "linkedin": "https://www.linkedin.com/in/caio-petroncini-7105941aa/"
+                },
+                {
+                    "name": "Lucas De Souza",
+                    "role": "Gerente",
+                    "image": "/team/tts/lucas.png",
+                    "bio": "Lideró el equipo, participó en el preprocesamiento de los audios brutos y en la implementación de la aplicación final.",
+                    "linkedin": "https://www.linkedin.com/in/lucas-de-souza-brand%C3%A3o-590b1228b"
+                },
+                {
+                    "name": "Pedro Soares",
+                    "role": "Desarrollador",
+                    "image": "/team/tts/pedro.png",
+                    "bio": "Participó en el preprocesamiento de los audios brutos.",
+                    "linkedin": "https://www.linkedin.com/in/pedro-soares-b3625b238/"
+                }
+            ]
+        }
+    },
+    {
+        "id": "5",
+        "title": "BoneCheck",
+        "description": "Sistema de IA para la detección temprana de la osteoporosis mediante clasificación de radiografías panorámicas.",
+        "image": "",
+        "category": "Visión Computacional",
+        "iconType": "VLM",
+        "date": "2024-02-15",
+        "language": "es",
+        "technologies": [
+            "Visión Computacional",
+            "Clasificación",
+            "VLM"
+        ],
+        "github": "https://github.com/gruporaia/bonecheck",
+        "meta": {
+            "technologies": [
+                "Visión Computacional",
+                "Clasificación",
+                "VLM"
+            ],
+            "team": [
+                {
+                    "name": "Gabriel Merlin",
+                    "role": "Gerente",
+                    "image": "/team/bonecheck/gabriel.png",
+                    "bio": "Lideró el equipo y participó en el entrenamiento del ensemble.",
+                    "linkedin": "https://www.linkedin.com/in/gabrielcmerlin"
+                },
+                {
+                    "name": "Ademir Guimarães",
+                    "role": "Desarrollador",
+                    "image": "/team/bonecheck/ademir.png",
+                    "bio": "Trabajó en el entrenamiento de los modelos base y del ensemble.",
+                    "linkedin": "https://www.linkedin.com/in/ademir-guimaraes/"
+                },
+                {
+                    "name": "Andre De Mitri",
+                    "role": "Desarrollador",
+                    "image": "/team/bonecheck/andre.png",
+                    "bio": "Participó en el preprocesamiento de datos y entrenamiento de modelos.",
+                    "linkedin": "https://www.linkedin.com/in/andre-de-mitri/"
+                },
+                {
+                    "name": "Matheus Giraldi",
+                    "role": "Desarrollador",
+                    "image": "/team/bonecheck/matheus-giraldi.png",
+                    "bio": "Trabajó en el entrenamiento de modelos base.",
+                    "linkedin": "https://www.linkedin.com/in/matheus-giraldi-alvarenga-b2b856217/"
+                },
+                {
+                    "name": "Matheus Lenzi",
+                    "role": "Desarrollador",
+                    "image": "/team/bonecheck/matheus-lenzi.png",
+                    "bio": "Trabajó en el entrenamiento de modelos base.",
+                    "linkedin": "https://www.linkedin.com/in/matheus-lenzi-dos-santos/"
+                },
+                {
+                    "name": "Yasmin Oliveira",
+                    "role": "Desarrolladora",
+                    "image": "/team/bonecheck/yasmin.png",
+                    "bio": "Trabajó en el preprocesamiento y en el uso de LLMs.",
+                    "linkedin": "https://www.linkedin.com/in/yasmin-victoria-oliveira/"
+                }
+            ]
+        }
+    },
+    {
+        "id": "6",
+        "title": "SpellNet",
+        "description": "Aplicación de visión por computadora para el reconocimiento de fingerspelling en Libras y ASL en tiempo real.",
+        "image": "",
+        "category": "Visión Computacional",
+        "iconType": "CNN",
+        "date": "2024-04-05",
+        "language": "es",
+        "technologies": [
+            "Visión Computacional",
+            "Reconocimiento de señas",
+            "CNN"
+        ],
+        "github": "https://github.com/gruporaia/SpellNet",
+        "meta": {
+            "technologies": [
+                "Visión Computacional",
+                "Reconocimiento de señas",
+                "CNN"
+            ],
+            "team": [
+                {
+                    "name": "Cecilia Nunes",
+                    "role": "Gerente",
+                    "image": "/team/spellnet/cecilia.jpg",
+                    "bio": "Lideró el equipo y trabajó en el preprocesamiento de datos de video.",
+                    "linkedin": "https://www.linkedin.com/in/cec%C3%ADlia-nunes-sedenho-305059255/pt"
+                },
+                {
+                    "name": "Daniel Dantas",
+                    "role": "Desarrollador",
+                    "image": "/team/spellnet/daniel.jpg",
+                    "bio": "Participó en la implementación y ajuste del modelo.",
+                    "linkedin": "https://www.linkedin.com/in/daniel-carvalho-aba61717a/"
+                },
+                {
+                    "name": "João Pedro Viguini",
+                    "role": "Desarrollador",
+                    "image": "/team/spellnet/joao-viguini.jpg",
+                    "bio": "Participó en la implementación y ajuste del modelo.",
+                    "linkedin": "https://www.linkedin.com/in/joão-pedro-viguini-1829281bb"
+                },
+                {
+                    "name": "Gabriel Iamato",
+                    "role": "Desarrollador",
+                    "image": "/team/spellnet/gabriel-iamato.jpg",
+                    "bio": "Encargado del preprocesamiento del conjunto de datos.",
+                    "linkedin": "https://www.linkedin.com/in/gabriel-campanelli-iamato/"
+                },
+                {
+                    "name": "Matheus Vicente",
+                    "role": "Desarrollador",
+                    "image": "/team/spellnet/matheus-vicente.jpg",
+                    "bio": "Encargado del preprocesamiento del conjunto de datos.",
+                    "linkedin": "https://www.linkedin.com/in/matheushrv"
+                },
+                {
+                    "name": "Bernardo Marques",
+                    "role": "Desarrollador",
+                    "image": "/team/spellnet/bernardo.jpg",
+                    "bio": "Desarrolló la interfaz para reconocimiento en tiempo real.",
+                    "linkedin": "https://www.linkedin.com/in/bernardo-marques-costa/"
+                }
+            ]
+        }
+    },
+    {
+        "id": "7",
+        "title": "VestAgents",
+        "description": "Herramienta multiagente para la generación de preguntas de exámenes vestibulares brasileños usando LLMs y RAG.",
+        "image": "",
+        "category": "Agentes de IA",
+        "iconType": "RAG",
+        "date": "2024-03-20",
+        "language": "es",
+        "technologies": [
+            "LLM",
+            "Agentes",
+            "RAG",
+            "Few-shot",
+            "Web scraping"
+        ],
+        "github": "https://github.com/gruporaia/vest-agents",
+        "meta": {
+            "technologies": [
+                "LLM",
+                "Agentes",
+                "RAG",
+                "Few-shot",
+                "Web scraping"
+            ],
+            "team": [
+                {
+                    "name": "Álvaro José Lopes",
+                    "role": "Desarrollador",
+                    "image": "/team/vestagents/alvaro.png",
+                    "bio": "Participó en la implementación de un agente de estructuración de prompts few-shot.",
+                    "linkedin": "https://br.linkedin.com/in/alvaro-jose-lopes-604360160"
+                },
+                {
+                    "name": "Artur De Vlieger",
+                    "role": "Desarrollador",
+                    "image": "/team/vestagents/artur.png",
+                    "bio": "Participó en la implementación de un agente de estructuración de prompts few-shot.",
+                    "linkedin": "https://www.linkedin.com/in/artur-de-vlieger-336829252/"
+                },
+                {
+                    "name": "Fabrício Salomon",
+                    "role": "Desarrollador",
+                    "image": "/team/vestagents/fabricio.png",
+                    "bio": "Implementó un agente de búsqueda y colaboró en la etapa de evaluación.",
+                    "linkedin": "https://br.linkedin.com/in/fabr%C3%ADcio-salomon"
+                },
+                {
+                    "name": "Letícia Marchezi",
+                    "role": "Gerente",
+                    "image": "/team/vestagents/leticia.png",
+                    "bio": "Gestionó el equipo, desarrolló agentes generales y colaboró en la evaluación.",
+                    "linkedin": "https://br.linkedin.com/in/letmarchezi"
+                },
+                {
+                    "name": "Luís Jorge",
+                    "role": "Desarrollador",
+                    "image": "/team/vestagents/luis.png",
+                    "bio": "Implementó un agente de búsqueda en un banco de preguntas.",
+                    "linkedin": "https://www.linkedin.com/in/luis-felipe-jorge/"
+                },
+                {
+                    "name": "Otávio Coletti",
+                    "role": "Desarrollador",
+                    "image": "/team/vestagents/otavio.png",
+                    "bio": "Implementó un agente de scraping web para recuperar textos de apoyo.",
+                    "linkedin": "https://www.linkedin.com/in/ot%C3%A1viocoletti-012"
+                }
+            ]
+        }
+    }
+]
