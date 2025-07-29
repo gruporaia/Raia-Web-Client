@@ -11,6 +11,7 @@ import ROUTES from '../routes';
 import { MockProject } from '../services/projects';
 import { CATEGORY_ICONS } from '../utils/iconMappings';
 import { createScrollRoute } from '../utils/navigationUtils';
+import { getProjectSlug } from '../utils/slugUtils';
 
 const Projects: React.FC = () => {
   const params = useParams<{ page?: string }>();
@@ -51,6 +52,9 @@ const Projects: React.FC = () => {
   const mapToContentItems = useMemo(() => {
     return (items: MockProject[]): ContentItem[] => {
       return items.map((item) => {
+        // Generate slug from project ID and title
+        const slug = getProjectSlug(String(item.id), item.title);
+
         // No need to add language parameters to links - language is persisted in localStorage
         return {
           id: item.id,
@@ -58,7 +62,7 @@ const Projects: React.FC = () => {
           description: item.description,
           image: item.image,
           category: item.category || 'Project',
-          ctaLink: ROUTES.PROJECTS.PROJECT_DETAIL({ id: String(item.id) }),
+          ctaLink: ROUTES.PROJECTS.PROJECT_DETAIL({ slug }),
           ctaText: getProjectContent<string>('content.viewDetails'),
           date: item.date,
           tags: item.meta?.technologies || [],

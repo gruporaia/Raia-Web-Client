@@ -65,6 +65,7 @@ const ContentCard: React.FC<ContentCardProps> = ({
     }
     if (
       item.ctaLink.includes('/projects/') ||
+      item.ctaLink.includes('/projetos/') ||
       item.category?.toLowerCase().includes('project')
     ) {
       return 'project';
