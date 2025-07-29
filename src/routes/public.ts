@@ -18,7 +18,7 @@ const PUBLIC_ROUTES: Record<string, RouteObject> = {
     translationNamespace: 'navigation',
   },
   CONTACT: {
-    path: '/contact',
+    path: '/contato',
     label: 'Contact',
     labelKey: { namespace: 'navigation', key: 'menu.contact' },
     description: 'Get in touch with our team',
@@ -26,7 +26,7 @@ const PUBLIC_ROUTES: Record<string, RouteObject> = {
     translationNamespace: 'navigation',
   },
   SERVICES: {
-    path: '/services',
+    path: '/iniciativas',
     label: 'Services',
     labelKey: { namespace: 'navigation', key: 'menu.services' },
     description: 'Our services',

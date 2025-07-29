@@ -16,7 +16,7 @@ const BLOG_ROUTES = {
   } as RouteObject,
 
   LIST: {
-    path: '/blog/page/1',
+    path: '/blog/pagina/1',
     label: 'Blog',
     labelKey: { namespace: 'navigation', key: 'menu.blog' },
     description: 'Read the latest updates and insights',
@@ -25,10 +25,10 @@ const BLOG_ROUTES = {
   } as RouteObject,
 
   LIST_PAGED: ((params: PaginationParams): string => {
-    return `/blog/page/${params.page}`;
+    return `/blog/pagina/${params.page}`;
   }) as DynamicRoute<PaginationParams>,
 
-  LIST_PAGED_STATIC: '/blog/page/:page',
+  LIST_PAGED_STATIC: '/blog/pagina/:page',
 
   POST_DETAIL: ((params: OptionalDetailParams = {}): string => {
     if (!params.id) return '/blog/post/:id';

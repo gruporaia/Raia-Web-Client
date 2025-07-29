@@ -1,16 +1,15 @@
 import { http, HttpResponse } from 'msw';
 
-import projectsPt from './projects/projects-pt.json';
+import bemuContent from './projects/content/bemu.json';
+import bonecheckContent from './projects/content/bonecheck.json';
+import chatDiarioContent from './projects/content/chat-diario-oficial.json';
+import ecoVisionContent from './projects/content/ecovision.json';
+import spellnetContent from './projects/content/spellnet.json';
+import ttsAutotuningContent from './projects/content/tts-autotuning.json';
+import vestagentsContent from './projects/content/vestagents.json';
 import projectsEn from './projects/projects-en.json';
 import projectsEs from './projects/projects-es.json';
-
-import chatDiarioContent from './projects/content/chat-diario-oficial.json';
-import bemuContent from './projects/content/bemu.json';
-import ecoVisionContent from './projects/content/ecovision.json';
-import ttsAutotuningContent from './projects/content/tts-autotuning.json';
-import bonecheckContent from './projects/content/bonecheck.json';
-import spellnetContent from './projects/content/spellnet.json';
-import vestagentsContent from './projects/content/vestagents.json';
+import projectsPt from './projects/projects-pt.json';
 
 export interface ProjectReference {
   title: string;
@@ -69,15 +68,21 @@ const contentMap: Record<string, Record<string, string>> = {
 };
 
 function addContentToProjects(projects: MockProject[]): MockProject[] {
-  return projects.map(project => ({
+  return projects.map((project) => ({
     ...project,
-    body: contentMap[project.id]?.[project.language || 'pt'] || ''
+    body: contentMap[project.id]?.[project.language || 'pt'] || '',
   }));
 }
 
-export const mockProjectsPt: MockProject[] = addContentToProjects(projectsPt as MockProject[]);
-export const mockProjectsEn: MockProject[] = addContentToProjects(projectsEn as MockProject[]);
-export const mockProjectsEs: MockProject[] = addContentToProjects(projectsEs as MockProject[]);
+export const mockProjectsPt: MockProject[] = addContentToProjects(
+  projectsPt as MockProject[]
+);
+export const mockProjectsEn: MockProject[] = addContentToProjects(
+  projectsEn as MockProject[]
+);
+export const mockProjectsEs: MockProject[] = addContentToProjects(
+  projectsEs as MockProject[]
+);
 
 export const mockProjects: MockProject[] = [
   ...mockProjectsPt,

@@ -18,10 +18,14 @@ import BaseLayout from '../layouts/BaseLayout';
 import ROUTES from '../routes';
 import { MockProject } from '../services/projects';
 import { CATEGORY_ICONS } from '../utils/iconMappings';
+import { getProjectIdFromSlug } from '../utils/slugUtils';
 
 const ProjectDetails: React.FC = () => {
-  const { id } = useParams<{ id: string }>();
+  const { slug } = useParams<{ slug: string }>();
   const theme = useTheme();
+
+  // Convert slug to ID for the existing hook
+  const projectId = slug ? getProjectIdFromSlug(slug) || undefined : undefined;
 
   const { getContent: getProjectText } = useLocalizedContent(
     'screens',
@@ -29,7 +33,10 @@ const ProjectDetails: React.FC = () => {
   );
   const { getContent: getNavText } = useLocalizedContent('navigation', 'menu');
 
-  const { document: project } = useContentById<MockProject>('projects', id);
+  const { document: project } = useContentById<MockProject>(
+    'projects',
+    projectId
+  );
 
   const allTeamMembers = useTeamMembers();
   const categoryIconMap = useMemo(() => CATEGORY_ICONS, []);
@@ -71,18 +78,18 @@ const ProjectDetails: React.FC = () => {
         href: ROUTES.PROJECTS.ROOT.path,
       },
       {
-        label: project?.title || id || '',
+        label: project?.title || slug || '',
       },
     ],
-    [getNavText, project, id]
+    [getNavText, project, slug]
   );
 
-  if (!id) {
+  if (!slug) {
     return (
       <BaseLayout>
         <Paper sx={{ p: 3, m: 3, borderRadius: theme.shape.borderRadius }}>
           <Typography variant="h5" color="error">
-            Invalid project ID
+            Invalid project slug
           </Typography>
         </Paper>
       </BaseLayout>
@@ -240,7 +247,7 @@ const ProjectDetails: React.FC = () => {
           resource="projects"
           i18nBase="screens.projectDetail"
           translationNamespace="projectDetail"
-          id={id}
+          id={projectId || ''}
           breadcrumbs={breadcrumbs}
           linkToList={ROUTES.PROJECTS.ROOT.path}
           sidebar={sidebar}

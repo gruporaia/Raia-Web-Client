@@ -1,13 +1,13 @@
-import {
-  DynamicRoute,
-  OptionalDetailParams,
-  PaginationParams,
-  RouteObject,
-} from './types';
+import { DynamicRoute, PaginationParams, RouteObject } from './types';
+
+interface ProjectDetailParams {
+  slug?: string;
+  [key: string]: string | number | undefined;
+}
 
 const PROJECTS_ROUTES = {
   ROOT: {
-    path: '/projects',
+    path: '/projetos',
     label: 'Projects',
     labelKey: { namespace: 'navigation', key: 'menu.projects' },
     description: 'Explore our projects',
@@ -16,7 +16,7 @@ const PROJECTS_ROUTES = {
   } as RouteObject,
 
   LIST: {
-    path: '/projects/page/1',
+    path: '/projetos/pagina/1',
     label: 'Projects',
     labelKey: { namespace: 'navigation', key: 'menu.projects' },
     description: 'Explore our projects',
@@ -25,17 +25,17 @@ const PROJECTS_ROUTES = {
   } as RouteObject,
 
   LIST_PAGED: ((params: PaginationParams): string => {
-    return `/projects/page/${params.page}`;
+    return `/projetos/pagina/${params.page}`;
   }) as DynamicRoute<PaginationParams>,
 
-  LIST_PAGED_STATIC: '/projects/page/:page',
+  LIST_PAGED_STATIC: '/projetos/pagina/:page',
 
-  PROJECT_DETAIL: ((params: OptionalDetailParams = {}): string => {
-    if (!params.id) return '/projects/project/:id';
-    return `/projects/project/${params.id}`;
-  }) as DynamicRoute<OptionalDetailParams>,
+  PROJECT_DETAIL: ((params: ProjectDetailParams = {}): string => {
+    if (!params.slug) return '/projetos/projeto/:slug';
+    return `/projetos/projeto/${params.slug}`;
+  }) as DynamicRoute<ProjectDetailParams>,
 
-  PROJECT_DETAIL_STATIC: '/projects/project/:id',
+  PROJECT_DETAIL_STATIC: '/projetos/projeto/:slug',
 };
 
 export default PROJECTS_ROUTES;

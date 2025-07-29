@@ -5,6 +5,7 @@ import {
   Routes,
   useLocation,
   useNavigate,
+  useParams,
 } from 'react-router-dom';
 
 import PageHelmet from '../components/translation/PageHelmet';
@@ -15,8 +16,38 @@ import {
   getLandingPageSlug,
   shouldShowLanding,
 } from '../utils/shouldShowLanding';
+import { getProjectSlug } from '../utils/slugUtils';
 import ROUTES from '.';
 import { importers } from './importRegistry';
+
+// Redirect components for old URLs
+const ProjectsPageRedirect: React.FC = () => {
+  const { page } = useParams<{ page: string }>();
+  return <Navigate to={`/projetos/pagina/${page || '1'}`} replace />;
+};
+
+// Redirect for old /projetos/page/:page format to new /projetos/pagina/:page format
+const OldProjectsPageRedirect: React.FC = () => {
+  const { page } = useParams<{ page: string }>();
+  return <Navigate to={`/projetos/pagina/${page || '1'}`} replace />;
+};
+
+// Redirect for old /blog/page/:page format to new /blog/pagina/:page format
+const OldBlogPageRedirect: React.FC = () => {
+  const { page } = useParams<{ page: string }>();
+  return <Navigate to={`/blog/pagina/${page || '1'}`} replace />;
+};
+
+// Redirect for old /projects/project/:id format to new /projetos/projeto/:slug format
+const OldProjectsDetailRedirect: React.FC = () => {
+  const { id } = useParams<{ id: string }>();
+  if (!id) {
+    return <Navigate to="/projetos" replace />;
+  }
+
+  const slug = getProjectSlug(id, '');
+  return <Navigate to={`/projetos/projeto/${slug}`} replace />;
+};
 
 const componentCache = new Map();
 
@@ -152,11 +183,11 @@ const AppRoutes: React.FC = () => {
         {/* Blog routes with consistent structure */}
         <Route path="/blog">
           {/* Root redirects to page 1 */}
-          <Route index element={<Navigate to="/blog/page/1" replace />} />
+          <Route index element={<Navigate to="/blog/pagina/1" replace />} />
 
           {/* Paginated list */}
           <Route
-            path="page/:page"
+            path="pagina/:page"
             element={
               <PageHelmet
                 title="Blog"
@@ -190,8 +221,12 @@ const AppRoutes: React.FC = () => {
           />
         </Route>
 
+        {/* Redirect old contact URL to new Portuguese URL */}
+        <Route path="/contact" element={<Navigate to="/contato" replace />} />
+
+        {/* New contact route in Portuguese */}
         <Route
-          path="/contact"
+          path="/contato"
           element={
             <PageHelmet
               title="Contact Us"
@@ -208,11 +243,31 @@ const AppRoutes: React.FC = () => {
           }
         />
 
-        <Route path="/projects">
-          <Route index element={<Navigate to="/projects/page/1" replace />} />
+        {/* Redirect old projects URL to new Portuguese URL */}
+        <Route path="/projects" element={<Navigate to="/projetos" replace />} />
+        <Route path="/projects/page/:page" element={<ProjectsPageRedirect />} />
+        <Route
+          path="/projects/project/:id"
+          element={<OldProjectsDetailRedirect />}
+        />
+        <Route
+          path="/projects/*"
+          element={<Navigate to="/projetos" replace />}
+        />
+
+        {/* Redirect old page URLs to new pagina URLs for backward compatibility */}
+        <Route
+          path="/projetos/page/:page"
+          element={<OldProjectsPageRedirect />}
+        />
+        <Route path="/blog/page/:page" element={<OldBlogPageRedirect />} />
+
+        {/* New projects routes in Portuguese */}
+        <Route path="/projetos">
+          <Route index element={<Navigate to="/projetos/pagina/1" replace />} />
 
           <Route
-            path="page/:page"
+            path="pagina/:page"
             element={
               <PageHelmet
                 title="Projects"
@@ -232,7 +287,7 @@ const AppRoutes: React.FC = () => {
           />
 
           <Route
-            path="project/:id"
+            path="projeto/:slug"
             element={
               <PageHelmet
                 title="Project Details"
@@ -246,8 +301,15 @@ const AppRoutes: React.FC = () => {
           />
         </Route>
 
+        {/* Redirect old services URL to new Portuguese URL */}
         <Route
           path="/services"
+          element={<Navigate to="/iniciativas" replace />}
+        />
+
+        {/* New services route in Portuguese */}
+        <Route
+          path="/iniciativas"
           element={
             <PageHelmet
               title="Services"
