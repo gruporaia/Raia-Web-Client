@@ -8,11 +8,7 @@
     "iconType": "CNN",
     "date": "2024-04-05",
     "language": "es",
-    "technologies": [
-      "Visión Computacional",
-      "Reconocimiento de señas",
-      "CNN"
-    ],
+    "technologies": ["Visión Computacional", "Reconocimiento de señas", "CNN"],
     "github": "https://github.com/gruporaia/SpellNet",
     "references": [
       {
@@ -63,10 +59,7 @@
     "iconType": "RAG",
     "date": "2025-06-14",
     "language": "es",
-    "technologies": [
-      "Text-to-speech",
-      "Procesamiento de audio"
-    ],
+    "technologies": ["Text-to-speech", "Procesamiento de audio"],
     "github": "http://github.com/gruporaia/TTS-AutoTuning",
     "references": [
       {
@@ -109,11 +102,7 @@
     "iconType": "VLM",
     "date": "2024-02-15",
     "language": "es",
-    "technologies": [
-      "Visión Computacional",
-      "Clasificación",
-      "VLM"
-    ],
+    "technologies": ["Visión Computacional", "Clasificación", "VLM"],
     "github": "https://github.com/gruporaia/bonecheck",
     "references": [
       {
@@ -123,11 +112,7 @@
       }
     ],
     "meta": {
-      "technologies": [
-        "Visión Computacional",
-        "Clasificación",
-        "VLM"
-      ],
+      "technologies": ["Visión Computacional", "Clasificación", "VLM"],
       "team": [
         {
           "linkedin": "https://www.linkedin.com/in/gabrielcmerlin"
@@ -159,13 +144,7 @@
     "iconType": "RAG",
     "date": "2024-03-20",
     "language": "es",
-    "technologies": [
-      "LLM",
-      "Agentes",
-      "RAG",
-      "Few-shot",
-      "Web scraping"
-    ],
+    "technologies": ["LLM", "Agentes", "RAG", "Few-shot", "Web scraping"],
     "references": [
       {
         "title": "Presentación en la Conferencia RAIA 2025",
@@ -184,13 +163,7 @@
       }
     ],
     "meta": {
-      "technologies": [
-        "LLM",
-        "Agentes",
-        "RAG",
-        "Few-shot",
-        "Web scraping"
-      ],
+      "technologies": ["LLM", "Agentes", "RAG", "Few-shot", "Web scraping"],
       "team": [
         {
           "linkedin": "https://br.linkedin.com/in/alvaro-jose-lopes-604360160"
@@ -219,12 +192,7 @@
     "iconType": "Artificial Intelligence",
     "date": "2024-03-20",
     "language": "es",
-    "technologies": [
-      "Machine Learning",
-      "Computer Vision",
-      "NLP",
-      "LaTeX"
-    ],
+    "technologies": ["Machine Learning", "Computer Vision", "NLP", "LaTeX"],
     "github": "https://github.com/gruporaia/BEMU",
     "featured": true,
     "references": [
@@ -245,12 +213,7 @@
       }
     ],
     "meta": {
-      "technologies": [
-        "Machine Learning",
-        "Computer Vision",
-        "NLP",
-        "LaTeX"
-      ],
+      "technologies": ["Machine Learning", "Computer Vision", "NLP", "LaTeX"],
       "team": [
         {
           "linkedin": "https://www.linkedin.com/in/lushimabucoro/"
@@ -279,20 +242,10 @@
     "iconType": "RAG",
     "date": "2024-02-15",
     "language": "es",
-    "technologies": [
-      "NLP",
-      "Ingeniería de Datos",
-      "RAG",
-      "LLM"
-    ],
+    "technologies": ["NLP", "Ingeniería de Datos", "RAG", "LLM"],
     "github": "https://github.com/gruporaia/Chat-Diario-Oficial",
     "meta": {
-      "technologies": [
-        "NLP",
-        "Ingeniería de Datos",
-        "RAG",
-        "LLM"
-      ],
+      "technologies": ["NLP", "Ingeniería de Datos", "RAG", "LLM"],
       "team": [
         {
           "linkedin": "https://www.linkedin.com/in/alvaro-jose-lopes/"
@@ -321,17 +274,11 @@
     "iconType": "Computer Vision",
     "date": "2025-05-19",
     "language": "es",
-    "technologies": [
-      "YOLO v11",
-      "Computer Vision"
-    ],
+    "technologies": ["YOLO v11", "Computer Vision"],
     "featured": false,
     "github": "https://github.com/gruporaia/EcoVision",
     "meta": {
-      "technologies": [
-        "YOLO v11",
-        "Computer Vision"
-      ],
+      "technologies": ["YOLO v11", "Computer Vision"],
       "team": [
         {
           "github": "https://github.com/Deflyer"

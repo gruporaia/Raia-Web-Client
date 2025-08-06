@@ -8,11 +8,7 @@
     "iconType": "CNN",
     "date": "2024-04-05",
     "language": "pt",
-    "technologies": [
-      "Visão Computacional",
-      "Reconhecimento de sinais",
-      "CNN"
-    ],
+    "technologies": ["Visão Computacional", "Reconhecimento de sinais", "CNN"],
     "github": "https://github.com/gruporaia/SpellNet",
     "references": [
       {
@@ -87,10 +83,7 @@
     "iconType": "RAG",
     "date": "2025-06-14",
     "language": "pt",
-    "technologies": [
-      "Text-to-speech",
-      "Processamento de áudio"
-    ],
+    "technologies": ["Text-to-speech", "Processamento de áudio"],
     "github": "http://github.com/gruporaia/TTS-AutoTuning",
     "references": [
       {
@@ -100,11 +93,7 @@
       }
     ],
     "meta": {
-      "technologies": [
-        "Automação",
-        "Processamento de áudio",
-        "Finetuning"
-      ],
+      "technologies": ["Automação", "Processamento de áudio", "Finetuning"],
       "team": [
         {
           "name": "Antonio Micheli",
@@ -153,11 +142,7 @@
     "iconType": "VLM",
     "date": "2024-02-15",
     "language": "pt",
-    "technologies": [
-      "Visão Computacional",
-      "Classificação",
-      "VLM"
-    ],
+    "technologies": ["Visão Computacional", "Classificação", "VLM"],
     "github": "https://github.com/gruporaia/bonecheck",
     "references": [
       {
@@ -167,11 +152,7 @@
       }
     ],
     "meta": {
-      "technologies": [
-        "Visão Computacional",
-        "Classificação",
-        "VLM"
-      ],
+      "technologies": ["Visão Computacional", "Classificação", "VLM"],
       "team": [
         {
           "name": "Gabriel Merlin",
@@ -227,13 +208,7 @@
     "iconType": "RAG",
     "date": "2024-03-20",
     "language": "pt",
-    "technologies": [
-      "LLM",
-      "Agentes",
-      "RAG",
-      "Few-shot",
-      "Web scraping"
-    ],
+    "technologies": ["LLM", "Agentes", "RAG", "Few-shot", "Web scraping"],
     "references": [
       {
         "title": "Apresentação na Conferência RAIA 2025",
@@ -252,13 +227,7 @@
       }
     ],
     "meta": {
-      "technologies": [
-        "LLM",
-        "Agentes",
-        "RAG",
-        "Few-shot",
-        "Web scraping"
-      ],
+      "technologies": ["LLM", "Agentes", "RAG", "Few-shot", "Web scraping"],
       "team": [
         {
           "name": "Álvaro José Lopes",
@@ -314,12 +283,7 @@
     "iconType": "Artificial Intelligence",
     "date": "2024-03-20",
     "language": "pt",
-    "technologies": [
-      "Machine Learning",
-      "Computer Vision",
-      "NLP",
-      "LaTeX"
-    ],
+    "technologies": ["Machine Learning", "Computer Vision", "NLP", "LaTeX"],
     "github": "https://github.com/gruporaia/BEMU",
     "featured": true,
     "references": [
@@ -340,12 +304,7 @@
       }
     ],
     "meta": {
-      "technologies": [
-        "Machine Learning",
-        "Computer Vision",
-        "NLP",
-        "LaTeX"
-      ],
+      "technologies": ["Machine Learning", "Computer Vision", "NLP", "LaTeX"],
       "team": [
         {
           "name": "Luísa Shimabucoro",
@@ -395,20 +354,10 @@
     "iconType": "RAG",
     "date": "2024-02-15",
     "language": "pt",
-    "technologies": [
-      "NLP",
-      "Engenharia de Dados",
-      "RAG",
-      "LLM"
-    ],
+    "technologies": ["NLP", "Engenharia de Dados", "RAG", "LLM"],
     "github": "https://github.com/gruporaia/Chat-Diario-Oficial",
     "meta": {
-      "technologies": [
-        "NLP",
-        "Engenharia de Dados",
-        "RAG",
-        "LLM"
-      ],
+      "technologies": ["NLP", "Engenharia de Dados", "RAG", "LLM"],
       "team": [
         {
           "name": "Alvaro Jose Lopes",
@@ -461,17 +410,11 @@
     "iconType": "Computer Vision",
     "date": "2025-05-19",
     "language": "pt",
-    "technologies": [
-      "YOLO v11",
-      "Computer Vision"
-    ],
+    "technologies": ["YOLO v11", "Computer Vision"],
     "featured": false,
     "github": "https://github.com/gruporaia/EcoVision",
     "meta": {
-      "technologies": [
-        "YOLO v11",
-        "Computer Vision"
-      ],
+      "technologies": ["YOLO v11", "Computer Vision"],
       "team": [
         {
           "name": "Artur De Vlieger Lima",

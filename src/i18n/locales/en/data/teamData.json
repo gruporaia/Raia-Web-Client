@@ -7,11 +7,7 @@
     "bio": "Computer Science undergraduate at ICMC-USP, in an exchange program with the University of Bern, Switzerland. Interested in exploring the application of artificial intelligence tools in areas of public interest, such as health and education.",
     "github": "https://github.com/DelgadoPedro",
     "linkedin": "https://www.linkedin.com/in/pedroamdelgado",
-    "expertise": [
-      "Artificial Intelligence",
-      "Health",
-      "Education"
-    ],
+    "expertise": ["Artificial Intelligence", "Health", "Education"],
     "education": "ICMC-USP"
   },
   {
@@ -22,11 +18,7 @@
     "bio": "Undergraduate student in Computer Science at ICMC - USP and researcher in the area of data architecture. Interested in areas related to Data Engineering and Machine Learning.",
     "github": "https://github.com/HeNunes",
     "linkedin": "https://www.linkedin.com/in/cec%C3%ADlia-nunes-sedenho-305059255/",
-    "expertise": [
-      "Data Architecture",
-      "Data Engineering",
-      "Machine Learning"
-    ],
+    "expertise": ["Data Architecture", "Data Engineering", "Machine Learning"],
     "education": "ICMC - USP"
   },
   {
@@ -36,11 +28,7 @@
     "image": "/team/gabriel-merlin.png",
     "bio": "His interests fit in the ML/DL area, especially involving Time Series.",
     "linkedin": "https://www.linkedin.com/in/gabrielcmerlin/",
-    "expertise": [
-      "Machine Learning",
-      "Deep Learning",
-      "Time Series"
-    ]
+    "expertise": ["Machine Learning", "Deep Learning", "Time Series"]
   },
   {
     "id": "lucas-de-souza-brandao",
@@ -49,11 +37,7 @@
     "image": "/team/lucas-de-souza-brandao.png",
     "bio": "Computer Science student at the University of São Paulo. Undergraduate-level researcher focusing on Data Science.",
     "linkedin": "https://www.linkedin.com/in/lucas-de-souza-brand%C3%A3o-590b1228b/",
-    "expertise": [
-      "Data Science",
-      "Research",
-      "Computer Science"
-    ],
+    "expertise": ["Data Science", "Research", "Computer Science"],
     "education": "University of São Paulo (USP)"
   },
   {
@@ -65,11 +49,7 @@
     "website": "https://rubenszinho.dev/",
     "github": "https://github.com/rubenszinho",
     "linkedin": "https://www.linkedin.com/in/samuelrubens/",
-    "expertise": [
-      "DevOps",
-      "Microservices",
-      "Cloud Computing"
-    ]
+    "expertise": ["DevOps", "Microservices", "Cloud Computing"]
   },
   {
     "id": "gabriel-andreghetti",
@@ -78,10 +58,7 @@
     "image": "/team/gabriel-andreghetti.png",
     "bio": "Studying Bachelor's in Information Systems.",
     "linkedin": "https://www.linkedin.com/in/gabriel-moraes-andreghetti-422573274/",
-    "expertise": [
-      "Partnerships",
-      "Information Systems"
-    ],
+    "expertise": ["Partnerships", "Information Systems"],
     "education": "University of São Paulo (USP)"
   },
   {
@@ -91,10 +68,7 @@
     "image": "/team/pedro-lucas-bahiense.png",
     "bio": "Computer Science student at the University of São Paulo.",
     "linkedin": "https://www.linkedin.com/in/pedro-lucas-figueiredo-bahiense/",
-    "expertise": [
-      "Partnerships",
-      "Computer Science"
-    ],
+    "expertise": ["Partnerships", "Computer Science"],
     "education": "University of São Paulo (USP)"
   },
   {
@@ -119,11 +93,7 @@
     "bio": "Interested in ML areas, with emphasis on NLP and Vision. Computer Science student at USP, having worked at the University of Edinburgh and Cohere For AI as a researcher.",
     "github": "https://github.com/luisashimabucoro",
     "linkedin": "https://www.linkedin.com/in/lushimabucoro/",
-    "expertise": [
-      "Machine Learning",
-      "NLP",
-      "Computer Vision"
-    ],
+    "expertise": ["Machine Learning", "NLP", "Computer Vision"],
     "education": "University of São Paulo (USP)"
   },
   {

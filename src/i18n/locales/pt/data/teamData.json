@@ -7,11 +7,7 @@
     "bio": "Graduando em Ciências de Computação pelo ICMC-USP, em intercâmbio com a Universidade de Berna, na Suíça. Possui interesse em explorar a aplicação de ferramentas de inteligência artificial em áreas de interesse público, como saúde e educação.",
     "github": "https://github.com/DelgadoPedro",
     "linkedin": "https://www.linkedin.com/in/pedroamdelgado",
-    "expertise": [
-      "Inteligência Artificial",
-      "Saúde",
-      "Educação"
-    ],
+    "expertise": ["Inteligência Artificial", "Saúde", "Educação"],
     "education": "ICMC-USP"
   },
   {
@@ -36,11 +32,7 @@
     "image": "/team/gabriel-merlin.png",
     "bio": "Seus interesses se encaixam na área de ML/DL, especialmente envolvendo Séries Temporais.",
     "linkedin": "https://www.linkedin.com/in/gabrielcmerlin/",
-    "expertise": [
-      "Machine Learning",
-      "Deep Learning",
-      "Séries Temporais"
-    ]
+    "expertise": ["Machine Learning", "Deep Learning", "Séries Temporais"]
   },
   {
     "id": "lucas-de-souza-brandao",
@@ -49,11 +41,7 @@
     "image": "/team/lucas-de-souza-brandao.png",
     "bio": "Estudante de Ciências de Computação na Universidade de São Paulo. Pesquisador de nível de graduação com foco em Ciência de Dados.",
     "linkedin": "https://www.linkedin.com/in/lucas-de-souza-brand%C3%A3o-590b1228b/",
-    "expertise": [
-      "Ciência de Dados",
-      "Pesquisa",
-      "Ciência da Computação"
-    ],
+    "expertise": ["Ciência de Dados", "Pesquisa", "Ciência da Computação"],
     "education": "Universidade de São Paulo (USP)"
   },
   {
@@ -65,11 +53,7 @@
     "website": "https://rubenszinho.dev/",
     "github": "https://github.com/rubenszinho",
     "linkedin": "https://www.linkedin.com/in/samuelrubens/",
-    "expertise": [
-      "DevOps",
-      "Microsserviços",
-      "Computação em Nuvem"
-    ]
+    "expertise": ["DevOps", "Microsserviços", "Computação em Nuvem"]
   },
   {
     "id": "gabriel-andreghetti",
@@ -78,10 +62,7 @@
     "image": "/team/gabriel-andreghetti.png",
     "bio": "Cursando Bacharelado em Sistemas de Informação.",
     "linkedin": "https://www.linkedin.com/in/gabriel-moraes-andreghetti-422573274/",
-    "expertise": [
-      "Parcerias",
-      "Sistemas de Informação"
-    ],
+    "expertise": ["Parcerias", "Sistemas de Informação"],
     "education": "Universidade de São Paulo (USP)"
   },
   {
@@ -91,10 +72,7 @@
     "image": "/team/pedro-lucas-bahiense.png",
     "bio": "Aluno de Ciências de Computação da Universidade de São Paulo.",
     "linkedin": "https://www.linkedin.com/in/pedro-lucas-figueiredo-bahiense/",
-    "expertise": [
-      "Parcerias",
-      "Ciência da Computação"
-    ],
+    "expertise": ["Parcerias", "Ciência da Computação"],
     "education": "Universidade de São Paulo (USP)"
   },
   {
@@ -119,11 +97,7 @@
     "bio": "Tem interesse nas áreas de ML, com ênfase em NLP e Visão. Aluna de Ciências de Computação da USP, já tendo passado pela U. de Edimburgo e Cohere For AI como pesquisadora.",
     "github": "https://github.com/luisashimabucoro",
     "linkedin": "https://www.linkedin.com/in/lushimabucoro/",
-    "expertise": [
-      "Machine Learning",
-      "NLP",
-      "Visão Computacional"
-    ],
+    "expertise": ["Machine Learning", "NLP", "Visão Computacional"],
     "education": "Universidade de São Paulo (USP)"
   },
   {
