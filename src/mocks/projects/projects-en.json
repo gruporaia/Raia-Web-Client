@@ -1,56 +1,271 @@
 [
   {
-    "id": "1",
-    "title": "Official Gazette Chat",
-    "description": "The Official Gazette Chat is an end-to-end solution that optimizes search in large textual databases, such as the Official Gazette of Belo Horizonte, using Retrieval Augmented Generation (RAG). It assists civil servants and professionals in navigating extensive documents, providing efficient searches and saving time.",
-    "image": "/projects/chat-diario-oficial/chat-diario-oficial.png",
-    "category": "Text Processing",
-    "iconType": "RAG",
-    "date": "2024-02-15",
+    "id": "6",
+    "title": "SpellNet",
+    "description": "Computer vision application for real-time fingerspelling recognition in Libras and ASL.",
+    "image": "/projects/spellnet/spellnet.png",
+    "category": "Computer Vision",
+    "iconType": "CNN",
+    "date": "2024-04-05",
     "language": "en",
-    "technologies": ["NLP", "Data Engineering", "RAG", "LLM"],
-    "github": "https://github.com/gruporaia/Chat-Diario-Oficial",
+    "technologies": ["Computer Vision", "Sign Recognition", "CNN"],
+    "github": "https://github.com/gruporaia/SpellNet",
+    "references": [
+      {
+        "title": "RAIA Conference 2025 Presentation",
+        "url": "https://youtu.be/KgYL-CT5AG8",
+        "type": "link"
+      },
+      {
+        "title": "Dataset and models on Hugging Face",
+        "url": "https://huggingface.co/collections/RAIA-BRASIL/spellnet-689240b4bc880f2f7652b206",
+        "type": "link"
+      }
+    ],
     "meta": {
-      "technologies": ["NLP", "Data Engineering", "RAG", "LLM"],
+      "technologies": ["Computer Vision", "Sign Recognition", "CNN"],
       "team": [
         {
-          "name": "Alvaro Jose Lopes",
-          "role": "Developer",
-          "image": "/team/chat-diario-oficial/alvaro-jose-lopes.png",
-          "bio": "Contributed to the data ingestion stage, from design to implementation.",
-          "linkedin": "https://www.linkedin.com/in/alvaro-jose-lopes/"
-        },
-        {
-          "name": "Bernardo Marques Costa",
-          "role": "Developer",
-          "image": "/team/chat-diario-oficial/bernardo-marques-costa.png",
-          "bio": "Worked on the design and implementation of the tool, from data ingestion to creating the final application.",
-          "linkedin": "https://www.linkedin.com/in/bernardo-marques-costa/",
-          "github": "https://github.com/bmarquescost"
-        },
-        {
-          "name": "Cecília Nunes Sedenho",
-          "role": "Developer",
-          "image": "/team/cecilia-nunes-sedenho.png",
-          "bio": "Contributed with testing different language models and integration between data ingestion and model interaction.",
-          "linkedin": "https://www.linkedin.com/in/cec%C3%ADlia-nunes-sedenho-305059255/",
-          "github": "https://github.com/HeNunes"
-        },
-        {
-          "name": "Laura Fernandes Camargos",
-          "role": "Developer",
-          "image": "/team/chat-diario-oficial/laura-fernandes-camargos.png",
-          "bio": "Worked on testing RAG configurations and implementing the frontend of the final application.",
-          "linkedin": "https://www.linkedin.com/in/laura-fernandes-camargos-a26b89246/",
-          "github": "https://github.com/laurafcamargos"
-        },
-        {
-          "name": "Pedro Augusto Monteiro Delgado",
+          "name": "Cecilia Nunes",
           "role": "Manager",
-          "image": "/team/pedro-augusto-monteiro-delgado.png",
-          "bio": "Managed the team and project, in addition to contributing to application testing.",
-          "linkedin": "https://www.linkedin.com/in/pedroamdelgado",
-          "github": "https://github.com/DelgadoPedro"
+          "image": "/team/spellnet/cecilia.jpg",
+          "bio": "Managed the team and worked on video preprocessing for dataset creation.",
+          "linkedin": "https://www.linkedin.com/in/cec%C3%ADlia-nunes-sedenho-305059255/pt"
+        },
+        {
+          "name": "Daniel Dantas",
+          "role": "Developer",
+          "image": "/team/spellnet/daniel.jpg",
+          "bio": "Worked on implementing and tuning the recognition model.",
+          "linkedin": "https://www.linkedin.com/in/daniel-carvalho-aba61717a/"
+        },
+        {
+          "name": "João Pedro Viguini",
+          "role": "Developer",
+          "image": "/team/spellnet/joao-viguini.jpg",
+          "bio": "Worked on implementing and tuning the recognition model.",
+          "linkedin": "https://www.linkedin.com/in/joão-pedro-viguini-1829281bb"
+        },
+        {
+          "name": "Gabriel Iamato",
+          "role": "Developer",
+          "image": "/team/spellnet/gabriel-iamato.jpg",
+          "bio": "Responsible for dataset preprocessing.",
+          "linkedin": "https://www.linkedin.com/in/gabriel-campanelli-iamato/"
+        },
+        {
+          "name": "Matheus Vicente",
+          "role": "Developer",
+          "image": "/team/spellnet/matheus-vicente.jpg",
+          "bio": "Responsible for dataset preprocessing.",
+          "linkedin": "https://www.linkedin.com/in/matheushrv"
+        },
+        {
+          "name": "Bernardo Marques",
+          "role": "Developer",
+          "image": "/team/spellnet/bernardo.jpg",
+          "bio": "Implemented the interface for real-time recognition.",
+          "linkedin": "https://www.linkedin.com/in/bernardo-marques-costa/"
+        }
+      ]
+    }
+  },
+  {
+    "id": "4",
+    "title": "TTS-AutoTuning",
+    "description": "This project involves creating an application for automating the fine-tuning process of text-to-speech models from Portuguese audio.",
+    "image": "/projects/tts-autotuning/tts-autotuning.png",
+    "category": "Text-to-speech",
+    "iconType": "RAG",
+    "date": "2025-06-14",
+    "language": "en",
+    "technologies": ["Text-to-speech", "Audio Processing"],
+    "github": "http://github.com/gruporaia/TTS-AutoTuning",
+    "references": [
+      {
+        "title": "RAIA Conference 2025 Presentation",
+        "url": "https://youtu.be/A6KlBExCb_4",
+        "type": "link"
+      }
+    ],
+    "meta": {
+      "technologies": ["Automation", "Audio Processing", "Fine-tuning"],
+      "team": [
+        {
+          "name": "Antonio Micheli",
+          "role": "Developer",
+          "image": "/team/tts/antonio.png",
+          "bio": "Worked on automatic evaluation of generated audios and implementation of the final application.",
+          "linkedin": "https://www.linkedin.com/in/ant%C3%B4nio-carlos-micheli-b10bb4289"
+        },
+        {
+          "name": "Arthur Ramos",
+          "role": "Developer",
+          "image": "/team/tts/arthur.png",
+          "bio": "Worked on automating the Orpheus model fine-tuning.",
+          "linkedin": "https://www.linkedin.com/in/arthur-ramos-9b81b9201/"
+        },
+        {
+          "name": "Caio Petroncini",
+          "role": "Developer",
+          "image": "/team/tts/caio.png",
+          "bio": "Worked on automating the XTTS model fine-tuning.",
+          "linkedin": "https://www.linkedin.com/in/caio-petroncini-7105941aa/"
+        },
+        {
+          "name": "Lucas De Souza",
+          "role": "Manager",
+          "image": "/team/tts/lucas.png",
+          "bio": "Managed the team, worked on preprocessing raw audio and implementing the final application.",
+          "linkedin": "https://www.linkedin.com/in/lucas-de-souza-brand%C3%A3o-590b1228b"
+        },
+        {
+          "name": "Pedro Soares",
+          "role": "Developer",
+          "image": "/team/tts/pedro.png",
+          "bio": "Worked on preprocessing raw audio.",
+          "linkedin": "https://www.linkedin.com/in/pedro-soares-b3625b238/"
+        }
+      ]
+    }
+  },
+  {
+    "id": "5",
+    "title": "BoneCheck",
+    "description": "AI system for early osteoporosis diagnosis based on panoramic radiographs.",
+    "image": "/projects/bone-check/bone-check.png",
+    "category": "Computer Vision",
+    "iconType": "VLM",
+    "date": "2024-02-15",
+    "language": "en",
+    "technologies": ["Computer Vision", "Classification", "VLM"],
+    "github": "https://github.com/gruporaia/bonecheck",
+    "references": [
+      {
+        "title": "RAIA Conference 2025 Presentation",
+        "url": "https://youtu.be/N-Us4VGM5e0",
+        "type": "link"
+      }
+    ],
+    "meta": {
+      "technologies": ["Computer Vision", "Classification", "VLM"],
+      "team": [
+        {
+          "name": "Gabriel Merlin",
+          "role": "Manager",
+          "image": "/team/bonecheck/gabriel.png",
+          "bio": "Managed the team and worked on ensemble training.",
+          "linkedin": "https://www.linkedin.com/in/gabrielcmerlin"
+        },
+        {
+          "name": "Ademir Guimarães",
+          "role": "Developer",
+          "image": "/team/bonecheck/ademir.png",
+          "bio": "Worked on training base models and ensemble.",
+          "linkedin": "https://www.linkedin.com/in/ademir-guimaraes/"
+        },
+        {
+          "name": "Andre De Mitri",
+          "role": "Developer",
+          "image": "/team/bonecheck/andre.png",
+          "bio": "Worked on dataset preprocessing and model training.",
+          "linkedin": "https://www.linkedin.com/in/andre-de-mitri/"
+        },
+        {
+          "name": "Matheus Giraldi",
+          "role": "Developer",
+          "image": "/team/bonecheck/matheus-giraldi.png",
+          "bio": "Worked on training base models.",
+          "linkedin": "https://www.linkedin.com/in/matheus-giraldi-alvarenga-b2b856217/"
+        },
+        {
+          "name": "Matheus Lenzi",
+          "role": "Developer",
+          "image": "/team/bonecheck/matheus-lenzi.png",
+          "bio": "Worked on training base models.",
+          "linkedin": "https://www.linkedin.com/in/matheus-lenzi-dos-santos/"
+        },
+        {
+          "name": "Yasmin Oliveira",
+          "role": "Developer",
+          "image": "/team/bonecheck/yasmin.png",
+          "bio": "Worked on dataset preprocessing and LLM usage.",
+          "linkedin": "https://www.linkedin.com/in/yasmin-victoria-oliveira/"
+        }
+      ]
+    }
+  },
+  {
+    "id": "7",
+    "title": "VestAgents",
+    "description": "Multi-agent tool for generating Brazilian university entrance exam questions using LLMs and RAG.",
+    "image": "/projects/vestagents/vestagents.png",
+    "category": "AI Agents",
+    "iconType": "RAG",
+    "date": "2024-03-20",
+    "language": "en",
+    "technologies": ["LLM", "Agents", "RAG", "Few-shot", "Web scraping"],
+    "references": [
+      {
+        "title": "RAIA Conference 2025 Presentation",
+        "url": "https://youtu.be/xTRNztX_wkU",
+        "type": "link"
+      },
+      {
+        "title": "GitHub Repository",
+        "url": "https://github.com/gruporaia/vestagents",
+        "type": "link"
+      },
+      {
+        "title": "Questions Dataset",
+        "url": "https://huggingface.co/collections/RAIA-BRASIL/vestagents-6889519bcae066088a40faae",
+        "type": "link"
+      }
+    ],
+    "meta": {
+      "technologies": ["LLM", "Agents", "RAG", "Few-shot", "Web scraping"],
+      "team": [
+        {
+          "name": "Álvaro José Lopes",
+          "role": "Developer",
+          "image": "/team/vestagents/alvaro.png",
+          "bio": "Worked on the implementation of a few-shot prompt structuring agent.",
+          "linkedin": "https://br.linkedin.com/in/alvaro-jose-lopes-604360160"
+        },
+        {
+          "name": "Artur De Vlieger",
+          "role": "Developer",
+          "image": "/team/vestagents/artur.png",
+          "bio": "Worked on the implementation of a few-shot prompt structuring agent.",
+          "linkedin": "https://www.linkedin.com/in/artur-de-vlieger-336829252/"
+        },
+        {
+          "name": "Fabrício Salomon",
+          "role": "Developer",
+          "image": "/team/vestagents/fabricio.png",
+          "bio": "Implemented a search agent and participated in the evaluation phase.",
+          "linkedin": "https://br.linkedin.com/in/fabr%C3%ADcio-salomon"
+        },
+        {
+          "name": "Letícia Marchezi",
+          "role": "Manager",
+          "image": "/team/vestagents/leticia.png",
+          "bio": "Managed the team, developed general-purpose agents and contributed to the evaluation process.",
+          "linkedin": "https://br.linkedin.com/in/letmarchezi"
+        },
+        {
+          "name": "Luís Jorge",
+          "role": "Developer",
+          "image": "/team/vestagents/luis.png",
+          "bio": "Worked on the implementation of a search agent for exam questions.",
+          "linkedin": "https://www.linkedin.com/in/luis-felipe-jorge/"
+        },
+        {
+          "name": "Otávio Coletti",
+          "role": "Developer",
+          "image": "/team/vestagents/otavio.png",
+          "bio": "Implemented a web scraping agent to retrieve support texts.",
+          "linkedin": "https://www.linkedin.com/in/ot%C3%A1viocoletti-012"
         }
       ]
     }
@@ -127,6 +342,62 @@
     }
   },
   {
+    "id": "1",
+    "title": "Official Gazette Chat",
+    "description": "The Official Gazette Chat is an end-to-end solution that optimizes search in large textual databases, such as the Official Gazette of Belo Horizonte, using Retrieval Augmented Generation (RAG). It assists civil servants and professionals in navigating extensive documents, providing efficient searches and saving time.",
+    "image": "/projects/chat-diario-oficial/chat-diario-oficial.png",
+    "category": "Text Processing",
+    "iconType": "RAG",
+    "date": "2024-02-15",
+    "language": "en",
+    "technologies": ["NLP", "Data Engineering", "RAG", "LLM"],
+    "github": "https://github.com/gruporaia/Chat-Diario-Oficial",
+    "meta": {
+      "technologies": ["NLP", "Data Engineering", "RAG", "LLM"],
+      "team": [
+        {
+          "name": "Alvaro Jose Lopes",
+          "role": "Developer",
+          "image": "/team/chat-diario-oficial/alvaro-jose-lopes.png",
+          "bio": "Contributed to the data ingestion stage, from design to implementation.",
+          "linkedin": "https://www.linkedin.com/in/alvaro-jose-lopes/"
+        },
+        {
+          "name": "Bernardo Marques Costa",
+          "role": "Developer",
+          "image": "/team/chat-diario-oficial/bernardo-marques-costa.png",
+          "bio": "Worked on the design and implementation of the tool, from data ingestion to creating the final application.",
+          "linkedin": "https://www.linkedin.com/in/bernardo-marques-costa/",
+          "github": "https://github.com/bmarquescost"
+        },
+        {
+          "name": "Cecília Nunes Sedenho",
+          "role": "Developer",
+          "image": "/team/cecilia-nunes-sedenho.png",
+          "bio": "Contributed with testing different language models and integration between data ingestion and model interaction.",
+          "linkedin": "https://www.linkedin.com/in/cec%C3%ADlia-nunes-sedenho-305059255/",
+          "github": "https://github.com/HeNunes"
+        },
+        {
+          "name": "Laura Fernandes Camargos",
+          "role": "Developer",
+          "image": "/team/chat-diario-oficial/laura-fernandes-camargos.png",
+          "bio": "Worked on testing RAG configurations and implementing the frontend of the final application.",
+          "linkedin": "https://www.linkedin.com/in/laura-fernandes-camargos-a26b89246/",
+          "github": "https://github.com/laurafcamargos"
+        },
+        {
+          "name": "Pedro Augusto Monteiro Delgado",
+          "role": "Manager",
+          "image": "/team/pedro-augusto-monteiro-delgado.png",
+          "bio": "Managed the team and project, in addition to contributing to application testing.",
+          "linkedin": "https://www.linkedin.com/in/pedroamdelgado",
+          "github": "https://github.com/DelgadoPedro"
+        }
+      ]
+    }
+  },
+  {
     "id": "3",
     "title": "EcoVision",
     "description": "EcoVision applies computer vision for safety in waste sorting, identifying dangerous objects in real-time.",
@@ -152,7 +423,7 @@
           "name": "Lucas de Souza Brandão",
           "role": "Data Scientist",
           "image": "/team/lucas-de-souza-brandao.png",
-          "bio": "Expert in computer vision models for object recognition.",
+          "bio": "Specialist in computer vision models for object recognition.",
           "github": "https://github.com/sb-lucas"
         },
         {
@@ -168,262 +439,6 @@
           "image": "/team/ecovision/pedro-figueiredo.png",
           "bio": "Engineer specialized in implementing YOLO models for object detection.",
           "github": "https://github.com/PedroLFigueiredo"
-        }
-      ]
-    }
-  },
-  {
-    "id": "4",
-    "title": "TTS-AutoTuning",
-    "description": "This project involves creating an application to automate the fine-tuning process of text-to-speech models based on Portuguese audio data.",
-    "image": "/projects/tts-autotuning/tts-autotuning.png",
-    "category": "Text-to-speech",
-    "iconType": "RAG",
-    "date": "2025-06-14",
-    "language": "en",
-    "technologies": ["Text-to-speech", "Audio processing"],
-    "github": "http://github.com/gruporaia/TTS-AutoTuning",
-    "references": [
-      {
-        "title": "RAIA Conference 2025 Presentation",
-        "url": "https://youtu.be/A6KlBExCb_4",
-        "type": "link"
-      }
-    ],
-    "meta": {
-      "technologies": ["Automation", "Audio processing", "Fine-tuning"],
-      "team": [
-        {
-          "name": "Antonio Micheli",
-          "role": "Developer",
-          "image": "/team/tts/antonio.png",
-          "bio": "Worked on the automatic evaluation of the generated audios and on the implementation of the final application.",
-          "linkedin": "https://www.linkedin.com/in/ant%C3%B4nio-carlos-micheli-b10bb4289"
-        },
-        {
-          "name": "Arthur Ramos",
-          "role": "Developer",
-          "image": "/team/tts/arthur.png",
-          "bio": "Worked on automating the fine-tuning of the Orpheus model.",
-          "linkedin": "https://www.linkedin.com/in/arthur-ramos-9b81b9201/"
-        },
-        {
-          "name": "Caio Petroncini",
-          "role": "Developer",
-          "image": "/team/tts/caio.png",
-          "bio": "Worked on automating the fine-tuning of the XTTS model.",
-          "linkedin": "https://www.linkedin.com/in/caio-petroncini-7105941aa/"
-        },
-        {
-          "name": "Lucas De Souza",
-          "role": "Manager",
-          "image": "/team/tts/lucas.png",
-          "bio": "Led the team, worked on preprocessing the raw audios and implementing the final application.",
-          "linkedin": "https://www.linkedin.com/in/lucas-de-souza-brand%C3%A3o-590b1228b"
-        },
-        {
-          "name": "Pedro Soares",
-          "role": "Developer",
-          "image": "/team/tts/pedro.png",
-          "bio": "Worked on the preprocessing of raw audios.",
-          "linkedin": "https://www.linkedin.com/in/pedro-soares-b3625b238/"
-        }
-      ]
-    }
-  },
-  {
-    "id": "5",
-    "title": "BoneCheck",
-    "description": "AI system for early osteoporosis detection via panoramic radiograph classification.",
-    "image": "/projects/bone-check/bone-check.png",
-    "category": "Computer Vision",
-    "iconType": "VLM",
-    "date": "2024-02-15",
-    "language": "en",
-    "technologies": ["Computer Vision", "Classification", "VLM"],
-    "github": "https://github.com/gruporaia/bonecheck",
-    "references": [
-      {
-        "title": "RAIA Conference 2025 Presentation",
-        "url": "https://youtu.be/N-Us4VGM5e0",
-        "type": "link"
-      }
-    ],
-    "meta": {
-      "technologies": ["Computer Vision", "Classification", "VLM"],
-      "team": [
-        {
-          "name": "Gabriel Merlin",
-          "role": "Manager",
-          "image": "/team/bonecheck/gabriel.png",
-          "bio": "Led the team and worked on ensemble training.",
-          "linkedin": "https://www.linkedin.com/in/gabrielcmerlin"
-        },
-        {
-          "name": "Ademir Guimarães",
-          "role": "Developer",
-          "image": "/team/bonecheck/ademir.png",
-          "bio": "Worked on base model and ensemble training.",
-          "linkedin": "https://www.linkedin.com/in/ademir-guimaraes/"
-        },
-        {
-          "name": "Andre De Mitri",
-          "role": "Developer",
-          "image": "/team/bonecheck/andre.png",
-          "bio": "Worked on data preprocessing and training of models.",
-          "linkedin": "https://www.linkedin.com/in/andre-de-mitri/"
-        },
-        {
-          "name": "Matheus Giraldi",
-          "role": "Developer",
-          "image": "/team/bonecheck/matheus-giraldi.png",
-          "bio": "Worked on training base models.",
-          "linkedin": "https://www.linkedin.com/in/matheus-giraldi-alvarenga-b2b856217/"
-        },
-        {
-          "name": "Matheus Lenzi",
-          "role": "Developer",
-          "image": "/team/bonecheck/matheus-lenzi.png",
-          "bio": "Worked on training base models.",
-          "linkedin": "https://www.linkedin.com/in/matheus-lenzi-dos-santos/"
-        },
-        {
-          "name": "Yasmin Oliveira",
-          "role": "Developer",
-          "image": "/team/bonecheck/yasmin.png",
-          "bio": "Worked on data preprocessing and LLM integration.",
-          "linkedin": "https://www.linkedin.com/in/yasmin-victoria-oliveira/"
-        }
-      ]
-    }
-  },
-  {
-    "id": "6",
-    "title": "SpellNet",
-    "description": "Computer vision app for real-time fingerspelling recognition in Libras and ASL.",
-    "image": "/projects/spellnet/spellnet.png",
-    "category": "Computer Vision",
-    "iconType": "CNN",
-    "date": "2024-04-05",
-    "language": "en",
-    "technologies": ["Computer Vision", "Sign recognition", "CNN"],
-    "github": "https://github.com/gruporaia/SpellNet",
-    "references": [
-      {
-        "title": "RAIA Conference 2025 Presentation",
-        "url": "https://youtu.be/KgYL-CT5AG8",
-        "type": "link"
-      }
-    ],
-    "meta": {
-      "technologies": ["Computer Vision", "Sign recognition", "CNN"],
-      "team": [
-        {
-          "name": "Cecilia Nunes",
-          "role": "Manager",
-          "image": "/team/spellnet/cecilia.jpg",
-          "bio": "Led the team and worked on preprocessing video data for dataset creation.",
-          "linkedin": "https://www.linkedin.com/in/cec%C3%ADlia-nunes-sedenho-305059255/pt"
-        },
-        {
-          "name": "Daniel Dantas",
-          "role": "Developer",
-          "image": "/team/spellnet/daniel.jpg",
-          "bio": "Worked on model implementation and fine-tuning.",
-          "linkedin": "https://www.linkedin.com/in/daniel-carvalho-aba61717a/"
-        },
-        {
-          "name": "João Pedro Viguini",
-          "role": "Developer",
-          "image": "/team/spellnet/joao-viguini.jpg",
-          "bio": "Worked on model implementation and fine-tuning.",
-          "linkedin": "https://www.linkedin.com/in/joão-pedro-viguini-1829281bb"
-        },
-        {
-          "name": "Gabriel Iamato",
-          "role": "Developer",
-          "image": "/team/spellnet/gabriel-iamato.jpg",
-          "bio": "Worked on dataset preprocessing.",
-          "linkedin": "https://www.linkedin.com/in/gabriel-campanelli-iamato/"
-        },
-        {
-          "name": "Matheus Vicente",
-          "role": "Developer",
-          "image": "/team/spellnet/matheus-vicente.jpg",
-          "bio": "Worked on dataset preprocessing.",
-          "linkedin": "https://www.linkedin.com/in/matheushrv"
-        },
-        {
-          "name": "Bernardo Marques",
-          "role": "Developer",
-          "image": "/team/spellnet/bernardo.jpg",
-          "bio": "Built the interface for real-time recognition.",
-          "linkedin": "https://www.linkedin.com/in/bernardo-marques-costa/"
-        }
-      ]
-    }
-  },
-  {
-    "id": "7",
-    "title": "VestAgents",
-    "description": "Multi-agent tool for generating Brazilian university entrance exam questions using LLMs and RAG.",
-    "image": "/projects/vestagents/vestagents.png",
-    "category": "AI Agents",
-    "iconType": "RAG",
-    "date": "2024-03-20",
-    "language": "en",
-    "technologies": ["LLM", "Agents", "RAG", "Few-shot", "Web scraping"],
-    "references": [
-      {
-        "title": "RAIA Conference 2025 Presentation",
-        "url": "https://youtu.be/xTRNztX_wkU",
-        "type": "link"
-      }
-    ],
-    "meta": {
-      "technologies": ["LLM", "Agents", "RAG", "Few-shot", "Web scraping"],
-      "team": [
-        {
-          "name": "Álvaro José Lopes",
-          "role": "Developer",
-          "image": "/team/vestagents/alvaro.png",
-          "bio": "Worked on the implementation of a few-shot prompt structuring agent.",
-          "linkedin": "https://br.linkedin.com/in/alvaro-jose-lopes-604360160"
-        },
-        {
-          "name": "Artur De Vlieger",
-          "role": "Developer",
-          "image": "/team/vestagents/artur.png",
-          "bio": "Worked on the implementation of a few-shot prompt structuring agent.",
-          "linkedin": "https://www.linkedin.com/in/artur-de-vlieger-336829252/"
-        },
-        {
-          "name": "Fabrício Salomon",
-          "role": "Developer",
-          "image": "/team/vestagents/fabricio.png",
-          "bio": "Implemented a search agent and participated in the evaluation phase.",
-          "linkedin": "https://br.linkedin.com/in/fabr%C3%ADcio-salomon"
-        },
-        {
-          "name": "Letícia Marchezi",
-          "role": "Manager",
-          "image": "/team/vestagents/leticia.png",
-          "bio": "Managed the team, developed general-purpose agents and contributed to the evaluation process.",
-          "linkedin": "https://br.linkedin.com/in/letmarchezi"
-        },
-        {
-          "name": "Luís Jorge",
-          "role": "Developer",
-          "image": "/team/vestagents/luis.png",
-          "bio": "Worked on the implementation of a search agent for exam questions.",
-          "linkedin": "https://www.linkedin.com/in/luis-felipe-jorge/"
-        },
-        {
-          "name": "Otávio Coletti",
-          "role": "Developer",
-          "image": "/team/vestagents/otavio.png",
-          "bio": "Implemented a web scraping agent to retrieve support texts.",
-          "linkedin": "https://www.linkedin.com/in/ot%C3%A1viocoletti-012"
         }
       ]
     }
