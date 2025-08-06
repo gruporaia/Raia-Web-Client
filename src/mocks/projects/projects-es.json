@@ -1,211 +1,5 @@
 [
   {
-    "id": "1",
-    "title": "Chat del Diario Oficial",
-    "description": "El Chat del Diario Oficial es una solución integral que optimiza la búsqueda en grandes bases de datos textuales, como el Diario Oficial de Belo Horizonte, utilizando Generación Aumentada por Recuperación (RAG). Ayuda a funcionarios y profesionales a navegar por documentos extensos, proporcionando búsquedas eficientes y ahorrando tiempo.",
-    "image": "/projects/chat-diario-oficial/chat-diario-oficial.png",
-    "category": "Procesamiento de Texto",
-    "iconType": "RAG",
-    "date": "2024-02-15",
-    "language": "es",
-    "technologies": ["NLP", "Ingeniería de Datos", "RAG", "LLM"],
-    "github": "https://github.com/gruporaia/Chat-Diario-Oficial",
-    "meta": {
-      "technologies": ["NLP", "Ingeniería de Datos", "RAG", "LLM"],
-      "team": [
-        {
-          "linkedin": "https://www.linkedin.com/in/alvaro-jose-lopes/"
-        },
-        {
-          "github": "https://github.com/bmarquescost"
-        },
-        {
-          "github": "https://github.com/HeNunes"
-        },
-        {
-          "github": "https://github.com/laurafcamargos"
-        },
-        {
-          "linkedin": "https://www.linkedin.com/in/matheus-giraldi-alvarenga-b2b856217/"
-        },
-        {
-          "linkedin": "https://www.linkedin.com/in/vinicius-alves-rocha-6a7420181/"
-        }
-      ]
-    }
-  },
-  {
-    "id": "2",
-    "title": "BEMU",
-    "description": "El proyecto recopila preguntas de exámenes de ingreso universitario brasileños para evaluar IAs multimodales en portugués, combinando análisis de PDFs, modelos de IA y convertidores a LaTeX. El resultado son cinco conjuntos de datos con más de 5.000 preguntas, haciendo que los benchmarks sean más representativos.",
-    "image": "/projects/bemu/bemu.png",
-    "category": "Modelos de Inteligencia Artificial",
-    "iconType": "Artificial Intelligence",
-    "date": "2024-03-20",
-    "language": "es",
-    "technologies": ["Machine Learning", "Computer Vision", "NLP", "LaTeX"],
-    "github": "https://github.com/gruporaia/BEMU",
-    "featured": true,
-    "references": [
-      {
-        "title": "Más allá del inglés: ampliando el horizonte de evaluaciones de IAs multimodales",
-        "url": "https://medium.com/@raia.diretoria/indo-al%C3%A9m-do-ingl%C3%AAs-ampliando-o-horizonte-de-avalia%C3%A7%C3%B5es-de-ias-multimodais-a5249af02f7a",
-        "type": "article"
-      },
-      {
-        "title": "Dataset en HuggingFace",
-        "url": "https://huggingface.co/datasets/CohereLabs/kaleidoscope",
-        "type": "link"
-      },
-      {
-        "title": "Artículo en Arxiv",
-        "url": "https://arxiv.org/pdf/2504.07072",
-        "type": "link"
-      }
-    ],
-    "meta": {
-      "technologies": ["Machine Learning", "Computer Vision", "NLP", "LaTeX"],
-      "team": [
-        {
-          "github": "https://github.com/gruporaia/BEMU/commits?author=luisashimabucoro"
-        },
-        {
-          "linkedin": "https://www.linkedin.com/in/gabrielcmerlin/"
-        },
-        {
-          "linkedin": "https://www.linkedin.com/in/andre-de-mitri/"
-        },
-        {
-          "linkedin": "https://www.linkedin.com/in/letmarchezi/"
-        },
-        {
-          "linkedin": "https://www.linkedin.com/in/mateushenrique-ssousa/"
-        },
-        {
-          "linkedin": "https://www.linkedin.com/in/pedro-augusto-monteiro-delgado/"
-        },
-        {
-          "linkedin": "https://www.linkedin.com/in/renan-oliveira-silva/"
-        }
-      ]
-    }
-  },
-  {
-    "id": "3",
-    "title": "EcoVision",
-    "description": "EcoVision aplica visión por computadora para la seguridad en la clasificación de residuos, identificando objetos peligrosos en tiempo real.",
-    "image": "/projects/ecovision/ecovision.png",
-    "category": "Visión Computacional",
-    "iconType": "Computer Vision",
-    "date": "2025-05-19",
-    "language": "es",
-    "technologies": ["YOLO v11", "Computer Vision"],
-    "featured": false,
-    "github": "https://github.com/gruporaia/EcoVision",
-    "meta": {
-      "technologies": ["YOLO v11", "Computer Vision"],
-      "team": [
-        {
-          "github": "https://github.com/Deflyer"
-        },
-        {
-          "github": "https://github.com/sb-lucas"
-        },
-        {
-          "github": "https://github.com/GusSampaio"
-        },
-        {
-          "linkedin": "https://www.linkedin.com/in/pedro-augusto-ribeiro-gomes-55b859193/"
-        }
-      ]
-    }
-  },
-  {
-    "id": "4",
-    "title": "TTS-AutoTuning",
-    "description": "Este proyecto consiste en la creación de una aplicación para automatizar el proceso de ajuste fino de modelos de texto a voz a partir de audios en portugués.",
-    "image": "/projects/tts-autotuning/tts-autotuning.png",
-    "category": "Texto a voz",
-    "iconType": "RAG",
-    "date": "2025-06-14",
-    "language": "es",
-    "technologies": ["Texto a voz", "Procesamiento de audio"],
-    "github": "http://github.com/gruporaia/TTS-AutoTuning",
-    "references": [
-      {
-        "title": "Presentación en la Conferencia RAIA 2025",
-        "url": "https://youtu.be/A6KlBExCb_4",
-        "type": "link"
-      }
-    ],
-    "meta": {
-      "technologies": [
-        "Automatización",
-        "Procesamiento de audio",
-        "Ajuste fino"
-      ],
-      "team": [
-        {
-          "linkedin": "https://www.linkedin.com/in/ant%C3%B4nio-carlos-micheli-b10bb4289"
-        },
-        {
-          "linkedin": "https://www.linkedin.com/in/arthur-ramos-9b81b9201/"
-        },
-        {
-          "linkedin": "https://www.linkedin.com/in/caio-petroncini-7105941aa/"
-        },
-        {
-          "linkedin": "https://www.linkedin.com/in/lucas-de-souza-brand%C3%A3o-590b1228b"
-        },
-        {
-          "linkedin": "https://www.linkedin.com/in/pedro-kenzo-muramatsu-carmo-b46877217/"
-        }
-      ]
-    }
-  },
-  {
-    "id": "5",
-    "title": "BoneCheck",
-    "description": "Sistema de IA para la detección temprana de la osteoporosis mediante clasificación de radiografías panorámicas.",
-    "image": "/projects/bone-check/bone-check.png",
-    "category": "Visión Computacional",
-    "iconType": "VLM",
-    "date": "2024-02-15",
-    "language": "es",
-    "technologies": ["Visión Computacional", "Clasificación", "VLM"],
-    "github": "https://github.com/gruporaia/bonecheck",
-    "references": [
-      {
-        "title": "Presentación en la Conferencia RAIA 2025",
-        "url": "https://youtu.be/N-Us4VGM5e0",
-        "type": "link"
-      }
-    ],
-    "meta": {
-      "technologies": ["Visión Computacional", "Clasificación", "VLM"],
-      "team": [
-        {
-          "linkedin": "https://www.linkedin.com/in/gabrielcmerlin"
-        },
-        {
-          "linkedin": "https://www.linkedin.com/in/ademir-guimaraes/"
-        },
-        {
-          "linkedin": "https://www.linkedin.com/in/andre-de-mitri/"
-        },
-        {
-          "linkedin": "https://www.linkedin.com/in/matheus-giraldi-alvarenga-b2b856217/"
-        },
-        {
-          "linkedin": "https://www.linkedin.com/in/matheus-lenzi-dos-santos/"
-        },
-        {
-          "linkedin": "https://www.linkedin.com/in/renan-oliveira-silva/"
-        }
-      ]
-    }
-  },
-  {
     "id": "6",
     "title": "SpellNet",
     "description": "Aplicación de visión por computadora para el reconocimiento de fingerspelling en Libras y ASL en tiempo real.",
@@ -214,12 +8,21 @@
     "iconType": "CNN",
     "date": "2024-04-05",
     "language": "es",
-    "technologies": ["Visión Computacional", "Reconocimiento de señas", "CNN"],
+    "technologies": [
+      "Visión Computacional",
+      "Reconocimiento de señas",
+      "CNN"
+    ],
     "github": "https://github.com/gruporaia/SpellNet",
     "references": [
       {
         "title": "Presentación en la Conferencia RAIA 2025",
         "url": "https://youtu.be/KgYL-CT5AG8",
+        "type": "link"
+      },
+      {
+        "title": "Dataset y modelos en Hugging Face",
+        "url": "https://huggingface.co/collections/RAIA-BRASIL/spellnet-689240b4bc880f2f7652b206",
         "type": "link"
       }
     ],
@@ -252,6 +55,102 @@
     }
   },
   {
+    "id": "4",
+    "title": "TTS-AutoTuning",
+    "description": "Este proyecto involucra la creación de una aplicación para automatizar el proceso de fine-tuning de modelos text-to-speech a partir de audios en portugués.",
+    "image": "/projects/tts-autotuning/tts-autotuning.png",
+    "category": "Text-to-speech",
+    "iconType": "RAG",
+    "date": "2025-06-14",
+    "language": "es",
+    "technologies": [
+      "Text-to-speech",
+      "Procesamiento de audio"
+    ],
+    "github": "http://github.com/gruporaia/TTS-AutoTuning",
+    "references": [
+      {
+        "title": "Presentación en la Conferencia RAIA 2025",
+        "url": "https://youtu.be/A6KlBExCb_4",
+        "type": "link"
+      }
+    ],
+    "meta": {
+      "technologies": [
+        "Automatización",
+        "Procesamiento de audio",
+        "Fine-tuning"
+      ],
+      "team": [
+        {
+          "linkedin": "https://www.linkedin.com/in/ant%C3%B4nio-carlos-micheli-b10bb4289"
+        },
+        {
+          "linkedin": "https://www.linkedin.com/in/arthur-ramos-9b81b9201/"
+        },
+        {
+          "linkedin": "https://www.linkedin.com/in/caio-petroncini-7105941aa/"
+        },
+        {
+          "linkedin": "https://www.linkedin.com/in/lucas-de-souza-brand%C3%A3o-590b1228b"
+        },
+        {
+          "linkedin": "https://www.linkedin.com/in/pedro-soares-b3625b238/"
+        }
+      ]
+    }
+  },
+  {
+    "id": "5",
+    "title": "BoneCheck",
+    "description": "Sistema de IA para diagnóstico temprano de osteoporosis basado en radiografías panorámicas.",
+    "image": "/projects/bone-check/bone-check.png",
+    "category": "Visión Computacional",
+    "iconType": "VLM",
+    "date": "2024-02-15",
+    "language": "es",
+    "technologies": [
+      "Visión Computacional",
+      "Clasificación",
+      "VLM"
+    ],
+    "github": "https://github.com/gruporaia/bonecheck",
+    "references": [
+      {
+        "title": "Presentación en la Conferencia RAIA 2025",
+        "url": "https://youtu.be/N-Us4VGM5e0",
+        "type": "link"
+      }
+    ],
+    "meta": {
+      "technologies": [
+        "Visión Computacional",
+        "Clasificación",
+        "VLM"
+      ],
+      "team": [
+        {
+          "linkedin": "https://www.linkedin.com/in/gabrielcmerlin"
+        },
+        {
+          "linkedin": "https://www.linkedin.com/in/ademir-guimaraes/"
+        },
+        {
+          "linkedin": "https://www.linkedin.com/in/andre-de-mitri/"
+        },
+        {
+          "linkedin": "https://www.linkedin.com/in/matheus-giraldi-alvarenga-b2b856217/"
+        },
+        {
+          "linkedin": "https://www.linkedin.com/in/matheus-lenzi-dos-santos/"
+        },
+        {
+          "linkedin": "https://www.linkedin.com/in/yasmin-victoria-oliveira/"
+        }
+      ]
+    }
+  },
+  {
     "id": "7",
     "title": "VestAgents",
     "description": "Herramienta multiagente para la generación de preguntas de exámenes vestibulares brasileños usando LLMs y RAG.",
@@ -260,16 +159,38 @@
     "iconType": "RAG",
     "date": "2024-03-20",
     "language": "es",
-    "technologies": ["LLM", "Agentes", "RAG", "Few-shot", "Web scraping"],
+    "technologies": [
+      "LLM",
+      "Agentes",
+      "RAG",
+      "Few-shot",
+      "Web scraping"
+    ],
     "references": [
       {
         "title": "Presentación en la Conferencia RAIA 2025",
         "url": "https://youtu.be/xTRNztX_wkU",
         "type": "link"
+      },
+      {
+        "title": "Repositorio GitHub",
+        "url": "https://github.com/gruporaia/vestagents",
+        "type": "link"
+      },
+      {
+        "title": "Dataset de preguntas",
+        "url": "https://huggingface.co/collections/RAIA-BRASIL/vestagents-6889519bcae066088a40faae",
+        "type": "link"
       }
     ],
     "meta": {
-      "technologies": ["LLM", "Agentes", "RAG", "Few-shot", "Web scraping"],
+      "technologies": [
+        "LLM",
+        "Agentes",
+        "RAG",
+        "Few-shot",
+        "Web scraping"
+      ],
       "team": [
         {
           "linkedin": "https://br.linkedin.com/in/alvaro-jose-lopes-604360160"
@@ -285,6 +206,144 @@
         },
         {
           "linkedin": "https://www.linkedin.com/in/luis-felipe-jorge/"
+        }
+      ]
+    }
+  },
+  {
+    "id": "2",
+    "title": "BEMU",
+    "description": "El proyecto recopila preguntas de exámenes vestibulares brasileños para evaluar IAs multimodales en portugués, combinando parsing de PDFs, modelos de IA y conversores para LaTeX. El resultado son cinco datasets con más de 5 mil preguntas, haciendo los benchmarks más representativos.",
+    "image": "/projects/bemu/bemu.png",
+    "category": "Modelos de IA",
+    "iconType": "Artificial Intelligence",
+    "date": "2024-03-20",
+    "language": "es",
+    "technologies": [
+      "Machine Learning",
+      "Computer Vision",
+      "NLP",
+      "LaTeX"
+    ],
+    "github": "https://github.com/gruporaia/BEMU",
+    "featured": true,
+    "references": [
+      {
+        "title": "Más allá del inglés: ampliando el horizonte de evaluaciones de IAs multimodales",
+        "url": "https://medium.com/@raia.diretoria/indo-al%C3%A9m-do-ingl%C3%A9s-ampliando-o-horizonte-de-avalia%C3%A7%C3%B5es-de-ias-multimodais-a5249af02f7a",
+        "type": "article"
+      },
+      {
+        "title": "Dataset en HuggingFace",
+        "url": "https://huggingface.co/datasets/CohereLabs/kaleidoscope",
+        "type": "link"
+      },
+      {
+        "title": "Artículo en Arxiv",
+        "url": "https://arxiv.org/pdf/2504.07072",
+        "type": "link"
+      }
+    ],
+    "meta": {
+      "technologies": [
+        "Machine Learning",
+        "Computer Vision",
+        "NLP",
+        "LaTeX"
+      ],
+      "team": [
+        {
+          "linkedin": "https://www.linkedin.com/in/lushimabucoro/"
+        },
+        {
+          "linkedin": "https://www.linkedin.com/in/gabrielcmerlin/"
+        },
+        {
+          "linkedin": "https://www.linkedin.com/in/andre-de-mitri/"
+        },
+        {
+          "linkedin": "https://www.linkedin.com/in/letmarchezi/"
+        },
+        {
+          "linkedin": "https://www.linkedin.com/in/ot%C3%A1viocoletti-012/"
+        }
+      ]
+    }
+  },
+  {
+    "id": "1",
+    "title": "Chat Diario Oficial",
+    "description": "El Chat Diario Oficial es una solución end-to-end que optimiza la búsqueda en grandes bases textuales, como el Diario Oficial de Belo Horizonte, usando Retrieval Augmented Generation (RAG). Asiste a servidores y profesionales en la navegación por documentos extensos, proporcionando búsquedas eficientes y ahorro de tiempo.",
+    "image": "/projects/chat-diario-oficial/chat-diario-oficial.png",
+    "category": "Procesamiento de Texto",
+    "iconType": "RAG",
+    "date": "2024-02-15",
+    "language": "es",
+    "technologies": [
+      "NLP",
+      "Ingeniería de Datos",
+      "RAG",
+      "LLM"
+    ],
+    "github": "https://github.com/gruporaia/Chat-Diario-Oficial",
+    "meta": {
+      "technologies": [
+        "NLP",
+        "Ingeniería de Datos",
+        "RAG",
+        "LLM"
+      ],
+      "team": [
+        {
+          "linkedin": "https://www.linkedin.com/in/alvaro-jose-lopes/"
+        },
+        {
+          "linkedin": "https://www.linkedin.com/in/bernardo-marques-costa/"
+        },
+        {
+          "linkedin": "https://www.linkedin.com/in/cec%C3%ADlia-nunes-sedenho-305059255/"
+        },
+        {
+          "linkedin": "https://www.linkedin.com/in/laura-fernandes-camargos-a26b89246/"
+        },
+        {
+          "linkedin": "https://www.linkedin.com/in/pedroamdelgado"
+        }
+      ]
+    }
+  },
+  {
+    "id": "3",
+    "title": "EcoVision",
+    "description": "EcoVision aplica visión por computadora para seguridad en la clasificación de residuos, identificando objetos peligrosos en tiempo real.",
+    "image": "/projects/ecovision/ecovision.png",
+    "category": "Visión Computacional",
+    "iconType": "Computer Vision",
+    "date": "2025-05-19",
+    "language": "es",
+    "technologies": [
+      "YOLO v11",
+      "Computer Vision"
+    ],
+    "featured": false,
+    "github": "https://github.com/gruporaia/EcoVision",
+    "meta": {
+      "technologies": [
+        "YOLO v11",
+        "Computer Vision"
+      ],
+      "team": [
+        {
+          "github": "https://github.com/Deflyer"
+        },
+        {
+          "github": "https://github.com/sb-lucas"
+        },
+        {
+          "github": "https://github.com/GusSampaio"
+        },
+        {
+          "github": "https://github.com/PedroLFigueiredo"
         }
       ]
     }

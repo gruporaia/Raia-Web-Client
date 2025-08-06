@@ -291,6 +291,7 @@ const Navbar: React.FC<NavbarProps> = ({
                   variant="h4"
                   sx={{
                     fontWeight: 700,
+                    fontFamily: '"Aicon", "Inter", "Roboto", "Helvetica", "Arial", sans-serif',
                     color: useWhiteContent
                       ? whiteColor
                       : themeMode === 'dark'
