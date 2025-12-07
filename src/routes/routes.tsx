@@ -10,7 +10,6 @@ import {
 
 import PageHelmet from '../components/translation/PageHelmet';
 import LoadingIndicator from '../components/ui/LoadingIndicator';
-import DataSourceTest from '../pages/DataSourceTest';
 import { debugLog } from '../utils/debugControl';
 import {
   getLandingPageSlug,
@@ -380,8 +379,6 @@ const AppRoutes: React.FC = () => {
             </PageHelmet>
           }
         />
-
-        <Route path="/test-data-source" element={<DataSourceTest />} />
 
         {/* Catch-all for unknown routes */}
         <Route

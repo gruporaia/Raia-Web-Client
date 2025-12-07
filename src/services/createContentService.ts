@@ -52,7 +52,7 @@ const getResourceMocks = async (
 };
 
 /**
- * Map of content resources to their Firestore collections
+ * Map of content resources to their collection identifiers
  */
 const RESOURCE_COLLECTIONS: Record<ContentResource, string> = {
   blog: COLLECTIONS.BLOGS,
@@ -63,7 +63,7 @@ const RESOURCE_COLLECTIONS: Record<ContentResource, string> = {
  * Creates a service for handling content data (both paginated lists and individual items)
  *
  * @template T Type of content being handled, extending the CommonContent interface
- * @param resource The content resource identifier ('blogPosts', 'projects', etc)
+ * @param resource The content resource identifier ('blog', 'projects', etc)
  * @param schema Optional Zod schema for validation (defaults to CommonContentSchema)
  * @returns A service object with methods for interacting with the content
  */

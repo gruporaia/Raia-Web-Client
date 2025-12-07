@@ -17,12 +17,7 @@ interface ImportMetaEnv {
   readonly VITE_FORM_DEFAULT_EMAIL: string;
   readonly VITE_API_URL: string;
   readonly VITE_USE_MOCK_DATA: string;
-  readonly VITE_USE_FIRESTORE: string;
-  readonly VITE_MULTI_TENANT: string;
-  readonly VITE_ENABLE_ANALYTICS: string;
   readonly VITE_ENABLE_NEWSLETTER: string;
-  readonly VITE_MAINTENANCE_MODE: string;
-  readonly VITE_FORCE_DEBUG: string;
   readonly VITE_FEATURE_SHOW_LANDING: string;
   readonly VITE_LANDING_CAMPAIGN_SLUG: string;
   readonly VITE_LANDING_START_DATE: string;

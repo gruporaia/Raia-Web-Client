@@ -10,16 +10,14 @@
  *
  * This checks:
  * 1. If we're in development mode
- * 2. If debug mode is forced through localStorage or environment variables
+ * 2. If debug mode is forced through localStorage
  */
 export const isDebugEnabled = (): boolean => {
   // Check environment - debug is only available in development by default
   const isDev = import.meta.env.DEV === true;
 
-  // Check for forced debug mode either through localStorage or env variable
-  const debugForced =
-    localStorage.getItem('debugMode') === 'true' ||
-    import.meta.env.VITE_FORCE_DEBUG === 'true';
+  // Check for forced debug mode through localStorage
+  const debugForced = localStorage.getItem('debugMode') === 'true';
 
   return isDev || debugForced;
 };

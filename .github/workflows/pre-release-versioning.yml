@@ -7,11 +7,12 @@ on:
 
 jobs:
   create-release:
+    # Skip if commit is from release-it or contains [skip ci]
+    if: "!contains(github.event.head_commit.message, '[skip ci]') && !contains(github.event.head_commit.message, 'chore(release)')"
     runs-on: ubuntu-latest
     outputs:
       release_branch: ${{ steps.set-release-branch.outputs.release_branch }}
-      release_tag: ${{ steps.get-release-tag.outputs.release_tag }}
-      domain_slug: ${{ steps.get-release-tag.outputs.domain_slug }}
+      release_tag: ${{ steps.create-release.outputs.release_tag }}
 
     steps:
       - name: Create GitHub App Token
@@ -27,64 +28,75 @@ jobs:
           fetch-depth: 0
           token: ${{ steps.app-token.outputs.token }}
 
+      - name: Set Git User Identity
+        run: |
+          git config --global user.name "rubrion[bot]"
+          git config --global user.email "rubrion[bot]@users.noreply.github.com"
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: lts/*
+          node-version: '20'
           cache: npm
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Get Pre-Release Version
-        id: get-release-tag
-        env:
-          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
+      - name: Check if release is needed
+        id: check-release
         run: |
           LATEST_COMMIT_TYPE=$(git log -1 --pretty=%B | grep -oP '^(docs|style|test|build|ci|chore)(?:\(.*\))?:' | head -1 || echo "")
 
           if [[ -n "$LATEST_COMMIT_TYPE" ]]; then
             echo "Latest commit is of type: $LATEST_COMMIT_TYPE, which doesn't require version bump."
-            echo "No new release detected."
-            exit 0
+            echo "should_release=false" >> $GITHUB_OUTPUT
+          else
+            echo "Commit type requires release."
+            echo "should_release=true" >> $GITHUB_OUTPUT
           fi
 
-          # Only proceed for feat, fix, refactor, perf types or if breaking change
-          RELEASE_TAG=$(npx release-it --ci --dry-run --preRelease=beta --git.requireBranch=develop | grep -oP 'Release \K[0-9]+\.[0-9]+\.[0-9]+(-beta\.[0-9]+)?' | head -n 1 | tr -d '\n' || echo "")
-
+      - name: Create Pre-Release
+        if: steps.check-release.outputs.should_release == 'true'
+        id: create-release
+        env:
+          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          # Run release-it and capture the output
+          OUTPUT=$(npx release-it --ci --preRelease=beta --git.requireBranch=develop 2>&1) || true
+          echo "$OUTPUT"
+          
+          # Extract the version from the output
+          RELEASE_TAG=$(echo "$OUTPUT" | grep -oP 'Successfully released.*v\K[0-9]+\.[0-9]+\.[0-9]+(-beta\.[0-9]+)?' | head -n 1 || echo "")
+          
           if [ -z "$RELEASE_TAG" ]; then
-            echo "No new release detected."
-            exit 0
+            # Try alternative pattern
+            RELEASE_TAG=$(echo "$OUTPUT" | grep -oP 'v[0-9]+\.[0-9]+\.[0-9]+(-beta\.[0-9]+)?' | tail -n 1 | sed 's/^v//' || echo "")
           fi
-
-          # Remove pre-release suffix for branch name
-          RELEASE_BASE=$(echo "$RELEASE_TAG" | sed 's/-beta\.[0-9]\+//')
-          {
-            echo "release_tag<<EOF"
-            echo "$RELEASE_TAG"
-            echo "EOF"
-          } >> $GITHUB_OUTPUT
-          {
-            echo "domain_slug<<EOF"
-            echo "$(echo "$RELEASE_TAG" | tr '[:upper:]' '[:lower:]')"
-            echo "EOF"
-          } >> $GITHUB_OUTPUT
-          echo "Next release version: $RELEASE_TAG"
+          
+          if [ -z "$RELEASE_TAG" ]; then
+            echo "No release was created."
+            echo "release_tag=" >> $GITHUB_OUTPUT
+          else
+            echo "Release created: $RELEASE_TAG"
+            echo "release_tag=$RELEASE_TAG" >> $GITHUB_OUTPUT
+          fi
 
       - name: Create & Push New Release Branch
-        if: steps.get-release-tag.outputs.release_tag != ''
+        if: steps.create-release.outputs.release_tag != ''
         id: set-release-branch
         run: |
-          RELEASE_TAG="${{ steps.get-release-tag.outputs.release_tag }}"
+          RELEASE_TAG="${{ steps.create-release.outputs.release_tag }}"
           # Remove pre-release suffix for branch naming
           RELEASE_BASE=$(echo "$RELEASE_TAG" | sed 's/-beta\.[0-9]\+//')
           RELEASE_BRANCH="release/v$RELEASE_BASE"
+          
+          echo "Creating release branch: $RELEASE_BRANCH"
+          
           # Ensure we branch off develop
           git checkout develop
+          git pull origin develop
           git checkout -b "$RELEASE_BRANCH" || git checkout "$RELEASE_BRANCH"
           git push --set-upstream origin "$RELEASE_BRANCH"
-          {
-            echo "release_branch<<EOF"
-            echo "$RELEASE_BRANCH"
-            echo "EOF"
-          } >> $GITHUB_OUTPUT
+          
+          echo "release_branch=$RELEASE_BRANCH" >> $GITHUB_OUTPUT
+          echo "Successfully created branch: $RELEASE_BRANCH"

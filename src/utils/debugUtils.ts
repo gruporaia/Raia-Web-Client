@@ -1,4 +1,4 @@
-import { IS_MOCK, USE_FIRESTORE } from '../config';
+import { IS_MOCK } from '../config';
 import { debugLog, isDebugEnabled } from './debugControl';
 
 /**
@@ -12,13 +12,9 @@ export function logDataSourceInfo() {
     debugLog('%c[Data Source Info]', style);
 
     debugLog('Active Data Source:', IS_MOCK ? 'Mock (MSW)' : 'API');
-    if (!IS_MOCK) {
-      debugLog('API Type:', USE_FIRESTORE ? 'Firestore DB' : 'REST API');
-    }
 
     debugLog('Configuration Flags:', {
       IS_MOCK,
-      USE_FIRESTORE,
       MSW_ACTIVE: window.__IS_MSW_ACTIVE__,
     });
 
@@ -29,8 +25,6 @@ export function logDataSourceInfo() {
 
     debugLog('Environment Variables:', {
       API_URL: import.meta.env.VITE_API_URL || 'Not set',
-      USE_FIRESTORE_ENV: import.meta.env.VITE_USE_FIRESTORE || 'Not set',
-      FIREBASE_CONFIG: import.meta.env.VITE_FIREBASE_CONFIG ? 'Set' : 'Not set',
     });
   }
 }

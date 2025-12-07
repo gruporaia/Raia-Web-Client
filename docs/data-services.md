@@ -1,8 +1,8 @@
-# Rubrion Web Client Template - Data Services Documentation
+# Grupo Raia Web Client - Data Services Documentation
 
 ## Overview
 
-This document provides an overview of the data services implementation in the Rubrion Web Client Template. The goal of this implementation is to provide a unified data layer that works seamlessly with both mock data and real data from either a REST API or Firestore database.
+This document provides an overview of the data services implementation in the Grupo Raia Web Client. The goal of this implementation is to provide a unified data layer that works seamlessly with mock data through MSW (Mock Service Worker).
 
 ## Architecture
 
@@ -24,17 +24,16 @@ The implementation follows a layered architecture:
 ┌─────────▼─────────┐
 │  Data Sources     │
 ├───────────────────┤
-│ MSW │ API │ Firebase │
+│    MSW (Mock)     │
 └───────────────────┘
 ```
 
 ### Key Features
 
-- **Multi-tenant architecture**: Data is namespaced by tenant
-- **Environment-aware data fetching**: Uses mock data in development, real API or Firestore in production
+- **Environment-aware data fetching**: Uses mock data via MSW
 - **Type-safe data models**: All data models are defined using Zod schemas
 - **Unified API**: Same interface regardless of data source
-- **Resilient fallbacks**: Falls back to mock data when API or Firestore fails
+- **Resilient fallbacks**: Falls back to mock data when API fails
 - **Pagination support**: Consistent pagination across all data sources
 - **Legacy compatibility**: Maintains backward compatibility with existing code
 
@@ -45,16 +44,12 @@ The application's runtime behavior is controlled by environment variables and co
 ```typescript
 // Configuration flags determine data source
 export const IS_MOCK = getDataSourceMode().IS_MOCK;
-export const USE_FIRESTORE = getDataSourceMode().USE_FIRESTORE;
 
 function getDataSourceMode() {
   const isMswEnabled = shouldUseMockData();
-  const isFirestoreEnabled =
-    !isMswEnabled && getEnvVariable('VITE_USE_FIRESTORE') === 'true';
 
   return {
     IS_MOCK: isMswEnabled,
-    USE_FIRESTORE: isFirestoreEnabled,
   };
 }
 ```
@@ -71,21 +66,17 @@ Data models are defined using Zod schemas for type safety and validation:
 
 ### 2. Tenant Resolution
 
-Tenant identification is central to the data services. In production, the tenant is determined from the subdomain, while in development it comes from a query parameter:
+Tenant identification is used for API compatibility:
 
 ```typescript
 export function resolveTenant(): string {
-  if (import.meta.env.DEV) {
-    return new URL(window.location.href).searchParams.get('tenant') ?? 'demo';
-  }
-
-  return window.location.hostname.split('.')[0];
+  return 'default';
 }
 ```
 
 ### 3. Service Factory
 
-The `createPaginatedService` function creates a paginated service for any data model with tenant support:
+The `createPaginatedService` function creates a paginated service for any data model:
 
 ```typescript
 export function createPaginatedService<T extends { id: string }>(options) {
@@ -105,30 +96,14 @@ export function createPaginatedService<T extends { id: string }>(options) {
 
 #### Mock Service Worker (MSW)
 
-- Used in development environment
+- Used in both development and production (until backend is implemented)
 - Intercepts HTTP requests and returns mock data
 - Supports pagination via query parameters
 - Simulates API behavior with proper error handling
 
-#### REST API
-
-- Used in production when Firestore is disabled
-- Fetches data from configurable API endpoints
-- Supports tenant-specific API routes
-- Supports standard pagination patterns
-- Falls back to mock data when API fails
-
-#### Firestore
-
-- Used in production when enabled via `VITE_USE_FIRESTORE`
-- Uses dynamic imports to avoid loading Firebase in environments where it's not used
-- Uses tenant-specific collection paths (e.g., `blogs/{tenant}/{documentId}`)
-- Implements efficient pagination using Firestore queries
-- Handles document snapshots and data conversion
-
 ### 5. React Integration
 
-React Query hooks provide a clean interface for components with tenant awareness:
+React Query hooks provide a clean interface for components:
 
 ```typescript
 // Hook for fetching paginated data
@@ -162,10 +137,10 @@ function useProject(id: string | undefined, tenantOverride?: string) {
 ## Data Flow
 
 1. **Component Renders**: A React component renders and calls a data hook
-2. **Tenant Resolution**: The hook resolves the current tenant or uses the provided override
-3. **Hook Invokes Service**: The hook calls a service method with tenant and parameters
+2. **Tenant Resolution**: The hook resolves the current tenant (returns 'default')
+3. **Hook Invokes Service**: The hook calls a service method with parameters
 4. **Service Determines Source**: Based on configuration, the service decides which data source to use
-5. **Data Fetching**: The service fetches data from the appropriate source using the tenant namespace
+5. **Data Fetching**: The service fetches data from MSW mock handlers
 6. **Data Processing**: The fetched data is validated and transformed
 7. **Return to Component**: The processed data is returned to the component via React Query
 
@@ -202,7 +177,6 @@ const [projects, setProjects] = useState<Project[]>([]);
 useEffect(() => {
   const loadProjects = async () => {
     try {
-      // Tenant is automatically resolved if not provided
       const data = await fetchProjects(page, limit);
       setProjects(data.projects);
     } catch (error) {
@@ -223,7 +197,7 @@ useEffect(() => {
 
 ### Services
 
-- `services/createPaginatedService.ts`: Factory function for creating tenant-aware paginated services
+- `services/createPaginatedService.ts`: Factory function for creating paginated services
 - `services/blog.ts`: Blog post service implementation
 - `services/projects.ts`: Project service implementation
 - `services/validators.ts`: Zod schemas for data validation
@@ -231,7 +205,6 @@ useEffect(() => {
 ### Data Access
 
 - `lib/fetcher.ts`: Utility function for making HTTP requests
-- `lib/firestore.ts`: Firestore integration with pagination and tenant support
 
 ### Mock Data
 
