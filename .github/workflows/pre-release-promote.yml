@@ -27,7 +27,7 @@ jobs:
 
       - name: Set Git User Identity
         run: |
-          git config --global user.name "Rubrion"
+          git config --global user.name "rubrion[bot]"
           git config --global user.email "rubrion[bot]@users.noreply.github.com"
 
       - name: Fetch Main and Release Branches
@@ -51,11 +51,12 @@ jobs:
           RELEASE_BRANCH="${{ github.event.inputs.release_branch }}"
           echo "Merging $RELEASE_BRANCH into main..."
           git checkout main
-          git merge --no-ff "$RELEASE_BRANCH"
+          git merge --no-ff "$RELEASE_BRANCH" -m "chore(release): merge $RELEASE_BRANCH into main"
           git push origin main
 
-      - name: Delete Release Branch (Optional)
+      - name: Delete Release Branch
         run: |
           RELEASE_BRANCH="${{ github.event.inputs.release_branch }}"
           echo "Deleting remote branch $RELEASE_BRANCH..."
           git push origin --delete "$RELEASE_BRANCH"
+          echo "Branch deleted. Cloudflare deployments will be cleaned up automatically."

@@ -17,9 +17,6 @@ dist-ssr
 package.json
 package-lock.json
 
-# MSW
-public/mockServiceWorker.js
-
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

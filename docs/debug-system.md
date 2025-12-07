@@ -1,15 +1,13 @@
 # Debug System & Mock Data
 
-This document describes the debug system and mocked data implementation for the web client template.
+This document describes the debug system and mocked data implementation for the Grupo Raia web client.
 
 ## Overview
 
-The application supports several modes of operation:
+The application currently operates with mock data since the backend is not yet implemented:
 
 1. **Development Mode (Default)** - Debug tools available, mock data enabled by default
-2. **Development with Forced Debug** - Full debugging with explicit tooling
-3. **Production with Real API** - No debug tools, uses real API endpoints
-4. **Production with Mocked Data** - No debug tools, but uses mock data
+2. **Production with Mocked Data** - Uses mock data (MSW - Mock Service Worker)
 
 ## Debug Utilities
 
@@ -34,10 +32,10 @@ npm run dev
 # Development with production-like settings (no debug)
 npm run dev:prod
 
-# Build for production (no debug, real API)
+# Build for production with mock data
 npm run build
 
-# Build for production with mock data (no debug, mock API)
+# Build for production with mock data (explicit)
 npm run build:mocked
 
 # Check for console.log statements in codebase
@@ -51,26 +49,14 @@ npm run clean:logs:fix
 
 The behavior is controlled through environment variables:
 
-- `VITE_USE_MOCK_DATA=true` - Forces the use of mock data regardless of environment
-- `VITE_FORCE_DEBUG=true` - Forces debug mode even in production builds
+- `VITE_USE_MOCK_DATA=true` - Forces the use of mock data (currently always true)
 
 ## Environment Files
 
 We provide several environment configurations:
 
-1. `.env` - Default development settings
-2. `.env.debug` - Development with explicit debug features
-3. `.env.mocked` - Production build with mock data
-
-## Debug Button (DataSourceToggle)
-
-The debug button appears in the bottom left corner of the screen in debug mode (development by default). It allows:
-
-- Switching between mock and real API data
-- Changing tenant settings
-- Viewing current configuration
-
-This button is automatically hidden in production builds unless `VITE_FORCE_DEBUG=true` is set.
+1. `.env.debug` - Development with explicit debug features
+2. `.env.mocked` - Production build with mock data
 
 ## Console Log Management
 

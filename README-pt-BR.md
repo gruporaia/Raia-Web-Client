@@ -1,34 +1,26 @@
-# Rubrion Engage Hub - Plataforma Empresarial
+# Grupo Raia - Web Client
 
-Uma plataforma multilíngue e multi-tenant white-label que serve como a solução empresarial principal dentro do ecossistema da Rubrion. Esta plataforma permite que organizações e empresas implementem sua própria presença digital com marca personalizada e suporte completo de localização, aproveitando o modelo "sem código, sem taxa de licença" da Rubrion.
+Uma plataforma web multilíngue para o Grupo Raia com suporte completo de localização.
 
 ## 🚀 Demo Ao Vivo
 
-Experimente a plataforma em ação com dados simulados:
+Experimente a plataforma em ação:
 
-**[https://engage-hub.rubrion.com/](https://engage-hub.rubrion.com/)**
-
-## Sobre a Rubrion
-
-A Rubrion oferece serviços digitais avançados para organizações usando um modelo **"sem código, sem taxa de licença"**: entregamos soluções SaaS open-source pré-configuradas, hospedadas e mantidas (CMS, e-commerce, LMS, etc.) para que os clientes não precisem programar ou pagar licenças proprietárias—cobrindo apenas custos de infraestrutura e taxas baseadas no uso.
-
-Utilizamos **arquiteturas white-label multi-tenant**: a maior parte do código é compartilhada, mas cada instância é implantada como um serviço isolado e atômico, garantindo ambientes seguros e escaláveis. Como parceiro técnico principal, automatizamos pipelines de deployment, gerenciamos parcerias de hospedagem, ajustamos planos baseados no uso real e reinvestimos parte da receita em software livre—completando um ciclo que torna a tecnologia acessível e fortalece o ecossistema de impacto.
+**[https://grupo-raia.org/](https://grupo-raia.org/)**
 
 ## Visão Geral da Plataforma
 
-A Plataforma Empresarial Engage Hub é uma solução abrangente em React + TypeScript projetada para:
+O Web Client do Grupo Raia é uma solução abrangente em React + TypeScript projetada para:
 
-- **Arquitetura Multi-tenant**: Código único servindo múltiplas instâncias isoladas de clientes
-- **Suporte Multilíngue**: Implementação completa de i18n com gerenciamento de conteúdo remoto
-- **Marca White-label**: Temas, conteúdo e recursos personalizáveis por tenant
+- **Suporte Multilíngue**: Implementação completa de i18n com gerenciamento de conteúdo
+- **Stack Tecnológico Moderno**: React 19 + TypeScript + Vite para performance otimizada
+- **Dados Mockados**: Utiliza MSW (Mock Service Worker) para dados, aguardando implementação do backend
 - **Infraestrutura Escalável**: Construída para deployment em nuvem com CI/CD automatizado
-- **Base Open Source**: Aproveitando tecnologias orientadas pela comunidade
 
 ## Índice
 
 - [Principais Recursos](#principais-recursos)
 - [Arquitetura](#arquitetura)
-- [Capacidades Multi-tenant](#capacidades-multi-tenant)
 - [Internacionalização](#internacionalização)
 - [Primeiros Passos](#primeiros-passos)
 - [Desenvolvimento](#desenvolvimento)
@@ -39,18 +31,16 @@ A Plataforma Empresarial Engage Hub é uma solução abrangente em React + TypeS
 ## Principais Recursos
 
 ### Capacidades Centrais da Plataforma
-- **Arquitetura Multi-tenant White-label**: Código único servindo múltiplas instâncias isoladas de clientes
-- **Internacionalização Abrangente**: Traduções estáticas da UI + gerenciamento dinâmico de conteúdo remoto
-- **Gerenciamento de Conteúdo em Tempo Real**: Conteúdo multilíngue baseado no Firestore com fallbacks de idioma
-- **Fontes de Dados Flexíveis**: Suporte para Firestore, APIs REST e mocking MSW
-- **Temas Avançados**: Temas personalizáveis por tenant com suporte a modo escuro/claro
+- **Internacionalização Abrangente**: Traduções estáticas da UI + gerenciamento dinâmico de conteúdo
+- **Suporte a Dados Mockados**: Mocking baseado em MSW para desenvolvimento e produção
+- **Temas Avançados**: Temas personalizáveis com suporte a modo escuro/claro
 - **Roteamento Enterprise**: Roteamento type-safe com metadados SEO e lazy loading
 
 ### Desenvolvimento e Operações
 - **Stack Tecnológico Moderno**: React 19 + TypeScript + Vite para performance otimizada
 - **CI/CD Automatizado**: GitHub Actions com versionamento semântico e automação de deployment
 - **Garantia de Qualidade**: ESLint, Prettier, Vitest com suíte de testes abrangente
-- **Ferramentas de Desenvolvimento**: MSW para mocking de API, utilitários de debug e troca de tenant
+- **Ferramentas de Desenvolvimento**: MSW para mocking de API, utilitários de debug
 - **Segurança**: Criptografia de arquivos BlackBox para configuração sensível
 - **Performance**: Divisão de código, lazy loading e estratégias otimizadas de cache
 
@@ -59,57 +49,18 @@ A Plataforma Empresarial Engage Hub é uma solução abrangente em React + TypeS
 - **Showcase de Conteúdo**: Portfólios de projetos, perfis de equipe, descrições de serviços
 - **Integração de Parceiros**: Logotipos e informações de parceiros
 - **Gerenciamento de Contato**: Formulários e informações de contato multi-canal
-- **Otimização SEO**: Gerenciamento de metadados baseado no Helmet com personalização por tenant
+- **Otimização SEO**: Gerenciamento de metadados baseado no Helmet
 
 ## Arquitetura
-
-### Design Multi-tenant
-```
-Deploy Único → Múltiplos Sites de Cliente
-├── acme.rubrion.com (Tenant: acme)
-├── beta.rubrion.com (Tenant: beta)
-└── demo.rubrion.com (Tenant: demo)
-```
-
-Cada tenant possui isoladamente:
-- **Configuração**: Tema, recursos, informações de contato
-- **Conteúdo**: Projetos, posts de blog, membros da equipe, serviços
-- **Marca**: Logo, cores, tipografia, estilo personalizado
-- **Dados**: Coleções separadas do Firestore com namespace de tenant
 
 ### Stack Tecnológico
 - **Frontend**: React 19, TypeScript, Material-UI, Framer Motion
 - **Roteamento**: React Router com navegação type-safe
 - **Gerenciamento de Estado**: React Context + TanStack Query
-- **Internacionalização**: i18next com suporte a conteúdo remoto
-- **Banco de Dados**: Firestore com arquitetura de dados multi-tenant
+- **Internacionalização**: i18next com suporte a conteúdo
+- **Dados**: Mock Service Worker (MSW) para mocking de API
 - **Desenvolvimento**: Vite, MSW, Vitest, ESLint, Prettier
 - **Deploy**: GitHub Actions, versionamento automatizado
-
-## Capacidades Multi-tenant
-
-### Resolução de Tenant
-- **Produção**: Baseado em subdomínio (`acme.rubrion.com` → `acme`)
-- **Desenvolvimento**: Parâmetro de query (`localhost:3000?tenant=acme`)
-- **Fallback**: Tenant demo para ambientes de desenvolvimento
-
-### Personalização por Tenant
-- **Temas**: Cores primárias/secundárias, tipografia, espaçamento
-- **Recursos**: Alternar newsletter, blog, formulários de contato, analytics
-- **Conteúdo**: Projetos localizados, serviços, informações da equipe
-- **Marca**: Logotipos personalizados, informações da empresa, links sociais
-
-### Isolamento de Dados
-```
-tenants/
-├── acme/
-│   ├── config: { theme, features, contact }
-│   ├── projects/
-│   ├── blog/
-│   └── team/
-├── beta/
-│   └── ...
-```
 
 ## Internacionalização
 
@@ -119,9 +70,8 @@ tenants/
 - **Utilitários**: Funções de tradução type-safe com fallbacks
 - **Desenvolvimento**: Detecção e debug de traduções ausentes
 
-### Conteúdo Remoto Dinâmico
-- **Estrutura Firestore**: Subcoleções específicas por idioma por documento
-- **Transparência da API**: Retorna conteúdo com o idioma real utilizado
+### Conteúdo Dinâmico
+- **Dados Mockados**: Conteúdo específico por idioma nos dados mock
 - **Estratégia de Fallback**: Fallback automático para inglês quando traduções indisponíveis
 - **Integração MSW**: Respostas multilíngues simuladas para desenvolvimento
 
@@ -140,8 +90,8 @@ tenants/
 
 1. **Clonar o Repositório**
    ```bash
-   git clone https://github.com/rubrion/engage-hub-business.git
-   cd engage-hub-business
+   git clone https://github.com/gruporaia/Raia-Web-Client.git
+   cd Raia-Web-Client
    ```
 
 2. **Instalar Dependências**
@@ -156,17 +106,12 @@ tenants/
 
 4. **Iniciar Servidor de Desenvolvimento**
    ```bash
-   # Iniciar com tenant demo
    npm run dev
-   
-   # Iniciar com tenant específico
-   npm run dev -- --tenant=acme
    ```
 
 5. **Acessar a Aplicação**
    ```
-   http://localhost:3000          # Tenant demo
-   http://localhost:3000?tenant=acme  # Tenant específico
+   http://localhost:3000
    ```
 
 ### Configuração de Ambiente
@@ -174,17 +119,17 @@ tenants/
 Crie um arquivo `.env` para seu ambiente:
 
 ```env
-# Configuração Firebase (para Firestore)
-VITE_FIREBASE_CONFIG='{"apiKey":"...","authDomain":"...","projectId":"..."}'
+# Configuração da API
+VITE_API_URL=https://demo.example.com/mock
+VITE_USE_MOCK_DATA=true
 
 # Feature Flags
-VITE_USE_FIRESTORE=false
-VITE_ENABLE_ANALYTICS=true
 VITE_ENABLE_NEWSLETTER=true
-VITE_MAINTENANCE_MODE=false
 
-# Configuração da API
-VITE_API_URL=https://api.rubrion.com/{tenant}
+# Emails de Formulário
+VITE_FORM_DEFAULT_EMAIL=contato@grupo-raia.org
+VITE_FORM_CONTACT_EMAIL=contato@grupo-raia.org
+VITE_FORM_TEAMJOIN_EMAIL=contato@grupo-raia.org
 ```
 
 ## Desenvolvimento
@@ -196,8 +141,8 @@ src/
 │   ├── ui/              # Componentes UI básicos
 │   ├── content/         # Componentes específicos de conteúdo
 │   └── translation/     # Utilitários de tradução
-├── context/             # Contextos React (Theme, Tenant, Language)
-├── core/                # Utilitários centrais (resolução de tenant)
+├── context/             # Contextos React (Theme, Language)
+├── core/                # Utilitários centrais
 ├── hooks/               # Hooks React customizados
 ├── i18n/                # Internacionalização
 │   ├── locales/         # Arquivos de tradução
@@ -237,34 +182,6 @@ npm run clean:logs:check # Verificar declarações console.log
 npm run clean:logs:fix   # Substituir console.log com debugLog
 ```
 
-### Adicionando um Novo Tenant
-
-1. **Criar Configuração do Tenant** (no Firestore ou dados simulados)
-   ```json
-   {
-     "name": "Nova Empresa",
-     "theme": {
-       "primary": "#1976d2",
-       "secondary": "#dc004e"
-     },
-     "features": {
-       "newsletter": true,
-       "blog": true,
-       "analytics": true
-     },
-     "contact": {
-       "email": "info@novaempresa.com",
-       "phone": "+5511999999999"
-     }
-   }
-   ```
-
-2. **Adicionar Conteúdo** (projetos, equipe, serviços)
-3. **Testar Localmente**
-   ```bash
-   npm run dev -- --tenant=novaempresa
-   ```
-
 ### Adicionando Novos Idiomas
 
 1. **Criar Arquivos de Tradução**
@@ -285,11 +202,8 @@ npm run clean:logs:fix   # Substituir console.log com debugLog
    const languages = ['en', 'es', 'pt', 'de'];
    ```
 
-3. **Adicionar Conteúdo Remoto** (no Firestore)
-   ```
-   projects/{projectId}/de/content/
-   blogPosts/{postId}/de/content/
-   ```
+3. **Adicionar Conteúdo aos Dados Mock**
+   Atualize os arquivos de dados mock com o novo conteúdo do idioma.
 
 ## Deploy
 
@@ -331,9 +245,10 @@ Para informações detalhadas de deploy, veja [docs/pipeline.md](./docs/pipeline
 Documentação abrangente está disponível no diretório `docs/`:
 
 - **[Visão Geral da Arquitetura](./docs/architecture-overview.md)** - Design e estrutura do sistema
-- **[Guia Multi-tenant](./docs/multi-tenant.md)** - Implementação multi-tenancy
+- **[Arquitetura de Tenant](./docs/multi-tenant.md)** - Configuração de tenant
 - **[Internacionalização](./docs/i18n.md)** - Guia completo de i18n
 - **[Serviços de Dados](./docs/data-services.md)** - Documentação da camada de dados
+- **[Fontes de Dados](./docs/data-sources.md)** - Configuração de fontes de dados
 - **[Sistema de Temas](./docs/theming.md)** - Personalização de tema
 - **[Sistema de Roteamento](./docs/routing-system.md)** - Navegação e roteamento
 - **[Biblioteca de Componentes](./docs/component-library.md)** - Componentes UI
@@ -365,18 +280,6 @@ Documentação abrangente está disponível no diretório `docs/`:
 - **Prettier**: Formatação consistente de código
 - **Testes**: Vitest com React Testing Library
 - **Commits**: Mensagens de commit convencionais
-
-### Seeding de Dados de Tenant
-
-Use os scripts fornecidos para dados de desenvolvimento consistentes:
-
-```bash
-# Seed tenant específico
-npm run seed:tenant -- --tenant=acme
-
-# Seed todos os tenants  
-npm run seed:all
-```
 
 ## Segurança e Configuração
 
@@ -416,33 +319,7 @@ Para manuseio seguro de arquivos de configuração sensíveis, este projeto usa 
 
 - Configuração sensível armazenada criptografada no repositório
 - Variáveis de ambiente para configurações específicas de deploy
-- Projetos Firebase separados para desenvolvimento/staging/produção
-- Isolamento de segurança específico por tenant
-
----
-
-## Integração do Ecossistema Rubrion
-
-Esta plataforma faz parte do ecossistema mais amplo de soluções SaaS open-source da Rubrion:
-
-### Plataformas Relacionadas
-- **Gerenciamento de Conteúdo**: CMS headless com suporte multi-tenant
-- **E-commerce**: Plataforma de loja online white-label  
-- **Gerenciamento de Aprendizado**: Sistema de entrega de conteúdo educacional
-- **Analytics**: Dashboard de analytics focado em privacidade
-
-### Benefícios do Modelo de Negócio
-- **Sem Codificação Necessária**: Soluções pré-configuradas prontas para deploy
-- **Sem Taxas de Licença**: Base open-source com preços transparentes
-- **Apenas Infraestrutura**: Clientes pagam pelo uso real, não licenças de software
-- **Gerenciamento Automatizado**: Deploy, manutenção e atualizações tratados automaticamente
-
-### Parceria Técnica
-Como parceiro técnico principal da Rubrion, esta plataforma demonstra:
-- **DevOps Automatizado**: Automação completa de pipeline CI/CD
-- **Arquitetura Escalável**: Design multi-tenant para uso eficiente de recursos
-- **Compromisso Open Source**: Reinvestimento de receita em desenvolvimento de software livre
-- **Parcerias de Hospedagem**: Gerenciamento otimizado de infraestrutura em nuvem
+- Manuseio seguro de endpoints de envio de formulário
 
 ---
 
@@ -454,13 +331,8 @@ Este projeto é licenciado sob a **GNU General Public License v3.0** (GPL-3.0).
 
 - **Documentação**: Guias completos no diretório `/docs`
 - **Issues**: GitHub Issues para relatórios de bugs e solicitações de recursos
-- **Comunidade**: Junte-se à nossa comunidade para discussões e suporte
-- **Enterprise**: Contate a Rubrion para deploy enterprise e personalização
-
-[![Donate via PayPal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif 'Donate via PayPal')](https://www.paypal.com/donate/?hosted_button_id=KBPKKS3627FX6)
+- **Contato**: contato@grupo-raia.org
 
 ---
 
-**Construído com ❤️ pela Equipe Rubrion**
-
-*Tornando a tecnologia acessível através da inovação open-source*
+**Construído com ❤️ pela Equipe Grupo Raia**
