@@ -16,6 +16,11 @@
     "subtitle": "Conoce a las personas detrás de RAIA que trabajan en conjunto para expandir los límites de la inteligencia artificial.",
     "buttonText": "Ver Socios"
   },
+  "institutions": {
+    "overline": "INSTITUCIONES",
+    "title": "Institutos Afiliados y Universidades",
+    "subtitle": "Nuestros miembros han sido afiliados a instituciones académicas y de investigación líderes en todo el mundo."
+  },
   "team": {
     "overline": "EQUIPO",
     "title": "Directores",

@@ -1,5 +1,6 @@
 import common from './common.json';
 import eventSponsorsData from './data/eventSponsorsData.json';
+import institutionsData from './data/institutionsData.json';
 import partnersData from './data/partnersData.json';
 import teamData from './data/teamData.json';
 import navigation from './navigation.json';
@@ -37,6 +38,7 @@ const data = {
   partnersData,
   teamData,
   eventSponsorsData,
+  institutionsData,
 };
 
 export default {

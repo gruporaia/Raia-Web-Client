@@ -16,6 +16,11 @@
     "subtitle": "We collaborate with companies, universities, and organizations to advance Artificial Intelligence in Brazil.",
     "buttonText": "View Partners"
   },
+  "institutions": {
+    "overline": "INSTITUTIONS",
+    "title": "Affiliated Institutes & Universities",
+    "subtitle": "Our members have been affiliated with leading academic and research institutions across the world."
+  },
   "team": {
     "overline": "TEAM",
     "title": "Directors",

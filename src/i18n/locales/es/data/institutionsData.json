@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Universidad de São Paulo",
+    "website": "https://www.usp.br/",
+    "src": "/institutions/usp.png"
+  },
+  {
+    "id": 2,
+    "name": "Universidad Federal de São Carlos",
+    "website": "https://www.ufscar.br/",
+    "src": "/institutions/ufscar.png"
+  },
+  {
+    "id": 3,
+    "name": "Universidad de Groninga",
+    "website": "https://www.rug.nl/",
+    "src": "/institutions/ugroningen.png"
+  },
+  {
+    "id": 4,
+    "name": "ETH Zúrich",
+    "website": "https://www.ethz.ch/",
+    "src": "/institutions/ethzurich.png"
+  },
+  {
+    "id": 5,
+    "name": "Universidad de Twente",
+    "website": "https://www.utwente.nl/",
+    "src": "/institutions/utwente.png"
+  },
+  {
+    "id": 6,
+    "name": "Universidad de Queensland",
+    "website": "https://www.uq.edu.au/",
+    "src": "/institutions/queensland.png"
+  },
+  {
+    "id": 7,
+    "name": "Instituto Santa Fe",
+    "website": "https://www.santafe.edu/",
+    "src": "/institutions/santafe.png"
+  },
+  {
+    "id": 8,
+    "name": "CERN",
+    "website": "https://www.cern.ch/",
+    "src": "/institutions/cern.png"
+  },
+  {
+    "id": 9,
+    "name": "Instituto Eldorado",
+    "website": "https://www.eldorado.org.br/",
+    "src": "/institutions/eldoradoinstitute.png"
+  },
+  {
+    "id": 10,
+    "name": "Universidad de Kentucky",
+    "website": "https://www.uky.edu/",
+    "src": "/institutions/ukentucky.png"
+  }
+]
