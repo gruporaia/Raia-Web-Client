@@ -16,6 +16,11 @@
     "subtitle": "Colaboramos com empresas, universidades e organizações para avançar a Inteligência Artificial no Brasil.",
     "buttonText": "Ver Parceiros"
   },
+  "institutions": {
+    "overline": "INSTITUIÇÕES",
+    "title": "Institutos Afiliados e Universidades",
+    "subtitle": "Nossos membros foram afiliados a instituições acadêmicas e de pesquisa líderes em todo o mundo."
+  },
   "team": {
     "overline": "EQUIPE",
     "title": "Diretores",
