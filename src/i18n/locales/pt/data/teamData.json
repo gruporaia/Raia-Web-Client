@@ -1,46 +1,44 @@
 [
   {
-    "id": "pedro-augusto-monteiro-delgado",
-    "name": "Pedro Augusto Monteiro Delgado",
+    "id": "pedro-lucas-bahiense",
+    "name": "Pedro Lucas Bahiense",
     "role": "Presidente",
-    "image": "/team/pedro-augusto-ribeiro-gomes.png",
-    "bio": "Graduando em Ciências de Computação pelo ICMC-USP, em intercâmbio com a Universidade de Berna, na Suíça. Possui interesse em explorar a aplicação de ferramentas de inteligência artificial em áreas de interesse público, como saúde e educação.",
-    "github": "https://github.com/DelgadoPedro",
-    "linkedin": "https://www.linkedin.com/in/pedroamdelgado",
+    "image": "/team/pedro-lucas-bahiense.png",
+    "bio": "Aluno de Ciências de Computação da Universidade de São Paulo e Presidente do RAIA.",
+    "linkedin": "https://www.linkedin.com/in/pedro-lucas-figueiredo-bahiense/",
     "expertise": [
-      "Inteligência Artificial",
-      "Saúde",
-      "Educação"
+      "Parcerias",
+      "Ciência da Computação"
     ],
-    "education": "ICMC-USP"
+    "education": "Universidade de São Paulo (USP)"
   },
   {
-    "id": "cecilia-nunes-sedenho",
-    "name": "Cecília Nunes Sedenho",
-    "role": "Diretora de Projetos",
-    "image": "/team/cecilia-nunes-sedenho.png",
-    "bio": "Graduanda em Ciências de Computação pelo ICMC - USP e pesquisadora na área de arquitetura de dados. Possui interesse em áreas relacionadas a Engenharia de Dados e Machine Learning.",
-    "github": "https://github.com/HeNunes",
-    "linkedin": "https://www.linkedin.com/in/cec%C3%ADlia-nunes-sedenho-305059255/",
+    "id": "gabriel-iamato",
+    "name": "Gabriel Campanelli Iamato",
+    "role": "Diretor de Projetos",
+    "image": "/team/gabriel-iamato.png",
+    "bio": "Atualmente cursa Ciência de Dados na USP - São Carlos, dando continuidade aos estudos em Aprendizado de Máquina, com pesquisa científica PIBIC focada na análise comparativa de sistemas de bicicletas compartilhadas. Integra a equipe de desenvolvimento de software do RAIA, com enfoque em IA e Visão Computacional, e fez parte da equipe de vendas e consultoria em Ciência de Dados do ICMC Jr., ambos projetos sem fins lucrativos.",
+    "linkedin": "https://www.linkedin.com/in/gabriel-campanelli-iamato/",
     "expertise": [
-      "Arquitetura de Dados",
-      "Engenharia de Dados",
+      "Visão Computacional",
+      "Pesquisa Científica",
       "Machine Learning"
     ],
     "education": "ICMC - USP"
   },
   {
-    "id": "gabriel-merlin",
-    "name": "Gabriel Merlin",
+    "id": "caio-petroncini",
+    "name": "Caio Petroncini",
     "role": "Diretor de Projetos",
-    "image": "/team/gabriel-merlin.png",
-    "bio": "Seus interesses se encaixam na área de ML/DL, especialmente envolvendo Séries Temporais.",
-    "linkedin": "https://www.linkedin.com/in/gabrielcmerlin/",
+    "image": "/team/caio-petroncini.png",
+    "bio": "Aluno de Ciências de Computação da Universidade de São Paulo e Diretor de Projetos do RAIA.",
+    "linkedin": "https://www.linkedin.com/in/caio-petroncini-7105941aa/",
     "expertise": [
       "Machine Learning",
       "Deep Learning",
       "Séries Temporais"
-    ]
+    ],
+    "education": "Universidade de São Paulo (USP)"
   },
   {
     "id": "lucas-de-souza-brandao",
@@ -53,6 +51,45 @@
       "Ciência de Dados",
       "Pesquisa",
       "Ciência da Computação"
+    ],
+    "education": "Universidade de São Paulo (USP)"
+  },
+  {
+    "id": "gabriel-andreghetti",
+    "name": "Gabriel Andreghetti",
+    "role": "Diretor de Parcerias",
+    "image": "/team/gabriel-andreghetti.png",
+    "bio": "Cursando Bacharelado em Sistemas de Informação.",
+    "linkedin": "https://www.linkedin.com/in/gabriel-moraes-andreghetti-422573274/",
+    "expertise": [
+      "Parcerias",
+      "Sistemas de Informação"
+    ],
+    "education": "Universidade de São Paulo (USP)"
+  },
+  {
+    "id": "luysa-goncalves",
+    "name": "Luysa de Souza Gonçalves",
+    "role": "Diretora de Parcerias",
+    "image": "/team/luysa-goncalves.png",
+    "bio": "Aluna de Ciências de Computação da Universidade de São Paulo e Diretora de Parcerias do RAIA.",
+    "linkedin": "https://www.linkedin.com/in/luysagoncalves/",
+    "expertise": [
+      "Visão Computacional",
+      "Parcerias"
+    ],
+    "education": "Universidade de São Paulo (USP)"
+  },
+  {
+    "id": "bruna-mata",
+    "name": "Bruna Pereira da Mata",
+    "role": "Diretora de Parcerias",
+    "image": "/team/bruna-pereira.png",
+    "bio": "Sou Engenheira de Software, quase graduada pela USP, com foco em Desenvolvimento Backend. Tenho dois anos de experiência profissional, nos quais contribuí em projetos de impacto dentro da empresa, entre eles desenvolvendo sistemas que reduziram em 80% a quantidade de acionamentos, e reestruturando fluxo que integrou mais de 2 mil dados diários (~50%) que antes não eram contemplados.",
+    "linkedin": "https://www.linkedin.com/in/luysagoncalves/",
+    "expertise": [
+      "Engenharia de Software",
+      "Parcerias"
     ],
     "education": "Universidade de São Paulo (USP)"
   },
@@ -72,30 +109,19 @@
     ]
   },
   {
-    "id": "gabriel-andreghetti",
-    "name": "Gabriel Andreghetti",
-    "role": "Diretor de Parcerias",
-    "image": "/team/gabriel-andreghetti.png",
-    "bio": "Cursando Bacharelado em Sistemas de Informação.",
-    "linkedin": "https://www.linkedin.com/in/gabriel-moraes-andreghetti-422573274/",
+    "id": "pedro-augusto-monteiro-delgado",
+    "name": "Pedro Augusto Monteiro Delgado",
+    "role": "Conselheiro",
+    "image": "/team/pedro-augusto-monteiro-delgado.png",
+    "bio": "Graduando em Ciências de Computação pelo ICMC-USP, em intercâmbio com a Universidade de Berna, na Suíça. Possui interesse em explorar a aplicação de ferramentas de inteligência artificial em áreas de interesse público, como saúde e educação.",
+    "github": "https://github.com/DelgadoPedro",
+    "linkedin": "https://www.linkedin.com/in/pedroamdelgado",
     "expertise": [
-      "Parcerias",
-      "Sistemas de Informação"
+      "Inteligência Artificial",
+      "Saúde",
+      "Educação"
     ],
-    "education": "Universidade de São Paulo (USP)"
-  },
-  {
-    "id": "pedro-lucas-bahiense",
-    "name": "Pedro Lucas Bahiense",
-    "role": "Diretor de Parcerias",
-    "image": "/team/pedro-lucas-bahiense.png",
-    "bio": "Aluno de Ciências de Computação da Universidade de São Paulo.",
-    "linkedin": "https://www.linkedin.com/in/pedro-lucas-figueiredo-bahiense/",
-    "expertise": [
-      "Parcerias",
-      "Ciência da Computação"
-    ],
-    "education": "Universidade de São Paulo (USP)"
+    "education": "ICMC-USP"
   },
   {
     "id": "pedro-augusto-ribeiro-gomes",
