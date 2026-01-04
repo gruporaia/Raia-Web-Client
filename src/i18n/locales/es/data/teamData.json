@@ -89,22 +89,11 @@
     "expertise": ["DevOps", "Microservicios", "Computación en la Nube"]
   },
   {
-    "id": "pedro-augusto-monteiro-delgado",
-    "name": "Pedro Augusto Monteiro Delgado",
-    "role": "Asesor",
-    "image": "/team/pedro-augusto-monteiro-delgado.png",
-    "bio": "Graduando en Ciencias de la Computación por ICMC-USP, en intercambio con la Universidad de Berna, en Suiza. Posee interés en explorar la aplicación de herramientas de inteligencia artificial en áreas de interés público, como salud y educación.",
-    "github": "https://github.com/DelgadoPedro",
-    "linkedin": "https://www.linkedin.com/in/pedroamdelgado",
-    "expertise": ["Inteligencia Artificial", "Salud", "Educación"],
-    "education": "ICMC-USP"
-  },
-  {
     "id": "pedro-augusto-ribeiro-gomes",
     "name": "Pedro Augusto Ribeiro Gomes",
-    "role": "Asesor",
+    "role": "Fundador y Asesor",
     "image": "/team/pedro-augusto-ribeiro-gomes.png",
-    "bio": "Fundador y Presidente de RAIA, cursando Ciencia de la Computación en ICMC - USP São Carlos.",
+    "bio": "Fundador y ex-Presidente de RAIA, cursando Ciencia de la Computación en ICMC - USP São Carlos.",
     "linkedin": "https://www.linkedin.com/in/pedroaurgomes/",
     "expertise": [
       "Inteligencia Artificial",
@@ -114,20 +103,9 @@
     "education": "Universidad de São Paulo (USP)"
   },
   {
-    "id": "luisa-shimabucoro",
-    "name": "Luísa Shimabucoro",
-    "role": "Asesora",
-    "image": "/team/luisa-shimabucoro.png",
-    "bio": "Tiene interés en las áreas de ML, con énfasis en NLP y Visión. Estudiante de Ciencias de la Computación de la USP, habiendo pasado por la U. de Edimburgo y Cohere For AI como investigadora.",
-    "github": "https://github.com/luisashimabucoro",
-    "linkedin": "https://www.linkedin.com/in/lushimabucoro/",
-    "expertise": ["Machine Learning", "NLP", "Visión por Computadora"],
-    "education": "Universidad de São Paulo (USP)"
-  },
-  {
     "id": "pedro-kenzo-muramatsu-carmo",
     "name": "Pedro Kenzo Muramatsu",
-    "role": "Asesor",
+    "role": "Ex Co-Presidente y Asesor",
     "image": "/team/pedro-kenzo-muramatsu-carmo.jpeg",
     "bio": "Ex Co-Presidente, actual Asesor de RAIA. Ingeniero de Computación Distribuida en CERN y futuro Ingeniero de Software Backend II en QuintoAndar. Licenciatura en Ciencia de la Computación @ ICMC USP, intercambio de investigación con beca completa @ Universidad de Kyushu",
     "linkedin": "https://www.linkedin.com/in/muramatsu-pedro/",
@@ -139,5 +117,27 @@
       "Comunicación Intercultural"
     ],
     "education": "Universidad de São Paulo (USP), Universidad de Kyushu"
+  },
+  {
+    "id": "luisa-shimabucoro",
+    "name": "Luísa Shimabucoro",
+    "role": "Fundadora y Ex-Directora de Proyectos y Asesora",
+    "image": "/team/luisa-shimabucoro.png",
+    "bio": "Fundadora y ex-Directora de Proyectos de RAIA. Tiene interés en las áreas de ML, con énfasis en NLP y Visión. Estudiante de Ciencias de la Computación de la USP, habiendo pasado por la U. de Edimburgo y Cohere For AI como investigadora.",
+    "github": "https://github.com/luisashimabucoro",
+    "linkedin": "https://www.linkedin.com/in/lushimabucoro/",
+    "expertise": ["Machine Learning", "NLP", "Visión por Computadora"],
+    "education": "Universidad de São Paulo (USP)"
+  },
+  {
+    "id": "pedro-augusto-monteiro-delgado",
+    "name": "Pedro Augusto Monteiro Delgado",
+    "role": "Ex-Presidente (2025) y Asesor",
+    "image": "/team/pedro-augusto-monteiro-delgado.png",
+    "bio": "Ex-Presidente de RAIA durante el mandato de 2025. Graduando en Ciencias de la Computación por ICMC-USP, en intercambio con la Universidad de Berna, en Suiza. Posee interés en explorar la aplicación de herramientas de inteligencia artificial en áreas de interés público, como salud y educación.",
+    "github": "https://github.com/DelgadoPedro",
+    "linkedin": "https://www.linkedin.com/in/pedroamdelgado",
+    "expertise": ["Inteligencia Artificial", "Salud", "Educación"],
+    "education": "ICMC-USP"
   }
 ]

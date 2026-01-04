@@ -4,5 +4,9 @@
     "title": "Conoce a Nuestro Multitud",
     "buttonText": "Únete a Nuestro Equipo",
     "footer": "Nos encantaría conocerte mejor — ¡envía tu solicitud hoy mismo!"
+  },
+  "sections": {
+    "currentAdministration": "Coordinación Actual 2026",
+    "advisors": "Asesores"
   }
 }
