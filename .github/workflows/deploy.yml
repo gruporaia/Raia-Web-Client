@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      - 'release/**'
+      - develop
   workflow_dispatch:
 
 jobs:
@@ -13,18 +13,8 @@ jobs:
     name: Deploy to Cloudflare Pages
 
     steps:
-      - name: Create GitHub App Token
-        id: app-token
-        uses: actions/create-github-app-token@v1
-        with:
-          app-id: ${{ vars.RUBRION_APP_ID }}
-          private-key: ${{ secrets.RUBRION_APP_SECRET }}
-
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          token: ${{ steps.app-token.outputs.token }}
-          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -34,9 +24,6 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-
-      - name: Setup Wrangler
-        run: npm install -g wrangler
 
       - name: Create .env file
         run: |
@@ -51,49 +38,30 @@ jobs:
           echo "VITE_LANDING_END_DATE=${{ vars.VITE_LANDING_END_DATE }}" >> .env
           echo "VITE_LANDING_CAMPAIGN_BASE_URL=${{ vars.VITE_LANDING_CAMPAIGN_BASE_URL }}" >> .env
 
-      - name: Build and Deploy
+      - name: Build
+        run: npm run build
+
+      - name: Deploy to Cloudflare Pages
+        id: deploy
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
-        run: npm run build && wrangler pages deploy dist --project-name=${{ vars.PROJECT_NAME }}
+        run: |
+          npx wrangler pages deploy dist --project-name=${{ vars.PROJECT_NAME }} --branch=${{ github.ref_name }}
 
       - name: Deployment Summary
         run: |
-          echo "Deployment completed successfully!"
-          echo "Site deployed to Cloudflare Pages"
+          echo "## Deployment Complete! 🚀" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
           if [[ "${{ github.ref_name }}" == "main" ]]; then
-            echo "Production deployment: https://grupo-raia.org"
+            echo "**Environment:** Production" >> $GITHUB_STEP_SUMMARY
+            echo "**URL:** https://grupo-raia.org" >> $GITHUB_STEP_SUMMARY
           else
-            # Cloudflare auto-generates branch aliases
-            BRANCH_SLUG=$(echo "${{ github.ref_name }}" | sed 's/\//-/g' | tr '[:upper:]' '[:lower:]')
-            echo "Preview deployment: https://${BRANCH_SLUG}.${{ vars.PROJECT_NAME }}.pages.dev"
+            echo "**Environment:** Preview (${{ github.ref_name }})" >> $GITHUB_STEP_SUMMARY
+            echo "**URL:** https://${{ github.ref_name }}.${{ vars.PROJECT_NAME }}.pages.dev" >> $GITHUB_STEP_SUMMARY
           fi
-
-      - name: Sync changes back to develop
-        run: |
-          git config --global user.name "rubrion[bot]"
-          git config --global user.email "rubrion[bot]@users.noreply.github.com"
           
-          git checkout -- .
-          git clean -fd
-          
-          # Fetch all branches
-          git fetch origin develop
-          
-          CURRENT_BRANCH="${{ github.ref_name }}"
-          
-          # Check if there are commits ahead of develop
-          COMMITS_AHEAD=$(git rev-list --count origin/develop..origin/$CURRENT_BRANCH 2>/dev/null || echo "0")
-          
-          if [[ "$COMMITS_AHEAD" -gt 0 ]]; then
-            echo "Branch $CURRENT_BRANCH is $COMMITS_AHEAD commit(s) ahead of develop. Merging back..."
-            
-            git checkout develop
-            git pull origin develop
-            git merge origin/$CURRENT_BRANCH --no-ff -m "chore: sync $CURRENT_BRANCH to develop [skip ci]"
-            git push origin develop
-            
-            echo "Successfully synced $CURRENT_BRANCH to develop"
-          else
-            echo "No commits ahead. Develop branch is up to date."
-          fi
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Commit:** \`${{ github.sha }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "**Triggered by:** ${{ github.actor }}" >> $GITHUB_STEP_SUMMARY

@@ -1,25 +1,22 @@
 ## Overview
 
-This project implements a comprehensive CI/CD pipeline that manages releases through a GitFlow-inspired branching strategy with automated versioning, deployment, and cleanup processes.
+This project implements a simple CI/CD pipeline with automated deployments to Cloudflare Pages.
 
 ## Workflow Diagram
 
 ```mermaid
 graph TD
     develop[Develop Branch]
-    release[Release Branches]
     main[Main Branch]
     
-    develop -->|New features trigger<br>pre-release versioning| release
-    release -->|Auto-deployment<br>with beta versioning| prerelease[Pre-Release Environment]
-    release -->|Manual promotion| main
-    main -->|Auto-deployment<br>with prod versioning| production[Production Environment]
-    main -->|Auto-sync version files| develop
+    develop -->|Push triggers<br>preview deployment| preview[Preview Environment]
+    develop -->|PR & Merge| main
+    main -->|Push triggers<br>production deployment| production[Production Environment]
     
     classDef branch fill:#e6f2ff,stroke:#0066cc,stroke-width:2px,color:#333333;
     classDef environment fill:#f0f7e6,stroke:#59b300,stroke-width:2px,color:#333333;
-    class develop,release,main branch;
-    class prerelease,production environment;
+    class develop,main branch;
+    class preview,production environment;
 ```
 
 ## Key Workflows
@@ -33,92 +30,69 @@ graph TD
 - Runs linting, formatting checks, and tests
 - Ensures code quality standards before merging
 
-### 2. Pre-Release Versioning (pre-release-versioning.yml)
+### 2. Deployment (deploy.yml)
 
-**Purpose:** Automatically create release branches from develop when new features are ready for testing.
-
-**Process:**
-- Triggered on push to `develop`
-- Calculates the next semantic version with beta tag
-- Creates a new `release/vX.Y.Z` branch
-- Serves as the foundation for pre-release deployment
-
-### 3. Deployment Automation (deploy.yml)
-
-**Purpose:** Handles deployments to both production and pre-release environments.
+**Purpose:** Handles deployments to both production and preview environments.
 
 **Process:**
-- Triggered on push to `main` or `release/*` branches
-- Prevents recursive trigger loops with [skip ci] detection
+- Triggered on push to `main` or `develop` branches
+- Builds the application with Vite
+- Deploys to Cloudflare Pages using Wrangler
 - For `main` branch:
-  - Builds and deploys to production environment
-  - Creates final version tags and GitHub releases
-  - Sets up production domain
-  - Syncs version files back to develop
-- For `release/*` branches:
-  - Builds and deploys to pre-release environment
-  - Creates beta version tags and draft GitHub releases
-  - Sets up pre-release domain with pattern `release-X-Y-Z.projectname.rubrion.com`
+  - Deploys to production (grupo-raia.org)
+- For `develop` branch:
+  - Deploys to preview environment (develop.raia.pages.dev)
 
-### 4. Deployment Cleanup (deploy-cleanup.yml)
+### 3. Changelog (changelog.yml)
 
-**Purpose:** Removes all resources when a release branch is deleted.
+**Purpose:** Automatically updates CHANGELOG.md from conventional commits.
 
 **Process:**
-- Triggered on deletion of a `release/*` branch
-- Removes Cloudflare deployments
-- Removes custom domains and DNS records
-- Deletes corresponding beta version tags on GitHub
+- Triggered on push to `main` branch
+- Parses conventional commits (feat, fix, perf, refactor)
+- Generates dated changelog entries
+- Commits updated CHANGELOG.md back to repository
+- Skips docs, style, test, build, ci, and chore commits
 
-### 5. Pre-Release Promotion (pre-release-promote.yml)
+### 4. GPG Key Retrieval (retrieve-gpg-key.yml)
 
-**Purpose:** Manually promote a release branch to production.
-
-**Process:**
-- Triggered manually with release branch parameter
-- Merges specified release branch into main
-- Optionally deletes the release branch after promotion
-
-### 6. GPG Key Retrieval (retrieve-gpg-key.yml)
-
-**Purpose:** Handles secure GPG key operations for signing commits and releases.
+**Purpose:** Handles secure GPG key operations for signing commits.
 
 **Process:**
 - Provides secure access to GPG keys for authenticated operations
-- Supports release signing and verification processes
+- Supports commit signing and verification processes
 
-## Release Management
+## Branching Strategy
 
-### Versioning Strategy
+- **main:** Production-ready code, deploys to grupo-raia.org
+- **develop:** Integration branch for features, deploys to preview
+- **feature/\*:** Feature branches, merged to develop via PR
 
-- **Production releases:** Semantic versioning (X.Y.Z)
-- **Pre-releases:** Semantic versioning with beta suffix (X.Y.Z-beta.N)
-- **Version Bumping Rules:**
-  - **Major (X):** Breaking changes
-  - **Minor (Y):** New features (non-breaking)
-  - **Patch (Z):** Bug fixes
-  - **No Version Change:** Documentation, style changes, tests, chores, and CI updates
+## Deployment Identification
 
-### CHANGELOG Generation
+Instead of semantic versioning, deployments are identified by:
+- **Git commit SHA** - unique identifier for each deployment
+- **Cloudflare deployment ID** - automatically generated by Cloudflare Pages
+- **Timestamp** - when the deployment was created
 
-- Automatically generates a CHANGELOG.md file using conventional commits
-- Uses auto-changelog with a customized keepachangelog template
-- Ensures clean, readable release history
+This approach is more suitable for web applications where:
+- Users don't need to track version numbers
+- Continuous deployment is the norm
+- Rollbacks are handled through Cloudflare Pages dashboard
 
 ## Configuration Files
 
-- **.release-it.json:** Controls version bumping and release creation
-- **.auto-changelog:** Formats the CHANGELOG output
 - **package.json:** Contains dependencies and project metadata
+- **.github/workflows/:** CI/CD workflow definitions
 
 ## Security & Authentication
 
-- Uses GitHub App tokens for secure authentication
-- Implements proper permission handling for cross-branch operations
-- Ensures CI/CD processes have necessary but limited access
+- Uses Cloudflare API tokens for deployment
+- GitHub Actions handles CI/CD securely
+- Environment variables stored in GitHub repository settings
 
 ## Environments
 
-- **Production:** Main domain at `projectname.rubrion.com`
-- **Pre-release:** Versioned domains at `release-X-Y-Z.projectname.rubrion.com`
+- **Production:** https://grupo-raia.org (main branch)
+- **Preview:** https://develop.raia.pages.dev (develop branch)
 - All deployments leverage Cloudflare Pages for hosting
