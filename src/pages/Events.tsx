@@ -92,10 +92,26 @@ const Events: React.FC = () => {
       return items.map((item) => {
         const slug = getEventSlug(String(item.id), item.title);
         const today = new Date();
+        today.setHours(0, 0, 0, 0); // Reset to start of day for accurate comparison
         const eventDate = new Date(item.date);
-        const isUpcoming = eventDate > today;
-        const badgeKey = isUpcoming ? 'upcoming' : 'past';
-        const badge = getEventContent<string>(`badges.${badgeKey}`);
+        eventDate.setHours(0, 0, 0, 0);
+
+        const isUpcoming = eventDate >= today;
+
+        // Calculate days left for upcoming events
+        let badge = undefined;
+        if (isUpcoming) {
+          const daysLeft = Math.ceil(
+            (eventDate.getTime() - today.getTime()) / (1000 * 60 * 60 * 24)
+          );
+          if (daysLeft === 0) {
+            badge = 'TODAY';
+          } else if (daysLeft === 1) {
+            badge = '1 DAY LEFT';
+          } else {
+            badge = `${daysLeft} DAYS LEFT`;
+          }
+        }
 
         return {
           id: item.id,
@@ -107,7 +123,7 @@ const Events: React.FC = () => {
           ctaText: getEventContent<string>('content.viewDetails'),
           date: item.date,
           badge,
-          tags: item.meta?.technologies || [],
+          tags: [],
           featured: item.featured || false,
         };
       });
@@ -157,12 +173,7 @@ const Events: React.FC = () => {
             contentSectionId="events-section"
             mapToContentItems={mapToContentItems}
             categoryIconMap={categoryIconMap}
-            items={allEvents}
-            totalPages={1}
-            totalItems={allEvents.length}
             hideHero={true}
-            totalPages={1}
-            totalItems={allEvents.length}
           />
         ) : (
           <Box sx={{ p: 4, textAlign: 'center' }}>
