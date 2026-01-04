@@ -1,0 +1,35 @@
+{
+  "meta": {
+    "title": "Event Details",
+    "description": "Detailed information about this event",
+    "location": "Location",
+    "date": "Date",
+    "endDate": "End Date",
+    "category": "Category",
+    "participants": "Participants",
+    "speakers": "Speakers"
+  },
+  "loading": {
+    "title": "Loading event details...",
+    "error": "Error loading the event"
+  },
+  "notFound": {
+    "title": "Event Not Found",
+    "message": "Sorry, the event you are looking for could not be found.",
+    "button": "Back to Events"
+  },
+  "sections": {
+    "details": "Event Details",
+    "basicInfo": "Basic Information"
+  },
+  "navigation": {
+    "back": "Back to Events",
+    "next": "Next Event",
+    "previous": "Previous Event"
+  },
+  "cta": {
+    "overline": "Interested in our events?",
+    "title": "Join our community",
+    "button": "Get in Touch"
+  }
+}

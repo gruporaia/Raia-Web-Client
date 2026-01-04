@@ -80,5 +80,16 @@
     "hero": {
       "buttonText": "Ver Proyectos"
     }
+  },
+  "meta": {
+    "home": "Bienvenido a RAIA - Impulsando la IA en Brasil",
+    "about": "Conozca más sobre RAIA",
+    "events": "Descubra nuestros eventos",
+    "services": "Explore nuestras iniciativas",
+    "contact": "Póngase en contacto con nosotros",
+    "blog": "Lee nuestro blog",
+    "projects": "Descubra nuestros proyectos",
+    "team": "Conozca nuestro equipo",
+    "partners": "Nuestros socios"
   }
 }

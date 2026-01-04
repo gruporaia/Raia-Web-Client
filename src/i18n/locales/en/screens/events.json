@@ -1,0 +1,25 @@
+{
+  "hero": {
+    "title": "Our Events",
+    "subtitle": "Conferences, workshops and hackathons that bring our community together for discussions, learning and innovation.",
+    "overline": "EVENTS",
+    "buttonText": "Get in Touch"
+  },
+  "tabs": {
+    "upcoming": "Upcoming Events",
+    "completed": "Past Events"
+  },
+  "content": {
+    "overline": "COMMUNITY",
+    "title": "Recent Events",
+    "viewDetails": "View Details",
+    "noItemsTitle": "No Events Found",
+    "noItemsMessage": "Currently there are no events available."
+  },
+  "noUpcomingEvents": "There are no scheduled events at the moment. Stay tuned for new announcements!",
+  "noCompletedEvents": "No past events to display.",
+  "loading": {
+    "items": "Loading events...",
+    "updating": "Updating events..."
+  }
+}

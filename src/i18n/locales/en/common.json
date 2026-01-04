@@ -89,5 +89,16 @@
     "hero": {
       "buttonText": "View Projects"
     }
+  },
+  "meta": {
+    "home": "Welcome to RAIA - Advancing AI in Brazil",
+    "about": "Learn more about RAIA",
+    "events": "Discover our events",
+    "services": "Explore our initiatives",
+    "contact": "Get in touch with us",
+    "blog": "Read our blog",
+    "projects": "Discover our projects",
+    "team": "Meet our team",
+    "partners": "Our partners"
   }
 }

@@ -1,0 +1,25 @@
+{
+  "hero": {
+    "title": "Nossos Eventos",
+    "subtitle": "Conferências, workshops e hackathons que reúnem nossa comunidade para discussões, aprendizados e inovação.",
+    "overline": "EVENTOS",
+    "buttonText": "Entre em Contato"
+  },
+  "tabs": {
+    "upcoming": "Próximos Eventos",
+    "completed": "Eventos Passados"
+  },
+  "content": {
+    "overline": "COMUNIDADE",
+    "title": "Eventos Recentes",
+    "viewDetails": "Ver Detalhes",
+    "noItemsTitle": "Nenhum Evento Encontrado",
+    "noItemsMessage": "Atualmente não há eventos disponíveis."
+  },
+  "noUpcomingEvents": "Não há eventos programados no momento. Fique atento para novos anúncios!",
+  "noCompletedEvents": "Nenhum evento anterior para exibir.",
+  "loading": {
+    "items": "Carregando eventos...",
+    "updating": "Atualizando eventos..."
+  }
+}

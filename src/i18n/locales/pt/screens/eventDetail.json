@@ -1,0 +1,35 @@
+{
+  "meta": {
+    "title": "Detalhes do Evento",
+    "description": "Informações detalhadas sobre este evento",
+    "location": "Local",
+    "date": "Data",
+    "endDate": "Data de Término",
+    "category": "Categoria",
+    "participants": "Participantes",
+    "speakers": "Palestrantes"
+  },
+  "loading": {
+    "title": "Carregando detalhes do evento...",
+    "error": "Erro ao carregar o evento"
+  },
+  "notFound": {
+    "title": "Evento Não Encontrado",
+    "message": "Desculpe, o evento que você está procurando não pode ser encontrado.",
+    "button": "Voltar para Eventos"
+  },
+  "sections": {
+    "details": "Detalhes do Evento",
+    "basicInfo": "Informações Básicas"
+  },
+  "navigation": {
+    "back": "Voltar para Eventos",
+    "next": "Próximo Evento",
+    "previous": "Evento Anterior"
+  },
+  "cta": {
+    "overline": "Interessado em nossos eventos?",
+    "title": "Participe de nossa comunidade",
+    "button": "Entre em Contato"
+  }
+}
