@@ -1,6 +1,9 @@
 import { Box, Container, Paper, Typography, useTheme } from '@mui/material';
 import React, { useMemo } from 'react';
 import { useParams } from 'react-router-dom';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 import ContentDetailPage, {
   MetaDisplay,
@@ -207,7 +210,10 @@ const EventDetails: React.FC = () => {
     };
 
     return Object.entries(sponsorMap)
-      .filter(([name]) => event.body?.includes(`**${name}**`))
+      .filter(([name]) => {
+        // Check for both markdown (**name**) and HTML (<strong>name</strong>) formats
+        return event.body?.includes(`**${name}**`) || event.body?.includes(`<strong>${name}</strong>`);
+      })
       .map(([name, filename]) => ({
         name,
         src: `/partners/${filename}`,
@@ -292,9 +298,113 @@ const EventDetails: React.FC = () => {
             </Box>
           </Box>
         )}
+
+        {/* Event Images Gallery */}
+        {eventId === '2' && (
+          <Box sx={{ mb: 6 }}>
+            <Typography
+              variant="h5"
+              component="h2"
+              gutterBottom
+              sx={{
+                color: 'text.primary',
+                fontWeight: 500,
+                mb: 4,
+                textAlign: 'center',
+              }}
+            >
+              Galeria de Fotos / Photo Gallery
+            </Typography>
+            <Box
+              sx={{
+                '& .slick-slider': {
+                  '& .slick-prev, & .slick-next': {
+                    zIndex: 1,
+                    '&:before': {
+                      fontSize: '40px',
+                      opacity: 0.75,
+                    },
+                  },
+                  '& .slick-prev': {
+                    left: '10px',
+                  },
+                  '& .slick-next': {
+                    right: '10px',
+                  },
+                  '& .slick-dots': {
+                    bottom: '-35px',
+                    '& li button:before': {
+                      fontSize: '12px',
+                      color: theme.palette.primary.main,
+                    },
+                    '& li.slick-active button:before': {
+                      color: theme.palette.primary.main,
+                    },
+                  },
+                },
+              }}
+            >
+              <Slider
+                dots={true}
+                infinite={true}
+                speed={500}
+                slidesToShow={3}
+                slidesToScroll={1}
+                autoplay={true}
+                autoplaySpeed={3000}
+                responsive={[
+                  {
+                    breakpoint: 960,
+                    settings: {
+                      slidesToShow: 2,
+                      slidesToScroll: 1,
+                    },
+                  },
+                  {
+                    breakpoint: 600,
+                    settings: {
+                      slidesToShow: 1,
+                      slidesToScroll: 1,
+                    },
+                  },
+                ]}
+              >
+                {[
+                  'IMG_0147.JPG',
+                  'IMG_0305.JPG',
+                  'IMG_0314.JPG',
+                  'IMG_0318.JPG',
+                  'IMG_0324.JPG',
+                  'IMG_0368.JPG',
+                ].map((img) => (
+                  <Box key={img} sx={{ px: 1 }}>
+                    <Box
+                      component="img"
+                      src={`/events/llm-spring-2025/${img}`}
+                      alt={`LLM Spring School 2025 - ${img}`}
+                      sx={{
+                        width: '100%',
+                        height: 'auto',
+                        borderRadius: 1,
+                        boxShadow: 2,
+                        objectFit: 'cover',
+                        aspectRatio: '4/3',
+                        cursor: 'pointer',
+                        transition: 'transform 0.3s ease',
+                        '&:hover': {
+                          transform: 'scale(1.02)',
+                        },
+                      }}
+                    />
+                  </Box>
+                ))}
+              </Slider>
+            </Box>
+          </Box>
+        )}
       </>
     );
-  }, [event, sponsors, getEventText]);
+  }, [event, sponsors, getEventText, eventId, theme.palette.primary.main]);
 
   return (
     <BaseLayout>
