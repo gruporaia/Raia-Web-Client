@@ -14,7 +14,7 @@ import {
 import React, { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import PartnerCarousel from '../components/ui/PartnerCarousel';
+import { Carousel } from '../components/ui';
 import { useEventSponsors } from '../data/eventSponsorsData';
 import { useLocalizedContent } from '../hooks/useLocalizedContent';
 import {
@@ -357,11 +357,11 @@ const LandingSeasonal: React.FC = () => {
               </Typography>
             )}
 
-            <PartnerCarousel
-              logos={eventSponsors}
+            <Carousel
+              items={eventSponsors}
               speed={15}
-              maxLogoHeight={layout.logo.maxHeight.landing}
-              logoSize={layout.logo.partnerSize}
+              maxItemHeight={layout.logo.maxHeight.landing}
+              itemSize={layout.logo.partnerSize}
               align="center"
             />
           </Box>

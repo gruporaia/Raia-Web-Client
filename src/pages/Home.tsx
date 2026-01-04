@@ -4,11 +4,8 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
 import MissingTranslation from '../components/translation/MissingTranslation';
-import { HeroSection, SeasonalBanner } from '../components/ui';
-import EventsCarousel from '../components/ui/EventsCarousel';
-import InstitutionsCarousel from '../components/ui/InstitutionsCarousel';
+import { Carousel, HeroSection, SeasonalBanner } from '../components/ui';
 import LogoAnimation from '../components/ui/LogoAnimation';
-import PartnerCarousel from '../components/ui/PartnerCarousel';
 import CTASection from '../components/ui/Section/CTASection';
 import TeamSlider from '../components/ui/TeamSlider';
 import { useInstitutions } from '../data/institutionsData';
@@ -277,12 +274,12 @@ const Home: React.FC = () => {
             navigate(ROUTES.PUBLIC.PARTNERDETAILS.path);
           }}
         >
-          <PartnerCarousel
-            logos={partners}
+          <Carousel
+            items={partners}
             speed={15}
-            maxLogoHeight={layout.logo.maxHeight.carousel}
+            maxItemHeight={layout.logo.maxHeight.carousel}
             padding="0 5px"
-            logoSize={layout.logo.partnerSize}
+            itemSize={layout.logo.partnerSize}
           />
         </CTASection>
 
@@ -299,11 +296,12 @@ const Home: React.FC = () => {
           )}
           py={2}
         >
-          <InstitutionsCarousel
-            institutions={institutions}
+          <Carousel
+            items={institutions}
             speed={25}
             squareSize={180}
             padding="0 8px"
+            forceAnimation={true}
           />
         </CTASection>
 

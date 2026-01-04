@@ -1,8 +1,8 @@
 // components/index.ts
 export { default as Breadcrumbs } from './Breadcrumbs';
+export { default as Carousel } from './Carousel';
 export { default as ContentCard } from './Card/ContentCard';
 export { default as Footer } from './Footer';
-export { default as InstitutionsCarousel } from './InstitutionsCarousel';
 export { default as LoadingIndicator } from './LoadingIndicator';
 export { default as Navbar } from './Navbar';
 export { default as SeasonalBanner } from './SeasonalBanner';
