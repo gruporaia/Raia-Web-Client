@@ -6,10 +6,7 @@
     "image": "/team/pedro-lucas-bahiense.png",
     "bio": "Estudiante de Ciencias de la Computación de la Universidad de São Paulo y Presidente de RAIA.",
     "linkedin": "https://www.linkedin.com/in/pedro-lucas-figueiredo-bahiense/",
-    "expertise": [
-      "Alianzas",
-      "Ciencias de la Computación"
-    ],
+    "expertise": ["Alianzas", "Ciencias de la Computación"],
     "education": "Universidad de São Paulo (USP)"
   },
   {
@@ -33,11 +30,7 @@
     "image": "/team/caio-petroncini.png",
     "bio": "Estudiante de Ciencias de la Computación de la Universidad de São Paulo y Director de Proyectos de RAIA.",
     "linkedin": "https://www.linkedin.com/in/caio-petroncini-7105941aa/",
-    "expertise": [
-      "Machine Learning",
-      "Deep Learning",
-      "Series Temporales"
-    ],
+    "expertise": ["Machine Learning", "Deep Learning", "Series Temporales"],
     "education": "Universidad de São Paulo (USP)"
   },
   {
@@ -61,10 +54,7 @@
     "image": "/team/gabriel-andreghetti.png",
     "bio": "Cursando Licenciatura en Sistemas de Información.",
     "linkedin": "https://www.linkedin.com/in/gabriel-moraes-andreghetti-422573274/",
-    "expertise": [
-      "Alianzas",
-      "Sistemas de Información"
-    ],
+    "expertise": ["Alianzas", "Sistemas de Información"],
     "education": "Universidad de São Paulo (USP)"
   },
   {
@@ -74,10 +64,7 @@
     "image": "/team/luysa-goncalves.png",
     "bio": "Estudiante de Ciencias de la Computación de la Universidad de São Paulo y Directora de Alianzas de RAIA.",
     "linkedin": "https://www.linkedin.com/in/luysagoncalves/",
-    "expertise": [
-      "Visión por Computadora",
-      "Alianzas"
-    ],
+    "expertise": ["Visión por Computadora", "Alianzas"],
     "education": "Universidad de São Paulo (USP)"
   },
   {
@@ -87,10 +74,7 @@
     "image": "/team/bruna-pereira.png",
     "bio": "Soy Ingeniera de Software, casi graduada por la USP, con enfoque en Desarrollo Backend. Tengo dos años de experiencia profesional, en los cuales contribuí en proyectos de impacto dentro de la empresa, entre ellos desarrollando sistemas que redujeron en un 80% la cantidad de activaciones, y reestructurando flujo que integró más de 2 mil datos diarios (~50%) que antes no eran contemplados.",
     "linkedin": "https://www.linkedin.com/in/luysagoncalves/",
-    "expertise": [
-      "Ingeniería de Software",
-      "Alianzas"
-    ],
+    "expertise": ["Ingeniería de Software", "Alianzas"],
     "education": "Universidad de São Paulo (USP)"
   },
   {
@@ -102,11 +86,7 @@
     "website": "https://rubenszinho.dev/",
     "github": "https://github.com/rubenszinho",
     "linkedin": "https://www.linkedin.com/in/samuelrubens/",
-    "expertise": [
-      "DevOps",
-      "Microservicios",
-      "Computación en la Nube"
-    ]
+    "expertise": ["DevOps", "Microservicios", "Computación en la Nube"]
   },
   {
     "id": "pedro-augusto-monteiro-delgado",
@@ -116,11 +96,7 @@
     "bio": "Graduando en Ciencias de la Computación por ICMC-USP, en intercambio con la Universidad de Berna, en Suiza. Posee interés en explorar la aplicación de herramientas de inteligencia artificial en áreas de interés público, como salud y educación.",
     "github": "https://github.com/DelgadoPedro",
     "linkedin": "https://www.linkedin.com/in/pedroamdelgado",
-    "expertise": [
-      "Inteligencia Artificial",
-      "Salud",
-      "Educación"
-    ],
+    "expertise": ["Inteligencia Artificial", "Salud", "Educación"],
     "education": "ICMC-USP"
   },
   {
@@ -145,11 +121,7 @@
     "bio": "Tiene interés en las áreas de ML, con énfasis en NLP y Visión. Estudiante de Ciencias de la Computación de la USP, habiendo pasado por la U. de Edimburgo y Cohere For AI como investigadora.",
     "github": "https://github.com/luisashimabucoro",
     "linkedin": "https://www.linkedin.com/in/lushimabucoro/",
-    "expertise": [
-      "Machine Learning",
-      "NLP",
-      "Visión por Computadora"
-    ],
+    "expertise": ["Machine Learning", "NLP", "Visión por Computadora"],
     "education": "Universidad de São Paulo (USP)"
   },
   {
