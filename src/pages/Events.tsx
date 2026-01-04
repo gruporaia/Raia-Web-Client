@@ -1,10 +1,11 @@
-import { Box, Tab, Tabs, Typography } from '@mui/material';
+import { Box, Container, Tab, Tabs, Typography } from '@mui/material';
 import React, { useMemo, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
 import ContentListPage, {
   HeroButton,
 } from '../components/content/ContentListPage';
+import EventsCarousel from '../components/ui/EventsCarousel';
 import { ContentItem } from '../components/ui/Card/ContentCard';
 import LoadingIndicator from '../components/ui/LoadingIndicator';
 import { usePaginatedContent } from '../hooks/useContent';
@@ -149,40 +150,84 @@ const Events: React.FC = () => {
   const upcomingContentItems = mapToContentItems(upcomingEvents);
   const completedContentItems = mapToContentItems(completedEvents);
 
+  // Combine all events for carousel
+  const allEventsForCarousel = [...upcomingEvents, ...completedEvents];
+
+  const handleCarouselEventClick = (slug: string) => {
+    navigate(ROUTES.EVENTS.EVENT_DETAIL({ slug }));
+  };
+
   return (
     <BaseLayout>
-      <Box sx={{ mt: 4, mb: 4 }}>
-        <Tabs
-          value={tabValue}
-          onChange={handleTabChange}
-          aria-label="event sections"
-          sx={{ borderBottom: 1, borderColor: 'divider', mb: 3 }}
-        >
-          <Tab
-            label={getEventContent<string>('tabs.upcoming')}
-            id="event-tab-0"
-            icon={
-              <span>
-                {upcomingEvents.length > 0 ? `(${upcomingEvents.length})` : ''}
-              </span>
-            }
-            iconPosition="end"
-          />
-          <Tab
-            label={getEventContent<string>('tabs.completed')}
-            id="event-tab-1"
-            icon={
-              <span>
-                {completedEvents.length > 0
-                  ? `(${completedEvents.length})`
-                  : ''}
-              </span>
-            }
-            iconPosition="end"
-          />
-        </Tabs>
+      <Container maxWidth="lg" sx={{ py: 4 }}>
+        {/* Hero Section */}
+        <Box sx={{ mb: 6 }}>
+          <Typography
+            variant="h3"
+            component="h1"
+            sx={{
+              mb: 2,
+              fontWeight: 700,
+              color: 'text.primary',
+            }}
+          >
+            {getEventContent<string>('hero.title')}
+          </Typography>
+          <Typography
+            variant="h6"
+            sx={{
+              mb: 4,
+              color: 'text.secondary',
+              maxWidth: '800px',
+              lineHeight: 1.6,
+            }}
+          >
+            {getEventContent<string>('hero.subtitle')}
+          </Typography>
 
-        <TabPanel value={tabValue} index={0}>
+          {/* Events Carousel */}
+          {allEventsForCarousel.length > 0 && (
+            <EventsCarousel
+              events={allEventsForCarousel}
+              onEventClick={handleCarouselEventClick}
+              height={400}
+            />
+          )}
+        </Box>
+
+        {/* Tabs Section */}
+        <Box sx={{ mt: 4, mb: 4 }}>
+          <Tabs
+            value={tabValue}
+            onChange={handleTabChange}
+            aria-label="event sections"
+            sx={{ borderBottom: 1, borderColor: 'divider', mb: 3 }}
+          >
+            <Tab
+              label={getEventContent<string>('tabs.upcoming')}
+              id="event-tab-0"
+              icon={
+                <span>
+                  {upcomingEvents.length > 0 ? `(${upcomingEvents.length})` : ''}
+                </span>
+              }
+              iconPosition="end"
+            />
+            <Tab
+              label={getEventContent<string>('tabs.completed')}
+              id="event-tab-1"
+              icon={
+                <span>
+                  {completedEvents.length > 0
+                    ? `(${completedEvents.length})`
+                    : ''}
+                </span>
+              }
+              iconPosition="end"
+            />
+          </Tabs>
+
+          <TabPanel value={tabValue} index={0}>
           {upcomingContentItems.length > 0 ? (
             <ContentListPage
               resource="events"
@@ -235,7 +280,8 @@ const Events: React.FC = () => {
             </Box>
           )}
         </TabPanel>
-      </Box>
+        </Box>
+      </Container>
     </BaseLayout>
   );
 };
