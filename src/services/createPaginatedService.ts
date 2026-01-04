@@ -17,9 +17,8 @@ export interface PaginatedServiceOptions<T extends CommonContent> {
 /**
  * Standard response format for paginated endpoints
  */
-export interface PaginatedResponse<
-  T extends CommonContent,
-> extends PaginatedContentResponse<T> {
+export interface PaginatedResponse<T extends CommonContent>
+  extends PaginatedContentResponse<T> {
   items: T[];
   totalPages: number;
   currentPage: number;
