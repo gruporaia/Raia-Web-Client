@@ -49,32 +49,32 @@ const TeamDetails: React.FC = () => {
   // Split team members into current administration and advisors
   const { currentAdministration, advisors } = useMemo(() => {
     const advisorRoles = [
-      'Advisor', 
-      'Conselheiro', 
-      'Conselheira', 
-      'Asesor', 
-      'Asesora', 
-      'Founder & Advisor', 
-      'Fundador e Conselheiro', 
-      'Fundador y Asesor', 
-      'Former Co-President & Advisor', 
-      'Ex-Co-Presidente e Conselheiro', 
+      'Advisor',
+      'Conselheiro',
+      'Conselheira',
+      'Asesor',
+      'Asesora',
+      'Founder & Advisor',
+      'Fundador e Conselheiro',
+      'Fundador y Asesor',
+      'Former Co-President & Advisor',
+      'Ex-Co-Presidente e Conselheiro',
       'Ex Co-Presidente y Asesor',
       'Founder & Former Projects Director & Advisor',
       'Fundadora e Ex-Diretora de Projetos e Conselheira',
       'Fundadora y Ex-Directora de Proyectos y Asesora',
       'Former President (2025) & Advisor',
       'Ex-Presidente (2025) e Conselheiro',
-      'Ex-Presidente (2025) y Asesor'
+      'Ex-Presidente (2025) y Asesor',
     ];
-    
+
     const current = normalizedMembers.filter(
       (member) => !advisorRoles.includes(member.role)
     );
-    const advisory = normalizedMembers.filter(
-      (member) => advisorRoles.includes(member.role)
+    const advisory = normalizedMembers.filter((member) =>
+      advisorRoles.includes(member.role)
     );
-    
+
     return {
       currentAdministration: current,
       advisors: advisory,
