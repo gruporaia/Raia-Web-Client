@@ -53,13 +53,6 @@ const Carousel: React.FC<CarouselProps> = ({
   const isReadyRef = useRef(false);
   const expectedImageCount = useMemo(() => items.length, [items.length]);
 
-  // Drag state
-  const [isDragging, setIsDragging] = useState(false);
-  const isDraggingRef = useRef(false);
-  const dragStartXRef = useRef(0);
-  const dragStartOffsetRef = useRef(0);
-  const resumeAnimationTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-
   const handleItemClick = useCallback((website?: string) => {
     if (website) {
       window.open(website, '_blank', 'noopener,noreferrer');
