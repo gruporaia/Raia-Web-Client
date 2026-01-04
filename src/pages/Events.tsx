@@ -1,14 +1,14 @@
-import { Box, Container, Tab, Tabs, Typography } from '@mui/material';
-import React, { useMemo, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Box, Container } from '@mui/material';
+import React, { useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import ContentListPage, {
   HeroButton,
 } from '../components/content/ContentListPage';
 import EventsCarousel from '../components/ui/EventsCarousel';
+import HeroSection from '../components/ui/Section/HeroSection';
 import { ContentItem } from '../components/ui/Card/ContentCard';
 import LoadingIndicator from '../components/ui/LoadingIndicator';
-import { usePaginatedContent } from '../hooks/useContent';
 import { useLocalizedContent } from '../hooks/useLocalizedContent';
 import BaseLayout from '../layouts/BaseLayout';
 import ROUTES from '../routes';
@@ -17,32 +17,8 @@ import { CATEGORY_ICONS } from '../utils/iconMappings';
 import { createScrollRoute } from '../utils/navigationUtils';
 import { getEventSlug } from '../utils/slugUtils';
 
-interface TabPanelProps {
-  children?: React.ReactNode;
-  index: number;
-  value: number;
-}
-
-function TabPanel(props: TabPanelProps) {
-  const { children, value, index } = props;
-
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`event-tabpanel-${index}`}
-      aria-labelledby={`event-tab-${index}`}
-    >
-      {value === index && <Box sx={{ pt: 3 }}>{children}</Box>}
-    </div>
-  );
-}
-
 const Events: React.FC = () => {
-  const params = useParams<{ page?: string }>();
   const navigate = useNavigate();
-  const initialPage = params.page ? parseInt(params.page, 10) : 1;
-  const [tabValue, setTabValue] = useState(0);
 
   const { getContent: getEventContent } = useLocalizedContent(
     'screens',
@@ -53,16 +29,15 @@ const Events: React.FC = () => {
     'menu'
   );
 
-  // We'll fetch data directly since we need more control for status filtering
-  const [upcomingEvents, setUpcomingEvents] = React.useState<MockEvent[]>([]);
-  const [completedEvents, setCompletedEvents] = React.useState<MockEvent[]>([]);
+  // Fetch all events (no status filtering - we'll show all)
+  const [allEvents, setAllEvents] = React.useState<MockEvent[]>([]);
   const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
     const loadEvents = async () => {
       try {
         setLoading(true);
-        // Get both upcoming and completed events
+        // Get upcoming events
         const upcomingData = await fetchEvents(
           1,
           100,
@@ -70,6 +45,7 @@ const Events: React.FC = () => {
           undefined,
           'upcoming'
         );
+        // Get completed events
         const completedData = await fetchEvents(
           1,
           100,
@@ -78,8 +54,8 @@ const Events: React.FC = () => {
           'completed'
         );
 
-        setUpcomingEvents(upcomingData.events);
-        setCompletedEvents(completedData.events);
+        // Combine all events
+        setAllEvents([...upcomingData.events, ...completedData.events]);
       } catch (error) {
         console.error('Failed to load events:', error);
       } finally {
@@ -116,6 +92,10 @@ const Events: React.FC = () => {
     return (items: MockEvent[]): ContentItem[] => {
       return items.map((item) => {
         const slug = getEventSlug(String(item.id), item.title);
+        const today = new Date();
+        const eventDate = new Date(item.date);
+        const isUpcoming = eventDate > today;
+        const badge = isUpcoming ? 'upcoming' : 'past';
 
         return {
           id: item.id,
@@ -126,6 +106,7 @@ const Events: React.FC = () => {
           ctaLink: ROUTES.EVENTS.EVENT_DETAIL({ slug }),
           ctaText: getEventContent<string>('content.viewDetails'),
           date: item.date,
+          badge,
           tags: item.meta?.technologies || [],
           featured: item.featured || false,
         };
@@ -135,10 +116,6 @@ const Events: React.FC = () => {
 
   const categoryIconMap = useMemo(() => CATEGORY_ICONS, []);
 
-  const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
-    setTabValue(newValue);
-  };
-
   if (loading) {
     return (
       <BaseLayout>
@@ -147,11 +124,7 @@ const Events: React.FC = () => {
     );
   }
 
-  const upcomingContentItems = mapToContentItems(upcomingEvents);
-  const completedContentItems = mapToContentItems(completedEvents);
-
-  // Combine all events for carousel
-  const allEventsForCarousel = [...upcomingEvents, ...completedEvents];
+  const allContentItems = mapToContentItems(allEvents);
 
   const handleCarouselEventClick = (slug: string) => {
     navigate(ROUTES.EVENTS.EVENT_DETAIL({ slug }));
@@ -159,128 +132,55 @@ const Events: React.FC = () => {
 
   return (
     <BaseLayout>
-      <Container maxWidth="lg" sx={{ py: 4 }}>
-        {/* Hero Section */}
-        <Box sx={{ mb: 6 }}>
-          <Typography
-            variant="h3"
-            component="h1"
-            sx={{
-              mb: 2,
-              fontWeight: 700,
-              color: 'text.primary',
-            }}
-          >
-            {getEventContent<string>('hero.title')}
-          </Typography>
-          <Typography
-            variant="h6"
-            sx={{
-              mb: 4,
-              color: 'text.secondary',
-              maxWidth: '800px',
-              lineHeight: 1.6,
-            }}
-          >
-            {getEventContent<string>('hero.subtitle')}
-          </Typography>
+      <HeroSection
+        title={getEventContent<string>('hero.title')}
+        subtitle={getEventContent<string>('hero.subtitle')}
+        buttons={[
+          {
+            text: getEventContent<string>('hero.buttonText'),
+            onClick: () =>
+              navigate(
+                createScrollRoute(ROUTES.PUBLIC.CONTACT.path, 'contact-section')
+              ),
+          },
+        ]}
+      />
 
-          {/* Events Carousel */}
-          {allEventsForCarousel.length > 0 && (
+      <Container maxWidth="lg" sx={{ py: 6 }}>
+        {/* Events Carousel */}
+        {allEvents.length > 0 && (
+          <Box sx={{ mb: 8 }}>
             <EventsCarousel
-              events={allEventsForCarousel}
+              events={allEvents}
               onEventClick={handleCarouselEventClick}
               height={400}
             />
-          )}
-        </Box>
+          </Box>
+        )}
 
-        {/* Tabs Section */}
-        <Box sx={{ mt: 4, mb: 4 }}>
-          <Tabs
-            value={tabValue}
-            onChange={handleTabChange}
-            aria-label="event sections"
-            sx={{ borderBottom: 1, borderColor: 'divider', mb: 3 }}
-          >
-            <Tab
-              label={getEventContent<string>('tabs.upcoming')}
-              id="event-tab-0"
-              icon={
-                <span>
-                  {upcomingEvents.length > 0 ? `(${upcomingEvents.length})` : ''}
-                </span>
-              }
-              iconPosition="end"
-            />
-            <Tab
-              label={getEventContent<string>('tabs.completed')}
-              id="event-tab-1"
-              icon={
-                <span>
-                  {completedEvents.length > 0
-                    ? `(${completedEvents.length})`
-                    : ''}
-                </span>
-              }
-              iconPosition="end"
-            />
-          </Tabs>
-
-          <TabPanel value={tabValue} index={0}>
-          {upcomingContentItems.length > 0 ? (
-            <ContentListPage
-              resource="events"
-              i18nBase="screens.events"
-              currentPage={initialPage}
-              itemsPerPage={9}
-              heroButtons={heroButtons}
-              linkToItem={(id) => ROUTES.EVENTS.EVENT_DETAIL({ id })}
-              linkToPage={(page) => ROUTES.EVENTS.LIST_PAGED({ page })}
-              breadcrumbs={breadcrumbs}
-              contentSectionId="events-section"
-              mapToContentItems={mapToContentItems}
-              categoryIconMap={categoryIconMap}
-              items={upcomingEvents}
-              totalPages={1}
-              totalItems={upcomingEvents.length}
-            />
-          ) : (
-            <Box sx={{ p: 4, textAlign: 'center' }}>
-              <Typography variant="body1" color="text.secondary">
-                {getEventContent<string>('noUpcomingEvents')}
-              </Typography>
-            </Box>
-          )}
-        </TabPanel>
-
-        <TabPanel value={tabValue} index={1}>
-          {completedContentItems.length > 0 ? (
-            <ContentListPage
-              resource="events"
-              i18nBase="screens.events"
-              currentPage={initialPage}
-              itemsPerPage={9}
-              heroButtons={heroButtons}
-              linkToItem={(id) => ROUTES.EVENTS.EVENT_DETAIL({ id })}
-              linkToPage={(page) => ROUTES.EVENTS.LIST_PAGED({ page })}
-              breadcrumbs={breadcrumbs}
-              contentSectionId="events-section"
-              mapToContentItems={mapToContentItems}
-              categoryIconMap={categoryIconMap}
-              items={completedEvents}
-              totalPages={1}
-              totalItems={completedEvents.length}
-            />
-          ) : (
-            <Box sx={{ p: 4, textAlign: 'center' }}>
-              <Typography variant="body1" color="text.secondary">
-                {getEventContent<string>('noCompletedEvents')}
-              </Typography>
-            </Box>
-          )}
-        </TabPanel>
-        </Box>
+        {/* All Events in Grid */}
+        {allContentItems.length > 0 ? (
+          <ContentListPage
+            resource="events"
+            i18nBase="screens.events"
+            currentPage={1}
+            itemsPerPage={9}
+            heroButtons={heroButtons}
+            linkToItem={(id) => ROUTES.EVENTS.EVENT_DETAIL({ id })}
+            linkToPage={(page) => ROUTES.EVENTS.LIST_PAGED({ page })}
+            breadcrumbs={breadcrumbs}
+            contentSectionId="events-section"
+            mapToContentItems={mapToContentItems}
+            categoryIconMap={categoryIconMap}
+            items={allEvents}
+            totalPages={1}
+            totalItems={allEvents.length}
+          />
+        ) : (
+          <Box sx={{ p: 4, textAlign: 'center' }}>
+            <p>No events available</p>
+          </Box>
+        )}
       </Container>
     </BaseLayout>
   );

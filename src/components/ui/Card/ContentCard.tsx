@@ -27,6 +27,7 @@ export interface ContentItem {
   date?: string;
   author?: string;
   featured?: boolean;
+  badge?: string;
   iconComponent?: typeof SvgIcon;
   prefetchImporter?: () => Promise<unknown>;
 }
@@ -180,6 +181,28 @@ const ContentCard: React.FC<ContentCardProps> = ({
             }}
           >
             Featured
+          </Box>
+        )}
+
+        {item.badge && (
+          <Box
+            sx={{
+              position: 'absolute',
+              top: 10,
+              right: variant === 'featured' ? 110 : 10,
+              backgroundColor:
+                item.badge === 'upcoming' ? 'success.main' : 'warning.main',
+              color: 'white',
+              py: 0.5,
+              px: 1.5,
+              borderRadius: 1,
+              fontSize: '0.75rem',
+              fontWeight: 'bold',
+              zIndex: 2,
+              textTransform: 'capitalize',
+            }}
+          >
+            {item.badge}
           </Box>
         )}
       </Box>
