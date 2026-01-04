@@ -18,6 +18,17 @@
     "message": "Desculpe, o evento que você está procurando não pode ser encontrado.",
     "button": "Voltar para Eventos"
   },
+  "details": {
+    "author": "Autor",
+    "date": "Data",
+    "category": "Categoria",
+    "readTime": "Tempo de Leitura",
+    "publishedOn": "Publicado em",
+    "share": "Compartilhar",
+    "email": "E-mail",
+    "participants": "Participantes",
+    "references": "Referências"
+  },
   "sections": {
     "details": "Detalhes do Evento",
     "basicInfo": "Informações Básicas"

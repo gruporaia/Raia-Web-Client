@@ -126,15 +126,23 @@ const EventDetails: React.FC = () => {
 
   return (
     <BaseLayout>
-      <ContentDetailPage
-        resource="events"
-        resourceId={eventId}
-        i18nBase="screens.eventDetail"
-        breadcrumbs={breadcrumbs}
-        sidebarConfig={sidebarConfig}
-        categoryIconMap={categoryIconMap}
-        linkToResource={(id) => ROUTES.EVENTS.EVENT_DETAIL({ id })}
-      />
+      <PageHelmet
+        title={event?.title || 'Event Details'}
+        description={event?.description || 'Detailed event information'}
+        translationNamespace="screens"
+        translationKey="eventDetail"
+      >
+        <ContentDetailPage
+          resource="events"
+          i18nBase="screens.eventDetail"
+          translationNamespace="eventDetail"
+          id={eventId || ''}
+          breadcrumbs={breadcrumbs}
+          linkToList={ROUTES.EVENTS.ROOT.path}
+          sidebar={sidebarConfig}
+          categoryIconMap={categoryIconMap}
+        />
+      </PageHelmet>
     </BaseLayout>
   );
 };

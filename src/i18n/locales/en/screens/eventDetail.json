@@ -18,6 +18,17 @@
     "message": "Sorry, the event you are looking for could not be found.",
     "button": "Back to Events"
   },
+  "details": {
+    "author": "Author",
+    "date": "Date",
+    "category": "Category",
+    "readTime": "Read Time",
+    "publishedOn": "Published On",
+    "share": "Share",
+    "email": "Email",
+    "participants": "Participants",
+    "references": "References"
+  },
   "sections": {
     "details": "Event Details",
     "basicInfo": "Basic Information"

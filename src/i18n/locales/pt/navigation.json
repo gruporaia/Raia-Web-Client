@@ -19,5 +19,9 @@
   "common": {
     "toggleTheme": "Alternar modo claro/escuro",
     "mobileMenu": "Abrir menu móvel"
+  },
+  "eventDetail": {
+    "title": "Detalhes do Evento",
+    "description": "Informações detalhadas sobre este evento"
   }
 }

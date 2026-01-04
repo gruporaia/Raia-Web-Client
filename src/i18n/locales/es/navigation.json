@@ -17,7 +17,11 @@
     "select": "Seleccionar idioma"
   },
   "common": {
-    "toggleTheme": "Cambiar modo claro/oscuro",
+    "toggleTheme": "Alternar modo claro/oscuro",
     "mobileMenu": "Abrir menú móvil"
+  },
+  "eventDetail": {
+    "title": "Detalles del Evento",
+    "description": "Información detallada sobre este evento"
   }
 }

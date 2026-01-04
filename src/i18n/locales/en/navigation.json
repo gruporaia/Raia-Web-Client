@@ -19,5 +19,9 @@
   "common": {
     "toggleTheme": "Toggle light/dark mode",
     "mobileMenu": "Open mobile menu"
+  },
+  "eventDetail": {
+    "title": "Event Details",
+    "description": "Detailed information about this event"
   }
 }
