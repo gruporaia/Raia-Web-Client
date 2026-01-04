@@ -1,0 +1,21 @@
+[
+    {
+        "id": "1",
+        "title": "Conferência RAIA 2025",
+        "excerpt": "Como construir um ecossistema de inteligência artificial mais conectado no Brasil?",
+        "description": "A Conferência RAIA 2025, realizada em junho de 2025, reuniu estudantes, pesquisadores, profissionais do setor privado e representantes de iniciativas públicas para debater os rumos da inteligência artificial no Brasil.",
+        "date": "2025-06-01",
+        "endDate": "2025-06-02",
+        "status": "completed",
+        "category": "conference",
+        "featured": true,
+        "location": "Instituto de Ciências Matemáticas e de Computação da USP São Carlos (ICMC/USP)",
+        "image": "/events/conference-2025/IMG_0042.JPG",
+        "language": "pt",
+        "meta": {
+            "description": "A maior conferência de IA do Brasil",
+            "participants": 150,
+            "speakers": 13
+        }
+    }
+]

@@ -1,0 +1,21 @@
+[
+    {
+        "id": "1",
+        "title": "RAIA Conference 2025",
+        "excerpt": "How to build a more connected artificial intelligence ecosystem in Brazil?",
+        "description": "The RAIA Conference 2025, held in June 2025, brought together students, researchers, private sector professionals and representatives of public initiatives to discuss the future of artificial intelligence in Brazil.",
+        "date": "2025-06-01",
+        "endDate": "2025-06-02",
+        "status": "completed",
+        "category": "conference",
+        "featured": true,
+        "location": "Institute of Mathematical and Computer Sciences at USP São Carlos (ICMC/USP)",
+        "image": "/events/conference-2025/IMG_0042.JPG",
+        "language": "en",
+        "meta": {
+            "description": "Brazil's largest AI conference",
+            "participants": 150,
+            "speakers": 13
+        }
+    }
+]

@@ -110,7 +110,7 @@ const defaultNavItems: NavItem[] = [
   { label: 'home', path: ROUTES.PUBLIC.HOME.path },
   { label: 'projects', path: ROUTES.PROJECTS.LIST.path },
   // { label: 'blog', path: ROUTES.BLOG.LIST.path }, // TODO(samuel): uncomment when blog is ready
-  { label: 'services', path: ROUTES.PUBLIC.SERVICES.path },
+  { label: 'events', path: ROUTES.PUBLIC.EVENTS.path },
   { label: 'contact', path: ROUTES.PUBLIC.CONTACT.path },
 ];
 
