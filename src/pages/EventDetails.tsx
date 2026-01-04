@@ -1,5 +1,8 @@
-import { Box, Container, Paper, Typography, useTheme } from '@mui/material';
-import React, { useMemo } from 'react';
+import { Box, Container, IconButton, Modal, Paper, Typography, useTheme } from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
+import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -25,6 +28,82 @@ const EventDetails: React.FC = () => {
 
   // Convert slug to ID for the existing hook
   const eventId = slug ? getEventIdFromSlug(slug) || undefined : undefined;
+
+  // Lightbox state
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  
+  // Gallery images for different events
+  const eventGalleries: Record<string, { images: string[]; folder: string; title: string }> = {
+    '1': {
+      images: [
+        'IMG_0042.JPG',
+        'IMG_0643.JPG',
+        'IMG_0736.JPG',
+        'IMG_1164.JPG',
+        'IMG_2971.JPG',
+        'IMG_3148.JPG',
+      ],
+      folder: 'conference-2025',
+      title: 'RAIA Conference 2025'
+    },
+    '2': {
+      images: [
+        'IMG_0147.JPG',
+        'IMG_0305.JPG',
+        'IMG_0314.JPG',
+        'IMG_0318.JPG',
+        'IMG_0324.JPG',
+        'IMG_0368.JPG',
+      ],
+      folder: 'llm-spring-2025',
+      title: 'LLM Spring School 2025'
+    }
+  };
+
+  const currentGallery = eventId ? eventGalleries[eventId] : null;
+  const galleryImages = currentGallery?.images || [];
+  const galleryFolder = currentGallery?.folder || '';
+  const galleryTitle = currentGallery?.title || '';
+
+  const handleImageClick = useCallback((index: number) => {
+    setSelectedImageIndex(index);
+    setLightboxOpen(true);
+  }, []);
+
+  const handleCloseLightbox = useCallback(() => {
+    setLightboxOpen(false);
+  }, []);
+
+  const handlePrevImage = useCallback(() => {
+    setSelectedImageIndex((prev) => (prev === 0 ? galleryImages.length - 1 : prev - 1));
+  }, [galleryImages.length]);
+
+  const handleNextImage = useCallback(() => {
+    setSelectedImageIndex((prev) => (prev === galleryImages.length - 1 ? 0 : prev + 1));
+  }, [galleryImages.length]);
+
+  // Keyboard navigation for lightbox
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (!lightboxOpen) return;
+      
+      switch (event.key) {
+        case 'Escape':
+          handleCloseLightbox();
+          break;
+        case 'ArrowLeft':
+          handlePrevImage();
+          break;
+        case 'ArrowRight':
+          handleNextImage();
+          break;
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [lightboxOpen, handleCloseLightbox, handlePrevImage, handleNextImage]);
 
   const { getContent: getEventText } = useLocalizedContent(
     'screens',
@@ -300,7 +379,7 @@ const EventDetails: React.FC = () => {
         )}
 
         {/* Event Images Gallery */}
-        {eventId === '2' && (
+        {currentGallery && galleryImages.length > 0 && (
           <Box sx={{ mb: 6 }}>
             <Typography
               variant="h5"
@@ -369,19 +448,13 @@ const EventDetails: React.FC = () => {
                   },
                 ]}
               >
-                {[
-                  'IMG_0147.JPG',
-                  'IMG_0305.JPG',
-                  'IMG_0314.JPG',
-                  'IMG_0318.JPG',
-                  'IMG_0324.JPG',
-                  'IMG_0368.JPG',
-                ].map((img) => (
+                {galleryImages.map((img, index) => (
                   <Box key={img} sx={{ px: 1 }}>
                     <Box
                       component="img"
-                      src={`/events/llm-spring-2025/${img}`}
-                      alt={`LLM Spring School 2025 - ${img}`}
+                      src={`/events/${galleryFolder}/${img}`}
+                      alt={`${galleryTitle} - ${img}`}
+                      onClick={() => handleImageClick(index)}
                       sx={{
                         width: '100%',
                         height: 'auto',
@@ -400,11 +473,142 @@ const EventDetails: React.FC = () => {
                 ))}
               </Slider>
             </Box>
+
+            {/* Lightbox Modal */}
+            <Modal
+              open={lightboxOpen}
+              onClose={handleCloseLightbox}
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <Box
+                sx={{
+                  position: 'relative',
+                  outline: 'none',
+                  maxWidth: '54vw',
+                  maxHeight: '54vh',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+                onClick={(e) => {
+                  // Close on background click, but not on image click
+                  if (e.target === e.currentTarget) {
+                    handleCloseLightbox();
+                  }
+                }}
+              >
+                {/* Close Button */}
+                <IconButton
+                  onClick={handleCloseLightbox}
+                  sx={{
+                    position: 'absolute',
+                    top: 20,
+                    right: 20,
+                    color: 'white',
+                    bgcolor: 'rgba(0, 0, 0, 0.5)',
+                    zIndex: 2,
+                    '&:hover': {
+                      bgcolor: 'rgba(0, 0, 0, 0.7)',
+                    },
+                  }}
+                >
+                  <CloseIcon />
+                </IconButton>
+
+                {/* Previous Button */}
+                <IconButton
+                  onClick={handlePrevImage}
+                  sx={{
+                    position: 'absolute',
+                    left: 20,
+                    color: 'white',
+                    bgcolor: 'rgba(0, 0, 0, 0.5)',
+                    zIndex: 2,
+                    '&:hover': {
+                      bgcolor: 'rgba(0, 0, 0, 0.7)',
+                    },
+                  }}
+                >
+                  <NavigateBeforeIcon />
+                </IconButton>
+
+                {/* Next Button */}
+                <IconButton
+                  onClick={handleNextImage}
+                  sx={{
+                    position: 'absolute',
+                    right: 20,
+                    color: 'white',
+                    bgcolor: 'rgba(0, 0, 0, 0.5)',
+                    zIndex: 2,
+                    '&:hover': {
+                      bgcolor: 'rgba(0, 0, 0, 0.7)',
+                    },
+                  }}
+                >
+                  <NavigateNextIcon />
+                </IconButton>
+
+                {/* Image */}
+                <Box
+                  component="img"
+                  src={`/events/${galleryFolder}/${galleryImages[selectedImageIndex]}`}
+                  alt={`${galleryTitle} - ${galleryImages[selectedImageIndex]}`}
+                  sx={{
+                    maxWidth: '100%',
+                    maxHeight: '100%',
+                    objectFit: 'contain',
+                    borderRadius: 1,
+                    boxShadow: 24,
+                  }}
+                />
+
+                {/* Image Counter */}
+                <Box
+                  sx={{
+                    position: 'absolute',
+                    bottom: 20,
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    color: 'white',
+                    bgcolor: 'rgba(0, 0, 0, 0.5)',
+                    px: 2,
+                    py: 1,
+                    borderRadius: 1,
+                    zIndex: 2,
+                  }}
+                >
+                  <Typography variant="body2">
+                    {selectedImageIndex + 1} / {galleryImages.length}
+                  </Typography>
+                </Box>
+              </Box>
+            </Modal>
           </Box>
         )}
       </>
     );
-  }, [event, sponsors, getEventText, eventId, theme.palette.primary.main]);
+  }, [
+    event, 
+    sponsors, 
+    getEventText, 
+    eventId, 
+    theme.palette.primary.main,
+    currentGallery,
+    galleryImages,
+    galleryFolder,
+    galleryTitle,
+    handleImageClick,
+    lightboxOpen,
+    handleCloseLightbox,
+    handlePrevImage,
+    handleNextImage,
+    selectedImageIndex
+  ]);
 
   return (
     <BaseLayout>
