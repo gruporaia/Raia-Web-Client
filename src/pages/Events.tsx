@@ -6,7 +6,6 @@ import ContentListPage, {
   HeroButton,
 } from '../components/content/ContentListPage';
 import { ContentItem } from '../components/ui/Card/ContentCard';
-import EventsCarousel from '../components/ui/EventsCarousel';
 import LoadingIndicator from '../components/ui/LoadingIndicator';
 import HeroSection from '../components/ui/Section/HeroSection';
 import { useLocalizedContent } from '../hooks/useLocalizedContent';
@@ -127,10 +126,6 @@ const Events: React.FC = () => {
 
   const allContentItems = mapToContentItems(allEvents);
 
-  const handleCarouselEventClick = (slug: string) => {
-    navigate(ROUTES.EVENTS.EVENT_DETAIL({ slug }));
-  };
-
   return (
     <BaseLayout>
       <HeroSection
@@ -148,17 +143,6 @@ const Events: React.FC = () => {
       />
 
       <Container maxWidth="lg" sx={{ py: 6 }}>
-        {/* Events Carousel */}
-        {allEvents.length > 0 && (
-          <Box sx={{ mb: 8 }}>
-            <EventsCarousel
-              events={allEvents}
-              onEventClick={handleCarouselEventClick}
-              height={400}
-            />
-          </Box>
-        )}
-
         {/* All Events in Grid */}
         {allContentItems.length > 0 ? (
           <ContentListPage
