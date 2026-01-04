@@ -1,4 +1,4 @@
-import { Paper, Typography, useTheme } from '@mui/material';
+import { Box, Container, Paper, Typography, useTheme } from '@mui/material';
 import React, { useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 
@@ -7,6 +7,7 @@ import ContentDetailPage, {
   SidebarConfig,
 } from '../components/content/ContentDetailPage';
 import PageHelmet from '../components/translation/PageHelmet';
+import PartnerCarousel from '../components/ui/PartnerCarousel';
 import { useContentById } from '../hooks/useContent';
 import { useLocalizedContent } from '../hooks/useLocalizedContent';
 import BaseLayout from '../layouts/BaseLayout';
@@ -62,67 +63,238 @@ const EventDetails: React.FC = () => {
     );
   }
 
-  const metaSections: MetaDisplay[] = [];
+  // Create sidebar metadata sections
+  const metaSections: MetaDisplay[] = useMemo(() => {
+    const sections: MetaDisplay[] = [];
 
-  // Add location if available
-  if (event?.location) {
-    metaSections.push({
-      icon: 'LocationOnIcon',
-      label: getEventText<string>('meta.location'),
-      value: event.location,
-    });
-  }
+    // Basic Info Section
+    const basicInfo: MetaDisplay = {
+      title: getEventText<string>('sections.basicInfo'),
+      values: [],
+    };
 
-  // Add date
-  if (event?.date) {
-    metaSections.push({
-      icon: 'EventIcon',
-      label: getEventText<string>('meta.date'),
-      value: new Date(event.date).toLocaleDateString(),
-    });
-  }
+    if (event?.location) {
+      basicInfo.values.push({
+        label: getEventText<string>('meta.location'),
+        value: event.location,
+      });
+    }
 
-  // Add end date if different from start date
-  if (event?.endDate && event.endDate !== event.date) {
-    metaSections.push({
-      icon: 'EventIcon',
-      label: getEventText<string>('meta.endDate'),
-      value: new Date(event.endDate).toLocaleDateString(),
-    });
-  }
+    if (event?.date) {
+      basicInfo.values.push({
+        label: getEventText<string>('meta.date'),
+        value: new Date(event.date).toLocaleDateString(),
+      });
+    }
 
-  // Add category
-  if (event?.category) {
-    metaSections.push({
-      icon: 'CategoryIcon',
-      label: getEventText<string>('meta.category'),
-      value: event.category,
-    });
-  }
+    if (event?.endDate && event.endDate !== event.date) {
+      basicInfo.values.push({
+        label: getEventText<string>('meta.endDate'),
+        value: new Date(event.endDate).toLocaleDateString(),
+      });
+    }
 
-  // Add participants count if available
-  if (event?.meta?.participants) {
-    metaSections.push({
-      icon: 'GroupsIcon',
-      label: getEventText<string>('meta.participants'),
-      value: `${event.meta.participants}`,
-    });
-  }
+    if (event?.category) {
+      basicInfo.values.push({
+        label: getEventText<string>('meta.category'),
+        value: event.category,
+      });
+    }
 
-  // Add speakers count if available
-  if (event?.meta?.speakers) {
-    metaSections.push({
-      icon: 'MicIcon',
-      label: getEventText<string>('meta.speakers'),
-      value: `${event.meta.speakers}`,
-    });
-  }
+    if (basicInfo.values.length > 0) {
+      sections.push(basicInfo);
+    }
+
+    // Event Statistics Section (only for RAIA Conference)
+    if (eventId === '1' && event?.meta) {
+      const stats: MetaDisplay = {
+        title: getEventText<string>('sections.statistics'),
+        values: [],
+      };
+
+      if (event.meta.participants) {
+        stats.values.push({
+          label: '',
+          value: (
+            <Box sx={{ textAlign: 'center', py: 2 }}>
+              <Typography
+                variant="h2"
+                sx={{
+                  fontWeight: 'bold',
+                  color: 'primary.main',
+                  fontSize: { xs: '2.5rem', md: '3rem' },
+                }}
+              >
+                +{event.meta.participants}
+              </Typography>
+              <Typography variant="body1" color="text.secondary">
+                {getEventText<string>('stats.participants')}
+              </Typography>
+            </Box>
+          ),
+        });
+      }
+
+      if (event.meta.speakers) {
+        stats.values.push({
+          label: '',
+          value: (
+            <Box sx={{ textAlign: 'center', py: 2 }}>
+              <Typography
+                variant="h2"
+                sx={{
+                  fontWeight: 'bold',
+                  color: 'primary.main',
+                  fontSize: { xs: '2.5rem', md: '3rem' },
+                }}
+              >
+                {event.meta.speakers}
+              </Typography>
+              <Typography variant="body1" color="text.secondary">
+                {getEventText<string>('stats.speakers')}
+              </Typography>
+            </Box>
+          ),
+        });
+      }
+
+      if (event.meta.youtubeViews) {
+        stats.values.push({
+          label: '',
+          value: (
+            <Box sx={{ textAlign: 'center', py: 2 }}>
+              <Typography
+                variant="h2"
+                sx={{
+                  fontWeight: 'bold',
+                  color: 'primary.main',
+                  fontSize: { xs: '2.5rem', md: '3rem' },
+                }}
+              >
+                +{event.meta.youtubeViews}
+              </Typography>
+              <Typography variant="body1" color="text.secondary">
+                {getEventText<string>('stats.youtubeViews')}
+              </Typography>
+            </Box>
+          ),
+        });
+      }
+
+      if (stats.values.length > 0) {
+        sections.push(stats);
+      }
+    }
+
+    return sections;
+  }, [event, eventId, getEventText]);
 
   const sidebarConfig: SidebarConfig = {
-    showAuthorCard: false,
-    showRelatedContent: false,
-    metaDisplay: metaSections,
+    metaSections,
   };
+
+  // Extract sponsors from the event body (looking for sponsor names)
+  const sponsors = useMemo(() => {
+    if (!event?.body) return [];
+
+    // Map sponsor names to their logo file names in public/partners
+    const sponsorMap: Record<string, string> = {
+      TRACTIAN: 'tractian.png',
+      Nubank: 'nubank.png',
+      'BTG Pactual': 'btgpactual.png',
+      Griaule: 'griaule.png',
+      beuni: 'beuni.png',
+    };
+
+    return Object.entries(sponsorMap)
+      .filter(([name]) => event.body?.includes(`**${name}**`))
+      .map(([name, filename]) => ({
+        name,
+        src: `/partners/${filename}`,
+      }));
+  }, [event?.body]);
+
+  // Create afterContent with sponsors carousel and YouTube video
+  const afterContent = useMemo(() => {
+    if (!event) return null;
+
+    return (
+      <>
+        {/* Sponsors Section */}
+        {sponsors.length > 0 && (
+          <Box sx={{ mb: 6 }}>
+            <Typography
+              variant="h5"
+              component="h2"
+              gutterBottom
+              sx={{
+                color: 'text.primary',
+                fontWeight: 500,
+                mb: 4,
+                textAlign: 'center',
+              }}
+            >
+              {getEventText<string>('meta.sponsorsTitle')}
+            </Typography>
+            <Box
+              sx={{
+                bgcolor: 'background.default',
+                py: 4,
+                px: 2,
+                borderRadius: 1,
+              }}
+            >
+              <PartnerCarousel logos={sponsors} logoSize={200} />
+            </Box>
+          </Box>
+        )}
+
+        {/* YouTube Video Section */}
+        {event.videoUrl && (
+          <Box sx={{ mb: 6 }}>
+            <Typography
+              variant="h5"
+              component="h2"
+              gutterBottom
+              sx={{
+                color: 'text.primary',
+                fontWeight: 500,
+                mb: 4,
+                textAlign: 'center',
+              }}
+            >
+              {getEventText<string>('meta.videoTitle')}
+            </Typography>
+            <Box
+              sx={{
+                position: 'relative',
+                paddingBottom: '56.25%',
+                height: 0,
+                overflow: 'hidden',
+                borderRadius: 1,
+                boxShadow: 1,
+              }}
+            >
+              <iframe
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  height: '100%',
+                  border: 'none',
+                }}
+                src={event.videoUrl}
+                title={event.title}
+                allowFullScreen
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              />
+            </Box>
+          </Box>
+        )}
+      </>
+    );
+  }, [event, sponsors, getEventText]);
 
   return (
     <BaseLayout>
@@ -141,6 +313,7 @@ const EventDetails: React.FC = () => {
           linkToList={ROUTES.EVENTS.ROOT.path}
           sidebar={sidebarConfig}
           categoryIconMap={categoryIconMap}
+          afterContent={afterContent}
         />
       </PageHelmet>
     </BaseLayout>

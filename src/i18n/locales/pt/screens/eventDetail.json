@@ -7,7 +7,9 @@
     "endDate": "Data de Término",
     "category": "Categoria",
     "participants": "Participantes",
-    "speakers": "Palestrantes"
+    "speakers": "Palestrantes",
+    "videoTitle": "Vídeo do Evento",
+    "sponsorsTitle": "Patrocinadores"
   },
   "loading": {
     "title": "Carregando detalhes do evento...",
@@ -31,7 +33,13 @@
   },
   "sections": {
     "details": "Detalhes do Evento",
-    "basicInfo": "Informações Básicas"
+    "basicInfo": "Informações Básicas",
+    "statistics": "Este Evento em Números"
+  },
+  "stats": {
+    "participants": "Participantes de diferentes regiões",
+    "speakers": "Palestrantes convidados",
+    "youtubeViews": "Visualizações no YouTube"
   },
   "navigation": {
     "back": "Voltar para Eventos",

@@ -52,9 +52,11 @@ export interface MockEvent {
     description?: string;
     participants?: number;
     speakers?: number;
+    youtubeViews?: number;
     [key: string]: unknown;
   };
   iconType?: string;
+  videoUrl?: string;
 }
 
 export interface Event extends MockEvent {}

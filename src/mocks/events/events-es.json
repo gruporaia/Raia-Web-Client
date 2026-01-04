@@ -12,10 +12,32 @@
         "location": "Instituto de Ciencias Matemáticas y de Computación de la USP São Carlos (ICMC/USP)",
         "image": "/events/conference-2025/IMG_0042.JPG",
         "language": "es",
+        "videoUrl": "https://www.youtube.com/embed/qwsQC3ABV4I",
         "meta": {
             "description": "La mayor conferencia de IA de Brasil",
             "participants": 150,
-            "speakers": 13
+            "speakers": 13,
+            "youtubeViews": 1300
+        }
+    },
+    {
+        "id": "2",
+        "title": "Escuela de Primavera de LLMs",
+        "excerpt": "Agentes de inteligencia artificial y modelos de lenguaje grande son temas de un evento gratuito en la USP São Carlos",
+        "description": "Un evento diseñado para reunir a investigadores y profesionales del mercado para discutir temas actuales sobre modelos de lenguaje grande (LLMs) y agentes de inteligencia artificial (IA).",
+        "date": "2025-11-15",
+        "endDate": "2025-11-16",
+        "status": "upcoming",
+        "category": "workshop",
+        "featured": true,
+        "location": "Instituto de Ciencias Matemáticas e Informáticas de la USP São Carlos (ICMC/USP)",
+        "image": "/events/llm-spring-school/llm-spring-school.jpg",
+        "language": "es",
+        "videoUrl": "https://www.youtube.com/embed/ywuZ5tNGuqU",
+        "meta": {
+            "description": "Escuela de Primavera con conferencias y talleres sobre LLMs",
+            "participants": null,
+            "speakers": 4
         }
     }
 ]

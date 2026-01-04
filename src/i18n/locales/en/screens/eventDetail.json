@@ -7,7 +7,9 @@
     "endDate": "End Date",
     "category": "Category",
     "participants": "Participants",
-    "speakers": "Speakers"
+    "speakers": "Speakers",
+    "videoTitle": "Event Video",
+    "sponsorsTitle": "Sponsors"
   },
   "loading": {
     "title": "Loading event details...",
@@ -31,7 +33,13 @@
   },
   "sections": {
     "details": "Event Details",
-    "basicInfo": "Basic Information"
+    "basicInfo": "Basic Information",
+    "statistics": "This Event in Numbers"
+  },
+  "stats": {
+    "participants": "Participants from different regions",
+    "speakers": "Invited speakers",
+    "youtubeViews": "YouTube views"
   },
   "navigation": {
     "back": "Back to Events",

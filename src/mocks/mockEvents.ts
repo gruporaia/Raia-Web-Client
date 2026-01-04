@@ -2,6 +2,7 @@ import { http, HttpResponse } from 'msw';
 
 import { MockEvent } from '../types/eventTypes';
 import conference2025Content from './events/content/conference-2025.json';
+import llmSpringSchoolContent from './events/content/llm-spring-school-2025.json';
 import eventsEn from './events/events-en.json';
 import eventsEs from './events/events-es.json';
 import eventsPt from './events/events-pt.json';
@@ -10,6 +11,7 @@ export type { MockEvent };
 
 const contentMap: Record<string, Record<string, string>> = {
   '1': conference2025Content,
+  '2': llmSpringSchoolContent,
 };
 
 function addContentToEvents(events: MockEvent[]): MockEvent[] {

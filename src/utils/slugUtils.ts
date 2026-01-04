@@ -63,6 +63,7 @@ export function getEventSlug(id: string, title: string): string {
   // Mapping of known event IDs to their expected slugs
   const knownSlugs: Record<string, string> = {
     '1': 'conferencia-raia-2025',
+    '2': 'llm-spring-school',
   };
 
   // Use known slug if available, otherwise generate from title
@@ -75,6 +76,7 @@ export function getEventSlug(id: string, title: string): string {
 export function getEventIdFromSlug(slug: string): string | null {
   const slugToId: Record<string, string> = {
     'conferencia-raia-2025': '1',
+    'llm-spring-school': '2',
   };
 
   return slugToId[slug] || null;

@@ -9,9 +9,13 @@
     "upcoming": "Upcoming Events",
     "completed": "Past Events"
   },
+  "badges": {
+    "upcoming": "UPCOMING",
+    "past": "PAST"
+  },
   "content": {
     "overline": "COMMUNITY",
-    "title": "Recent Events",
+    "title": "All Events",
     "readMore": "Read More",
     "viewDetails": "View Details",
     "noItemsTitle": "No Events Found",

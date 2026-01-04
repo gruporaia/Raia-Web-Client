@@ -12,8 +12,8 @@ import {
   Typography,
   useTheme,
 } from '@mui/material';
-import React, { useCallback, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import React, { useCallback, useEffect, useState } from 'react';
 
 import { MockEvent } from '../../services/events';
 import { createScrollRoute } from '../../utils/navigationUtils';
@@ -122,7 +122,8 @@ const EventsCarousel: React.FC<EventsCarouselProps> = ({
               left: 0,
               right: 0,
               height: '40%',
-              background: 'linear-gradient(to top, rgba(0,0,0,0.8), transparent)',
+              background:
+                'linear-gradient(to top, rgba(0,0,0,0.8), transparent)',
             }}
           />
 

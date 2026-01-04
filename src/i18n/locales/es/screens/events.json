@@ -9,9 +9,13 @@
     "upcoming": "Próximos Eventos",
     "completed": "Eventos Pasados"
   },
+  "badges": {
+    "upcoming": "PRÓXIMO",
+    "past": "PASADO"
+  },
   "content": {
     "overline": "COMUNIDAD",
-    "title": "Eventos Recientes",
+    "title": "Todos los Eventos",
     "readMore": "Leer Más",
     "viewDetails": "Ver Detalles",
     "noItemsTitle": "No Se Encontraron Eventos",

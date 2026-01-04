@@ -5,10 +5,10 @@ import { useNavigate } from 'react-router-dom';
 import ContentListPage, {
   HeroButton,
 } from '../components/content/ContentListPage';
-import EventsCarousel from '../components/ui/EventsCarousel';
-import HeroSection from '../components/ui/Section/HeroSection';
 import { ContentItem } from '../components/ui/Card/ContentCard';
+import EventsCarousel from '../components/ui/EventsCarousel';
 import LoadingIndicator from '../components/ui/LoadingIndicator';
+import HeroSection from '../components/ui/Section/HeroSection';
 import { useLocalizedContent } from '../hooks/useLocalizedContent';
 import BaseLayout from '../layouts/BaseLayout';
 import ROUTES from '../routes';
@@ -95,7 +95,8 @@ const Events: React.FC = () => {
         const today = new Date();
         const eventDate = new Date(item.date);
         const isUpcoming = eventDate > today;
-        const badge = isUpcoming ? 'upcoming' : 'past';
+        const badgeKey = isUpcoming ? 'upcoming' : 'past';
+        const badge = getEventContent<string>(`badges.${badgeKey}`);
 
         return {
           id: item.id,
@@ -173,6 +174,9 @@ const Events: React.FC = () => {
             mapToContentItems={mapToContentItems}
             categoryIconMap={categoryIconMap}
             items={allEvents}
+            totalPages={1}
+            totalItems={allEvents.length}
+            hideHero={true}
             totalPages={1}
             totalItems={allEvents.length}
           />
