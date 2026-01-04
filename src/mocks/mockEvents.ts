@@ -66,7 +66,7 @@ export const eventHandlers = [
     const paginatedEvents = filteredEvents.slice(startIndex, endIndex);
 
     return HttpResponse.json({
-      events: paginatedEvents,
+      items: paginatedEvents,
       totalPages,
       currentPage: page,
       totalItems,

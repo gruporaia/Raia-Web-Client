@@ -12,6 +12,7 @@
   "content": {
     "overline": "COMMUNITY",
     "title": "Recent Events",
+    "readMore": "Read More",
     "viewDetails": "View Details",
     "noItemsTitle": "No Events Found",
     "noItemsMessage": "Currently there are no events available."
