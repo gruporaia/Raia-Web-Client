@@ -3,7 +3,7 @@ name: Cleanup Release Branch Deployments
 on:
   delete:
     branches:
-      - 'release/**'
+      - "release/**"
 
 jobs:
   cleanup:
