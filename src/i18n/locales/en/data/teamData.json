@@ -1,34 +1,33 @@
 [
   {
-    "id": "pedro-augusto-monteiro-delgado",
-    "name": "Pedro Augusto Monteiro Delgado",
+    "id": "pedro-lucas-bahiense",
+    "name": "Pedro Lucas Bahiense",
     "role": "President",
-    "image": "/team/pedro-augusto-monteiro-delgado.png",
-    "bio": "Computer Science undergraduate at ICMC-USP, in an exchange program with the University of Bern, Switzerland. Interested in exploring the application of artificial intelligence tools in areas of public interest, such as health and education.",
-    "github": "https://github.com/DelgadoPedro",
-    "linkedin": "https://www.linkedin.com/in/pedroamdelgado",
-    "expertise": ["Artificial Intelligence", "Health", "Education"],
-    "education": "ICMC-USP"
+    "image": "/team/pedro-lucas-bahiense.png",
+    "bio": "Computer Science student at the University of São Paulo and President of RAIA.",
+    "linkedin": "https://www.linkedin.com/in/pedro-lucas-figueiredo-bahiense/",
+    "expertise": ["Partnerships", "Computer Science", "Software Engineering"],
+    "education": "University of São Paulo (USP)"
   },
   {
-    "id": "cecilia-nunes-sedenho",
-    "name": "Cecília Nunes Sedenho",
+    "id": "gabriel-iamato",
+    "name": "Gabriel Campanelli Iamato",
     "role": "Projects Director",
-    "image": "/team/cecilia-nunes-sedenho.png",
-    "bio": "Undergraduate student in Computer Science at ICMC - USP and researcher in the area of data architecture. Interested in areas related to Data Engineering and Machine Learning.",
-    "github": "https://github.com/HeNunes",
-    "linkedin": "https://www.linkedin.com/in/cec%C3%ADlia-nunes-sedenho-305059255/",
-    "expertise": ["Data Architecture", "Data Engineering", "Machine Learning"],
+    "image": "/team/gabriel-iamato.png",
+    "bio": "Currently pursuing a degree in Data Science at the University of São Paulo (USP) – São Carlos, continuing studies in Machine Learning, with PIBIC scientific research focused on the comparative analysis of bike-sharing systems. He is part of the RAIA software development team, with a focus on AI and Computer Vision, and previously joined the sales and Data Science consulting team at ICMC Jr., both nonprofit initiatives.",
+    "linkedin": "https://www.linkedin.com/in/gabriel-campanelli-iamato/",
+    "expertise": ["Computer Vision", "Scientific Research", "Machine Learning"],
     "education": "ICMC - USP"
   },
   {
-    "id": "gabriel-merlin",
-    "name": "Gabriel Merlin",
+    "id": "caio-petroncini",
+    "name": "Caio Petroncini",
     "role": "Projects Director",
-    "image": "/team/gabriel-merlin.png",
-    "bio": "His interests fit in the ML/DL area, especially involving Time Series.",
-    "linkedin": "https://www.linkedin.com/in/gabrielcmerlin/",
-    "expertise": ["Machine Learning", "Deep Learning", "Time Series"]
+    "image": "/team/caio-petroncini.png",
+    "bio": "Computer Science student at the University of São Paulo and Projects Director of RAIA.",
+    "linkedin": "https://www.linkedin.com/in/caio-petroncini-7105941aa/",
+    "expertise": ["Machine Learning", "Deep Learning", "Time Series"],
+    "education": "Universidade de São Paulo (USP)"
   },
   {
     "id": "lucas-de-souza-brandao",
@@ -39,6 +38,36 @@
     "linkedin": "https://www.linkedin.com/in/lucas-de-souza-brand%C3%A3o-590b1228b/",
     "expertise": ["Data Science", "Research", "Computer Science"],
     "education": "University of São Paulo (USP)"
+  },
+  {
+    "id": "gabriel-andreghetti",
+    "name": "Gabriel Andreghetti",
+    "role": "Partnerships Director",
+    "image": "/team/gabriel-andreghetti.png",
+    "bio": "Studying Bachelor's in Information Systems.",
+    "linkedin": "https://www.linkedin.com/in/gabriel-moraes-andreghetti-422573274/",
+    "expertise": ["Partnerships", "Information Systems"],
+    "education": "University of São Paulo (USP)"
+  },
+  {
+    "id": "luysa-goncalves",
+    "name": "Luysa de Souza Gonçalves",
+    "role": "Partnerships Director",
+    "image": "/team/luysa-goncalves.png",
+    "bio": "Computer Science student at the University of São Paulo and Partnerships Director of RAIA.",
+    "linkedin": "https://www.linkedin.com/in/luysagoncalves/",
+    "expertise": ["Computer Vision", "Partnerships"],
+    "education": "Universidade de São Paulo (USP)"
+  },
+  {
+    "id": "bruna-mata",
+    "name": "Bruna Pereira da Mata",
+    "role": "Partnerships Director",
+    "image": "/team/bruna-pereira.png",
+    "bio": "Software Engineer, almost graduated from USP, with a focus on Backend Development. I have two years of professional experience, in which I contributed to impact projects within the company, among them developing systems that reduced by 80% the number of activations, and restructuring flow that integrated more than 2 thousand daily data (~50%) that before were not considered.",
+    "linkedin": "https://www.linkedin.com/in/luysagoncalves/",
+    "expertise": ["Software Engineering", "Partnerships"],
+    "education": "Universidade de São Paulo (USP)"
   },
   {
     "id": "samuel-rubens-souza-oliveira",
@@ -52,31 +81,11 @@
     "expertise": ["DevOps", "Microservices", "Cloud Computing"]
   },
   {
-    "id": "gabriel-andreghetti",
-    "name": "Gabriel Andreghetti",
-    "role": "Partnerships Director",
-    "image": "/team/gabriel-andreghetti.png",
-    "bio": "Studying Bachelor's in Information Systems.",
-    "linkedin": "https://www.linkedin.com/in/gabriel-moraes-andreghetti-422573274/",
-    "expertise": ["Partnerships", "Information Systems"],
-    "education": "University of São Paulo (USP)"
-  },
-  {
-    "id": "pedro-lucas-bahiense",
-    "name": "Pedro Lucas Bahiense",
-    "role": "Partnerships Director",
-    "image": "/team/pedro-lucas-bahiense.png",
-    "bio": "Computer Science student at the University of São Paulo.",
-    "linkedin": "https://www.linkedin.com/in/pedro-lucas-figueiredo-bahiense/",
-    "expertise": ["Partnerships", "Computer Science"],
-    "education": "University of São Paulo (USP)"
-  },
-  {
     "id": "pedro-augusto-ribeiro-gomes",
     "name": "Pedro Augusto Ribeiro Gomes",
-    "role": "Advisor",
+    "role": "Founder & Advisor",
     "image": "/team/pedro-augusto-ribeiro-gomes.png",
-    "bio": "Founder and President of RAIA, studying Computer Science at ICMC - USP São Carlos.",
+    "bio": "Founder and former President of RAIA, studying Computer Science at ICMC - USP São Carlos.",
     "linkedin": "https://www.linkedin.com/in/pedroaurgomes/",
     "expertise": [
       "Artificial Intelligence",
@@ -86,20 +95,9 @@
     "education": "University of São Paulo (USP)"
   },
   {
-    "id": "luisa-shimabucoro",
-    "name": "Luísa Shimabucoro",
-    "role": "Advisor",
-    "image": "/team/luisa-shimabucoro.png",
-    "bio": "Interested in ML areas, with emphasis on NLP and Vision. Computer Science student at USP, having worked at the University of Edinburgh and Cohere For AI as a researcher.",
-    "github": "https://github.com/luisashimabucoro",
-    "linkedin": "https://www.linkedin.com/in/lushimabucoro/",
-    "expertise": ["Machine Learning", "NLP", "Computer Vision"],
-    "education": "University of São Paulo (USP)"
-  },
-  {
     "id": "pedro-kenzo-muramatsu-carmo",
     "name": "Pedro Kenzo Muramatsu",
-    "role": "Advisor",
+    "role": "Former Co-President & Advisor",
     "image": "/team/pedro-kenzo-muramatsu-carmo.jpeg",
     "bio": "Former Co-President, current Advisor of RAIA. Distributed Computing Engineer at CERN and incoming Backend SWE II at QuintoAndar. BsC Computer Science @ ICMC USP, full-ride research exchange @ Kyushu University",
     "linkedin": "https://www.linkedin.com/in/muramatsu-pedro/",
@@ -111,5 +109,27 @@
       "Intercultural Communication"
     ],
     "education": "University of São Paulo (USP), Kyushu University"
+  },
+  {
+    "id": "luisa-shimabucoro",
+    "name": "Luísa Shimabucoro",
+    "role": "Founder & Former Projects Director & Advisor",
+    "image": "/team/luisa-shimabucoro.png",
+    "bio": "Founder and former Projects Director of RAIA. Interested in ML areas, with emphasis on NLP and Vision. Computer Science student at USP, having worked at the University of Edinburgh and Cohere For AI as a researcher.",
+    "github": "https://github.com/luisashimabucoro",
+    "linkedin": "https://www.linkedin.com/in/lushimabucoro/",
+    "expertise": ["Machine Learning", "NLP", "Computer Vision"],
+    "education": "University of São Paulo (USP)"
+  },
+  {
+    "id": "pedro-augusto-monteiro-delgado",
+    "name": "Pedro Augusto Monteiro Delgado",
+    "role": "Former President (2025) & Advisor",
+    "image": "/team/pedro-augusto-monteiro-delgado.png",
+    "bio": "Former President of RAIA during the 2025 term. Computer Science undergraduate at ICMC-USP, in an exchange program with the University of Bern, Switzerland. Interested in exploring the application of artificial intelligence tools in areas of public interest, such as health and education.",
+    "github": "https://github.com/DelgadoPedro",
+    "linkedin": "https://www.linkedin.com/in/pedroamdelgado",
+    "expertise": ["Artificial Intelligence", "Health", "Education"],
+    "education": "ICMC-USP"
   }
 ]
