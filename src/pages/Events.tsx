@@ -1,23 +1,22 @@
-import { Box, Container } from '@mui/material';
 import React, { useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import ContentListPage, {
   HeroButton,
 } from '../components/content/ContentListPage';
 import { ContentItem } from '../components/ui/Card/ContentCard';
-import LoadingIndicator from '../components/ui/LoadingIndicator';
-import HeroSection from '../components/ui/Section/HeroSection';
 import { useLocalizedContent } from '../hooks/useLocalizedContent';
 import BaseLayout from '../layouts/BaseLayout';
 import ROUTES from '../routes';
-import { fetchEvents, MockEvent } from '../services/events';
+import { MockEvent } from '../services/events';
 import { CATEGORY_ICONS } from '../utils/iconMappings';
 import { createScrollRoute } from '../utils/navigationUtils';
 import { getEventSlug } from '../utils/slugUtils';
 
 const Events: React.FC = () => {
+  const params = useParams<{ page?: string }>();
   const navigate = useNavigate();
+  const initialPage = params.page ? parseInt(params.page, 10) : 1;
 
   const { getContent: getEventContent } = useLocalizedContent(
     'screens',
@@ -27,43 +26,6 @@ const Events: React.FC = () => {
     'navigation',
     'menu'
   );
-
-  // Fetch all events (no status filtering - we'll show all)
-  const [allEvents, setAllEvents] = React.useState<MockEvent[]>([]);
-  const [loading, setLoading] = React.useState(true);
-
-  React.useEffect(() => {
-    const loadEvents = async () => {
-      try {
-        setLoading(true);
-        // Get upcoming events
-        const upcomingData = await fetchEvents(
-          1,
-          100,
-          undefined,
-          undefined,
-          'upcoming'
-        );
-        // Get completed events
-        const completedData = await fetchEvents(
-          1,
-          100,
-          undefined,
-          undefined,
-          'completed'
-        );
-
-        // Combine all events
-        setAllEvents([...upcomingData.events, ...completedData.events]);
-      } catch (error) {
-        console.error('Failed to load events:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    loadEvents();
-  }, []);
 
   const heroButtons: HeroButton[] = [
     {
@@ -92,7 +54,7 @@ const Events: React.FC = () => {
       return items.map((item) => {
         const slug = getEventSlug(String(item.id), item.title);
         const today = new Date();
-        today.setHours(0, 0, 0, 0); // Reset to start of day for accurate comparison
+        today.setHours(0, 0, 0, 0);
         const eventDate = new Date(item.date);
         eventDate.setHours(0, 0, 0, 0);
 
@@ -132,55 +94,21 @@ const Events: React.FC = () => {
 
   const categoryIconMap = useMemo(() => CATEGORY_ICONS, []);
 
-  if (loading) {
-    return (
-      <BaseLayout>
-        <LoadingIndicator message="Loading events..." fullHeight />
-      </BaseLayout>
-    );
-  }
-
-  const allContentItems = mapToContentItems(allEvents);
-
   return (
     <BaseLayout>
-      <HeroSection
-        title={getEventContent<string>('hero.title')}
-        subtitle={getEventContent<string>('hero.subtitle')}
-        buttons={[
-          {
-            text: getEventContent<string>('hero.buttonText'),
-            onClick: () =>
-              navigate(
-                createScrollRoute(ROUTES.PUBLIC.CONTACT.path, 'contact-section')
-              ),
-          },
-        ]}
+      <ContentListPage
+        resource="events"
+        i18nBase="screens.events"
+        currentPage={initialPage}
+        itemsPerPage={9}
+        heroButtons={heroButtons}
+        linkToItem={(id) => ROUTES.EVENTS.EVENT_DETAIL({ id })}
+        linkToPage={(page) => ROUTES.EVENTS.LIST_PAGED({ page })}
+        breadcrumbs={breadcrumbs}
+        contentSectionId="events-section"
+        mapToContentItems={mapToContentItems}
+        categoryIconMap={categoryIconMap}
       />
-
-      <Container maxWidth="lg" sx={{ py: 6 }}>
-        {/* All Events in Grid */}
-        {allContentItems.length > 0 ? (
-          <ContentListPage
-            resource="events"
-            i18nBase="screens.events"
-            currentPage={1}
-            itemsPerPage={9}
-            heroButtons={heroButtons}
-            linkToItem={(id) => ROUTES.EVENTS.EVENT_DETAIL({ id })}
-            linkToPage={(page) => ROUTES.EVENTS.LIST_PAGED({ page })}
-            breadcrumbs={breadcrumbs}
-            contentSectionId="events-section"
-            mapToContentItems={mapToContentItems}
-            categoryIconMap={categoryIconMap}
-            hideHero={true}
-          />
-        ) : (
-          <Box sx={{ p: 4, textAlign: 'center' }}>
-            <p>No events available</p>
-          </Box>
-        )}
-      </Container>
     </BaseLayout>
   );
 };

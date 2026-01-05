@@ -6,6 +6,7 @@ import {
   mockEvents,
 } from '../mocks/mockEvents';
 import { createPaginatedService } from './createPaginatedService';
+import { EventSchema } from './validators';
 
 /**
  * Service for fetching events - initialized lazily to avoid require issues
@@ -21,7 +22,7 @@ export const getEventService = async () => {
       route: '/events',
       mock: mockEvents,
       collection: COLLECTIONS.EVENTS || 'events',
-      // Schema validation would go here if available
+      schema: EventSchema,
     });
   }
   return _eventService;

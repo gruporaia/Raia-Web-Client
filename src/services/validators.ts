@@ -89,3 +89,70 @@ export type BlogPost = z.infer<typeof BlogPostSchema>;
  * Type for projects parsed from the schema
  */
 export type Project = z.infer<typeof ProjectSchema>;
+
+/**
+ * Schema for event references
+ */
+export const EventReferenceSchema = z.object({
+  title: z.string(),
+  url: z.string(),
+  type: z.enum(['article', 'link', 'video']),
+});
+
+/**
+ * Schema for event authors
+ */
+export const EventAuthorSchema = z.object({
+  name: z.string(),
+  role: z.string(),
+  image: z.string(),
+  bio: z.string().optional(),
+  email: z.string().optional(),
+  linkedin: z.string().optional(),
+  github: z.string().optional(),
+  website: z.string().optional(),
+});
+
+/**
+ * Schema for initiative tabs
+ */
+export const InitiativeTabSchema = z.object({
+  id: z.string(),
+  title: z.string(),
+  description: z.string(),
+  date: z.string().optional(),
+  link: z.string().optional(),
+});
+
+/**
+ * Schema for event entities
+ */
+export const EventSchema = z
+  .object({
+    id: z.string(),
+    title: z.string(),
+    description: z.string(),
+    body: z.string(),
+    image: z.string().optional(),
+    category: z.enum(['event', 'hackathon', 'fellowship', 'conference']).optional(),
+    categoryIcon: z.string().optional(),
+    date: z.string(),
+    endDate: z.string().optional(),
+    status: z.enum(['upcoming', 'completed']),
+    location: z.string().optional(),
+    featured: z.boolean().optional(),
+    references: z.array(EventReferenceSchema).optional(),
+    authors: z.array(EventAuthorSchema).optional(),
+    language: z.string().optional(),
+    excerpt: z.string().optional(),
+    initiatives: z.array(InitiativeTabSchema).optional(),
+    meta: z.record(z.unknown()).optional(),
+    iconType: z.string().optional(),
+    videoUrl: z.string().optional(),
+  })
+  .merge(HasTimestamps);
+
+/**
+ * Type for events parsed from the schema
+ */
+export type Event = z.infer<typeof EventSchema>;
