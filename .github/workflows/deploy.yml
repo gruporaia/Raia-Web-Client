@@ -19,8 +19,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'
+          node-version: "20"
+          cache: "npm"
 
       - name: Install dependencies
         run: npm ci
@@ -53,7 +53,7 @@ jobs:
         run: |
           echo "## Deployment Complete! 🚀" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          
+
           if [[ "${{ github.ref_name }}" == "main" ]]; then
             echo "**Environment:** Production" >> $GITHUB_STEP_SUMMARY
             echo "**URL:** https://grupo-raia.org" >> $GITHUB_STEP_SUMMARY
@@ -61,7 +61,7 @@ jobs:
             echo "**Environment:** Preview (${{ github.ref_name }})" >> $GITHUB_STEP_SUMMARY
             echo "**URL:** https://${{ github.ref_name }}.${{ vars.PROJECT_NAME }}.pages.dev" >> $GITHUB_STEP_SUMMARY
           fi
-          
+
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**Commit:** \`${{ github.sha }}\`" >> $GITHUB_STEP_SUMMARY
           echo "**Triggered by:** ${{ github.actor }}" >> $GITHUB_STEP_SUMMARY

@@ -1,17 +1,30 @@
 import js from '@eslint/js';
-import tsPlugin from '@typescript-eslint/eslint-plugin';
-import tsParser from '@typescript-eslint/parser';
-import prettier from 'eslint-plugin-prettier';
+import eslintConfigPrettier from 'eslint-config-prettier/flat';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import vitest from 'eslint-plugin-vitest';
 import globals from 'globals';
+import tseslint from 'typescript-eslint';
 
-export default [
+export default tseslint.config(
+  // Global ignores
   {
-    ignores: ['dist'],
+    ignores: [
+      'dist',
+      'coverage',
+      'node_modules',
+      'public/mockServiceWorker.js',
+    ],
   },
+
+  // Base JS recommended rules
+  js.configs.recommended,
+
+  // TypeScript recommended rules
+  ...tseslint.configs.recommended,
+
+  // Main configuration for all source files
   {
     files: ['**/*.{ts,tsx,js,jsx}'],
     languageOptions: {
@@ -21,7 +34,6 @@ export default [
         ...globals.browser,
         process: 'readonly',
       },
-      parser: tsParser,
       parserOptions: {
         ecmaFeatures: {
           jsx: true,
@@ -31,22 +43,18 @@ export default [
     plugins: {
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
-      prettier,
-      '@typescript-eslint': tsPlugin,
       'simple-import-sort': simpleImportSort,
     },
     rules: {
-      ...js.configs.recommended.rules,
-      ...tsPlugin.configs.recommended.rules,
       ...reactHooks.configs.recommended.rules,
       'react-refresh/only-export-components': [
         'warn',
         { allowConstantExport: true },
       ],
-      'prettier/prettier': 'error',
-      '@typescript-eslint/no-unused-vars': 'warn',
-      'react/react-in-jsx-scope': 'off',
-      'react/prop-types': 'off',
+      '@typescript-eslint/no-unused-vars': [
+        'warn',
+        { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
+      ],
       'simple-import-sort/imports': 'error',
       'simple-import-sort/exports': 'error',
     },
@@ -56,13 +64,8 @@ export default [
       },
     },
   },
-  // Override for TypeScript files to disable no-undef as recommended by typescript-eslint
-  {
-    files: ['**/*.{ts,tsx}'],
-    rules: {
-      'no-undef': 'off', // TypeScript's type checking already handles this effectively
-    },
-  },
+
+  // Test files configuration
   {
     files: [
       '**/*.test.{ts,tsx,js,jsx}',
@@ -82,4 +85,7 @@ export default [
       ...vitest.configs.recommended.rules,
     },
   },
-];
+
+  // Prettier config - MUST be last to override conflicting rules
+  eslintConfigPrettier
+);

@@ -34,32 +34,32 @@ jobs:
         shell: bash
         run: |
           set -e
-          
+
           DATE=$(date +%Y-%m-%d)
-          
+
           # Get commits since last changelog update or last 50 commits
           LAST_CHANGELOG_COMMIT=$(git log --oneline --all --grep="chore: update changelog" -1 --format="%H" 2>/dev/null || true)
-          
+
           if [ -n "$LAST_CHANGELOG_COMMIT" ]; then
             COMMITS=$(git log --pretty=format:"%s" "${LAST_CHANGELOG_COMMIT}..HEAD" --no-merges 2>/dev/null | grep -v "chore: update changelog" || true)
           else
             COMMITS=$(git log --pretty=format:"%s" -50 --no-merges 2>/dev/null | grep -v "chore: update changelog" || true)
           fi
-          
+
           if [ -z "$COMMITS" ]; then
             echo "No new commits to add to changelog"
             echo "has_changes=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          
+
           echo "has_changes=true" >> "$GITHUB_OUTPUT"
-          
+
           # Parse conventional commits using grep and sed
           FEATURES=$(echo "$COMMITS" | grep -E "^feat(\(.+\))?:" | sed 's/^feat\([^)]*\)\?:[[:space:]]*/- /' || true)
           FIXES=$(echo "$COMMITS" | grep -E "^fix(\(.+\))?:" | sed 's/^fix\([^)]*\)\?:[[:space:]]*/- /' || true)
           PERF=$(echo "$COMMITS" | grep -E "^perf(\(.+\))?:" | sed 's/^perf\([^)]*\)\?:[[:space:]]*/- /' || true)
           REFACTOR=$(echo "$COMMITS" | grep -E "^refactor(\(.+\))?:" | sed 's/^refactor\([^)]*\)\?:[[:space:]]*/- /' || true)
-          
+
           # Build the changelog entry
           {
             echo "## [$DATE]"
@@ -89,51 +89,51 @@ jobs:
               echo ""
             fi
           } > /tmp/changelog_entry.md
-          
+
           # Check if we actually have any categorized changes
           if [ -z "$FEATURES" ] && [ -z "$FIXES" ] && [ -z "$PERF" ] && [ -z "$REFACTOR" ]; then
             echo "No notable changes to add to changelog"
             echo "has_changes=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          
+
           echo "Generated changelog entry for $DATE"
 
       - name: Update CHANGELOG.md
         if: steps.changelog.outputs.has_changes == 'true'
         run: |
           CHANGELOG_FILE="CHANGELOG.md"
-          
+
           # Create CHANGELOG.md if it doesn't exist
           if [ ! -f "$CHANGELOG_FILE" ]; then
             printf "# Changelog\n\nAll notable changes to this project will be documented in this file.\n" > "$CHANGELOG_FILE"
           fi
-          
+
           # Read the new entry
           NEW_ENTRY=$(cat /tmp/changelog_entry.md)
-          
+
           # Insert after the header (after line 3)
           head -n 3 "$CHANGELOG_FILE" > /tmp/changelog_new.md
           echo "" >> /tmp/changelog_new.md
           cat /tmp/changelog_entry.md >> /tmp/changelog_new.md
           tail -n +4 "$CHANGELOG_FILE" >> /tmp/changelog_new.md
-          
+
           mv /tmp/changelog_new.md "$CHANGELOG_FILE"
-          
+
           echo "Updated CHANGELOG.md"
 
       - name: Commit and Push
         if: steps.changelog.outputs.has_changes == 'true'
         run: |
           git add CHANGELOG.md
-          
+
           if git diff --staged --quiet; then
             echo "No changes to commit"
             exit 0
           fi
-          
+
           git commit -m "chore: update changelog [skip ci]"
           git push origin main
-          
+
           echo "Changelog updated and pushed"
           echo "Changelog updated and pushed"
