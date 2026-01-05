@@ -4,12 +4,12 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
 import MissingTranslation from '../components/translation/MissingTranslation';
-import { HeroSection, SeasonalBanner } from '../components/ui';
+import { Carousel, HeroSection, SeasonalBanner } from '../components/ui';
 import EventsCarousel from '../components/ui/EventsCarousel';
 import LogoAnimation from '../components/ui/LogoAnimation';
-import PartnerCarousel from '../components/ui/PartnerCarousel';
 import CTASection from '../components/ui/Section/CTASection';
 import TeamSlider from '../components/ui/TeamSlider';
+import { useInstitutions } from '../data/institutionsData';
 import { usePartners } from '../data/partnersData';
 import { useTeamMembers } from '../data/teamData';
 import { useLocalizedContent } from '../hooks/useLocalizedContent';
@@ -39,6 +39,7 @@ const Home: React.FC = () => {
   const { getContent } = useLocalizedContent('screens', 'home');
 
   const partners = usePartners();
+  const institutions = useInstitutions();
   const teamMembers = useTeamMembers();
 
   useEffect(() => {
@@ -97,6 +98,12 @@ const Home: React.FC = () => {
     title: getContent<string>('partners.title'),
     subtitle: getContent<string>('partners.subtitle'),
     buttonText: getContent<string>('partners.buttonText'),
+  };
+
+  const institutionsContent = {
+    overline: getContent<string>('institutions.overline'),
+    title: getContent<string>('institutions.title'),
+    subtitle: getContent<string>('institutions.subtitle'),
   };
 
   const teamContent = {
@@ -214,7 +221,7 @@ const Home: React.FC = () => {
           >
             <EventsCarousel
               events={events}
-              onEventClick={(slug) =>
+              onEventClick={(slug: string) =>
                 navigate(ROUTES.EVENTS.EVENT_DETAIL({ slug }))
               }
               height={400}
@@ -268,12 +275,34 @@ const Home: React.FC = () => {
             navigate(ROUTES.PUBLIC.PARTNERDETAILS.path);
           }}
         >
-          <PartnerCarousel
-            logos={partners}
+          <Carousel
+            items={partners}
             speed={15}
-            maxLogoHeight={layout.logo.maxHeight.carousel}
+            maxItemHeight={layout.logo.maxHeight.carousel}
             padding="0 5px"
-            logoSize={layout.logo.partnerSize}
+            itemSize={layout.logo.partnerSize}
+          />
+        </CTASection>
+
+        <CTASection
+          id="institutions-section"
+          overline={renderContent(
+            institutionsContent.overline,
+            'institutions.overline'
+          )}
+          title={renderContent(institutionsContent.title, 'institutions.title')}
+          subtitle={renderContent(
+            institutionsContent.subtitle,
+            'institutions.subtitle'
+          )}
+          py={2}
+        >
+          <Carousel
+            items={institutions}
+            speed={25}
+            squareSize={180}
+            padding="0 8px"
+            forceAnimation={true}
           />
         </CTASection>
 

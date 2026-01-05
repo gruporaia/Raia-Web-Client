@@ -21,7 +21,7 @@ import ContentDetailPage, {
   SidebarConfig,
 } from '../components/content/ContentDetailPage';
 import PageHelmet from '../components/translation/PageHelmet';
-import PartnerCarousel from '../components/ui/PartnerCarousel';
+import { Carousel } from '../components/ui';
 import { useContentById } from '../hooks/useContent';
 import { useLocalizedContent } from '../hooks/useLocalizedContent';
 import BaseLayout from '../layouts/BaseLayout';
@@ -338,7 +338,7 @@ const EventDetails: React.FC = () => {
                 borderRadius: 1,
               }}
             >
-              <PartnerCarousel logos={sponsors} logoSize={200} />
+              <Carousel items={sponsors} itemSize={200} />
             </Box>
           </Box>
         )}
