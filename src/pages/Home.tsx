@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 import MissingTranslation from '../components/translation/MissingTranslation';
 import { Carousel, HeroSection, SeasonalBanner } from '../components/ui';
+import EventsCarousel from '../components/ui/EventsCarousel';
 import LogoAnimation from '../components/ui/LogoAnimation';
 import CTASection from '../components/ui/Section/CTASection';
 import TeamSlider from '../components/ui/TeamSlider';
@@ -220,7 +221,7 @@ const Home: React.FC = () => {
           >
             <EventsCarousel
               events={events}
-              onEventClick={(slug) =>
+              onEventClick={(slug: string) =>
                 navigate(ROUTES.EVENTS.EVENT_DETAIL({ slug }))
               }
               height={400}
