@@ -1,12 +1,20 @@
-import { Box, Container, IconButton, Modal, Paper, Typography, useTheme } from '@mui/material';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 import CloseIcon from '@mui/icons-material/Close';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import {
+  Box,
+  IconButton,
+  Modal,
+  Paper,
+  Typography,
+  useTheme,
+} from '@mui/material';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 
 import ContentDetailPage, {
   MetaDisplay,
@@ -32,9 +40,12 @@ const EventDetails: React.FC = () => {
   // Lightbox state
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-  
+
   // Gallery images for different events
-  const eventGalleries: Record<string, { images: string[]; folder: string; title: string }> = {
+  const eventGalleries: Record<
+    string,
+    { images: string[]; folder: string; title: string }
+  > = {
     '1': {
       images: [
         'IMG_0042.JPG',
@@ -45,7 +56,7 @@ const EventDetails: React.FC = () => {
         'IMG_3148.JPG',
       ],
       folder: 'conference-2025',
-      title: 'RAIA Conference 2025'
+      title: 'RAIA Conference 2025',
     },
     '2': {
       images: [
@@ -57,12 +68,15 @@ const EventDetails: React.FC = () => {
         'IMG_0368.JPG',
       ],
       folder: 'llm-spring-2025',
-      title: 'LLM Spring School 2025'
-    }
+      title: 'LLM Spring School 2025',
+    },
   };
 
   const currentGallery = eventId ? eventGalleries[eventId] : null;
-  const galleryImages = currentGallery?.images || [];
+  const galleryImages = useMemo(
+    () => currentGallery?.images || [],
+    [currentGallery?.images]
+  );
   const galleryFolder = currentGallery?.folder || '';
   const galleryTitle = currentGallery?.title || '';
 
@@ -76,18 +90,22 @@ const EventDetails: React.FC = () => {
   }, []);
 
   const handlePrevImage = useCallback(() => {
-    setSelectedImageIndex((prev) => (prev === 0 ? galleryImages.length - 1 : prev - 1));
+    setSelectedImageIndex((prev) =>
+      prev === 0 ? galleryImages.length - 1 : prev - 1
+    );
   }, [galleryImages.length]);
 
   const handleNextImage = useCallback(() => {
-    setSelectedImageIndex((prev) => (prev === galleryImages.length - 1 ? 0 : prev + 1));
+    setSelectedImageIndex((prev) =>
+      prev === galleryImages.length - 1 ? 0 : prev + 1
+    );
   }, [galleryImages.length]);
 
   // Keyboard navigation for lightbox
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (!lightboxOpen) return;
-      
+
       switch (event.key) {
         case 'Escape':
           handleCloseLightbox();
@@ -132,18 +150,6 @@ const EventDetails: React.FC = () => {
     ],
     [getNavText, event, slug]
   );
-
-  if (!slug) {
-    return (
-      <BaseLayout>
-        <Paper sx={{ p: 3, m: 3, borderRadius: theme.shape.borderRadius }}>
-          <Typography variant="h5" color="error">
-            Invalid event slug
-          </Typography>
-        </Paper>
-      </BaseLayout>
-    );
-  }
 
   // Create sidebar metadata sections
   const metaSections: MetaDisplay[] = useMemo(() => {
@@ -291,7 +297,10 @@ const EventDetails: React.FC = () => {
     return Object.entries(sponsorMap)
       .filter(([name]) => {
         // Check for both markdown (**name**) and HTML (<strong>name</strong>) formats
-        return event.body?.includes(`**${name}**`) || event.body?.includes(`<strong>${name}</strong>`);
+        return (
+          event.body?.includes(`**${name}**`) ||
+          event.body?.includes(`<strong>${name}</strong>`)
+        );
       })
       .map(([name, filename]) => ({
         name,
@@ -593,10 +602,9 @@ const EventDetails: React.FC = () => {
       </>
     );
   }, [
-    event, 
-    sponsors, 
-    getEventText, 
-    eventId, 
+    event,
+    sponsors,
+    getEventText,
     theme.palette.primary.main,
     currentGallery,
     galleryImages,
@@ -607,8 +615,21 @@ const EventDetails: React.FC = () => {
     handleCloseLightbox,
     handlePrevImage,
     handleNextImage,
-    selectedImageIndex
+    selectedImageIndex,
   ]);
+
+  // Early return after all hooks
+  if (!slug) {
+    return (
+      <BaseLayout>
+        <Paper sx={{ p: 3, m: 3, borderRadius: theme.shape.borderRadius }}>
+          <Typography variant="h5" color="error">
+            Invalid event slug
+          </Typography>
+        </Paper>
+      </BaseLayout>
+    );
+  }
 
   return (
     <BaseLayout>

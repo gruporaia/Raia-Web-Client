@@ -59,7 +59,7 @@ export interface MockEvent {
   videoUrl?: string;
 }
 
-export interface Event extends MockEvent {}
+export type Event = MockEvent;
 
 export interface PaginatedEventResponse {
   events: MockEvent[];

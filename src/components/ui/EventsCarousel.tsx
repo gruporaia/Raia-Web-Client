@@ -2,13 +2,9 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import {
   Box,
-  Button,
-  Card,
   CardMedia,
   Chip,
-  Container,
   IconButton,
-  Paper,
   Typography,
   useTheme,
 } from '@mui/material';
@@ -16,7 +12,6 @@ import { motion } from 'framer-motion';
 import React, { useCallback, useEffect, useState } from 'react';
 
 import { MockEvent } from '../../services/events';
-import { createScrollRoute } from '../../utils/navigationUtils';
 import { getEventSlug } from '../../utils/slugUtils';
 
 interface EventsCarouselProps {
@@ -38,13 +33,6 @@ const EventsCarousel: React.FC<EventsCarouselProps> = ({
 
   // Only use events with images
   const displayEvents = events.filter((e) => e.image);
-
-  if (displayEvents.length === 0) {
-    return null;
-  }
-
-  const currentEvent = displayEvents[currentIndex];
-  const currentSlug = getEventSlug(String(currentEvent.id), currentEvent.title);
 
   const handleNext = useCallback(() => {
     setCurrentIndex((prev) => (prev + 1) % displayEvents.length);
@@ -76,6 +64,14 @@ const EventsCarousel: React.FC<EventsCarouselProps> = ({
       return () => clearTimeout(timer);
     }
   }, [autoPlay]);
+
+  // Early return after all hooks
+  if (displayEvents.length === 0) {
+    return null;
+  }
+
+  const currentEvent = displayEvents[currentIndex];
+  const currentSlug = getEventSlug(String(currentEvent.id), currentEvent.title);
 
   return (
     <Box

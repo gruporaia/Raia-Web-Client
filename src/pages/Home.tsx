@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom';
 import MissingTranslation from '../components/translation/MissingTranslation';
 import { HeroSection, SeasonalBanner } from '../components/ui';
 import EventsCarousel from '../components/ui/EventsCarousel';
-import LoadingIndicator from '../components/ui/LoadingIndicator';
 import LogoAnimation from '../components/ui/LogoAnimation';
 import PartnerCarousel from '../components/ui/PartnerCarousel';
 import CTASection from '../components/ui/Section/CTASection';
@@ -19,7 +18,6 @@ import BaseLayout from '../layouts/BaseLayout';
 import ROUTES from '../routes';
 import { getImporterForPath } from '../routes/importRegistry';
 import { fetchEvents, MockEvent } from '../services/events';
-import { getEventSlug } from '../utils/slugUtils';
 import { layout } from '../theme/themeUtils';
 import { shouldShowLogoAnimation } from '../utils/logoAnimationState';
 import { prefetch } from '../utils/prefetchRoute';
@@ -53,8 +51,20 @@ const Home: React.FC = () => {
     const loadEvents = async () => {
       try {
         setEventsLoading(true);
-        const upcomingData = await fetchEvents(1, 100, undefined, undefined, 'upcoming');
-        const completedData = await fetchEvents(1, 100, undefined, undefined, 'completed');
+        const upcomingData = await fetchEvents(
+          1,
+          100,
+          undefined,
+          undefined,
+          'upcoming'
+        );
+        const completedData = await fetchEvents(
+          1,
+          100,
+          undefined,
+          undefined,
+          'completed'
+        );
         setEvents([...upcomingData.events, ...completedData.events]);
       } catch (error) {
         console.error('Failed to load events:', error);
@@ -204,7 +214,9 @@ const Home: React.FC = () => {
           >
             <EventsCarousel
               events={events}
-              onEventClick={(slug) => navigate(ROUTES.EVENTS.EVENT_DETAIL({ slug }))}
+              onEventClick={(slug) =>
+                navigate(ROUTES.EVENTS.EVENT_DETAIL({ slug }))
+              }
               height={400}
             />
           </Box>

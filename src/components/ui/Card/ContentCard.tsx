@@ -191,7 +191,11 @@ const ContentCard: React.FC<ContentCardProps> = ({
               top: 10,
               right: variant === 'featured' ? 110 : 10,
               backgroundColor:
-                item.badge === 'upcoming' || item.badge === 'UPCOMING' || item.badge === 'PRÓXIMO' ? 'success.main' : 'warning.main',
+                item.badge === 'upcoming' ||
+                item.badge === 'UPCOMING' ||
+                item.badge === 'PRÓXIMO'
+                  ? 'success.main'
+                  : 'warning.main',
               color: 'white',
               py: 0.5,
               px: 1.5,

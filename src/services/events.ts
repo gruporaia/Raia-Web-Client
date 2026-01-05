@@ -5,7 +5,6 @@ import {
   MockEvent,
   mockEvents,
 } from '../mocks/mockEvents';
-import { MockEvent as MockEventType } from '../types/eventTypes';
 import { createPaginatedService } from './createPaginatedService';
 
 /**
