@@ -3,6 +3,7 @@ import { http, HttpHandler } from 'msw';
 import { handlers as i18nHandlersAll } from '../i18n/msw/handlers';
 import { debugLog } from '../utils/debugControl';
 import { blogHandlers } from './mockBlogPosts';
+import { eventHandlers } from './mockEvents';
 import { projectHandlers } from './mockProjects';
 
 /**
@@ -14,7 +15,7 @@ import { projectHandlers } from './mockProjects';
 const isContentHandler = (handler: HttpHandler) => {
   const path = handler.info.path;
 
-  const contentPatterns = ['/api/posts/', '/api/projects/'];
+  const contentPatterns = ['/api/posts/', '/api/projects/', '/api/events/'];
 
   if (typeof path === 'string') {
     return contentPatterns.some((pattern) => path.includes(pattern));
@@ -33,6 +34,7 @@ const i18nHandlers = i18nHandlersAll.filter(
 export const handlers = [
   ...projectHandlers,
   ...blogHandlers,
+  ...eventHandlers,
   ...i18nHandlers,
 
   http.get('/api/health', () => {

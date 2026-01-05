@@ -1,0 +1,43 @@
+[
+  {
+    "id": "1",
+    "title": "Conferência RAIA 2025",
+    "excerpt": "Como construir um ecossistema de inteligência artificial mais conectado no Brasil?",
+    "description": "A Conferência RAIA 2025, realizada em junho de 2025, reuniu estudantes, pesquisadores, profissionais do setor privado e representantes de iniciativas públicas para debater os rumos da inteligência artificial no Brasil.",
+    "date": "2025-06-01",
+    "endDate": "2025-06-02",
+    "status": "completed",
+    "category": "conference",
+    "featured": true,
+    "location": "Instituto de Ciências Matemáticas e de Computação da USP São Carlos (ICMC/USP)",
+    "image": "/events/conference-2025/IMG_0042.JPG",
+    "language": "pt",
+    "videoUrl": "https://www.youtube.com/embed/qwsQC3ABV4I",
+    "meta": {
+      "description": "A maior conferência de IA do Brasil",
+      "participants": 150,
+      "speakers": 13,
+      "youtubeViews": 1300
+    }
+  },
+  {
+    "id": "2",
+    "title": "Escola de Primavera de LLMs",
+    "excerpt": "Agentes de inteligência artificial e modelos de linguagem de larga escala são temas de evento gratuito na USP São Carlos",
+    "description": "Um evento destinado a reunir pesquisadores e profissionais do mercado para discutir temas atuais sobre modelos de linguagem de larga escala (LLMs) e agentes de inteligência artificial (IA).",
+    "date": "2025-11-15",
+    "endDate": "2025-11-16",
+    "status": "upcoming",
+    "category": "workshop",
+    "featured": true,
+    "location": "Instituto de Ciências Matemáticas e de Computação da USP São Carlos (ICMC/USP)",
+    "image": "/events/llm-spring-2025/IMG_0147.JPG",
+    "language": "pt",
+    "videoUrl": "https://www.youtube.com/embed/ywuZ5tNGuqU",
+    "meta": {
+      "description": "Escola de Primavera com palestras e minicursos sobre LLMs",
+      "participants": null,
+      "speakers": 4
+    }
+  }
+]

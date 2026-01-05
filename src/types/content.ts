@@ -39,7 +39,7 @@ export interface PaginatedContentResponse<T extends CommonContent> {
 /**
  * Content resource identifier
  */
-export type ContentResource = 'blog' | 'projects';
+export type ContentResource = 'blog' | 'projects' | 'events';
 
 /**
  * Map of content resources to their API endpoints
@@ -47,4 +47,5 @@ export type ContentResource = 'blog' | 'projects';
 export const CONTENT_ENDPOINTS: Record<ContentResource, string> = {
   blog: 'posts',
   projects: 'projects',
+  events: 'events',
 };

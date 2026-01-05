@@ -1,0 +1,43 @@
+[
+  {
+    "id": "1",
+    "title": "RAIA Conference 2025",
+    "excerpt": "How to build a more connected artificial intelligence ecosystem in Brazil?",
+    "description": "The RAIA Conference 2025, held in June 2025, brought together students, researchers, private sector professionals and representatives of public initiatives to discuss the future of artificial intelligence in Brazil.",
+    "date": "2025-06-01",
+    "endDate": "2025-06-02",
+    "status": "completed",
+    "category": "conference",
+    "featured": true,
+    "location": "Institute of Mathematical and Computer Sciences at USP São Carlos (ICMC/USP)",
+    "image": "/events/conference-2025/IMG_0042.JPG",
+    "language": "en",
+    "videoUrl": "https://www.youtube.com/embed/qwsQC3ABV4I",
+    "meta": {
+      "description": "Brazil's largest AI conference",
+      "participants": 150,
+      "speakers": 13,
+      "youtubeViews": 1300
+    }
+  },
+  {
+    "id": "2",
+    "title": "LLM Spring School",
+    "excerpt": "Artificial intelligence agents and large language models are topics of a free event at USP São Carlos",
+    "description": "An event designed to bring together researchers and market professionals to discuss current topics on large language models (LLMs) and artificial intelligence (AI) agents.",
+    "date": "2025-11-15",
+    "endDate": "2025-11-16",
+    "status": "upcoming",
+    "category": "workshop",
+    "featured": true,
+    "location": "Institute of Mathematical and Computer Sciences at USP São Carlos (ICMC/USP)",
+    "image": "/events/llm-spring-2025/IMG_0147.JPG",
+    "language": "en",
+    "videoUrl": "https://www.youtube.com/embed/ywuZ5tNGuqU",
+    "meta": {
+      "description": "Spring School with lectures and workshops on LLMs",
+      "participants": null,
+      "speakers": 4
+    }
+  }
+]

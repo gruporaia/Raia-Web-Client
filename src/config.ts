@@ -65,6 +65,8 @@ export const PAGINATION = {
 export const COLLECTIONS = {
   BLOGS: 'blogs',
   PROJECTS: 'projects',
+  EVENTS: 'events',
+  TRANSLATIONS: 'translations',
 };
 
 /**

@@ -74,6 +74,8 @@ const Blog = cachedLazy(importers.blog);
 const PostDetail = cachedLazy(importers.postDetail);
 const Contact = cachedLazy(importers.contact);
 const NotFound = cachedLazy(importers.notFound);
+const Events = cachedLazy(importers.events);
+const EventDetails = cachedLazy(importers.eventDetails);
 const Projects = cachedLazy(importers.projects);
 const ProjectDetails = cachedLazy(importers.projectDetails);
 const Services = cachedLazy(importers.services);
@@ -305,6 +307,45 @@ const AppRoutes: React.FC = () => {
           path="/services"
           element={<Navigate to="/iniciativas" replace />}
         />
+
+        {/* Events routes in Portuguese */}
+        <Route path="/eventos">
+          <Route index element={<Navigate to="/eventos/pagina/1" replace />} />
+
+          <Route
+            path="pagina/:page"
+            element={
+              <PageHelmet
+                title="Events"
+                description="Explore our events"
+                translationNamespace={
+                  ROUTES.EVENTS.LIST.translationNamespace || 'navigation'
+                }
+                translationKey="menu.events"
+                routeMetadata={{
+                  labelKey: ROUTES.EVENTS.LIST.labelKey,
+                  descriptionKey: ROUTES.EVENTS.LIST.descriptionKey,
+                }}
+              >
+                <Events />
+              </PageHelmet>
+            }
+          />
+
+          <Route
+            path="evento/:slug"
+            element={
+              <PageHelmet
+                title="Event Details"
+                description="Detailed event information"
+                translationNamespace="screens"
+                translationKey="eventDetail"
+              >
+                <EventDetails />
+              </PageHelmet>
+            }
+          />
+        </Route>
 
         {/* New services route in Portuguese */}
         <Route

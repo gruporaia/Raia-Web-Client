@@ -6,6 +6,8 @@ import navigation from './navigation.json';
 import about from './screens/about.json';
 import blog from './screens/blog.json';
 import contact from './screens/contact.json';
+import eventDetail from './screens/eventDetail.json';
+import events from './screens/events.json';
 import home from './screens/home.json';
 import landingSeasonal from './screens/landingSeasonal.json';
 import notFound from './screens/notFound.json';
@@ -22,6 +24,8 @@ const screens = {
   blog,
   postDetail,
   contact,
+  eventDetail,
+  events,
   home,
   landingSeasonal,
   notFound,

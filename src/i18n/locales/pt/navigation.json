@@ -2,13 +2,13 @@
   "menu": {
     "home": "Início",
     "about": "Sobre",
+    "events": "Eventos",
     "services": "Iniciativas",
     "blog": "Blog",
     "projects": "Projetos",
     "team": "Equipe",
     "contact": "Contato",
-    "partners": "Parceiros",
-    "becomeMember": "Tornar-se Membro"
+    "partners": "Parceiros"
   },
   "language": {
     "english": "Inglês",
@@ -19,5 +19,9 @@
   "common": {
     "toggleTheme": "Alternar modo claro/escuro",
     "mobileMenu": "Abrir menu móvel"
+  },
+  "eventDetail": {
+    "title": "Detalhes do Evento",
+    "description": "Informações detalhadas sobre este evento"
   }
 }

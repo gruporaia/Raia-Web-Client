@@ -54,3 +54,30 @@ export function getProjectIdFromSlug(slug: string): string | null {
 
   return slugToId[slug] || null;
 }
+
+/**
+ * Gets an event slug based on the known event titles
+ * This is a mapping of known events to ensure consistent slugs
+ */
+export function getEventSlug(id: string, title: string): string {
+  // Mapping of known event IDs to their expected slugs
+  const knownSlugs: Record<string, string> = {
+    '1': 'conferencia-raia-2025',
+    '2': 'llm-spring-school',
+  };
+
+  // Use known slug if available, otherwise generate from title
+  return knownSlugs[id] || titleToSlug(title);
+}
+
+/**
+ * Creates a reverse mapping from slug to event ID
+ */
+export function getEventIdFromSlug(slug: string): string | null {
+  const slugToId: Record<string, string> = {
+    'conferencia-raia-2025': '1',
+    'llm-spring-school': '2',
+  };
+
+  return slugToId[slug] || null;
+}

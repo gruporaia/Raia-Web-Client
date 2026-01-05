@@ -1,18 +1,50 @@
 [
   {
     "id": 1,
-    "name": "Pico",
-    "subtitle": "Plataforma de Estudios Gamificada",
-    "description": "Pico es una aplicación móvil que transforma el estudio para exámenes en un juego, con preguntas seleccionadas por IA, cronogramas de estudio y competencia con amigos. Ayuda a los estudiantes a dejar de procrastinar y crear hábitos duraderos para ingresar a sus escuelas y carreras soñadas.",
-    "website": "https://www.usepico.com.br/",
-    "src": "/partners/pico.png"
-  },
-  {
-    "id": 2,
     "name": "SignLink",
     "subtitle": "Plataforma de Aprendizaje de Lengua de Señas",
     "description": "SignLink es una plataforma de lenguas de señas lanzada en Brasil en 2023 y actualmente incubada por StartFellowship en Suiza. Con rutas de aprendizaje gamificadas, un diccionario en expansión y un enfoque en la presencia humana, el proyecto facilita el aprendizaje de múltiples lenguas de señas para romper barreras internacionales.",
     "website": "https://signlink.com.br/",
     "src": "/partners/signlink.png"
+  },
+  {
+    "id": 2,
+    "name": "TRACTIAN",
+    "subtitle": "Plataforma de Mantenimiento Predictivo",
+    "description": "TRACTIAN es una empresa de tecnología que ofrece soluciones de mantenimiento predictivo y monitoreo de máquinas industriales utilizando inteligencia artificial e IoT.",
+    "website": "https://tractian.com/",
+    "src": "/partners/tractian.png"
+  },
+  {
+    "id": 3,
+    "name": "Nubank",
+    "subtitle": "Banco Digital",
+    "description": "Nubank es una fintech brasileña que ofrece servicios financieros digitales, incluyendo tarjetas de crédito, cuentas digitales e inversiones.",
+    "website": "https://nubank.com.br/",
+    "src": "/partners/nubank.png"
+  },
+  {
+    "id": 4,
+    "name": "BTG Pactual",
+    "subtitle": "Banco de Inversiones",
+    "description": "BTG Pactual es un banco de inversiones líder en América Latina, que ofrece servicios en gestión de patrimonio, banca de inversión y mercados de capitales.",
+    "website": "https://www.btgpactual.com/",
+    "src": "/partners/btgpactual.png"
+  },
+  {
+    "id": 5,
+    "name": "Griaule",
+    "subtitle": "Tecnología Biométrica",
+    "description": "Griaule es una empresa brasileña especializada en soluciones de identificación biométrica, que ofrece tecnología de reconocimiento de huellas dactilares y facial.",
+    "website": "https://www.griaulebiometrics.com/",
+    "src": "/partners/griaule.png"
+  },
+  {
+    "id": 6,
+    "name": "beuni",
+    "subtitle": "Plataforma Educativa",
+    "description": "beuni es una plataforma que conecta a estudiantes con oportunidades educativas y profesionales, facilitando el acceso a educación de calidad.",
+    "website": "https://beuni.com.br/",
+    "src": "/partners/beuni.png"
   }
 ]

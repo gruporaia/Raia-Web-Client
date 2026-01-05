@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "title": "Detalles del Evento",
+    "description": "Información detallada sobre este evento",
+    "location": "Ubicación",
+    "date": "Fecha",
+    "endDate": "Fecha de Finalización",
+    "category": "Categoría",
+    "participants": "Participantes",
+    "speakers": "Oradores",
+    "videoTitle": "Video del Evento",
+    "sponsorsTitle": "Patrocinadores"
+  },
+  "loading": {
+    "title": "Cargando detalles del evento...",
+    "error": "Error al cargar el evento"
+  },
+  "notFound": {
+    "title": "Evento No Encontrado",
+    "message": "Lo sentimos, el evento que buscas no se puede encontrar.",
+    "button": "Volver a Eventos"
+  },
+  "details": {
+    "author": "Autor",
+    "date": "Fecha",
+    "category": "Categoría",
+    "readTime": "Tiempo de Lectura",
+    "publishedOn": "Publicado en",
+    "share": "Compartir",
+    "email": "Correo Electrónico",
+    "participants": "Participantes",
+    "references": "Referencias"
+  },
+  "sections": {
+    "details": "Detalles del Evento",
+    "basicInfo": "Información Básica",
+    "statistics": "Este Evento en Números"
+  },
+  "stats": {
+    "participants": "Participantes de diferentes regiones",
+    "speakers": "Oradores invitados",
+    "youtubeViews": "Visualizaciones en YouTube"
+  },
+  "navigation": {
+    "back": "Volver a Eventos",
+    "next": "Próximo Evento",
+    "previous": "Evento Anterior"
+  },
+  "cta": {
+    "overline": "¿Interesado en nuestros eventos?",
+    "title": "Únete a nuestra comunidad",
+    "button": "Ponte en Contacto"
+  }
+}
