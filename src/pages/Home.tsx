@@ -56,14 +56,14 @@ const Home: React.FC = () => {
           1,
           100,
           undefined,
-          undefined,
+          i18n.language,
           'upcoming'
         );
         const completedData = await fetchEvents(
           1,
           100,
           undefined,
-          undefined,
+          i18n.language,
           'completed'
         );
         setEvents([...upcomingData.events, ...completedData.events]);
@@ -74,7 +74,7 @@ const Home: React.FC = () => {
       }
     };
     loadEvents();
-  }, []);
+  }, [i18n.language]);
 
   const handleAnimationComplete = () => {
     setShowLogoAnimation(false);
