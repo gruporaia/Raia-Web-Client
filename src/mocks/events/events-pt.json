@@ -39,5 +39,25 @@
       "participants": null,
       "speakers": 4
     }
+  },
+  {
+    "id": "3",
+    "title": "Hackathon RAIA + Monks",
+    "excerpt": "IA pela Qualidade da Informação: Compreensão, Consciência e Confiança no Mundo Digital",
+    "description": "Este foi um hackathon técnico, em que as equipes precisavam desenvolver, em um período de 12 horas, uma solução para o problema da qualidade da informação no mundo digital.",
+    "date": "2025-09-20",
+    "endDate": "2025-09-20",
+    "status": "completed",
+    "category": "hackathon",
+    "featured": true,
+    "location": "Onovolab, São Carlos - SP",
+    "image": "/events/hackathon-raia-monks/IMG_1.jpg",
+    "language": "pt",
+    "videoUrl": "https://www.youtube.com/embed/ywuZ5tNGuqU",
+    "meta": {
+      "description": "Hackathon RAIA + Monks",
+      "participants": 60,
+      "speakers": null
+    }
   }
 ]

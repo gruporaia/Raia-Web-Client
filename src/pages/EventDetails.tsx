@@ -70,6 +70,15 @@ const EventDetails: React.FC = () => {
       folder: 'llm-spring-2025',
       title: 'LLM Spring School 2025',
     },
+    '3': {
+      images: [
+        'IMG_1.jpg',
+        'IMG_2.jpg',
+        'IMG_3.jpg',
+      ],
+      folder: 'hackathon-raia-monks',
+      title: "Hackathon Raia + Monks"
+    },
   };
 
   const currentGallery = eventId ? eventGalleries[eventId] : null;
