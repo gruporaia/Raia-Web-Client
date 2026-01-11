@@ -2,8 +2,8 @@ import { http, HttpResponse } from 'msw';
 
 import { MockEvent } from '../types/eventTypes';
 import conference2025Content from './events/content/conference-2025.json';
-import llmSpringSchoolContent from './events/content/llm-spring-school-2025.json';
 import hackathonRaiaMonks from './events/content/hackathon-raia-monks.json';
+import llmSpringSchoolContent from './events/content/llm-spring-school-2025.json';
 import eventsEn from './events/events-en.json';
 import eventsEs from './events/events-es.json';
 import eventsPt from './events/events-pt.json';
