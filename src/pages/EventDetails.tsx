@@ -71,13 +71,9 @@ const EventDetails: React.FC = () => {
       title: 'LLM Spring School 2025',
     },
     '3': {
-      images: [
-        'IMG_1.jpg',
-        'IMG_2.jpg',
-        'IMG_3.jpg',
-      ],
+      images: ['IMG_1.jpg', 'IMG_2.jpg', 'IMG_3.jpg'],
       folder: 'hackathon-raia-monks',
-      title: "Hackathon Raia + Monks"
+      title: 'Hackathon Raia + Monks',
     },
   };
 
