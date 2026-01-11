@@ -198,8 +198,8 @@ const EventDetails: React.FC = () => {
       sections.push(basicInfo);
     }
 
-    // Event Statistics Section (only for RAIA Conference)
-    if (eventId === '1' && event?.meta) {
+    // Event Statistics Section (for events that provide `meta` data)
+    if (event?.meta) {
       const stats: MetaDisplay = {
         title: getEventText<string>('sections.statistics'),
         values: [],
@@ -268,6 +268,51 @@ const EventDetails: React.FC = () => {
               </Typography>
               <Typography variant="body1" color="text.secondary">
                 {getEventText<string>('stats.youtubeViews')}
+              </Typography>
+            </Box>
+          ),
+        });
+      }
+
+      if (event.meta.hours) {
+        stats.values.push({
+          label: '',
+          value: (
+            <Box sx={{ textAlign: 'center', py: 2 }}>
+              <Typography
+                variant="h2"
+                sx={{
+                  fontWeight: 'bold',
+                  color: 'primary.main',
+                  fontSize: { xs: '2.5rem', md: '3rem' },
+                }}
+              >
+                {event.meta.hours}
+              </Typography>
+              <Typography variant="body1" color="text.secondary">
+                {getEventText<string>('stats.hours')}
+              </Typography>
+            </Box>
+          ),
+        });
+      }
+
+      if (event.meta.prizes) {
+        stats.values.push({
+          label: '',
+          value: (
+            <Box sx={{ textAlign: 'center', py: 2 }}>
+              <Typography
+                variant="h4"
+                sx={{
+                  fontWeight: 'bold',
+                  color: 'primary.main',
+                }}
+              >
+                {event.meta.prizes}
+              </Typography>
+              <Typography variant="body1" color="text.secondary">
+                {getEventText<string>('stats.prizes')}
               </Typography>
             </Box>
           ),

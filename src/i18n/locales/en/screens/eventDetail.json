@@ -39,7 +39,9 @@
   "stats": {
     "participants": "Participants from different regions",
     "speakers": "Invited speakers",
-    "youtubeViews": "YouTube views"
+    "youtubeViews": "YouTube views",
+    "hours": "Event hours",
+    "prizes": "In prizes"
   },
   "navigation": {
     "back": "Back to Events",

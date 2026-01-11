@@ -56,7 +56,8 @@
     "meta": {
       "description": "RAIA + Monks Hackathon",
       "participants": 60,
-      "speakers": null
+      "hours": 12,
+      "prizes": "R$4.000,00"
     }
   }
 ]
