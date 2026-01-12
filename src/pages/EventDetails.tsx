@@ -639,7 +639,7 @@ const EventDetails: React.FC = () => {
                     py: 1,
                     borderRadius: 1,
                     zIndex: 2,
-                  }}
+                   }}
                 >
                   <Typography variant="body2">
                     {selectedImageIndex + 1} / {galleryImages.length}
