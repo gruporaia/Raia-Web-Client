@@ -9,28 +9,32 @@ import React, {
 
 import { debounce } from '../../utils/animationUtils';
 
-interface Logo {
+interface CarouselItem {
   src: string;
   name: string;
   website?: string;
 }
 
-interface PartnerCarouselProps {
-  logos: Logo[];
+interface CarouselProps {
+  items: CarouselItem[];
   speed?: number;
-  maxLogoHeight?: number;
+  maxItemHeight?: number;
   padding?: string;
   align?: 'center' | 'start' | 'end' | 'stretch';
-  logoSize?: number;
+  itemSize?: number;
+  squareSize?: number; // For backwards compatibility with institutions
+  forceAnimation?: boolean; // Force animation even if items fit
 }
 
-const PartnerCarousel: React.FC<PartnerCarouselProps> = ({
-  logos = [],
+const Carousel: React.FC<CarouselProps> = ({
+  items = [],
   speed = 20,
-  maxLogoHeight = 60,
+  maxItemHeight = 60,
   padding = '0 40px',
   align = 'center',
-  logoSize = 160,
+  itemSize = 160,
+  squareSize, // For backwards compatibility
+  forceAnimation = false,
 }) => {
   const theme = useTheme();
   const isDarkMode = theme.palette.mode === 'dark';
@@ -47,19 +51,19 @@ const PartnerCarousel: React.FC<PartnerCarouselProps> = ({
   const offsetRef = useRef(0);
   const [, setLoadedImages] = useState(0);
   const isReadyRef = useRef(false);
-  const expectedImageCount = useMemo(() => logos.length, [logos.length]);
+  const expectedImageCount = useMemo(() => items.length, [items.length]);
 
-  const handleLogoClick = useCallback((website?: string) => {
+  const handleItemClick = useCallback((website?: string) => {
     if (website) {
       window.open(website, '_blank', 'noopener,noreferrer');
     }
   }, []);
 
   const displayItems = useMemo(() => {
-    if (logos.length === 0) return [];
-    if (!shouldAnimate) return logos;
-    return [...logos, ...logos, ...logos];
-  }, [logos, shouldAnimate]);
+    if (items.length === 0) return [];
+    if (!shouldAnimate) return items;
+    return [...items, ...items, ...items];
+  }, [items, shouldAnimate]);
 
   const startRAF = useCallback(() => {
     if (animationRef.current) return;
@@ -110,7 +114,7 @@ const PartnerCarousel: React.FC<PartnerCarouselProps> = ({
   }, [startRAF, stopRAF]);
 
   const recalculateDimensions = useCallback(() => {
-    if (!containerRef.current || !innerRef.current || logos.length === 0)
+    if (!containerRef.current || !innerRef.current || items.length === 0)
       return;
 
     const containerWidth = containerRef.current.clientWidth;
@@ -140,7 +144,10 @@ const PartnerCarousel: React.FC<PartnerCarouselProps> = ({
       setTotalWidth(originalItemsWidth);
     }
 
-    const newShouldAnimate = originalItemsWidth > containerWidth;
+    const newShouldAnimate =
+      forceAnimation && items.length >= 3
+        ? true
+        : originalItemsWidth > containerWidth;
 
     if (newShouldAnimate !== shouldAnimateRef.current) {
       shouldAnimateRef.current = newShouldAnimate;
@@ -148,7 +155,7 @@ const PartnerCarousel: React.FC<PartnerCarouselProps> = ({
 
       resetAnimation();
     }
-  }, [logos.length, resetAnimation]);
+  }, [items.length, resetAnimation, forceAnimation]);
 
   const handleImageLoad = useCallback(() => {
     setLoadedImages((prev) => {
@@ -167,13 +174,13 @@ const PartnerCarousel: React.FC<PartnerCarouselProps> = ({
   );
 
   useEffect(() => {
-    if (logos.length === 0) return;
+    if (items.length === 0) return;
     setLoadedImages(0);
     isReadyRef.current = false;
-  }, [logos]);
+  }, [items]);
 
   useEffect(() => {
-    if (!containerRef.current || logos.length === 0) return;
+    if (!containerRef.current || items.length === 0) return;
 
     const resizeObserver = new ResizeObserver(debouncedRecalculate);
     resizeObserver.observe(containerRef.current);
@@ -187,7 +194,7 @@ const PartnerCarousel: React.FC<PartnerCarouselProps> = ({
       window.removeEventListener('orientationchange', debouncedRecalculate);
       stopRAF();
     };
-  }, [logos.length, debouncedRecalculate, stopRAF]);
+  }, [items.length, debouncedRecalculate, stopRAF]);
 
   useEffect(() => {
     if (shouldAnimate && isReadyRef.current && totalWidthRef.current > 0) {
@@ -227,12 +234,12 @@ const PartnerCarousel: React.FC<PartnerCarouselProps> = ({
           willChange: shouldAnimate ? 'transform' : 'auto',
         }}
       >
-        {displayItems.map((logo, index) => {
-          const cloneGroup = Math.floor(index / logos.length);
-          const originalIndex = index % logos.length;
+        {displayItems.map((item, index) => {
+          const cloneGroup = Math.floor(index / items.length);
+          const originalIndex = index % items.length;
           const uniqueKey = shouldAnimate
-            ? `logo-${originalIndex}-clone-${cloneGroup}`
-            : `logo-${originalIndex}`;
+            ? `carousel-item-${originalIndex}-clone-${cloneGroup}`
+            : `carousel-item-${originalIndex}`;
 
           return (
             <Box
@@ -242,9 +249,9 @@ const PartnerCarousel: React.FC<PartnerCarouselProps> = ({
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                minWidth: logoSize,
-                maxWidth: logoSize + 60, // Allow some extra width for wider logos
-                height: maxLogoHeight, // unified height
+                minWidth: squareSize || itemSize,
+                maxWidth: (squareSize || itemSize) + 60,
+                height: squareSize || maxItemHeight,
               }}
             >
               {/* Inner wrapper for hover scaling to avoid affecting the track animation */}
@@ -256,45 +263,45 @@ const PartnerCarousel: React.FC<PartnerCarouselProps> = ({
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  minWidth: logoSize,
-                  maxWidth: logoSize + 60, // Allow some extra width for wider logos
-                  height: maxLogoHeight, // unified height
-                  padding: 0, // remove extra padding
+                  minWidth: squareSize || itemSize,
+                  maxWidth: (squareSize || itemSize) + 60,
+                  height: squareSize || maxItemHeight,
+                  padding: 0,
                   backgroundColor: 'transparent',
                   borderRadius: 1,
-                  cursor: logo.website ? 'pointer' : 'default',
+                  cursor: item.website ? 'pointer' : 'default',
                 }}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
-                onClick={() => handleLogoClick(logo.website)}
-                role={logo.website ? 'button' : undefined}
-                tabIndex={logo.website ? 0 : undefined}
+                onClick={() => handleItemClick(item.website)}
+                role={item.website ? 'button' : undefined}
+                tabIndex={item.website ? 0 : undefined}
                 onKeyDown={(e) => {
-                  if (logo.website && (e.key === 'Enter' || e.key === ' ')) {
+                  if (item.website && (e.key === 'Enter' || e.key === ' ')) {
                     e.preventDefault();
-                    handleLogoClick(logo.website);
+                    handleItemClick(item.website);
                   }
                 }}
                 aria-label={
-                  logo.website ? `Visit ${logo.name} website` : undefined
+                  item.website ? `Visit ${item.name} website` : undefined
                 }
               >
                 <img
-                  src={logo.src}
-                  alt={logo.name}
+                  src={item.src}
+                  alt={item.name}
                   onLoad={handleImageLoad}
                   onError={handleImageLoad}
                   style={{
-                    maxHeight: `${maxLogoHeight}px`,
+                    maxHeight: `${squareSize || maxItemHeight}px`,
                     width: 'auto',
-                    minWidth: '120px', // Ensure minimum width for readability
-                    maxWidth: '200px', // Allow wider logos to be more readable
+                    minWidth: '120px',
+                    maxWidth: '200px',
                     objectFit: 'contain',
                     display: 'block',
                     margin: '0 auto',
                     borderRadius: 6,
                     boxSizing: 'border-box',
-                    padding: '8px', // consistent padding
+                    padding: '8px',
                     opacity: hoveredIndex === index ? 1 : 0.8,
                     transition: 'all 0.3s ease, filter 0.3s ease',
                     filter:
@@ -303,8 +310,8 @@ const PartnerCarousel: React.FC<PartnerCarouselProps> = ({
                           ? `drop-shadow(0 2px 6px rgba(255,255,255,0.3)) drop-shadow(0 1px 3px rgba(255,255,255,0.25)) drop-shadow(0 0px 2px rgba(255,255,255,0.2)) grayscale(0)`
                           : `drop-shadow(0 2px 6px rgba(0,0,0,0.3)) drop-shadow(0 1px 3px rgba(0,0,0,0.25)) drop-shadow(0 0px 2px rgba(0,0,0,0.2)) grayscale(0)`
                         : isDarkMode
-                          ? 'grayscale(100%) contrast(2) brightness(0.4) invert(1) opacity(0.85)' // White filter preserving details
-                          : 'grayscale(100%) brightness(0.4) contrast(2) opacity(0.7)', // Black filter preserving details
+                          ? 'grayscale(100%) contrast(2) brightness(0.4) invert(1) opacity(0.85)'
+                          : 'grayscale(100%) brightness(0.4) contrast(2) opacity(0.7)',
                   }}
                 />
               </Box>
@@ -316,4 +323,4 @@ const PartnerCarousel: React.FC<PartnerCarouselProps> = ({
   );
 };
 
-export default PartnerCarousel;
+export default Carousel;

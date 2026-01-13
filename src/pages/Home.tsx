@@ -4,11 +4,12 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
 import MissingTranslation from '../components/translation/MissingTranslation';
-import { HeroSection, SeasonalBanner } from '../components/ui';
+import { Carousel, HeroSection, SeasonalBanner } from '../components/ui';
+import EventsCarousel from '../components/ui/EventsCarousel';
 import LogoAnimation from '../components/ui/LogoAnimation';
-import PartnerCarousel from '../components/ui/PartnerCarousel';
 import CTASection from '../components/ui/Section/CTASection';
 import TeamSlider from '../components/ui/TeamSlider';
+import { useInstitutions } from '../data/institutionsData';
 import { usePartners } from '../data/partnersData';
 import { useTeamMembers } from '../data/teamData';
 import { useLocalizedContent } from '../hooks/useLocalizedContent';
@@ -16,6 +17,7 @@ import { useTranslationContext } from '../hooks/useTranslationContext';
 import BaseLayout from '../layouts/BaseLayout';
 import ROUTES from '../routes';
 import { getImporterForPath } from '../routes/importRegistry';
+import { fetchEvents, MockEvent } from '../services/events';
 import { layout } from '../theme/themeUtils';
 import { shouldShowLogoAnimation } from '../utils/logoAnimationState';
 import { prefetch } from '../utils/prefetchRoute';
@@ -29,12 +31,15 @@ const Home: React.FC = () => {
     shouldShowLogoAnimation()
   );
   const [contentLoaded, setContentLoaded] = useState<boolean>(false);
+  const [events, setEvents] = useState<MockEvent[]>([]);
+  const [eventsLoading, setEventsLoading] = useState(true);
 
   const showSeasonalBanner = shouldShowLanding();
 
   const { getContent } = useLocalizedContent('screens', 'home');
 
   const partners = usePartners();
+  const institutions = useInstitutions();
   const teamMembers = useTeamMembers();
 
   useEffect(() => {
@@ -42,6 +47,34 @@ const Home: React.FC = () => {
       setContentLoaded(true);
     }
   }, [translationState.isLoading]);
+
+  useEffect(() => {
+    const loadEvents = async () => {
+      try {
+        setEventsLoading(true);
+        const upcomingData = await fetchEvents(
+          1,
+          100,
+          undefined,
+          i18n.language,
+          'upcoming'
+        );
+        const completedData = await fetchEvents(
+          1,
+          100,
+          undefined,
+          i18n.language,
+          'completed'
+        );
+        setEvents([...upcomingData.events, ...completedData.events]);
+      } catch (error) {
+        console.error('Failed to load events:', error);
+      } finally {
+        setEventsLoading(false);
+      }
+    };
+    loadEvents();
+  }, [i18n.language]);
 
   const handleAnimationComplete = () => {
     setShowLogoAnimation(false);
@@ -65,6 +98,12 @@ const Home: React.FC = () => {
     title: getContent<string>('partners.title'),
     subtitle: getContent<string>('partners.subtitle'),
     buttonText: getContent<string>('partners.buttonText'),
+  };
+
+  const institutionsContent = {
+    overline: getContent<string>('institutions.overline'),
+    title: getContent<string>('institutions.title'),
+    subtitle: getContent<string>('institutions.subtitle'),
   };
 
   const teamContent = {
@@ -172,6 +211,32 @@ const Home: React.FC = () => {
           showNavbar={true}
         />
 
+        {/* Events Carousel Section */}
+        {!eventsLoading && events.length > 0 && (
+          <Box
+            component="section"
+            sx={{
+              py: { xs: 4, md: 6 },
+            }}
+          >
+            <Box
+              sx={{
+                maxWidth: 'lg',
+                mx: 'auto',
+                px: { xs: 2, sm: 3, md: 4 },
+              }}
+            >
+              <EventsCarousel
+                events={events}
+                onEventClick={(slug: string) =>
+                  navigate(ROUTES.EVENTS.EVENT_DETAIL({ slug }))
+                }
+                height={400}
+              />
+            </Box>
+          </Box>
+        )}
+
         {showSeasonalBanner && (
           <Box
             sx={{
@@ -218,12 +283,34 @@ const Home: React.FC = () => {
             navigate(ROUTES.PUBLIC.PARTNERDETAILS.path);
           }}
         >
-          <PartnerCarousel
-            logos={partners}
+          <Carousel
+            items={partners}
             speed={15}
-            maxLogoHeight={layout.logo.maxHeight.carousel}
+            maxItemHeight={layout.logo.maxHeight.carousel}
             padding="0 5px"
-            logoSize={layout.logo.partnerSize}
+            itemSize={layout.logo.partnerSize}
+          />
+        </CTASection>
+
+        <CTASection
+          id="institutions-section"
+          overline={renderContent(
+            institutionsContent.overline,
+            'institutions.overline'
+          )}
+          title={renderContent(institutionsContent.title, 'institutions.title')}
+          subtitle={renderContent(
+            institutionsContent.subtitle,
+            'institutions.subtitle'
+          )}
+          py={2}
+        >
+          <Carousel
+            items={institutions}
+            speed={25}
+            squareSize={180}
+            padding="0 8px"
+            forceAnimation={true}
           />
         </CTASection>
 

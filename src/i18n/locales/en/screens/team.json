@@ -4,5 +4,9 @@
     "title": "Meet Our Crew",
     "buttonText": "Join Our Team",
     "footer": "We'd love to learn more about you — send in your application today!"
+  },
+  "sections": {
+    "currentAdministration": "Current Administration 2026",
+    "advisors": "Advisors"
   }
 }

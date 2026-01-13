@@ -110,7 +110,7 @@ const defaultNavItems: NavItem[] = [
   { label: 'home', path: ROUTES.PUBLIC.HOME.path },
   { label: 'projects', path: ROUTES.PROJECTS.LIST.path },
   // { label: 'blog', path: ROUTES.BLOG.LIST.path }, // TODO(samuel): uncomment when blog is ready
-  { label: 'services', path: ROUTES.PUBLIC.SERVICES.path },
+  { label: 'events', path: ROUTES.PUBLIC.EVENTS.path },
   { label: 'contact', path: ROUTES.PUBLIC.CONTACT.path },
 ];
 
@@ -141,7 +141,6 @@ const Navbar: React.FC<NavbarProps> = ({
         getContent<string>(`menu.${item.label}`),
       ])
     ),
-    becomeMember: getContent<string>('menu.becomeMember'),
     organization: {
       logoText: getCommonContent<string>('organization.logoText'),
     },
@@ -413,33 +412,6 @@ const Navbar: React.FC<NavbarProps> = ({
                     </Button>
                   ))}
 
-                  <Button
-                    component={PrefetchLink}
-                    to={ROUTES.PUBLIC.TEAMJOIN.path}
-                    prefetchImporter={getImporterForPath(
-                      ROUTES.PUBLIC.TEAMJOIN.path
-                    )}
-                    sx={{
-                      ml: 1.5,
-                      px: 2.5,
-                      py: 1,
-                      textTransform: 'none',
-                      fontWeight: 600,
-                      borderRadius: borderRadius.medium,
-                      backgroundColor: (theme) => theme.palette.primary.main,
-                      color: 'white',
-                      '&:hover': {
-                        backgroundColor: (theme) => theme.palette.primary.dark,
-                      },
-                      transition: transitions.medium,
-                    }}
-                  >
-                    {renderTranslation(
-                      translations.becomeMember,
-                      'navigation.menu.becomeMember'
-                    )}
-                  </Button>
-
                   <LanguageSwitcher
                     sx={{
                       ml: 1,
@@ -542,28 +514,6 @@ const Navbar: React.FC<NavbarProps> = ({
                 </ListItemButton>
               </ListItem>
             ))}
-            <ListItem disablePadding>
-              <ListItemButton
-                component={PrefetchLink}
-                to={ROUTES.PUBLIC.TEAMJOIN.path}
-                prefetchImporter={getImporterForPath(
-                  ROUTES.PUBLIC.TEAMJOIN.path
-                )}
-                sx={{
-                  textAlign: 'center',
-                  py: 1.5,
-                  '&:hover': {
-                    backgroundColor: (theme) =>
-                      `${theme.palette.primary.light}14`,
-                  },
-                }}
-              >
-                <ListItemText
-                  primary={translations.becomeMember}
-                  sx={{ fontWeight: 600 }}
-                />
-              </ListItemButton>
-            </ListItem>
           </List>
         </Box>
       </Drawer>

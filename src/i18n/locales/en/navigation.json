@@ -2,13 +2,13 @@
   "menu": {
     "home": "Home",
     "about": "About",
+    "events": "Events",
     "services": "Initiatives",
     "blog": "Blog",
     "projects": "Projects",
     "team": "Team",
     "contact": "Contact",
-    "partners": "Partners",
-    "becomeMember": "Become a Member"
+    "partners": "Partners"
   },
   "language": {
     "english": "English",
@@ -19,5 +19,9 @@
   "common": {
     "toggleTheme": "Toggle light/dark mode",
     "mobileMenu": "Open mobile menu"
+  },
+  "eventDetail": {
+    "title": "Event Details",
+    "description": "Detailed information about this event"
   }
 }

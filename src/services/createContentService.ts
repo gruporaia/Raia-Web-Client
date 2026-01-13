@@ -42,6 +42,9 @@ const getResourceMocks = async (
     } else if (resource === 'projects') {
       const { mockProjects } = await import('../mocks/mockProjects');
       mockData = mockProjects;
+    } else if (resource === 'events') {
+      const { mockEvents } = await import('../mocks/mockEvents');
+      mockData = mockEvents;
     }
 
     return mockData;
@@ -57,6 +60,7 @@ const getResourceMocks = async (
 const RESOURCE_COLLECTIONS: Record<ContentResource, string> = {
   blog: COLLECTIONS.BLOGS,
   projects: COLLECTIONS.PROJECTS,
+  events: COLLECTIONS.EVENTS,
 };
 
 /**

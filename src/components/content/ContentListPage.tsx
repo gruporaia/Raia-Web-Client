@@ -46,6 +46,7 @@ interface ContentListPageProps<T extends CommonContent> {
   newsletter?: React.ReactNode;
   mapToContentItems?: (items: T[]) => ContentItem[];
   categoryIconMap?: Record<string, typeof SvgIcon>;
+  hideHero?: boolean;
 }
 
 /**
@@ -62,6 +63,7 @@ function ContentListPage<T extends CommonContent>({
   newsletter,
   mapToContentItems,
   categoryIconMap,
+  hideHero = false,
 }: ContentListPageProps<T>) {
   const navigate = useNavigate();
   const location = useLocation();
@@ -169,12 +171,14 @@ function ContentListPage<T extends CommonContent>({
   if (isLoading && !contentData) {
     return (
       <>
-        <HeroSection
-          title={translations.hero.title}
-          subtitle={translations.hero.subtitle}
-          overline={translations.hero.overline}
-          buttons={heroButtons}
-        />
+        {!hideHero && (
+          <HeroSection
+            title={translations.hero.title}
+            subtitle={translations.hero.subtitle}
+            overline={translations.hero.overline}
+            buttons={heroButtons}
+          />
+        )}
 
         <Container maxWidth="lg" sx={{ my: 8 }}>
           <LoadingIndicator message={translations.loading.items} fullHeight />
@@ -189,21 +193,23 @@ function ContentListPage<T extends CommonContent>({
   if (error || !contentData || hasEmptyItems) {
     return (
       <>
-        <HeroSection
-          title={renderContent(
-            translations.hero.title,
-            `screens.${namespace}.hero.title`
-          )}
-          subtitle={renderContent(
-            translations.hero.subtitle,
-            `screens.${namespace}.hero.subtitle`
-          )}
-          overline={renderContent(
-            translations.hero.overline,
-            `screens.${namespace}.hero.overline`
-          )}
-          buttons={heroButtons}
-        />
+        {!hideHero && (
+          <HeroSection
+            title={renderContent(
+              translations.hero.title,
+              `screens.${namespace}.hero.title`
+            )}
+            subtitle={renderContent(
+              translations.hero.subtitle,
+              `screens.${namespace}.hero.subtitle`
+            )}
+            overline={renderContent(
+              translations.hero.overline,
+              `screens.${namespace}.hero.overline`
+            )}
+            buttons={heroButtons}
+          />
+        )}
 
         <Container maxWidth="lg" sx={{ my: 8 }}>
           <Typography variant="h4" sx={{ mb: 4, textAlign: 'center' }}>
@@ -231,21 +237,23 @@ function ContentListPage<T extends CommonContent>({
 
   return (
     <>
-      <HeroSection
-        title={renderContent(
-          translations.hero.title,
-          `screens.${namespace}.hero.title`
-        )}
-        subtitle={renderContent(
-          translations.hero.subtitle,
-          `screens.${namespace}.hero.subtitle`
-        )}
-        overline={renderContent(
-          translations.hero.overline,
-          `screens.${namespace}.hero.overline`
-        )}
-        buttons={heroButtons}
-      />
+      {!hideHero && (
+        <HeroSection
+          title={renderContent(
+            translations.hero.title,
+            `screens.${namespace}.hero.title`
+          )}
+          subtitle={renderContent(
+            translations.hero.subtitle,
+            `screens.${namespace}.hero.subtitle`
+          )}
+          overline={renderContent(
+            translations.hero.overline,
+            `screens.${namespace}.hero.overline`
+          )}
+          buttons={heroButtons}
+        />
+      )}
 
       <CTASection
         id={contentSectionId}

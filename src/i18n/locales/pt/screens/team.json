@@ -4,5 +4,9 @@
     "title": "Conheça Nosso Time",
     "buttonText": "Junte-se à Nossa Equipe",
     "footer": "Gostaríamos de saber mais sobre você — envie sua inscrição hoje!"
+  },
+  "sections": {
+    "currentAdministration": "Coordenação Atual 2026",
+    "advisors": "Conselheiros"
   }
 }

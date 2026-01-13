@@ -25,7 +25,7 @@ import {
   spacing,
   transitions,
 } from '../../theme/themeUtils';
-import PartnerCarousel from './PartnerCarousel';
+import Carousel from './Carousel';
 
 /**
  * Seasonal Banner Component
@@ -363,11 +363,11 @@ const SeasonalBanner: React.FC = () => {
                   >
                     {sponsorsTitle}
                   </Typography>
-                  <PartnerCarousel
-                    logos={eventSponsors}
+                  <Carousel
+                    items={eventSponsors}
                     speed={12}
-                    maxLogoHeight={layout.logo.maxHeight.banner}
-                    logoSize={layout.logo.defaultSize}
+                    maxItemHeight={layout.logo.maxHeight.banner}
+                    itemSize={layout.logo.defaultSize}
                     align="center"
                     padding="0"
                   />

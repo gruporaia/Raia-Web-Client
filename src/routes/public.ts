@@ -25,6 +25,14 @@ const PUBLIC_ROUTES: Record<string, RouteObject> = {
     descriptionKey: { namespace: 'common', key: 'meta.contact' },
     translationNamespace: 'navigation',
   },
+  EVENTS: {
+    path: '/eventos',
+    label: 'Events',
+    labelKey: { namespace: 'navigation', key: 'menu.events' },
+    description: 'Explore our events',
+    descriptionKey: { namespace: 'common', key: 'meta.events' },
+    translationNamespace: 'navigation',
+  },
   SERVICES: {
     path: '/iniciativas',
     label: 'Services',
