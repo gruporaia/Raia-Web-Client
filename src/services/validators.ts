@@ -134,7 +134,9 @@ export const EventSchema = z
     description: z.string(),
     body: z.string(),
     image: z.string().optional(),
-    category: z.enum(['event', 'hackathon', 'fellowship', 'conference']).optional(),
+    category: z
+      .enum(['event', 'hackathon', 'fellowship', 'conference'])
+      .optional(),
     categoryIcon: z.string().optional(),
     date: z.string(),
     endDate: z.string().optional(),

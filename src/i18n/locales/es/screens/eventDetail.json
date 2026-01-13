@@ -39,7 +39,9 @@
   "stats": {
     "participants": "Participantes de diferentes regiones",
     "speakers": "Oradores invitados",
-    "youtubeViews": "Visualizaciones en YouTube"
+    "youtubeViews": "Visualizaciones en YouTube",
+    "hours": "Horas de evento",
+    "prizes": "En premios"
   },
   "navigation": {
     "back": "Volver a Eventos",
