@@ -56,14 +56,14 @@ const Home: React.FC = () => {
           1,
           100,
           undefined,
-          undefined,
+          i18n.language,
           'upcoming'
         );
         const completedData = await fetchEvents(
           1,
           100,
           undefined,
-          undefined,
+          i18n.language,
           'completed'
         );
         setEvents([...upcomingData.events, ...completedData.events]);
@@ -74,7 +74,7 @@ const Home: React.FC = () => {
       }
     };
     loadEvents();
-  }, []);
+  }, [i18n.language]);
 
   const handleAnimationComplete = () => {
     setShowLogoAnimation(false);
@@ -214,18 +214,26 @@ const Home: React.FC = () => {
         {/* Events Carousel Section */}
         {!eventsLoading && events.length > 0 && (
           <Box
+            component="section"
             sx={{
               py: { xs: 4, md: 6 },
-              px: { xs: 2, md: 4 },
             }}
           >
-            <EventsCarousel
-              events={events}
-              onEventClick={(slug: string) =>
-                navigate(ROUTES.EVENTS.EVENT_DETAIL({ slug }))
-              }
-              height={400}
-            />
+            <Box
+              sx={{
+                maxWidth: 'lg',
+                mx: 'auto',
+                px: { xs: 2, sm: 3, md: 4 },
+              }}
+            >
+              <EventsCarousel
+                events={events}
+                onEventClick={(slug: string) =>
+                  navigate(ROUTES.EVENTS.EVENT_DETAIL({ slug }))
+                }
+                height={400}
+              />
+            </Box>
           </Box>
         )}
 
