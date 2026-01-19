@@ -1,22 +1,15 @@
 {
-  "overline": "INSCRIPCIONES: 24/05 - 06/06",
-  "title": "RAIA Conference 2025",
-  "subtitle": "Un encuentro para discutir el presente y futuro de la Inteligencia Artificial en Brasil. Charlas con expertos, presentaciones de proyectos innovadores, networking y debates técnicos.",
-  "buttonText": "Entrar al Sitio",
-  "primaryButtonText": "Ver en Vivo",
-  "location": "ICMC USP São Carlos - Auditorio Fernão Stella",
-  "date": "14/06",
-  "subscriptionEndDate": "06/06",
-  "subscriptionEndAlert": "Las inscripciones han terminado, pero no te preocupes. Puedes ver el evento en vivo de forma remota.",
+  "overline": "INSCRIPCIONES: 19/01 - 26/01",
+  "title": "RAIA Fellowship 2026",
+  "subtitle": "Programa de Desarrollo de Talentos de RAIA donde los miembros mejoran sus conocimientos en IA a través de proyectos, mentorías y conexiones.",
+  "buttonText": "Inscribirse",
+  "subscriptionEndDate": "26/01",
+  "subscriptionEndAlert": "Las inscripciones han finalizado.",
   "features": [
-    "Charlas con expertos en IA",
-    "Presentaciones de proyectos innovadores",
-    "Networking",
-    "Debates estratégicos y técnicos"
+    "Realizar proyectos de alto impacto",
+    "Participar en mentorías con expertos",
+    "Desarrollar habilidades de liderazgo y otras soft skills",
+    "Obtener conexiones valiosas con talentos en IA"
   ],
-  "cta": "Si quieres estar entre aquellos que moldean el futuro de la IA en el país, este evento es para ti. Inscripciones abiertas del 24/05 al 13/06. ¡Sé parte de esta transformación!",
-  "sponsors": {
-    "title": "Patrocinadores Oficiales",
-    "subtitle": "Empresas líderes que apoyan la innovación tecnológica en Brasil"
-  }
+  "cta": "Si buscas aprender más sobre IA, poner manos a la obra en un proyecto de impacto real y conseguir conexiones valiosas, ¡el Fellowship es para ti! ¡Inscríbete!"
 }
