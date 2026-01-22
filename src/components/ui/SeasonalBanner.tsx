@@ -34,17 +34,24 @@ import Carousel from './Carousel';
  */
 const SeasonalBanner: React.FC = () => {
   const theme = useTheme();
-  const { getContent } = useLocalizedContent('screens', 'landingSeasonal');
+  const { getContent, hasTranslation } = useLocalizedContent(
+    'screens',
+    'landingSeasonal'
+  );
   const [isVisible, setIsVisible] = useState(true);
   const eventSponsors = useEventSponsors();
 
   const overline = getContent<string>('overline');
   const title = getContent<string>('title');
   const primaryButtonText = getContent<string>('primaryButtonText');
-  const location = getContent<string>('location');
-  const date = getContent<string>('date');
+  const location = hasTranslation('location')
+    ? getContent<string>('location')
+    : '';
+  const date = hasTranslation('date') ? getContent<string>('date') : '';
   const subscriptionEndAlert = getContent<string>('subscriptionEndAlert');
-  const sponsorsTitle = getContent<string>('sponsors.title');
+  const sponsorsTitle = hasTranslation('sponsors.title')
+    ? getContent<string>('sponsors.title')
+    : '';
 
   const handlePrimaryButton = () => {
     const url = `${import.meta.env.VITE_LANDING_CAMPAIGN_BASE_URL}`;
@@ -58,116 +65,117 @@ const SeasonalBanner: React.FC = () => {
   return (
     <AnimatePresence mode="wait">
       {isVisible && (
-        <motion.div
-          initial={{ opacity: 0, y: -60, scale: 0.9 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: -30, scale: 0.9 }}
-          transition={{
-            duration: 0.6,
-            ease: [0.25, 0.46, 0.45, 0.94],
-            type: 'spring',
-            stiffness: 260,
-            damping: 25,
-          }}
-          style={{ position: 'relative' }}
-        >
+        <Container maxWidth="lg" sx={{ position: 'relative' }}>
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.3, duration: 0.3 }}
-            style={{
-              position: 'absolute',
-              top: -16,
-              right: -8,
-              zIndex: 20,
+            initial={{ opacity: 0, y: -60, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -30, scale: 0.9 }}
+            transition={{
+              duration: 0.6,
+              ease: [0.25, 0.46, 0.45, 0.94],
+              type: 'spring',
+              stiffness: 260,
+              damping: 25,
             }}
+            style={{ position: 'relative' }}
           >
-            <IconButton
-              onClick={handleDismiss}
-              sx={{
-                color:
-                  theme.palette.mode === 'dark'
-                    ? theme.palette.text.secondary
-                    : theme.palette.text.primary,
-                backgroundColor:
-                  theme.palette.mode === 'dark'
-                    ? 'rgba(255, 255, 255, 0.1)'
-                    : 'rgba(255, 255, 255, 0.9)',
-                backdropFilter: 'blur(10px)',
-                border:
-                  theme.palette.mode === 'dark'
-                    ? `1px solid rgba(255, 255, 255, 0.2)`
-                    : `1px solid rgba(0, 0, 0, 0.1)`,
-                width: 32,
-                height: 32,
-                boxShadow:
-                  theme.palette.mode === 'dark'
-                    ? '0 4px 12px rgba(0, 0, 0, 0.3)'
-                    : '0 2px 8px rgba(0, 0, 0, 0.15)',
-                '&:hover': {
-                  backgroundColor:
-                    theme.palette.mode === 'dark'
-                      ? 'rgba(255, 255, 255, 0.15)'
-                      : 'rgba(255, 255, 255, 1)',
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.3, duration: 0.3 }}
+              style={{
+                position: 'absolute',
+                top: -16,
+                right: -8,
+                zIndex: 20,
+              }}
+            >
+              <IconButton
+                onClick={handleDismiss}
+                sx={{
                   color:
                     theme.palette.mode === 'dark'
-                      ? theme.palette.text.primary
-                      : theme.palette.text.secondary,
-                  transform: 'scale(1.1)',
+                      ? theme.palette.text.secondary
+                      : theme.palette.text.primary,
+                  backgroundColor:
+                    theme.palette.mode === 'dark'
+                      ? 'rgba(255, 255, 255, 0.1)'
+                      : 'rgba(255, 255, 255, 0.9)',
+                  backdropFilter: 'blur(10px)',
+                  border:
+                    theme.palette.mode === 'dark'
+                      ? `1px solid rgba(255, 255, 255, 0.2)`
+                      : `1px solid rgba(0, 0, 0, 0.1)`,
+                  width: 32,
+                  height: 32,
                   boxShadow:
                     theme.palette.mode === 'dark'
-                      ? '0 6px 16px rgba(0, 0, 0, 0.4)'
-                      : '0 4px 12px rgba(0, 0, 0, 0.2)',
-                },
-                transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
-              }}
-              size="small"
-            >
-              <CloseIcon fontSize="small" />
-            </IconButton>
-          </motion.div>
+                      ? '0 4px 12px rgba(0, 0, 0, 0.3)'
+                      : '0 2px 8px rgba(0, 0, 0, 0.15)',
+                  '&:hover': {
+                    backgroundColor:
+                      theme.palette.mode === 'dark'
+                        ? 'rgba(255, 255, 255, 0.15)'
+                        : 'rgba(255, 255, 255, 1)',
+                    color:
+                      theme.palette.mode === 'dark'
+                        ? theme.palette.text.primary
+                        : theme.palette.text.secondary,
+                    transform: 'scale(1.1)',
+                    boxShadow:
+                      theme.palette.mode === 'dark'
+                        ? '0 6px 16px rgba(0, 0, 0, 0.4)'
+                        : '0 4px 12px rgba(0, 0, 0, 0.2)',
+                  },
+                  transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
+                }}
+                size="small"
+              >
+                <CloseIcon fontSize="small" />
+              </IconButton>
+            </motion.div>
 
-          <Paper
-            elevation={0}
-            sx={{
-              backgroundColor:
-                theme.palette.mode === 'dark'
-                  ? theme.palette.background.paper
-                  : theme.palette.primary.main,
-              backgroundImage:
-                'linear-gradient(135deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.05) 100%)',
-              borderRadius: borderRadius.lg,
-              overflow: 'hidden',
-              position: 'relative',
-              border:
-                theme.palette.mode === 'dark'
-                  ? `1px solid ${theme.palette.grey[700]}`
-                  : 'none',
-              '&::before': {
-                content: '""',
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0,
-                background: `url("/home/raia-white-logo.png")`,
-                backgroundSize: 'contain',
-                backgroundRepeat: 'no-repeat',
-                backgroundPosition: 'right center',
-                opacity: 0.08,
-                zIndex: 1,
-              },
-            }}
-          >
-            <Container
-              maxWidth="lg"
+            <Paper
+              elevation={0}
               sx={{
+                backgroundColor:
+                  theme.palette.mode === 'dark'
+                    ? theme.palette.background.paper
+                    : theme.palette.primary.main,
+                backgroundImage:
+                  'linear-gradient(135deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.05) 100%)',
+                borderRadius: borderRadius.lg,
+                overflow: 'hidden',
                 position: 'relative',
-                zIndex: 2,
-                py: { xs: spacing.sm, md: spacing.md },
-                pb: { xs: spacing.xs, md: spacing.sm },
+                border:
+                  theme.palette.mode === 'dark'
+                    ? `1px solid ${theme.palette.grey[700]}`
+                    : 'none',
+                '&::before': {
+                  content: '""',
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  background: `url("/home/raia-white-logo.png")`,
+                  backgroundSize: 'contain',
+                  backgroundRepeat: 'no-repeat',
+                  backgroundPosition: 'right center',
+                  opacity: 0.08,
+                  zIndex: 1,
+                },
               }}
             >
+              <Box
+                sx={{
+                  position: 'relative',
+                  zIndex: 2,
+                  py: { xs: spacing.sm, md: spacing.md },
+                  pb: { xs: spacing.xs, md: spacing.sm },
+                  px: { xs: spacing.sm, md: spacing.md },
+                }}
+              >
               <Box
                 sx={{
                   display: 'flex',
@@ -210,63 +218,69 @@ const SeasonalBanner: React.FC = () => {
                     {title}
                   </Typography>
 
-                  <Stack
-                    direction={{ xs: 'column', sm: 'row' }}
-                    spacing={2}
-                    alignItems={{ xs: 'center', md: 'flex-start' }}
-                    sx={{ mb: 0 }}
-                  >
-                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                      <CalendarTodayIcon
-                        sx={{
-                          color:
-                            theme.palette.mode === 'dark'
-                              ? theme.palette.text.secondary
-                              : theme.palette.primary.contrastText,
-                          mr: 1,
-                          fontSize: '1.1rem',
-                        }}
-                      />
-                      <Typography
-                        variant="body1"
-                        component="span"
-                        sx={{
-                          color:
-                            theme.palette.mode === 'dark'
-                              ? theme.palette.text.secondary
-                              : theme.palette.primary.contrastText,
-                          fontWeight: 500,
-                        }}
-                      >
-                        {date}
-                      </Typography>
-                    </Box>
-                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                      <LocationOnIcon
-                        sx={{
-                          color:
-                            theme.palette.mode === 'dark'
-                              ? theme.palette.text.secondary
-                              : theme.palette.primary.contrastText,
-                          mr: 1,
-                          fontSize: '1.1rem',
-                        }}
-                      />
-                      <Typography
-                        variant="body1"
-                        component="span"
-                        sx={{
-                          color:
-                            theme.palette.mode === 'dark'
-                              ? theme.palette.text.secondary
-                              : theme.palette.primary.contrastText,
-                          fontWeight: 500,
-                        }}
-                      >
-                        {location}
-                      </Typography>
-                    </Box>
-                  </Stack>
+                  {(date || location) && (
+                    <Stack
+                      direction={{ xs: 'column', sm: 'row' }}
+                      spacing={2}
+                      alignItems={{ xs: 'center', md: 'flex-start' }}
+                      sx={{ mb: 0 }}
+                    >
+                      {date && (
+                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                          <CalendarTodayIcon
+                            sx={{
+                              color:
+                                theme.palette.mode === 'dark'
+                                  ? theme.palette.text.secondary
+                                  : theme.palette.primary.contrastText,
+                              mr: 1,
+                              fontSize: '1.1rem',
+                            }}
+                          />
+                          <Typography
+                            variant="body1"
+                            component="span"
+                            sx={{
+                              color:
+                                theme.palette.mode === 'dark'
+                                  ? theme.palette.text.secondary
+                                  : theme.palette.primary.contrastText,
+                              fontWeight: 500,
+                            }}
+                          >
+                            {date}
+                          </Typography>
+                        </Box>
+                      )}
+                      {location && (
+                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                          <LocationOnIcon
+                            sx={{
+                              color:
+                                theme.palette.mode === 'dark'
+                                  ? theme.palette.text.secondary
+                                  : theme.palette.primary.contrastText,
+                              mr: 1,
+                              fontSize: '1.1rem',
+                            }}
+                          />
+                          <Typography
+                            variant="body1"
+                            component="span"
+                            sx={{
+                              color:
+                                theme.palette.mode === 'dark'
+                                  ? theme.palette.text.secondary
+                                  : theme.palette.primary.contrastText,
+                              fontWeight: 500,
+                            }}
+                          >
+                            {location}
+                          </Typography>
+                        </Box>
+                      )}
+                    </Stack>
+                  )}
                 </Box>
 
                 <Box
@@ -345,7 +359,7 @@ const SeasonalBanner: React.FC = () => {
               )}
 
               {sponsorsTitle && eventSponsors.length > 0 && (
-                <Box sx={{ mt: spacing.xs, mx: -spacing.md, mb: -spacing.xs }}>
+                <Box sx={{ mt: spacing.xs, mb: -spacing.xs }}>
                   <Typography
                     variant="caption"
                     sx={{
@@ -358,7 +372,6 @@ const SeasonalBanner: React.FC = () => {
                       mb: '2px',
                       display: 'block',
                       textAlign: 'left',
-                      ml: spacing.md,
                     }}
                   >
                     {sponsorsTitle}
@@ -373,9 +386,10 @@ const SeasonalBanner: React.FC = () => {
                   />
                 </Box>
               )}
-            </Container>
+            </Box>
           </Paper>
         </motion.div>
+      </Container>
       )}
     </AnimatePresence>
   );

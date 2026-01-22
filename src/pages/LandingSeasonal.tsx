@@ -35,7 +35,10 @@ const LandingSeasonal: React.FC = () => {
   const theme = useTheme();
   const navigate = useNavigate();
   const buttonRef = useRef<HTMLButtonElement>(null);
-  const { getContent } = useLocalizedContent('screens', 'landingSeasonal');
+  const { getContent, hasTranslation } = useLocalizedContent(
+    'screens',
+    'landingSeasonal'
+  );
 
   const backgroundVariations = getThemeBackgroundVariations(theme);
   const { background, overlay } = backgroundVariations.soft;
@@ -45,13 +48,19 @@ const LandingSeasonal: React.FC = () => {
   const subtitle = getContent<string>('subtitle');
   const buttonText = getContent<string>('buttonText');
   const primaryButtonText = getContent<string>('primaryButtonText');
-  const location = getContent<string>('location');
-  const date = getContent<string>('date');
+  const location = hasTranslation('location')
+    ? getContent<string>('location')
+    : '';
+  const date = hasTranslation('date') ? getContent<string>('date') : '';
   const subscriptionEndAlert = getContent<string>('subscriptionEndAlert');
   const features = getContent<string[]>('features') || [];
   const cta = getContent<string>('cta');
-  const sponsorsTitle = getContent<string>('sponsors.title');
-  const sponsorsSubtitle = getContent<string>('sponsors.subtitle');
+  const sponsorsTitle = hasTranslation('sponsors.title')
+    ? getContent<string>('sponsors.title')
+    : '';
+  const sponsorsSubtitle = hasTranslation('sponsors.subtitle')
+    ? getContent<string>('sponsors.subtitle')
+    : '';
 
   useEffect(() => {
     if (buttonRef.current) {
@@ -134,45 +143,51 @@ const LandingSeasonal: React.FC = () => {
             {title}
           </Typography>
 
-          <Stack
-            direction="row"
-            spacing={2}
-            justifyContent="center"
-            sx={{ mb: spacing.xs }}
-          >
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <CalendarTodayIcon
-                sx={{
-                  color: theme.palette.common.white,
-                  mr: 1,
-                  fontSize: '1.2rem',
-                }}
-              />
-              <Typography
-                variant="body1"
-                component="span"
-                sx={{ color: theme.palette.common.white, fontSize: '1rem' }}
-              >
-                {date}
-              </Typography>
-            </Box>
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <LocationOnIcon
-                sx={{
-                  color: theme.palette.common.white,
-                  mr: 1,
-                  fontSize: '1.2rem',
-                }}
-              />
-              <Typography
-                variant="body1"
-                component="span"
-                sx={{ color: theme.palette.common.white, fontSize: '1rem' }}
-              >
-                {location}
-              </Typography>
-            </Box>
-          </Stack>
+          {(date || location) && (
+            <Stack
+              direction="row"
+              spacing={2}
+              justifyContent="center"
+              sx={{ mb: spacing.xs }}
+            >
+              {date && (
+                <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                  <CalendarTodayIcon
+                    sx={{
+                      color: theme.palette.common.white,
+                      mr: 1,
+                      fontSize: '1.2rem',
+                    }}
+                  />
+                  <Typography
+                    variant="body1"
+                    component="span"
+                    sx={{ color: theme.palette.common.white, fontSize: '1rem' }}
+                  >
+                    {date}
+                  </Typography>
+                </Box>
+              )}
+              {location && (
+                <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                  <LocationOnIcon
+                    sx={{
+                      color: theme.palette.common.white,
+                      mr: 1,
+                      fontSize: '1.2rem',
+                    }}
+                  />
+                  <Typography
+                    variant="body1"
+                    component="span"
+                    sx={{ color: theme.palette.common.white, fontSize: '1rem' }}
+                  >
+                    {location}
+                  </Typography>
+                </Box>
+              )}
+            </Stack>
+          )}
 
           <Typography
             variant="body1"

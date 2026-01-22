@@ -287,7 +287,7 @@ const EventDetails: React.FC = () => {
                   fontSize: { xs: '2.5rem', md: '3rem' },
                 }}
               >
-                {event.meta.hours}
+                {String(event.meta.hours)}
               </Typography>
               <Typography variant="body1" color="text.secondary">
                 {getEventText<string>('stats.hours')}
@@ -309,7 +309,7 @@ const EventDetails: React.FC = () => {
                   color: 'primary.main',
                 }}
               >
-                {event.meta.prizes}
+                {String(event.meta.prizes)}
               </Typography>
               <Typography variant="body1" color="text.secondary">
                 {getEventText<string>('stats.prizes')}
@@ -325,7 +325,7 @@ const EventDetails: React.FC = () => {
     }
 
     return sections;
-  }, [event, eventId, getEventText]);
+  }, [event, getEventText]);
 
   const sidebarConfig: SidebarConfig = {
     metaSections,
