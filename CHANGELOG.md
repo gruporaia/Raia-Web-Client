@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2026-01-22]
+
+### Features
+- enhance SeasonalBanner and LandingSeasonal components with translation checks and update event details
+
+
 ## [2026-01-04]
 
 ### Features
