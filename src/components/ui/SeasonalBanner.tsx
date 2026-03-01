@@ -176,220 +176,220 @@ const SeasonalBanner: React.FC = () => {
                   px: { xs: spacing.sm, md: spacing.md },
                 }}
               >
-              <Box
-                sx={{
-                  display: 'flex',
-                  flexDirection: { xs: 'column', md: 'row' },
-                  alignItems: { xs: 'center', md: 'center' },
-                  justifyContent: 'space-between',
-                  gap: spacing.sm,
-                  textAlign: { xs: 'center', md: 'left' },
-                }}
-              >
-                <Box sx={{ flex: 1, maxWidth: { md: '70%' } }}>
-                  <Typography
-                    variant="overline"
-                    component="p"
-                    sx={{
-                      color:
-                        theme.palette.mode === 'dark'
-                          ? theme.palette.text.secondary
-                          : theme.palette.primary.contrastText,
-                      mb: '4px',
-                      fontSize: '0.9rem',
-                      fontWeight: 'bold',
-                      letterSpacing: '0.1em',
-                    }}
-                  >
-                    {overline}
-                  </Typography>
-
-                  <Typography
-                    variant="h3"
-                    component="h2"
-                    sx={{
-                      color: theme.palette.common.white,
-                      fontWeight: 700,
-                      mb: spacing.xs,
-                      fontSize: { xs: '1.8rem', md: '2.2rem' },
-                      lineHeight: 1.2,
-                    }}
-                  >
-                    {title}
-                  </Typography>
-
-                  {(date || location) && (
-                    <Stack
-                      direction={{ xs: 'column', sm: 'row' }}
-                      spacing={2}
-                      alignItems={{ xs: 'center', md: 'flex-start' }}
-                      sx={{ mb: 0 }}
-                    >
-                      {date && (
-                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                          <CalendarTodayIcon
-                            sx={{
-                              color:
-                                theme.palette.mode === 'dark'
-                                  ? theme.palette.text.secondary
-                                  : theme.palette.primary.contrastText,
-                              mr: 1,
-                              fontSize: '1.1rem',
-                            }}
-                          />
-                          <Typography
-                            variant="body1"
-                            component="span"
-                            sx={{
-                              color:
-                                theme.palette.mode === 'dark'
-                                  ? theme.palette.text.secondary
-                                  : theme.palette.primary.contrastText,
-                              fontWeight: 500,
-                            }}
-                          >
-                            {date}
-                          </Typography>
-                        </Box>
-                      )}
-                      {location && (
-                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                          <LocationOnIcon
-                            sx={{
-                              color:
-                                theme.palette.mode === 'dark'
-                                  ? theme.palette.text.secondary
-                                  : theme.palette.primary.contrastText,
-                              mr: 1,
-                              fontSize: '1.1rem',
-                            }}
-                          />
-                          <Typography
-                            variant="body1"
-                            component="span"
-                            sx={{
-                              color:
-                                theme.palette.mode === 'dark'
-                                  ? theme.palette.text.secondary
-                                  : theme.palette.primary.contrastText,
-                              fontWeight: 500,
-                            }}
-                          >
-                            {location}
-                          </Typography>
-                        </Box>
-                      )}
-                    </Stack>
-                  )}
-                </Box>
-
                 <Box
                   sx={{
                     display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    minWidth: { md: '220px' },
-                    height: { md: 'auto' },
+                    flexDirection: { xs: 'column', md: 'row' },
+                    alignItems: { xs: 'center', md: 'center' },
+                    justifyContent: 'space-between',
+                    gap: spacing.sm,
+                    textAlign: { xs: 'center', md: 'left' },
                   }}
                 >
-                  <Button
-                    variant="contained"
-                    size="large"
-                    onClick={handlePrimaryButton}
+                  <Box sx={{ flex: 1, maxWidth: { md: '70%' } }}>
+                    <Typography
+                      variant="overline"
+                      component="p"
+                      sx={{
+                        color:
+                          theme.palette.mode === 'dark'
+                            ? theme.palette.text.secondary
+                            : theme.palette.primary.contrastText,
+                        mb: '4px',
+                        fontSize: '0.9rem',
+                        fontWeight: 'bold',
+                        letterSpacing: '0.1em',
+                      }}
+                    >
+                      {overline}
+                    </Typography>
+
+                    <Typography
+                      variant="h3"
+                      component="h2"
+                      sx={{
+                        color: theme.palette.common.white,
+                        fontWeight: 700,
+                        mb: spacing.xs,
+                        fontSize: { xs: '1.8rem', md: '2.2rem' },
+                        lineHeight: 1.2,
+                      }}
+                    >
+                      {title}
+                    </Typography>
+
+                    {(date || location) && (
+                      <Stack
+                        direction={{ xs: 'column', sm: 'row' }}
+                        spacing={2}
+                        alignItems={{ xs: 'center', md: 'flex-start' }}
+                        sx={{ mb: 0 }}
+                      >
+                        {date && (
+                          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                            <CalendarTodayIcon
+                              sx={{
+                                color:
+                                  theme.palette.mode === 'dark'
+                                    ? theme.palette.text.secondary
+                                    : theme.palette.primary.contrastText,
+                                mr: 1,
+                                fontSize: '1.1rem',
+                              }}
+                            />
+                            <Typography
+                              variant="body1"
+                              component="span"
+                              sx={{
+                                color:
+                                  theme.palette.mode === 'dark'
+                                    ? theme.palette.text.secondary
+                                    : theme.palette.primary.contrastText,
+                                fontWeight: 500,
+                              }}
+                            >
+                              {date}
+                            </Typography>
+                          </Box>
+                        )}
+                        {location && (
+                          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                            <LocationOnIcon
+                              sx={{
+                                color:
+                                  theme.palette.mode === 'dark'
+                                    ? theme.palette.text.secondary
+                                    : theme.palette.primary.contrastText,
+                                mr: 1,
+                                fontSize: '1.1rem',
+                              }}
+                            />
+                            <Typography
+                              variant="body1"
+                              component="span"
+                              sx={{
+                                color:
+                                  theme.palette.mode === 'dark'
+                                    ? theme.palette.text.secondary
+                                    : theme.palette.primary.contrastText,
+                                fontWeight: 500,
+                              }}
+                            >
+                              {location}
+                            </Typography>
+                          </Box>
+                        )}
+                      </Stack>
+                    )}
+                  </Box>
+
+                  <Box
                     sx={{
-                      backgroundColor:
-                        theme.palette.mode === 'dark'
-                          ? theme.palette.primary.main
-                          : theme.palette.common.white,
-                      color:
-                        theme.palette.mode === 'dark'
-                          ? theme.palette.common.white
-                          : theme.palette.primary.dark,
-                      px: spacing.xl,
-                      py: buttonSizes.large.padding,
-                      fontSize: buttonSizes.medium.fontSize,
-                      fontWeight: 600,
-                      boxShadow: shadows.button,
-                      borderRadius: borderRadius.md,
-                      transition: transitions.medium,
-                      whiteSpace: 'nowrap',
-                      '&:hover': {
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      minWidth: { md: '220px' },
+                      height: { md: 'auto' },
+                    }}
+                  >
+                    <Button
+                      variant="contained"
+                      size="large"
+                      onClick={handlePrimaryButton}
+                      sx={{
                         backgroundColor:
                           theme.palette.mode === 'dark'
-                            ? theme.palette.primary.light
-                            : theme.palette.grey[50],
-                        transform: 'translateY(-2px)',
-                        boxShadow: shadows.cardHover,
-                      },
-                      '&:active': {
-                        transform: 'translateY(0)',
-                      },
-                    }}
-                  >
-                    {primaryButtonText}
-                  </Button>
+                            ? theme.palette.primary.main
+                            : theme.palette.common.white,
+                        color:
+                          theme.palette.mode === 'dark'
+                            ? theme.palette.common.white
+                            : theme.palette.primary.dark,
+                        px: spacing.xl,
+                        py: buttonSizes.large.padding,
+                        fontSize: buttonSizes.medium.fontSize,
+                        fontWeight: 600,
+                        boxShadow: shadows.button,
+                        borderRadius: borderRadius.md,
+                        transition: transitions.medium,
+                        whiteSpace: 'nowrap',
+                        '&:hover': {
+                          backgroundColor:
+                            theme.palette.mode === 'dark'
+                              ? theme.palette.primary.light
+                              : theme.palette.grey[50],
+                          transform: 'translateY(-2px)',
+                          boxShadow: shadows.cardHover,
+                        },
+                        '&:active': {
+                          transform: 'translateY(0)',
+                        },
+                      }}
+                    >
+                      {primaryButtonText}
+                    </Button>
+                  </Box>
                 </Box>
-              </Box>
 
-              {subscriptionEndAlert && (
-                <Alert
-                  severity="warning"
-                  sx={{
-                    mt: spacing.sm,
-                    mb: spacing.xs,
-                    backgroundColor: 'rgba(255, 152, 0, 0.15)',
-                    color: theme.palette.common.white,
-                    border: '1px solid rgba(255, 152, 0, 0.3)',
-                    borderRadius: borderRadius.sm,
-                    '& .MuiAlert-icon': {
-                      color: '#ff9800',
-                    },
-                    fontSize: '0.85rem',
-                    py: 0.5,
-                  }}
-                  icon={false}
-                >
-                  <Typography
-                    variant="body2"
-                    sx={{ fontWeight: 600, fontSize: '0.85rem' }}
-                  >
-                    {subscriptionEndAlert}
-                  </Typography>
-                </Alert>
-              )}
-
-              {sponsorsTitle && eventSponsors.length > 0 && (
-                <Box sx={{ mt: spacing.xs, mb: -spacing.xs }}>
-                  <Typography
-                    variant="caption"
+                {subscriptionEndAlert && (
+                  <Alert
+                    severity="warning"
                     sx={{
-                      color:
-                        theme.palette.mode === 'dark'
-                          ? theme.palette.text.secondary
-                          : theme.palette.primary.contrastText,
-                      fontSize: '0.75rem',
-                      fontWeight: 500,
-                      mb: '2px',
-                      display: 'block',
-                      textAlign: 'left',
+                      mt: spacing.sm,
+                      mb: spacing.xs,
+                      backgroundColor: 'rgba(255, 152, 0, 0.15)',
+                      color: theme.palette.common.white,
+                      border: '1px solid rgba(255, 152, 0, 0.3)',
+                      borderRadius: borderRadius.sm,
+                      '& .MuiAlert-icon': {
+                        color: '#ff9800',
+                      },
+                      fontSize: '0.85rem',
+                      py: 0.5,
                     }}
+                    icon={false}
                   >
-                    {sponsorsTitle}
-                  </Typography>
-                  <Carousel
-                    items={eventSponsors}
-                    speed={12}
-                    maxItemHeight={layout.logo.maxHeight.banner}
-                    itemSize={layout.logo.defaultSize}
-                    align="center"
-                    padding="0"
-                  />
-                </Box>
-              )}
-            </Box>
-          </Paper>
-        </motion.div>
-      </Container>
+                    <Typography
+                      variant="body2"
+                      sx={{ fontWeight: 600, fontSize: '0.85rem' }}
+                    >
+                      {subscriptionEndAlert}
+                    </Typography>
+                  </Alert>
+                )}
+
+                {sponsorsTitle && eventSponsors.length > 0 && (
+                  <Box sx={{ mt: spacing.xs, mb: -spacing.xs }}>
+                    <Typography
+                      variant="caption"
+                      sx={{
+                        color:
+                          theme.palette.mode === 'dark'
+                            ? theme.palette.text.secondary
+                            : theme.palette.primary.contrastText,
+                        fontSize: '0.75rem',
+                        fontWeight: 500,
+                        mb: '2px',
+                        display: 'block',
+                        textAlign: 'left',
+                      }}
+                    >
+                      {sponsorsTitle}
+                    </Typography>
+                    <Carousel
+                      items={eventSponsors}
+                      speed={12}
+                      maxItemHeight={layout.logo.maxHeight.banner}
+                      itemSize={layout.logo.defaultSize}
+                      align="center"
+                      padding="0"
+                    />
+                  </Box>
+                )}
+              </Box>
+            </Paper>
+          </motion.div>
+        </Container>
       )}
     </AnimatePresence>
   );
