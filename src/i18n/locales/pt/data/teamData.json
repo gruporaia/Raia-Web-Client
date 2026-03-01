@@ -85,6 +85,23 @@
     "expertise": ["DevOps", "Microsserviços", "Computação em Nuvem"]
   },
   {
+    "id": "beatriz-fugi",
+    "name": "Beatriz Fugi",
+    "role": "Diretora de Marketing",
+    "image": "/team/beatriz-fugi.jpeg",
+    "bio": "Graduanda em Tecnologia em Marketing pela Fundação Getulio Vargas, com bacharelado em Nutrição pela Universidade de São Paulo e especialização em Nutrição, Metabolismo e Fisiologia do Exercício pela FMRP-USP. Atualmente, integro a Diretoria de Marketing da Rede de Avanço em Inteligência Artificial (RAIA), onde produzo materiais para redes sociais.",
+    "linkedin": "https://www.linkedin.com/in/beatriz-fugi/",
+    "education": "FMRP-USP"
+  },
+  {
+    "id": "gabriel-fagundes",
+    "name": "Gabriel Fagundes",
+    "role": "Diretor de Projetos",
+    "image": "/team/gabriel-fagundes.png",
+    "bio": "Engenheiro de Software & Cientista de Dados que combina expertise acadêmica em IA e ciência de dados com experiência profissional em engenharia de software, entregando soluções eficientes, manuteníveis e orientadas por dados. Forte base em algoritmos, estruturas de dados e design de software, com foco na criação de aplicações confiáveis e escaláveis.",
+    "linkedin": "https://www.linkedin.com/in/gafagundes/"
+  },
+  {
     "id": "pedro-augusto-ribeiro-gomes",
     "name": "Pedro Augusto Ribeiro Gomes",
     "role": "Fundador e Conselheiro",
