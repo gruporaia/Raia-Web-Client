@@ -191,6 +191,41 @@
           "image": "/team/bonecheck/yasmin.png",
           "bio": "Worked on dataset preprocessing and LLM usage.",
           "linkedin": "https://www.linkedin.com/in/yasmin-victoria-oliveira/"
+        },
+        {
+          "name": "Luysa Gonçalves",
+          "role": "Developer",
+          "image": "/team/bonecheck/luysagoncalves.jpg",
+          "bio": "Worked on training base models.",
+          "linkedin": "https://www.linkedin.com/in/luysagoncalves/"
+        },
+        {
+          "name": "Matheus Vicente",
+          "role": "Developer",
+          "image": "/team/bonecheck/matheusvicente.jpg",
+          "bio": "Worked on training base models.",
+          "linkedin": "https://www.linkedin.com/in/matheushrv/"
+        },
+        {
+          "name": "Artur Vlieger",
+          "role": "Developer",
+          "image": "/team/bonecheck/arturvlieger.jpeg",
+          "bio": "Worked on training base models.",
+          "linkedin": "https://www.linkedin.com/in/artur-de-vlieger-336829252/"
+        },
+        {
+          "name": "Caio Petroncini",
+          "role": "Developer",
+          "image": "/team/bonecheck/caiopetroncini.jpeg",
+          "bio": "Worked on training base models.",
+          "linkedin": "https://www.linkedin.com/in/caio-petroncini-7105941aa/"
+        },
+        {
+          "name": "Antônio Carlos Micheli",
+          "role": "Developer",
+          "image": "/team/bonecheck/antoniocarlos.jpeg",
+          "bio": "Worked on training base models.",
+          "linkedin": "https://www.linkedin.com/in/ant%C3%B4nio-carlos-micheli-b10bb4289/"
         }
       ]
     }

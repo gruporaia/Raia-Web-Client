@@ -195,6 +195,41 @@
           "image": "/team/bonecheck/yasmin.png",
           "bio": "Atuou no pré-processamento do dataset e no uso de LLMs.",
           "linkedin": "https://www.linkedin.com/in/yasmin-victoria-oliveira/"
+        },
+        {
+          "name": "Luysa Gonçalves",
+          "role": "Desenvolvedor",
+          "image": "/team/bonecheck/luysagoncalves.jpg",
+          "bio": "Atuou na etapa de treinamento dos modelos base.",
+          "linkedin": "https://www.linkedin.com/in/luysagoncalves/"
+        },
+        {
+          "name": "Matheus Vicente",
+          "role": "Desenvolvedor",
+          "image": "/team/bonecheck/matheusvicente.jpg",
+          "bio": "Atuou na etapa de treinamento dos modelos base.",
+          "linkedin": "https://www.linkedin.com/in/matheushrv/"
+        },
+        {
+          "name": "Artur Vlieger",
+          "role": "Desenvolvedor",
+          "image": "/team/bonecheck/arturvlieger.jpeg",
+          "bio": "Atuou na etapa de treinamento dos modelos base.",
+          "linkedin": "https://www.linkedin.com/in/artur-de-vlieger-336829252/"
+        },
+        {
+          "name": "Caio Petroncini",
+          "role": "Desenvolvedor",
+          "image": "/team/bonecheck/caiopetroncini.jpeg",
+          "bio": "Atuou na etapa de treinamento dos modelos base.",
+          "linkedin": "https://www.linkedin.com/in/caio-petroncini-7105941aa/"
+        },
+        {
+          "name": "Antônio Carlos Micheli",
+          "role": "Desenvolvedor",
+          "image": "/team/bonecheck/antoniocarlos.jpeg",
+          "bio": "Atuou na etapa de treinamento dos modelos base.",
+          "linkedin": "https://www.linkedin.com/in/ant%C3%B4nio-carlos-micheli-b10bb4289/"
         }
       ]
     }
