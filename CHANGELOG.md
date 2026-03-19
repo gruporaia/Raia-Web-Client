@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2026-03-19]
+
+### Features
+feat(team): add missing directors (#40)
+
+
 ## [2026-01-22]
 
 ### Features
