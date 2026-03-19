@@ -40,6 +40,14 @@
     "education": "University of São Paulo (USP)"
   },
   {
+    "id": "gabriel-fagundes",
+    "name": "Gabriel Fagundes",
+    "role": "Project Director",
+    "image": "/team/gabriel-fagundes.png",
+    "bio": "Software Engineer & Data Scientist combining academic expertise in AI and data science with professional experience in software engineering, delivering efficient, maintainable, and data-driven solutions. Strong foundation in algorithms, data structures, and software design, focusing on building reliable and scalable applications.",
+    "linkedin": "https://www.linkedin.com/in/gafagundes/"
+  },
+  {
     "id": "gabriel-andreghetti",
     "name": "Gabriel Andreghetti",
     "role": "Partnerships Director",
@@ -88,14 +96,6 @@
     "bio": "Undergraduate student in Marketing Technology at Fundação Getulio Vargas, with a Bachelor's degree in Nutrition from the Universidade de São Paulo and a specialization in Nutrition, Metabolism, and Exercise Physiology from FMRP-USP. Currently, I am part of the Marketing Board at the Artificial Intelligence Advancement Network (RAIA), where I produce content for social media.",
     "linkedin": "https://www.linkedin.com/in/beatriz-fugi/",
     "education": "FMRP-USP"
-  },
-  {
-    "id": "gabriel-fagundes",
-    "name": "Gabriel Fagundes",
-    "role": "Project Director",
-    "image": "/team/gabriel-fagundes.png",
-    "bio": "Software Engineer & Data Scientist combining academic expertise in AI and data science with professional experience in software engineering, delivering efficient, maintainable, and data-driven solutions. Strong foundation in algorithms, data structures, and software design, focusing on building reliable and scalable applications.",
-    "linkedin": "https://www.linkedin.com/in/gafagundes/"
   },
   {
     "id": "pedro-augusto-ribeiro-gomes",
