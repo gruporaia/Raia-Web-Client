@@ -1,20 +1,20 @@
 {
-  "overline": "REGISTRATION: 01/19 - 01/27",
-  "title": "RAIA Fellowship 2026",
-  "subtitle": "RAIA's Talent Development Program where members enhance their AI knowledge through projects, mentoring, and connections.",
+  "overline": "REGISTRATION: 05/20 - 06/17",
+  "title": "RAIA Conference 2026",
+  "subtitle": "AI Beyond the Model: Research, Engineering, and Impact",
   "buttonText": "Enter Site",
   "primaryButtonText": "Apply",
-  "location": "",
-  "date": "",
-  "subscriptionEndDate": "01/27",
-  "subscriptionEndAlert": "Applications are open until 01/27. Don't miss this opportunity!",
+  "location": "ICMC USP São Carlos - Fernão Stella Auditorium",
+  "date": "06/20",
+  "subscriptionEndDate": "06/17",
+  "subscriptionEndAlert": "Applications are open until 06/17. Don't miss this opportunity!",
   "features": [
-    "Work on high-impact projects",
-    "Participate in mentoring with experts",
-    "Develop leadership and other soft skills",
-    "Gain valuable connections with AI talents"
+    "Talks and Panels with AI experts",
+    "Presentation of innovative projects",
+    "Networking moments",
+    "Strategic and technical debates"
   ],
-  "cta": "If you want to learn more about AI, get hands-on experience in a real impact project, and make valuable connections, the Fellowship is for you! Apply now!",
+  "cta": "The RAIA Conference will be a unique and free opportunity to learn from leading experts in the field and make valuable connections. Apply now!",
   "sponsors": {
     "title": "",
     "subtitle": ""
